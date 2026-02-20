@@ -1,0 +1,135 @@
+{
+    "key": "group_ready_section_fields",
+    "title": "Ready Section Fields",
+    "fields": [
+        {
+            "key": "field_ready_section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ready to Elevate Your Digital Presence?",
+            "placeholder": "Enter section title",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ready_section_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "With over a decade of experience and a passion for innovation, BrillMark is here to help you achieve your goals.",
+            "placeholder": "Enter section description",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_ready_section_stats",
+            "label": "Stats",
+            "name": "stats",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Stat",
+            "default_value": [
+                {
+                    "stat_number": "10K+",
+                    "stat_label": "Projects Completed"
+                },
+                {
+                    "stat_number": "1M+",
+                    "stat_label": "Lines of Code Written"
+                },
+                {
+                    "stat_number": "1000+",
+                    "stat_label": "Optimized Websites"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_ready_section_stat_number",
+                    "label": "Stat Number",
+                    "name": "stat_number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "e.g., 10K+",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ready_section_stat_label",
+                    "label": "Stat Label",
+                    "name": "stat_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "e.g., Projects Completed",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/ready-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "modified": 1769514543
+}

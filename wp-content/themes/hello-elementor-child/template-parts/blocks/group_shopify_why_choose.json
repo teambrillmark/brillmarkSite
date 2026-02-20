@@ -1,0 +1,145 @@
+{
+    "key": "group_shopify_why_choose",
+    "title": "Shopify Why Choose Block Fields",
+    "fields": [
+        {
+            "key": "field_shopify_why_choose_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Main heading for the Why Choose section",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Why Choose Brillmark for Your Shopify Migration?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shopify_why_choose_description",
+            "label": "Description",
+            "name": "description",
+            "type": "text",
+            "instructions": "Subheading or tagline below the title",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Save Time, Let Us Do The Heavy Lifting",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_shopify_why_choose_items",
+            "label": "Grid Items",
+            "name": "items",
+            "type": "repeater",
+            "instructions": "List of feature items (icon, title, description)",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 12,
+            "layout": "block",
+            "button_label": "Add Item",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_shopify_why_choose_item_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "Icon image for this item",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_shopify_why_choose_item_title",
+                    "label": "Item Title",
+                    "name": "item_title",
+                    "type": "text",
+                    "instructions": "Short title (e.g. 12+ Years, Optimized)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_shopify_why_choose_item_desc",
+                    "label": "Item Description",
+                    "name": "item_desc",
+                    "type": "text",
+                    "instructions": "Short description (e.g. E-commerce Expertise)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/shopify-why-choose"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for Shopify Why Choose custom block",
+    "modified": 1770791258
+}

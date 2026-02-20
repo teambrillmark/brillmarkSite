@@ -1,0 +1,304 @@
+/* Our Process Section Block Styles */
+
+/* Base Section */
+.our-process-section-section {
+  width: 100%;
+  padding: 50px 0px;
+  background-color: #F7F8FA;
+  box-sizing: border-box;
+  display: none;
+  position: relative;
+}
+.our-process-section-section::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -10px;
+  width: 104%;
+  height: 100%;
+  background-color: #F4F7FA;
+  z-index: 0;
+}
+
+.our-process-section-section .container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.our-process-section-section .our-process-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Main Title */
+.our-process-section-section .our-process-section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: #1A202C;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+}
+
+/* Description */
+.our-process-section-section .our-process-section-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #4A5568;
+  margin: 0;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Accordion Container */
+.our-process-section-section .our-process-section-accordion {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+/* Accordion Item */
+.our-process-section-section .our-process-section-accordion-item {
+  background-color: #ffffff;
+  border: 1px solid #0960A8;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Accordion Header */
+.our-process-section-section .our-process-section-accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 20px 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+.our-process-section-section .our-process-section-accordion-item.active .our-process-section-accordion-header {
+  padding: 20px 15px 10px;
+}
+
+/* .our-process-section-section .our-process-section-accordion-header:hover {
+  background-color: #F7F8FA;
+} */
+
+/* Step Number Circle */
+.our-process-section-section .our-process-section-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #0960A8;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.our-process-section-section .our-process-section-step-number span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0960A8;
+  line-height: 1;
+}
+
+/* Active Step Number */
+.our-process-section-section .our-process-section-accordion-item.active .our-process-section-step-number {
+  background-color: #0960A8;
+  border-color: #0960A8;
+}
+
+.our-process-section-section .our-process-section-accordion-item.active .our-process-section-step-number span {
+  color: #ffffff;
+}
+
+/* Step Title */
+.our-process-section-section .our-process-section-step-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1A202C;
+  flex: 1;
+  line-height: 18px;
+  max-width: 400px;
+  text-wrap: auto;
+}
+
+/* Chevron Icon */
+.our-process-section-section .our-process-section-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #0960A8;
+  transition: transform 0.3s ease;
+}
+
+.our-process-section-section .our-process-section-accordion-item.active .our-process-section-chevron {
+  transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.our-process-section-section .our-process-section-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 14px 0px;
+}
+
+.our-process-section-section .our-process-section-accordion-item.active .our-process-section-accordion-content {
+  max-height: 2000px;
+  padding: 0 clamp(16px, 3vw, 20px) clamp(20px, 3vw, 24px);
+}
+
+.our-process-section-section .our-process-section-accordion-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 14px;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* Step Description */
+.our-process-section-section .our-process-section-step-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #112446;
+  margin: 0;
+}
+
+/* Checklist */
+.our-process-section-section .our-process-section-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.our-process-section-section .our-process-section-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.our-process-section-section .our-process-section-check-icon {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.our-process-section-section .our-process-section-checklist-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #313F58;
+}
+
+/* CTA Button */
+.our-process-section-section .our-process-section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.our-process-section-section .our-process-section-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background-color: #1D376B;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.our-process-section-section .our-process-section-cta-button:hover {
+  background-color: #152A52;
+}
+
+.our-process-section-section .our-process-section-cta-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .our-process-section-section{
+    display: block;
+  }
+  .our-process-section-section .container {
+    padding: 0 15px;
+  }
+  
+  .our-process-section-section .our-process-section-step-number {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  .our-process-section-section .container {
+    padding: 0 12px;
+  }
+  
+  .our-process-section-section .our-process-section-accordion-header {
+    gap: 10px;
+  }
+  
+  .our-process-section-section .our-process-section-step-number {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+  
+  
+  .our-process-section-section .our-process-section-chevron {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .our-process-section-section .our-process-section-accordion-item.active .our-process-section-accordion-content {
+    padding: 0 14px 18px;
+  }
+  
+  
+  .our-process-section-section .our-process-section-cta-button {
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .our-process-section-section .our-process-section-cta-text {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,193 @@
+{
+    "key": "group_why_choose_shopify_section_fields",
+    "title": "Why Choose Shopify Section Fields",
+    "fields": [
+        {
+            "key": "field_why-choose-shopify-section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Why Choose BrillMark for Shopify Web Development?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_why-choose-shopify-section_subtitle",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We build great user experiences by providing full-spectrum Shopify development services and solutions to customers worldwide.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
+        },
+        {
+            "key": "field_why-choose-shopify-section_feature_column_header",
+            "label": "Feature Column Header",
+            "name": "feature_column_header",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Feature",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_why-choose-shopify-section_benefit_column_header",
+            "label": "Benefit Column Header",
+            "name": "benefit_column_header",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Benefit",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_why-choose-shopify-section_rows",
+            "label": "Feature & Benefit Rows",
+            "name": "rows",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "default_value": [
+                {
+                    "field_why-choose-shopify-section_feature_title": "Full-Service Shopify Development Experts",
+                    "field_why-choose-shopify-section_benefit_description": "Enjoy a dedicated team including Shopify developers, project managers, QA specialists, GA & tool analysts, CRO strategists, and UX designers working in sync to optimize your store."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "CRO Expertise & Integration",
+                    "field_why-choose-shopify-section_benefit_description": "Data-Driven Approach with a proven track record of 10,000+ campaigns, with conversion optimization is integrated into every service: design, development, and customization."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "Custom Integrations",
+                    "field_why-choose-shopify-section_benefit_description": "Seamlessly integrates top-tier apps (Klaviyo, Mailchimp, Google Shopping, Omnisend & more)."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "Transparent, Pricing Model",
+                    "field_why-choose-shopify-section_benefit_description": "Pay only for the services you need, with no hidden costs. Gain a complete, cross-functional team—no need for multiple hires."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "Flexibility & Integration",
+                    "field_why-choose-shopify-section_benefit_description": "Our specialists coordinate under one process, ensuring timely delivery and smooth integration with your Shopify store and marketing tools."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "End-to-End Support",
+                    "field_why-choose-shopify-section_benefit_description": "From platform migrations (Shopify, WordPress) to new site launches, we provide ongoing support from setting up goals to troubleshooting post-launch issues."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "Holistic Development:",
+                    "field_why-choose-shopify-section_benefit_description": "BrillMark has helped several Websites and CRO agencies with effective experiments and the best tech support. BrillMark team of developers can consistently create and execute complicated experiments across any device, application, or platform."
+                },
+                {
+                    "field_why-choose-shopify-section_feature_title": "Real-time maintenance:",
+                    "field_why-choose-shopify-section_benefit_description": "We provide you with real-time maintenance & support during the project implementation. As a specialized Shopify development agency, we provide continuing upgrades and upkeep of your website, including website layout, HTML\/CSS tweaks, feature additions, and social media updates."
+                }
+            ],
+            "button_label": "",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_why-choose-shopify-section_feature_title",
+                    "label": "Feature Title",
+                    "name": "feature_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_why-choose-shopify-section_benefit_description",
+                    "label": "Benefit Description",
+                    "name": "benefit_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/why-choose-shopify-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Feature and benefit comparison table for Shopify development services.",
+    "modified": 1771307318
+}

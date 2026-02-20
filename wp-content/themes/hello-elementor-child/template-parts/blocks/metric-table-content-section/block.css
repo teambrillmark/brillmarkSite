@@ -1,0 +1,10 @@
+.metric-table-content-section-section { display: flex; flex-direction: column; gap: 40px; justify-content: center; align-items: center; }
+.metric-table-content-section-title { font-family: "Poppins", sans-serif; font-size: 40px; font-weight: 300; text-align: center; text-transform: capitalize; color: #112446; }
+.metric-table-content-section-frame { display: flex; flex-direction: row; justify-content: center; align-items: center; }
+.metric-table-content-section-inner-frame { display: flex; flex-direction: column; }
+.metric-table-content-section-item { display: flex; flex-direction: row; gap: 10px; padding: 20px 100px; align-items: center; background-color: #eceff1; border: 1px solid rgba(51, 51, 51, 0.10); border-radius: 6px; }
+.metric-table-content-section-metric, .metric-table-content-section-total-sessions, .metric-table-content-section-orders-fulfilled, .metric-table-content-section-total-sales, .metric-table-content-section-conversion-rate, .metric-table-content-section-added-to-cart-rate, .metric-table-content-section-reached-checkout-rate, .metric-table-content-section-completed-checkout { font-family: "Poppins", sans-serif; font-size: 20px; font-weight: 400; color: #112446; }
+.metric-table-content-section-value { font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 400; color: #313f58; }
+@media (max-width: 1024px) { .metric-table-content-section-frame { flex-direction: column; } }
+@media (max-width: 768px) { .metric-table-content-section-item { padding: 20px; } }
+@media (max-width: 480px) { .metric-table-content-section-title { font-size: 32px; } }

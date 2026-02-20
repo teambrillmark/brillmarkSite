@@ -1,0 +1,146 @@
+{
+  "key": "group_footer_section_fields",
+  "title": "Footer Section Fields",
+  "fields": [
+    {
+      "key": "field_footer_section_shape_1",
+      "label": "Footer Shape 1 (decorative)",
+      "name": "shape_1",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "thumbnail"
+    },
+    {
+      "key": "field_footer_section_shape_2",
+      "label": "Footer Shape 2 (decorative)",
+      "name": "shape_2",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "thumbnail"
+    },
+    {
+      "key": "field_footer_section_logo",
+      "label": "Footer Logo",
+      "name": "logo_footer",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_footer_section_description",
+      "label": "Description Text",
+      "name": "description",
+      "type": "textarea",
+      "rows": 4,
+      "default_value": "We're a growing, distributed team of experienced developers with a passion for website experimentation and conversion rate optimization (CRO)."
+    },
+    {
+      "key": "field_footer_section_book_meeting_link",
+      "label": "Book a Meeting URL",
+      "name": "book_meeting_link",
+      "type": "link",
+      "return_format": "array"
+    },
+    {
+      "key": "field_footer_section_book_meeting_text",
+      "label": "Book a Meeting Button Text",
+      "name": "book_meeting_button_text",
+      "type": "text",
+      "default_value": "Book a meeting"
+    },
+    {
+      "key": "field_footer_section_social_links",
+      "label": "Social Links",
+      "name": "social_links",
+      "type": "repeater",
+      "min": 0,
+      "layout": "table",
+      "button_label": "Add Social Link",
+      "sub_fields": [
+        {
+          "key": "field_footer_section_social_url",
+          "label": "URL",
+          "name": "url",
+          "type": "link",
+          "return_format": "array"
+        },
+        {
+          "key": "field_footer_section_social_icon",
+          "label": "Icon Image",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "thumbnail"
+        }
+      ]
+    },
+    {
+      "key": "field_footer_section_columns",
+      "label": "Footer Link Columns",
+      "name": "footer_columns",
+      "type": "repeater",
+      "min": 1,
+      "max": 6,
+      "layout": "block",
+      "button_label": "Add Column",
+      "sub_fields": [
+        {
+          "key": "field_footer_section_column_heading",
+          "label": "Column Heading",
+          "name": "heading",
+          "type": "text",
+          "required": 1,
+          "placeholder": "e.g. Company, Services, Useful Links"
+        },
+        {
+          "key": "field_footer_section_column_links",
+          "label": "Links",
+          "name": "links",
+          "type": "repeater",
+          "min": 0,
+          "layout": "table",
+          "button_label": "Add Link",
+          "sub_fields": [
+            {
+              "key": "field_footer_section_link",
+              "label": "Link",
+              "name": "link",
+              "type": "link",
+              "return_format": "array",
+              "required": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_footer_section_copyright_1",
+      "label": "Copyright Line 1",
+      "name": "copyright_line_1",
+      "type": "text",
+      "default_value": "BrillMark © 2026. All rights reserved."
+    },
+    {
+      "key": "field_footer_section_copyright_2",
+      "label": "Copyright Line 2",
+      "name": "copyright_line_2",
+      "type": "text",
+      "default_value": "A/B Test Development Agency"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/footer-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "active": true,
+  "description": "Footer block: logo, description, book meeting CTA, social links, link columns, copyright."
+}

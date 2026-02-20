@@ -1,0 +1,315 @@
+.intelligence-section-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px 10px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.intelligence-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intelligence-section-title {
+  color: #112446;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 54px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.intelligence-section-description {
+  color: #313F58;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* Two Column Layout */
+.intelligence-section-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  align-items: start;
+}
+
+/* Left Column: Image Section */
+.intelligence-section-left {
+  position: relative;
+}
+
+.intelligence-section-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 690px;
+}
+
+.intelligence-section-main-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Floating Icons */
+.intelligence-section-floating-icons {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  z-index: 10;
+}
+
+.floating-icon {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.floating-icon-3d {
+  top: 0;
+  left: 0;
+}
+
+.floating-icon-html {
+  top: 60px;
+  left: 20px;
+}
+
+/* CRO Powered by AI Box */
+.intelligence-section-cro-box {
+  position: absolute;
+  bottom: 5%;
+  right: 14%;
+  padding: 22px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 200px;
+  width: 100%;
+  z-index: 10;
+  border-radius: 6px;
+  border-right: 1px solid rgba(0, 0, 0, 0.10);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(2.5px);
+	display: none;
+}
+
+.cro-box-title {
+  color: #313F58;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+}
+
+.cro-box-title-bold {
+  color: #313F58;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 2px 0;
+  margin-bottom: 8px;
+}
+
+.cro-box-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cro-box-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+  color: #313F58;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.cro-box-item:last-child {
+  margin-bottom: 0;
+}
+
+.cro-item-text {
+  flex: 1;
+}
+
+/* Right Column: Feature Cards */
+.intelligence-section-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0px 0px 0px 50px;
+  border-radius: 10px;
+  background: #FFF;
+}
+
+.intelligence-section-feature-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.intelligence-section-feature-card {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  position: relative;
+}
+
+.intelligence-section-feature-card::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, #0960a8 0, #0960a8 6px, transparent 2px, transparent 11px);
+    top: 25px;
+    left: 1.5%;
+}
+
+.intelligence-section-feature-card:last-child::before,
+.intelligence-section-feature-card:nth-child(4)::before {
+    content: none;
+}
+
+.feature-card-icon {
+  width: 4%;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0px;
+  margin-top: 5px;
+}
+
+.feature-card-details {
+    width: 100%;
+}
+
+.feature-card-title {
+  color: #112446;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0px 0 10px 0;
+}
+
+.feature-card-description {
+  color: #313F58;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0px
+}
+
+.intelligence-section-feature-card:last-child .feature-card-description{
+	font-weight: 500;
+	font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .intelligence-section-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .intelligence-section-floating-icons {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .floating-icon {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  .intelligence-section-right {
+    border-top: none;
+    border-right: none;
+    padding: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .intelligence-section-section {
+    padding: 40px 16px;
+  }
+
+  .intelligence-section-header {
+    margin-bottom: 40px;
+  }
+
+  .intelligence-section-content-wrapper {
+    gap: 32px;
+  }
+
+  .intelligence-section-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+	.intelligence-section-image-wrapper {
+  		height: 100%;
+}
+}
+
+@media (max-width: 480px) {
+
+  .feature-card-icon {
+    width: 6%;
+  }
+	.intelligence-section-feature-card::before{
+		left: 2.5%;
+	}
+}

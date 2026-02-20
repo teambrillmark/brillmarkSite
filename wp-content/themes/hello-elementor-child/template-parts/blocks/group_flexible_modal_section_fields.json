@@ -1,0 +1,322 @@
+{
+    "key": "group_flexible_modal_section_fields",
+    "title": "Flexible Modal Section Fields",
+    "fields": [
+        {
+            "key": "field_flexible-modal-section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Flexible Engagement Models",
+            "placeholder": "Enter section title",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_flexible-modal-section_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "At BrillMark, we recognize that every business has unique needs and priorities. That's why we offer flexible engagement models to deliver the support and expertise you need, when you need it.",
+            "placeholder": "Enter section description",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_flexible-modal-section_engagement_cards",
+            "label": "Engagement Cards",
+            "name": "engagement_cards",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 6,
+            "layout": "block",
+            "button_label": "Add Card",
+            "default_value": [
+                {
+                    "card_icon": "..\/images\/f99c01e87047e2ddbdef1e8de4e7deb6b7a2d54d.png",
+                    "card_title": "Retainer-Based Partnerships",
+                    "card_description": "Ideal for businesses with ongoing development needs, including eCommerce companies and CRO agencies.",
+                    "features": [
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Predictable Costs"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Dedicated Resources"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Priority Service"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Long-Term Collaboration"
+                        }
+                    ],
+                    "button_text": "Learn more",
+                    "button_link": "#"
+                },
+                {
+                    "card_icon": "..\/images\/37197bba3cd6f0dd028c47ce6354ea9ea712c0a2.png",
+                    "card_title": "Block of Hours",
+                    "card_description": "Perfect for businesses looking to start testing development, establish a testing culture, or require on-demand services without a long-term commitment.",
+                    "features": [
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Flexibility:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "On-Demand Support:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Budget Control:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Trial Opportunity:"
+                        }
+                    ],
+                    "button_text": "Learn more",
+                    "button_link": "#"
+                },
+                {
+                    "card_icon": "..\/images\/4d72a100f67376c9576061d40e8c33fbff248dc2.png",
+                    "card_title": "Project-Based Engagements",
+                    "card_description": "Designed for one-time projects or specific initiatives with clearly defined scopes and timelines.",
+                    "features": [
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Defined Scope and Timeline:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Focused Expertise:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Transparent Pricing:"
+                        },
+                        {
+                            "feature_icon": "..\/images\/0a4c455889ffedb1bc8c52d98827cda063d1f456.png",
+                            "feature_text": "Specialized Solutions:"
+                        }
+                    ],
+                    "button_text": "Learn more",
+                    "button_link": "#"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_flexible-modal-section_card_icon",
+                    "label": "Card Icon",
+                    "name": "card_icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_flexible-modal-section_card_title",
+                    "label": "Card Title",
+                    "name": "card_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Enter card title",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_flexible-modal-section_card_description",
+                    "label": "Card Description",
+                    "name": "card_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Enter card description",
+                    "rows": 2,
+                    "new_lines": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_flexible-modal-section_features",
+                    "label": "Features",
+                    "name": "features",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 10,
+                    "layout": "table",
+                    "button_label": "Add Feature",
+                    "collapsed": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_flexible-modal-section_feature_icon",
+                            "label": "Feature Icon",
+                            "name": "feature_icon",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_flexible-modal-section_feature_text",
+                            "label": "Feature Text",
+                            "name": "feature_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Enter feature text",
+                            "maxlength": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_flexible-modal-section_button_text",
+                    "label": "Button Text",
+                    "name": "button_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Learn more",
+                    "placeholder": "Enter button text",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_flexible-modal-section_button_link",
+                    "label": "Button Link",
+                    "name": "button_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#",
+                    "placeholder": "Enter button URL"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/flexible-modal-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF field group for the Flexible Modal Section block",
+    "show_in_rest": true,
+    "modified": 1770616527
+}

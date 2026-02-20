@@ -1,0 +1,81 @@
+{
+    "key": "group_faq_txt_section_fields",
+    "title": "FAQ Text Section Fields",
+    "fields": [
+        {
+            "key": "field_faq_txt_section_badge",
+            "label": "Badge",
+            "name": "badge",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "FAQ",
+            "placeholder": "Enter badge text",
+            "maxlength": 50,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_faq_txt_section_heading",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Frequently asked questions",
+            "placeholder": "Enter section heading",
+            "maxlength": 200,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_faq_txt_section_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Develop top-line strategies and ensure value through tested procedures. Generate effective testing protocols to support sustainable and visionary growth strategies.",
+            "placeholder": "Enter section description",
+            "rows": 4,
+            "new_lines": "br",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/faq-txt-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the FAQ Text Section block",
+    "modified": 1768494563
+}

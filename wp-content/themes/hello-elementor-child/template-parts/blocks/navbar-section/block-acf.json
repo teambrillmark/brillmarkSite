@@ -1,0 +1,278 @@
+{
+    "key": "group_navbar_section_fields",
+    "title": "Navbar Section Fields",
+    "fields": [
+        {
+            "key": "field_navbar_section_logo",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "required": 0,
+            "instructions": "Upload the site logo. Recommended size: 200x46px."
+        },
+        {
+            "key": "field_navbar_section_nav_items",
+            "label": "Navigation Items",
+            "name": "nav_items",
+            "type": "repeater",
+            "layout": "table",
+            "min": 1,
+            "max": 10,
+            "button_label": "Add Navigation Item",
+            "sub_fields": [
+                {
+                    "key": "field_navbar_section_nav_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": ""
+                },
+                {
+                    "key": "field_navbar_section_nav_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "default_value": ""
+                },
+                {
+                    "key": "field_navbar_section_nav_has_dropdown",
+                    "label": "Has Dropdown?",
+                    "name": "has_dropdown",
+                    "type": "true_false",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No",
+                    "instructions": "Enable if this item triggers the services mega menu."
+                }
+            ],
+            "default_value": [
+                {
+                    "label": "Home",
+                    "url": "/",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Services",
+                    "url": "",
+                    "has_dropdown": true
+                },
+                {
+                    "label": "About Us",
+                    "url": "/about-us",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Our Blogs",
+                    "url": "/blog",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Referral",
+                    "url": "/referral",
+                    "has_dropdown": false
+                }
+            ]
+        },
+        {
+            "key": "field_navbar_section_cta_button_text",
+            "label": "CTA Button Text",
+            "name": "cta_button_text",
+            "type": "text",
+            "required": 0,
+            "default_value": "Let's Talk!"
+        },
+        {
+            "key": "field_navbar_section_cta_button_link",
+            "label": "CTA Button Link",
+            "name": "cta_button_link",
+            "type": "url",
+            "required": 0,
+            "default_value": "/contact"
+        },
+        {
+            "key": "field_navbar_section_services",
+            "label": "Services",
+            "name": "services",
+            "type": "repeater",
+            "layout": "block",
+            "min": 1,
+            "max": 12,
+            "button_label": "Add Service",
+            "instructions": "Add services that appear in the dropdown mega menu. Services are displayed in rows of 3.",
+            "sub_fields": [
+                {
+                    "key": "field_navbar_section_service_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "required": 0
+                },
+                {
+                    "key": "field_navbar_section_service_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": ""
+                },
+                {
+                    "key": "field_navbar_section_service_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "required": 0,
+                    "default_value": ""
+                },
+                {
+                    "key": "field_navbar_section_service_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 0,
+                    "default_value": ""
+                }
+            ],
+            "default_value": [
+                {
+                    "title": "A/B Test Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/ab-testing"
+                },
+                {
+                    "title": "Shopify Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/shopify"
+                },
+                {
+                    "title": "WordPress Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/wordpress"
+                },
+                {
+                    "title": "Full Stack Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/fullstack"
+                },
+                {
+                    "title": "Design & Mockups",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/design"
+                },
+                {
+                    "title": "CRO Support",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/cro"
+                },
+                {
+                    "title": "Technical Support",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/support"
+                },
+                {
+                    "title": "Quality Assurance",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/qa"
+                },
+                {
+                    "title": "Dedicated Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "/services/dedicated"
+                }
+            ]
+        },
+        {
+            "key": "field_navbar_section_sidebar_title",
+            "label": "Sidebar Title",
+            "name": "sidebar_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "more from brillmark",
+            "instructions": "Title displayed above the featured case study in the dropdown."
+        },
+        {
+            "key": "field_navbar_section_featured_badge",
+            "label": "Featured Badge Icon",
+            "name": "featured_badge",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "required": 0,
+            "instructions": "Small badge icon for the featured case study."
+        },
+        {
+            "key": "field_navbar_section_featured_label",
+            "label": "Featured Label",
+            "name": "featured_label",
+            "type": "text",
+            "required": 0,
+            "default_value": "Featured Case Study"
+        },
+        {
+            "key": "field_navbar_section_featured_title",
+            "label": "Featured Title",
+            "name": "featured_title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Shopify Toplids Migration"
+        },
+        {
+            "key": "field_navbar_section_featured_description",
+            "label": "Featured Description",
+            "name": "featured_description",
+            "type": "text",
+            "required": 0,
+            "default_value": "Discover how we achieved a"
+        },
+		{
+            "key": "field_navbar_section_featured_description_color_text",
+            "label": "Featured Description Color Text",
+            "name": "featured_description_color_text",
+            "type": "text",
+            "required": 0,
+            "default_value": "128% conversion uplift."
+        },
+        {
+            "key": "field_navbar_section_featured_link_text",
+            "label": "Featured Link Text",
+            "name": "featured_link_text",
+            "type": "text",
+            "required": 0,
+            "default_value": "Read full story"
+        },
+        {
+            "key": "field_navbar_section_featured_link_url",
+            "label": "Featured Link URL",
+            "name": "featured_link_url",
+            "type": "url",
+            "required": 0,
+            "default_value": "/case-study"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/navbar-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF field group for the Navbar Section block with mega menu dropdown."
+}

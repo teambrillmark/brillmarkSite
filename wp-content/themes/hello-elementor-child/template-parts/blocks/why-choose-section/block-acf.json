@@ -1,0 +1,153 @@
+{
+  "key": "group_why_choose_section_fields",
+  "title": "Why Choose Section Fields",
+  "fields": [
+    {
+      "key": "field_why_choose_section_title_light",
+      "label": "Title (Light)",
+      "name": "title_light",
+      "type": "text",
+      "instructions": "Enter the light weight portion of the title",
+      "required": 0,
+      "default_value": "Why Choose "
+    },
+    {
+      "key": "field_why_choose_section_title_bold",
+      "label": "Title (Bold)",
+      "name": "title_bold",
+      "type": "text",
+      "instructions": "Enter the bold portion of the title",
+      "required": 0,
+      "default_value": "BrillMark?"
+    },
+    {
+      "key": "field_why_choose_section_subtitle",
+      "label": "Subtitle",
+      "name": "subtitle",
+      "type": "textarea",
+      "instructions": "Enter the subtitle text below the main title",
+      "required": 0,
+      "default_value": "Trusted by three of the world's top 10 CRO agencies to deliver high-performance, conversion-focused solutions.",
+      "rows": 3
+    },
+    {
+      "key": "field_why_choose_section_feature_cards",
+      "label": "Feature Cards",
+      "name": "feature_cards",
+      "type": "repeater",
+      "instructions": "Add feature cards to display",
+      "required": 0,
+      "min": 1,
+      "max": 6,
+      "layout": "block",
+      "button_label": "Add Feature Card",
+      "sub_fields": [
+        {
+          "key": "field_why_choose_section_card_icon",
+          "label": "Icon",
+          "name": "icon",
+          "type": "image",
+          "instructions": "Upload an icon for this feature card",
+          "required": 0,
+          "return_format": "url",
+          "preview_size": "thumbnail",
+          "library": "all"
+        },
+        {
+          "key": "field_why_choose_section_card_title",
+          "label": "Card Title",
+          "name": "card_title",
+          "type": "text",
+          "instructions": "Enter the title for this feature card",
+          "required": 1,
+          "default_value": ""
+        },
+        {
+          "key": "field_why_choose_section_card_description",
+          "label": "Card Description",
+          "name": "card_description",
+          "type": "textarea",
+          "instructions": "Enter the description for this feature card",
+          "required": 0,
+          "default_value": "",
+          "rows": 3
+        },
+        {
+          "key": "field_why_choose_section_is_wide_card",
+          "label": "Wide Card",
+          "name": "is_wide_card",
+          "type": "true_false",
+          "instructions": "Make this card take up more horizontal space",
+          "required": 0,
+          "default_value": 0,
+          "ui": 1,
+          "ui_on_text": "Yes",
+          "ui_off_text": "No"
+        }
+      ],
+      "default_value": [
+        {
+          "field_why_choose_section_card_title": "Comprehensive Expertise",
+          "field_why_choose_section_card_description": "Our team brings together specialists in development, design, analytics, and optimization to provide a holistic approach to your digital needs.",
+          "field_why_choose_section_is_wide_card": 0
+        },
+        {
+          "field_why_choose_section_card_title": "Customized Solutions",
+          "field_why_choose_section_card_description": "We understand every business is unique, so we tailor our services to align with your objectives and challenges.",
+          "field_why_choose_section_is_wide_card": 0
+        },
+        {
+          "field_why_choose_section_card_title": "Proven Results",
+          "field_why_choose_section_card_description": "With a proven track record, we consistently deliver measurable results that drive sustainable growth and create long-term value for our clients.",
+          "field_why_choose_section_is_wide_card": 0
+        },
+        {
+          "field_why_choose_section_card_title": "Collaborative Partnership",
+          "field_why_choose_section_card_description": "We view our clients as partners. Your success is our success, and we work closely with you every step of the way.",
+          "field_why_choose_section_is_wide_card": 1
+        }
+      ]
+    },
+    {
+      "key": "field_why_choose_section_cta_text",
+      "label": "CTA Text",
+      "name": "cta_text",
+      "type": "textarea",
+      "instructions": "Enter the text for the CTA card",
+      "required": 0,
+      "default_value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "rows": 2
+    },
+    {
+      "key": "field_why_choose_section_cta_button",
+      "label": "CTA Button",
+      "name": "cta_button",
+      "type": "link",
+      "instructions": "Add a link for the CTA button",
+      "required": 0,
+      "return_format": "array",
+      "default_value": {
+        "title": "Start Free Trial",
+        "url": "#",
+        "target": ""
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/why-choose-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Why Choose Section block"
+}

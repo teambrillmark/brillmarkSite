@@ -1,0 +1,419 @@
+/* Our Process Section Block Styles */
+
+/* Base Section */
+.our-process-section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 60px 10px;
+  background-color: #f4f7fa;
+  display: block;
+}
+
+.our-process-section *,
+.our-process-section *::before,
+.our-process-section *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.our-process-section .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Wrapper */
+.our-process-section .our-process-section__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+.our-process-section .our-process-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  max-width: 985px;
+  width: 100%;
+  text-align: center;
+}
+
+.our-process-section .our-process-section__title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 300;
+  text-transform: capitalize;
+  color: #112446;
+  margin: 0;
+}
+
+.our-process-section .our-process-section__description {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-weight: 400;
+  color: #313F58;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Content Card */
+.our-process-section .our-process-section__content {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  padding: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Sidebar - Steps Navigation */
+.our-process-section .our-process-section__sidebar {
+  flex-shrink: 0;
+}
+
+.our-process-section .our-process-section__steps-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 40px 30px;
+  background-color: #f4f7fa;
+  border-radius: 6px;
+  height: 100%;
+}
+
+/* Step Numbers Column */
+.our-process-section .our-process-section__step-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-process-section .our-process-section__step-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-process-section .our-process-section__step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #0960a8;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.our-process-section .our-process-section__step-number span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0960a8;
+}
+
+.our-process-section .our-process-section__step-number--active {
+  background-color: #0960a8;
+}
+
+.our-process-section .our-process-section__step-number--active span {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.our-process-section .our-process-section__step-number:hover {
+  background-color: #0960a8;
+}
+
+.our-process-section .our-process-section__step-number:hover span {
+  color: #ffffff;
+}
+
+.our-process-section .our-process-section__step-line {
+  width: 1px;
+  height: 30px;
+  margin: 5px 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #0960a8 0,
+    #0960a8 6px,
+    transparent 2px,
+    transparent 11px
+  );
+}
+
+/* Step Titles Column */
+.our-process-section .our-process-section__step-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: flex-start;
+  width: 320px;
+}
+
+.our-process-section .our-process-section__step-title {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.our-process-section .our-process-section__step-title span {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+}
+
+
+.our-process-section .our-process-section__step-title--active span {
+  color: #333333;
+}
+
+/* Details Panel */
+.our-process-section .our-process-section__details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.our-process-section .our-process-section__step-content {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.our-process-section .our-process-section__step-content--active {
+  display: flex;
+}
+
+.our-process-section .our-process-section__content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.our-process-section .our-process-section__step-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #112446;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 591px;
+}
+
+/* Features List */
+.our-process-section .our-process-section__features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.our-process-section .our-process-section__feature-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.our-process-section .our-process-section__feature-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.our-process-section .our-process-section__feature-item span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #313f58;
+}
+
+/* CTA Button */
+.our-process-section .our-process-section__cta-wrapper {
+  margin-top: 10px;
+}
+
+.our-process-section .our-process-section__cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  background-color: #13367d;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.our-process-section .our-process-section__cta-button span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.our-process-section .our-process-section__cta-button:hover {
+  background-color: #0960a8;
+}
+
+/* Responsive Styles */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .our-process-section {
+    padding: 50px 60px;
+  }
+
+  .our-process-section .our-process-section__content {
+    gap: 40px;
+    padding: 40px;
+  }
+
+  .our-process-section .our-process-section__step-titles {
+    width: 260px;
+    gap: 35px;
+  }
+
+  .our-process-section .our-process-section__step-title span {
+    font-size: 16px;
+  }
+
+  .our-process-section .our-process-section__step-description {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Portrait - 768px */
+@media (max-width: 768px) {
+  .our-process-section {
+    display: none;
+    padding: 40px 30px;
+  }
+
+  .our-process-section .our-process-section__wrapper {
+    gap: 30px;
+  }
+
+  .our-process-section .our-process-section__content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .our-process-section .our-process-section__sidebar {
+    width: 100%;
+  }
+
+  .our-process-section .our-process-section__steps-nav {
+    padding: 25px 20px;
+  }
+
+  .our-process-section .our-process-section__step-titles {
+    width: auto;
+    flex: 1;
+    gap: 30px;
+  }
+
+  .our-process-section .our-process-section__step-line {
+    height: 28px;
+  }
+
+  .our-process-section .our-process-section__step-description {
+    font-size: 15px;
+  }
+
+  .our-process-section .our-process-section__cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  .our-process-section {
+    padding: 30px 20px;
+  }
+
+  .our-process-section .our-process-section__header {
+    gap: 12px;
+  }
+
+  .our-process-section .our-process-section__title {
+    font-size: 28px;
+  }
+
+  .our-process-section .our-process-section__description {
+    font-size: 15px;
+  }
+
+  .our-process-section .our-process-section__content {
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .our-process-section .our-process-section__steps-nav {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .our-process-section .our-process-section__step-numbers {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .our-process-section .our-process-section__step-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .our-process-section .our-process-section__step-row--last .our-process-section__step-line {
+    display: none;
+  }
+
+  .our-process-section .our-process-section__step-line {
+    width: 20px;
+    height: 1px;
+  }
+
+  .our-process-section .our-process-section__step-titles {
+    display: none;
+  }
+
+  .our-process-section .our-process-section__step-number {
+    width: 28px;
+    height: 28px;
+  }
+
+  .our-process-section .our-process-section__step-number span {
+    font-size: 14px;
+  }
+
+  .our-process-section .our-process-section__content-inner {
+    gap: 25px;
+  }
+
+  .our-process-section .our-process-section__step-description {
+    font-size: 14px;
+  }
+
+  .our-process-section .our-process-section__feature-item span {
+    font-size: 14px;
+  }
+
+  .our-process-section .our-process-section__cta-button span {
+    font-size: 14px;
+  }
+}

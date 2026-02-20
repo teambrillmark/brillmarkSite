@@ -1,0 +1,179 @@
+/* SECTION */
+.brands-slider-section-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+/* CONTENT */
+.brands-slider-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* HEADER */
+.brands-slider-section-header {
+    text-align: center;
+    max-width: 611px;
+}
+
+/* ===============================
+   HORIZONTAL SCROLL FIX
+================================== */
+
+.brands-slider-section-slider {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* IMPORTANT: THIS MAKES IT SCROLL */
+.brands-wrapper {
+    display: inline-flex;
+    /* key change */
+    gap: 60px;
+    white-space: nowrap;
+    /* prevents wrapping */
+    min-width: 100%;
+    /* ensures overflow */
+	 align-items: center;
+    justify-content: center;
+}
+
+/* LOGO ITEMS */
+.brands-slider-section-logo-item {
+    flex: 0 0 auto;
+    /* prevents shrinking */
+}
+
+/* LOGO SIZE */
+.brands-slider-section-logo-wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.brands-slider-section-logo-img {
+    max-height: 80px;
+    width: auto;
+}
+
+/* Hide scrollbar (optional) */
+.brands-slider-section-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.brands-slider-section-slider {
+    scrollbar-width: none;
+}
+
+ .shopify-migration.brands-slider-section-section .container{
+    max-width: 1800px;
+    margin: auto;
+ }
+@media (max-width: 768px) {
+    .brands-wrapper {
+        min-width: 100%;
+        display: flex;
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .brands-slider-section-logo-img {
+        max-width: 80px;
+    }
+
+    .brands-slider-section-logo-wrapper {
+        height: unset;
+    }
+
+    .brands-slider-section-section {
+        padding: 80px 20px;
+    }
+}
+
+
+/* shopify migartion................ */
+.shopify-migration.brands-slider-section-section {
+    padding: 60px 0;
+}
+
+.shopify-migration .brands-slider-section-header {
+    text-align: center;
+    max-width: 615px;
+}
+
+.shopify-migration.brands-slider-section-section .brands-slider-section-title {
+    color: #112446;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 54px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.shopify-migration.brands-slider-section-section .brands-slider-section-subtitle {
+    color: #313F58;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 155.556% */
+    margin: 0;
+}
+
+.shopify-migration .brands-wrapper{
+     width: max-content;
+    animation: scroll-logos 40s linear infinite;
+    will-change: transform;
+}
+
+@keyframes scroll-logos {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-30%, 0, 0);
+  }
+}
+
+@media(max-width:768px) {
+    .shopify-migration .brands-slider-section-header {
+        text-align: center;
+        max-width: 615px;
+    }
+
+    .shopify-migration.brands-slider-section-section .brands-slider-section-title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    /* .shopify-migration  .brands-slider-section-logo-img{
+        max-width: 90px;
+    } */
+
+    .shopify-migration .brands-wrapper{
+        animation: none;
+        width: inherit;
+    }
+    
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(9),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(10),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(11),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(12),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(13),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(14),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(15),
+    .shopify-migration .brands-wrapper .brands-slider-section-logo-item:nth-child(16){
+        display: none;
+    }
+
+}

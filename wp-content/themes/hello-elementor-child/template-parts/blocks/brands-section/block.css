@@ -1,0 +1,329 @@
+/* Brands Section Styles */
+
+/* Root Section */
+.brands-section-section {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.brands-section-section .container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Wrapper */
+.brands-section-section .brands-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Header */
+.brands-section-section .brands-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.brands-section-section .brands-section-titles {
+  display: inline;
+}
+
+/* Subtitle */
+.brands-section-section .brands-section-subtitle {
+  color: #112446;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+}
+
+/* Main Heading */
+.brands-section-section .brands-section-heading {
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #112446;
+  margin: 0;
+  font-weight: 400;
+  display: inline;
+}
+
+/* Description */
+.brands-section-section .brands-section-description {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #313F58;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* Logos Container */
+.brands-section-section .brands-section-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Logos Row */
+.brands-section-section .brands-section-logos-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.shopify-brand-section.brands-section-section .brands-section-logos-row:nth-child(1) {
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.shopify-brand-section .brands-section-logo-img[src*='/Cornet_Barcelona'],
+.shopify-brand-section .brands-section-logo-img[src*='/ECHO_LOGOMARK'],
+.shopify-brand-section .brands-section-logo-img[src*='/GaiaHerbs'],
+.shopify-brand-section .brands-section-logo-img[src*='/PalanteLogo']{
+	transform: scale(.8) !important;
+}
+
+/* Logo Item */
+.brands-section-section .brands-section-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*   min-width: 100px;
+  max-width: 150px; */
+  flex: 0 0 auto;
+}
+
+/* Logo Image */
+/* .brands-section-section .brands-section-logo-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brands-section-section .brands-section-logo-img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+} */
+
+/* ===========================
+   Responsive Breakpoints
+   =========================== */
+
+/* Tablet - 1024px and below */
+@media (max-width: 1024px) {
+  .brands-section-section .brands-section-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+    justify-items: center;
+    align-items: center;
+  }
+
+  .brands-section-section .brands-section-logos-row {
+    display: contents;
+    /* Remove row wrapper, use grid directly */
+  }
+
+  .brands-section-section .brands-section-logo-item {
+    min-width: unset;
+    max-width: 140px;
+    width: 100%;
+  }
+
+  /* .brands-section-section .brands-section-logo-img {
+    max-width: 100%;
+    max-height: 60px;
+  } */
+}
+
+/* Tablet Portrait - 768px and below */
+@media (max-width: 768px) {
+  .brands-section-section {
+    padding: 50px 10px;
+  }
+
+  .brands-section-section .brands-section-subtitle,
+  .brands-section-section .brands-section-heading {
+    font-size: 30px;
+  }
+
+  .brands-section-section .brands-section-logos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .brands-section-section .brands-section-logo-item {
+    max-width: 120px;
+  }
+
+  .brands-section-section .brands-section-wrapper {
+    gap: 30px;
+  }
+
+  /* .brands-section-section .brands-section-logo-img {
+    max-height: 50px;
+  } */
+}
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+
+  .brands-section-section .container {
+    padding: 0 10px;
+  }
+
+  .brands-section-section .brands-section-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0xp 20px;
+  }
+
+  .brands-section-section .brands-section-logo-item {
+    min-width: unset;
+    max-width: 100%;
+    width: 80%;
+  }
+
+  /* .brands-section-section .brands-section-logo-img {
+    max-width: 80px;
+    max-height: 40px;
+  } */
+}
+
+/* Very Small Mobile - 360px and below */
+@media (max-width: 360px) {
+  .brands-section-section .brands-section-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* .brands-section-section .brands-section-logo-img {
+    max-width: 70px;
+    max-height: 35px;
+  } */
+}
+
+/* shopify-brand-section */
+
+.shopify-brand-section.brands-section-section .brands-section-header {
+  max-width: 1240px;
+}
+
+.shopify-brand-section.brands-section-section .brands-section-description {
+  max-width: 1068px;
+}
+
+@media screen and (min-width: 769px) {
+
+  .shopify-brand-section .brands-section-heading,
+  .shopify-brand-section .brands-section-subtitle {
+    font-size: 40px;
+  }
+
+}
+
+
+/* shopify migartion................ */
+.page-id-11558 .brands-slider-section-section {
+  padding: 60px 0;
+}
+
+.page-id-11558 .brands-slider-section-header {
+  text-align: center;
+  max-width: 615px;
+}
+
+.page-id-11558 .brands-slider-section-section .brands-slider-section-title {
+  color: #112446;
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 54px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.page-id-11558 .brands-slider-section-section .brands-slider-section-subtitle {
+  color: #313F58;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  /* 155.556% */
+  margin: 0;
+}
+
+@media(max-width:768px) {
+  .page-id-11558 .brands-slider-section-header {
+    text-align: center;
+    max-width: 615px;
+  }
+
+  .page-id-11558 .brands-slider-section-section .brands-slider-section-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+/* Shopify page */
+.shopify-brand-section.brands-section-section .brands-section-titles {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shopify-brand-section.brands-section-section .brands-section-titles h2 {
+    line-height: 1.35;
+}
+
+
+/* about-us page and ab-test page ........... */
+.brand-section.brands-section-section .brands-section-wrapper,
+.brand-section.video-testimonial-section .video-testimonial-content {
+  gap: 40px;
+}
+
+.brand-section.brands-section-section .brands-section-subtitle,
+.brand-section.brands-section-section .brands-section-heading {
+  font-size: 40px;
+  line-height: 54px;
+}
+
+.brand-section.brands-section-section .brands-section-description {
+  line-height: 28px;
+}
+
+@media(max-width:768px) {
+  .brand-section.brands-section-section .container {
+    padding: 0;
+  }
+
+  .brand-section.brands-section-section .brands-section-titles {
+    line-height: 40px;
+  }
+
+  .brand-section.brands-section-section .brands-section-subtitle,
+  .brand-section.brands-section-section .brands-section-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+}

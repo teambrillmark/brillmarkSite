@@ -1,0 +1,89 @@
+{
+  "key": "group_ready_section_fields",
+  "title": "Ready Section Fields",
+  "fields": [
+    {
+      "key": "field_ready_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Ready to Elevate Your Digital Presence?",
+      "placeholder": "Enter section title"
+    },
+    {
+      "key": "field_ready_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "With over a decade of experience and a passion for innovation, BrillMark is here to help you achieve your goals.",
+      "placeholder": "Enter section description",
+      "rows": 3
+    },
+    {
+      "key": "field_ready_section_stats",
+      "label": "Stats",
+      "name": "stats",
+      "type": "repeater",
+      "required": 0,
+      "min": 1,
+      "max": 6,
+      "layout": "block",
+      "button_label": "Add Stat",
+      "sub_fields": [
+        {
+          "key": "field_ready_section_stat_number",
+          "label": "Stat Number",
+          "name": "stat_number",
+          "type": "text",
+          "required": 1,
+          "placeholder": "e.g., 10K+",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_ready_section_stat_label",
+          "label": "Stat Label",
+          "name": "stat_label",
+          "type": "text",
+          "required": 1,
+          "placeholder": "e.g., Projects Completed",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ],
+      "default_value": [
+        {
+          "stat_number": "10K+",
+          "stat_label": "Projects Completed"
+        },
+        {
+          "stat_number": "1M+",
+          "stat_label": "Lines of Code Written"
+        },
+        {
+          "stat_number": "1000+",
+          "stat_label": "Optimized Websites"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/ready-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true
+}

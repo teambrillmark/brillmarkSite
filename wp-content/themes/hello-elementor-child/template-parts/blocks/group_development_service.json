@@ -1,0 +1,248 @@
+{
+    "key": "group_development_service",
+    "title": "Development Service Block Fields",
+    "fields": [
+        {
+            "key": "field_development_service_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Main heading for the development services block",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "All Inclusive A\/B Test Development Services",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_development_service_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Intro paragraph below the section title",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BrillMark extends your team to deliver fast, high-quality A\/B testing and optimization that drives real conversion growth.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
+        },
+        {
+            "key": "field_development_service_services",
+            "label": "Services",
+            "name": "services",
+            "type": "repeater",
+            "instructions": "List of service tabs and their content",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 20,
+            "layout": "block",
+            "button_label": "Add Service",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_development_service_tab_title",
+                    "label": "Tab Title",
+                    "name": "tab_title",
+                    "type": "text",
+                    "instructions": "Label shown on the tab (e.g. A\/B Test Development)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_development_service_tab_id",
+                    "label": "Tab ID",
+                    "name": "tab_id",
+                    "type": "text",
+                    "instructions": "Unique ID for the tab (e.g. ab-test-development). Used for linking tab and content.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_development_service_info_title",
+                    "label": "Info Title",
+                    "name": "info_title",
+                    "type": "text",
+                    "instructions": "Heading inside the content panel",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_development_service_info_description",
+                    "label": "Info Description",
+                    "name": "info_description",
+                    "type": "wysiwyg",
+                    "instructions": "Main description paragraph",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_development_service_info_list",
+                    "label": "Info List",
+                    "name": "info_list",
+                    "type": "wysiwyg",
+                    "instructions": "Bullet list content (use list formatting in editor)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_development_service_cta_text",
+                    "label": "CTA Button Text",
+                    "name": "cta_text",
+                    "type": "text",
+                    "instructions": "Text for the call-to-action link",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Schedule FREE strategy session",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_development_service_cta_url",
+                    "label": "CTA Button URL",
+                    "name": "cta_url",
+                    "type": "url",
+                    "instructions": "URL for the CTA link",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_development_service_session_cta_text",
+            "label": "Session CTA Text (Mobile)",
+            "name": "session_cta_text",
+            "type": "text",
+            "instructions": "Button text shown below accordion on mobile",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Schedule FREE strategy session",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_development_service_session_cta_url",
+            "label": "Session CTA URL (Mobile)",
+            "name": "session_cta_url",
+            "type": "url",
+            "instructions": "URL for the session CTA button",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/development-service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for Development Service custom block",
+    "modified": 1770738608
+}

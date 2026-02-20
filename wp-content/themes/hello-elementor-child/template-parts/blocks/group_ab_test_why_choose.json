@@ -1,0 +1,178 @@
+{
+    "key": "group_ab_test_why_choose",
+    "title": "AB Test Why Choose Block Fields",
+    "fields": [
+        {
+            "key": "field_ab_test_why_choose_heading",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "Main heading for the Why Choose A\/B Test section",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Why Choose BrillMark For A\/B Test Development?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Subheading or tagline below the title",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Compare how BrillMark's full-service, CRO-focused team outperforms a traditional, non-A\/B testing developer setup.",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_column_2_header",
+            "label": "Column 2 Header",
+            "name": "column_2_header",
+            "type": "text",
+            "instructions": "Header for the BrillMark column",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BRILLMARK DEV PACKAGE",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_column_3_header",
+            "label": "Column 3 Header",
+            "name": "column_3_header",
+            "type": "text",
+            "instructions": "Header for the comparison column",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "NON-AB TESTING DEVELOPER",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_table_rows",
+            "label": "Table Rows",
+            "name": "table_rows",
+            "type": "repeater",
+            "instructions": "Comparison rows: criteria label, BrillMark content, and other developer content",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 12,
+            "layout": "block",
+            "button_label": "Add Row",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_ab_test_why_choose_criteria_label",
+                    "label": "Criteria Label",
+                    "name": "criteria_label",
+                    "type": "text",
+                    "instructions": "Row criteria (e.g. Team Composition, Service Scope)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ab_test_why_choose_brillmark_content",
+                    "label": "BrillMark Content",
+                    "name": "brillmark_content",
+                    "type": "wysiwyg",
+                    "instructions": "Content for the BrillMark column",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_ab_test_why_choose_other_content",
+                    "label": "Other Developer Content",
+                    "name": "other_content",
+                    "type": "wysiwyg",
+                    "instructions": "Content for the non-A\/B testing developer column",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/ab-test-why-choose"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for AB Test Why Choose custom block",
+    "modified": 1770916624
+}

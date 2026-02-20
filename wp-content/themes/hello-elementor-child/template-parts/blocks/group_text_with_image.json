@@ -1,0 +1,86 @@
+{
+    "key": "group_text_with_image",
+    "title": "Text with Image Block Fields",
+    "fields": [
+        {
+            "key": "field_text_with_image_title",
+            "label": "Title",
+            "name": "title",
+            "type": "wysiwyg",
+            "instructions": "Enter the main heading. You can use bold formatting for emphasis.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Hello from <strong>Abdullah!<\/strong>",
+            "media_upload": 0,
+            "toolbar": "basic",
+            "tabs": "visual",
+            "delay": 0
+        },
+        {
+            "key": "field_text_with_image_description",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "Enter the description text. You can use line breaks and formatting.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our team has run over 10,000 campaigns across every conceivable device, application, and platform&hellip; and we're just getting started! This has helped us build long-term relationships with our clients. Making us the preferred choice for CRO and marketing professionals.\n\nOur team operates like a close-knit family, contributing significantly to our consistent growth.\n\nWith operations spanning India, Bangladesh, and the USA, our team's foundation is built on hard work, strong work ethics, and loyalty&mdash;values deeply rooted in our culture.",
+            "media_upload": 0,
+            "toolbar": "basic",
+            "tabs": "visual",
+            "delay": 0
+        },
+        {
+            "key": "field_text_with_image_image",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Select an image for the text with image block",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/text-with-image"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for Text with Image custom block",
+    "modified": 1771500545
+}

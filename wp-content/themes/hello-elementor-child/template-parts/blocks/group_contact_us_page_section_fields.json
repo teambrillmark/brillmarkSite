@@ -1,0 +1,337 @@
+{
+    "key": "group_contact_us_page_section_fields",
+    "title": "Contact Us Page Section Fields",
+    "fields": [
+        {
+            "key": "field_contact_us_page_section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Let's get in touch",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_contact_us_page_section_subtitle",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We will get back to you in 24 hours with a solution or a proposal",
+            "rows": 2,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_contact_us_page_section_form_code",
+            "label": "Form Code",
+            "name": "form_code",
+            "type": "textarea",
+            "instructions": "Enter the complete HTML form code. This will be output directly inside the form wrapper.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "<form method=\"post\">\n  <!-- Your form fields here -->\n<\/form>",
+            "rows": 12,
+            "new_lines": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_contact_us_page_section_whats_next_title",
+            "label": "What's Next Title",
+            "name": "whats_next_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "What's next?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_contact_us_page_section_steps",
+            "label": "Steps",
+            "name": "steps",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 1,
+            "default_value": [
+                {
+                    "step_title": "STEP 1 – Proposal",
+                    "step_description": "Once we receive your inquiry, we will send you high-level proposal that will give you an overview of our services and processes",
+                    "step_extra_text": ""
+                },
+                {
+                    "step_title": "STEP 2 – Introduction call",
+                    "step_description": "We will schedule a meeting in order to get better understanding of your testing requirements and explain our development process",
+                    "step_extra_text": ""
+                },
+                {
+                    "step_title": "STEP 3 – Let's start testing",
+                    "step_description": "Once the onboarding is completed, we can immediately start testing",
+                    "step_extra_text": "We would like to hear your feedback so send us an email or reach out via our social media accounts."
+                }
+            ],
+            "max": 0,
+            "button_label": "",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_contact_us_page_section_step_title",
+                    "label": "Step Title",
+                    "name": "step_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_contact_us_page_section_step_description",
+                    "label": "Step Description",
+                    "name": "step_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_contact_us_page_section_step_extra_text",
+                    "label": "Step Extra Text",
+                    "name": "step_extra_text",
+                    "type": "textarea",
+                    "instructions": "Optional additional paragraph shown below the main description.",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_contact_us_page_section_email_address",
+            "label": "Email Address",
+            "name": "email_address",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "info@brillmark.com",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_contact_us_page_section_email_label",
+            "label": "Email Label",
+            "name": "email_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Email: info@brillmark.com",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_contact_us_page_section_social_links",
+            "label": "Social Links",
+            "name": "social_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "min": 1,
+            "default_value": [
+                {
+                    "platform": "linkedin",
+                    "url": "https:\/\/www.linkedin.com\/company\/brillmark\/",
+                    "icon": ""
+                },
+                {
+                    "platform": "twitter",
+                    "url": "https:\/\/twitter.com\/brillmark",
+                    "icon": ""
+                },
+                {
+                    "platform": "facebook",
+                    "url": "https:\/\/www.facebook.com\/brillmark",
+                    "icon": ""
+                }
+            ],
+            "max": 0,
+            "button_label": "",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_contact_us_page_section_social_platform",
+                    "label": "Platform",
+                    "name": "platform",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "linkedin": "LinkedIn",
+                        "twitter": "Twitter",
+                        "facebook": "Facebook",
+                        "instagram": "Instagram"
+                    },
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "default_value": false,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_contact_us_page_section_social_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_contact_us_page_section_social_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "Upload SVG or PNG icon (white on transparent preferred).",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/contact-us-page-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Contact Us page section with custom form code, steps, and social links.",
+    "modified": 1771507976
+}

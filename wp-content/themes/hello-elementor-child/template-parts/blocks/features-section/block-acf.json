@@ -1,0 +1,91 @@
+{
+  "key": "group_features-section_fields",
+  "title": "Features Section Fields",
+  "fields": [
+    {
+      "key": "field_features-section_title",
+      "label": "Section Title",
+      "name": "features_section_title",
+      "type": "text",
+      "instructions": "The main title for the features section",
+      "required": 0,
+      "default_value": "Why Choose Brillmark for Your Shopify Migration?",
+      "placeholder": "Why Choose Brillmark for Your Shopify Migration?"
+    },
+    {
+      "key": "field_features-section_description",
+      "label": "Section Description",
+      "name": "features_section_description",
+      "type": "textarea",
+      "instructions": "A brief description of the features section",
+      "required": 0,
+      "default_value": "Save Time, Let Us Do The Heavy Lifting",
+      "placeholder": "Save Time, Let Us Do The Heavy Lifting"
+    },
+    {
+      "key": "field_features-section_items",
+      "label": "Features Items",
+      "name": "features_section_items",
+      "type": "repeater",
+      "instructions": "Add features to display",
+      "required": 0,
+      "min": 0,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add Feature",
+      "sub_fields": [
+        {
+          "key": "field_features-section_item_title",
+          "label": "Feature Title",
+          "name": "title",
+          "type": "text",
+          "instructions": "The title of the feature",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter feature title"
+        },
+        {
+          "key": "field_features-section_item_description",
+          "label": "Feature Description",
+          "name": "description",
+          "type": "textarea",
+          "instructions": "The description of the feature",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter feature description"
+        }
+      ],
+      "default_value": [
+        {
+          "title": "12+ Years",
+          "description": "E-commerce Expertise"
+        },
+        {
+          "title": "Optimized",
+          "description": "1000+ Websites"
+        },
+        {
+          "title": "200+",
+          "description": "Successful Shopify Migrations"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/features-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

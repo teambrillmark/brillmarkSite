@@ -1,0 +1,178 @@
+{
+    "key": "group_what_we_achieve",
+    "title": "What We Achieve Block Fields",
+    "fields": [
+        {
+            "key": "field_what_we_achieve_heading",
+            "label": "Section Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "Main heading for the metrics table section",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "What We Set Out To Achieve",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_achieve_before_label",
+            "label": "Before Column Label",
+            "name": "before_label",
+            "type": "text",
+            "instructions": "Label for the before period column (e.g. date range)",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Before (Oct 24 – Nov 24)",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_achieve_after_label",
+            "label": "After Column Label",
+            "name": "after_label",
+            "type": "text",
+            "instructions": "Label for the after period column (e.g. date range)",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "After (Dec 24 – Jan 25)",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_achieve_rows",
+            "label": "Metrics Rows",
+            "name": "rows",
+            "type": "repeater",
+            "instructions": "Add each metric row for the table",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 20,
+            "layout": "table",
+            "button_label": "Add Row",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_what_we_achieve_metric",
+                    "label": "Metric",
+                    "name": "metric",
+                    "type": "text",
+                    "instructions": "Metric name (e.g. Total Sessions, Conversion Rate)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_achieve_before_value",
+                    "label": "Before Value",
+                    "name": "before_value",
+                    "type": "text",
+                    "instructions": "Value for the before period",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_achieve_after_value",
+                    "label": "After Value",
+                    "name": "after_value",
+                    "type": "text",
+                    "instructions": "Value for the after period",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_achieve_increase",
+                    "label": "Increase (%)",
+                    "name": "increase",
+                    "type": "text",
+                    "instructions": "Increase percentage (e.g. +62.4% or —)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/what-we-achieve"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for What We Achieve metrics table custom block",
+    "modified": 1771006024
+}

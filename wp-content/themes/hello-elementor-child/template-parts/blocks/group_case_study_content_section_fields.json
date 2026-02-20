@@ -1,0 +1,138 @@
+{
+    "key": "group_case_study_content_section_fields",
+    "title": "Case Study Content Section Fields",
+    "fields": [
+        {
+            "key": "field_case-study-content-section_case_study_title",
+            "label": "Case Study Title",
+            "name": "case_study_title",
+            "type": "text",
+            "instructions": "The title of the case study",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Toplids Case Study:",
+            "placeholder": "Toplids Case Study:",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_case-study-content-section_case_study_subtitle",
+            "label": "Case Study Subtitle",
+            "name": "case_study_subtitle",
+            "type": "text",
+            "instructions": "The subtitle of the case study",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Increasing Conversions by 128% in 3 Months",
+            "placeholder": "Increasing Conversions by 128% in 3 Months",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_case-study-content-section_case_study_client",
+            "label": "Client",
+            "name": "case_study_client",
+            "type": "text",
+            "instructions": "The client name",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Client: Toplids",
+            "placeholder": "Client: Toplids",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_case-study-content-section_case_study_requirements",
+            "label": "Requirements",
+            "name": "case_study_requirements",
+            "type": "textarea",
+            "instructions": "The requirements for the case study",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Requirement: 2.0 Migration, Theme building, Redesign, Custom development",
+            "placeholder": "Requirement: 2.0 Migration, Theme building, Redesign, Custom development",
+            "new_lines": "",
+            "maxlength": "",
+            "rows": ""
+        },
+        {
+            "key": "field_case-study-content-section_case_study_review",
+            "label": "Review",
+            "name": "case_study_review",
+            "type": "textarea",
+            "instructions": "The review of the case study",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The whole experience has been fantastic all in all. The site is performing very well.",
+            "placeholder": "The whole experience has been fantastic all in all. The site is performing very well.",
+            "new_lines": "",
+            "maxlength": "",
+            "rows": ""
+        },
+        {
+            "key": "field_case-study-content-section_case_study_reviewer",
+            "label": "Reviewer",
+            "name": "case_study_reviewer",
+            "type": "text",
+            "instructions": "The name of the reviewer",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "— Tyler Moon, CEO, Top Lids",
+            "placeholder": "— Tyler Moon, CEO, Top Lids",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-study-content-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1770818511
+}

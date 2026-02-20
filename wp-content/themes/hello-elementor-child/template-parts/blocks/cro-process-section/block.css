@@ -1,0 +1,779 @@
+/* CRO Process Section Block Styles */
+/* Scoped to .cro-dev-wrapper */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Base Section Styles */
+.cro-dev-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.cro-dev-wrapper *,
+.cro-dev-wrapper *::before,
+.cro-dev-wrapper *::after {
+    box-sizing: border-box;
+}
+
+.cro-dev-wrapper .cro-dev-container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.cro-dev-wrapper .cro-dev-main {
+    width: 100%;
+}
+
+/* Banner Title Section */
+.cro-dev-wrapper .cro-banner-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cro-dev-wrapper .cro-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #112446;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cro-dev-wrapper .cro-para {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #112446;
+    margin: 0 0 40px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Tab Accordion */
+.cro-dev-wrapper .cro-tab-mobile {
+    display: block;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button:hover {
+    background-color: #f9f9f9;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .accordion-title-image {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .accordion-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .accordion-icon.image-active {
+    display: none;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button.active .accordion-icon.image-active {
+    display: block;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button.active .accordion-icon.image-inactive {
+    display: none;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .mobile-acro-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button .icon.up-arrow {
+    display: none;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button.active .icon.down-arrow {
+    display: none;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button.active .icon.up-arrow {
+    display: flex;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-content {
+    display: none;
+    padding: 0 20px 20px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    height: auto;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-button.active + .mobile-tab-accordion-content {
+    display: block;
+}
+
+.cro-dev-wrapper .mobile-tab-accordion-content-text {
+    padding-top: 20px;
+}
+
+.cro-dev-wrapper .mobile-content-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: #112446;
+    margin: 0 0 20px 0;
+    line-height: 1.4;
+}
+
+.cro-dev-wrapper .mobile-list-tab {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cro-dev-wrapper .mobile-list-tab li {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    padding-left: 20px;
+    position: relative;
+}
+
+.cro-dev-wrapper .mobile-list-tab li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007aff;
+    font-weight: bold;
+}
+
+.cro-dev-wrapper .mobile-list-tab li b {
+    font-weight: 600;
+    color: #112446;
+}
+
+.cro-dev-wrapper .discussion-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cro-dev-wrapper .discussion-link button {
+    padding: 12px 22px;
+    background-color: #13367d;
+    border: none;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cro-dev-wrapper .discussion-link button:hover {
+    background-color: #0f2a5f;
+}
+
+/* Desktop Tab Section - Hidden on Mobile */
+.cro-dev-wrapper .cro-pro-tab {
+    display: none;
+}
+
+.cro-dev-wrapper .cro-stepper-container {
+    margin-bottom: 50px;
+}
+
+.cro-dev-wrapper .stepper-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Horizontal connecting line */
+.cro-dev-wrapper .stepper-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+.cro-dev-wrapper .stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    flex: 1;
+    max-width: 200px;
+    min-width: 120px;
+    z-index: 1;
+}
+
+.cro-dev-wrapper .step-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007aff;
+    border: 2px solid #007aff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.cro-dev-wrapper .step-counter.completed {
+    background-color: #007aff;
+    border-color: #007aff;
+    color: #ffffff;
+}
+
+.cro-dev-wrapper .step-counter:not(.completed) {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #666;
+}
+
+.cro-dev-wrapper .display-Wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.cro-dev-wrapper .stepper-box-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cro-dev-wrapper .cro-stepper-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 15px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: auto;
+    height: 215px;
+    flex: 1;
+    max-width: 200px;
+    min-width: 120px;
+    position: relative;
+}
+
+.cro-dev-wrapper .cro-stepper-box:hover {
+    background-color: transparent;
+}
+
+.cro-dev-wrapper .cro-stepper-box.active-Box {
+    background-color: transparent;
+}
+
+.cro-dev-wrapper .cro-stepper-box .box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.cro-dev-wrapper .cro-stepper-box .active-image {
+    display: none;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    padding: 8px;
+    background-color: #13367d;
+    border-radius: 4px;
+}
+
+.cro-dev-wrapper .cro-stepper-box .inactive-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.cro-dev-wrapper .cro-stepper-box.active-Box .active-image {
+    display: block;
+}
+
+.cro-dev-wrapper .cro-stepper-box.active-Box .inactive-image {
+    display: none;
+}
+
+.cro-dev-wrapper .desktop-tab-title-cro {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--Dark-gray, #333);
+    margin: 0;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cro-dev-wrapper .cro-stepper-box.active-Box .desktop-tab-title-cro {
+    background-color: #13367d;
+    color: #ffffff;
+}
+
+.cro-dev-wrapper .stepper-display {
+    width: 100%;
+}
+
+.cro-dev-wrapper .display-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-bottom: 70px;
+    align-items: flex-start;
+}
+
+.cro-dev-wrapper .display-text {
+    height: auto;
+}
+
+.cro-dev-wrapper .display-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 400px;
+    max-width: 400px;
+}
+
+.cro-dev-wrapper .display-cro-hero-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.cro-dev-wrapper .display-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.cro-dev-wrapper .pro-tab-content {
+    display: none;
+}
+
+.cro-dev-wrapper .pro-tab-content.active {
+    display: block;
+}
+
+.cro-dev-wrapper .pro-tab-title {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: #112446;
+    margin: 0 0 25px 0;
+    line-height: 1.4;
+}
+
+.cro-dev-wrapper .pro-tab-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cro-dev-wrapper .pro-tab-content ul li {
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #333;
+    padding-left: 20px;
+    position: relative;
+}
+
+.cro-dev-wrapper .pro-tab-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #007aff;
+    font-weight: bold;
+}
+
+.cro-dev-wrapper .pro-tab-content ul li b {
+    font-weight: 600;
+    color: #112446;
+}
+
+.cro-dev-wrapper .lets-discuss-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #13367d;
+    border-radius: 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cro-dev-wrapper .lets-discuss-btn:hover {
+    background-color: #0f2a5f;
+}
+
+
+.stepper-wrapper {
+  max-width: 1110px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  cursor: pointer;
+}
+
+.cro-first-item-horizontal::after {
+  position: absolute;
+  content: "";
+  border-bottom: 1px solid #0960A8;
+  width: 70%;
+  top: 20px;
+  left: 65%;
+  z-index: 2;
+}
+
+.cro-item-vertical::before {
+  position: absolute;
+  content: "";
+  border-top: 1px solid #0960A8;
+  width: 30px;
+  top: 65px;
+  left: 50%;
+  rotate: 90deg;
+  translate: -50%;
+  z-index: 2;
+}
+
+.cro-second-item-horizontal::after,
+.cro-third-item-horizontal::after,
+.cro-fourth-item-horizontal::after {
+  position: absolute;
+  content: "";
+  border-top: 1px solid #0960A8;
+  width: 70%;
+  top: 20px;
+  left: 65%;
+  z-index: 2;
+}
+
+.completed {
+  background-color: #0960a8;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+.imageShow {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.imageHide {
+  display: none;
+}
+
+.step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Be Vietnam Pro", sans-serif;
+  margin-bottom: 6px;
+  color: #0960a8;
+  border: 1px solid #0960a8;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  top: 20px;
+  left: 65%;
+  z-index: 3;
+}
+
+.display-Wrap {
+  box-shadow: 0 0 10px 0 rgba(27, 27, 27, 0.1);
+max-width: 1140px;
+    margin: 35px auto;
+  background-color: white;
+}
+
+.stepper-box-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content:space-between
+}
+
+.cro-stepper-box {
+  /* width: 222px; */
+  width: 20%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.cro-stepper-box:last-child {
+  border-right: none;
+}
+
+.active-Box {
+  background-color: #0960a8;
+  color: white;
+}
+
+.active-Box .box-content > h4 {
+  color: white;
+}
+
+.box-content {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  text-align: center;
+  font-size: 16px;
+  color: #112446;
+}
+
+.box-content img {
+  width: 60px;
+}
+
+.stepper-display {
+  max-width: 1110px;
+  margin: auto;
+}
+
+.display-content-wrapper {
+     padding: 59px 59px 0px 59px;
+  gap: 68px;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Tablet Breakpoint - 768px and up */
+@media (min-width: 768px) {
+    .cro-dev-wrapper {
+        padding: 80px 20px;
+    }
+
+    .cro-dev-wrapper .cro-para {
+        font-size: 1.25rem;
+    }
+
+    .cro-dev-wrapper .mobile-tab-accordion-button .mobile-acro-title {
+        font-size: 1rem;
+    }
+
+    .cro-dev-wrapper .display-content-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .cro-dev-wrapper .display-image {
+        flex: 0 0 350px;
+        max-width: 350px;
+    }
+
+    .cro-dev-wrapper .display-text {
+        flex: 1;
+    }
+}
+
+/* Tablet Breakpoint - 1023.9px and below */
+@media screen and (max-width: 1023.9px) {
+    .cro-dev-wrapper .cro-para {
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .cro-dev-wrapper .mobile-tab-accordion-content-text button {
+        padding: 12px 22px;
+    }
+
+    .cro-dev-wrapper .mobile-tab-accordion-content-text button a {
+        color: #fff;
+    }
+}
+
+/* Desktop Breakpoint - 1024px and up */
+@media (min-width: 1024px) {
+    .cro-dev-wrapper .cro-tab-mobile {
+        display: none;
+    }
+
+    .cro-dev-wrapper .cro-pro-tab {
+        display: block;
+    }
+
+    .cro-dev-wrapper .stepper-wrapper {
+        padding: 0 50px;
+    }
+
+    .cro-dev-wrapper .stepper-wrapper::before {
+        left: 8%;
+        right: 8%;
+    }
+
+    .cro-dev-wrapper .stepper-item {
+        max-width: 180px;
+    }
+
+    .cro-dev-wrapper .cro-stepper-box {
+        max-width: 180px;
+    }
+
+    .cro-dev-wrapper .display-image {
+        flex: 0 0 400px;
+        max-width: 400px;
+    }
+}
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {
+    .cro-dev-wrapper .cro-dev-container {
+        max-width: 1230px;
+    }
+
+    .cro-dev-wrapper .display-content-wrapper {
+        gap: 50px;
+    }
+}
+
+/* Small Mobile - 668px and below */
+@media screen and (max-width: 668px) {
+    .cro-dev-wrapper .mobile-tab-accordion-button .accordion-title-image > p {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .cro-dev-wrapper .mobile-tab-accordion-button .mobile-acro-title {
+        font-size: 0.875rem;
+        line-height: 1.125;
+    }
+
+    .cro-dev-wrapper .discussion-link button {
+        padding: 12px 20px;
+        font-size: 0.8125rem;
+    }
+}

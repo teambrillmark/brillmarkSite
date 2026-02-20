@@ -1,0 +1,485 @@
+{
+    "key": "group_navbar_section_fields",
+    "title": "Navbar Section Fields",
+    "fields": [
+        {
+            "key": "field_navbar_section_logo",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Upload the site logo. Recommended size: 200x46px.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_navbar_section_nav_items",
+            "label": "Navigation Items",
+            "name": "nav_items",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "min": 1,
+            "max": 10,
+            "button_label": "Add Navigation Item",
+            "default_value": [
+                {
+                    "label": "Home",
+                    "url": "\/",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Services",
+                    "url": "",
+                    "has_dropdown": true
+                },
+                {
+                    "label": "About Us",
+                    "url": "\/about-us",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Our Blogs",
+                    "url": "\/blog",
+                    "has_dropdown": false
+                },
+                {
+                    "label": "Referral",
+                    "url": "\/referral",
+                    "has_dropdown": false
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_navbar_section_nav_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_navbar_section_nav_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_navbar_section_nav_has_dropdown",
+                    "label": "Has Dropdown?",
+                    "name": "has_dropdown",
+                    "type": "true_false",
+                    "instructions": "Enable if this item triggers the services mega menu.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No",
+                    "message": ""
+                }
+            ]
+        },
+        {
+            "key": "field_navbar_section_cta_button_text",
+            "label": "CTA Button Text",
+            "name": "cta_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Let's Talk!",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_cta_button_link",
+            "label": "CTA Button Link",
+            "name": "cta_button_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "\/contact",
+            "placeholder": ""
+        },
+        {
+            "key": "field_navbar_section_services",
+            "label": "Services",
+            "name": "services",
+            "type": "repeater",
+            "instructions": "Add services that appear in the dropdown mega menu. Services are displayed in rows of 3.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 1,
+            "max": 12,
+            "button_label": "Add Service",
+            "default_value": [
+                {
+                    "title": "A\/B Test Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/ab-testing"
+                },
+                {
+                    "title": "Shopify Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/shopify"
+                },
+                {
+                    "title": "WordPress Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/wordpress"
+                },
+                {
+                    "title": "Full Stack Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/fullstack"
+                },
+                {
+                    "title": "Design & Mockups",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/design"
+                },
+                {
+                    "title": "CRO Support",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/cro"
+                },
+                {
+                    "title": "Technical Support",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/support"
+                },
+                {
+                    "title": "Quality Assurance",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/qa"
+                },
+                {
+                    "title": "Dedicated Development",
+                    "description": "Lorem Ipsum is simply dummy text of the printing and",
+                    "url": "\/services\/dedicated"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_navbar_section_service_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_navbar_section_service_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_navbar_section_service_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_navbar_section_service_url",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_navbar_section_sidebar_title",
+            "label": "Sidebar Title",
+            "name": "sidebar_title",
+            "type": "text",
+            "instructions": "Title displayed above the featured case study in the dropdown.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "more from brillmark",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_badge",
+            "label": "Featured Badge Icon",
+            "name": "featured_badge",
+            "type": "image",
+            "instructions": "Small badge icon for the featured case study.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_navbar_section_featured_label",
+            "label": "Featured Label",
+            "name": "featured_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Featured Case Study",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_title",
+            "label": "Featured Title",
+            "name": "featured_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Shopify Toplids Migration",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_description",
+            "label": "Featured Description",
+            "name": "featured_description",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Discover how we achieved a",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_description_color_text",
+            "label": "Featured Description Color Text",
+            "name": "featured_description_color_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "128% conversion uplift.",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_link_text",
+            "label": "Featured Link Text",
+            "name": "featured_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read full story",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_navbar_section_featured_link_url",
+            "label": "Featured Link URL",
+            "name": "featured_link_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "\/case-study",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "global-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF field group for the Navbar Section block with mega menu dropdown.",
+    "modified": 1771401304
+}

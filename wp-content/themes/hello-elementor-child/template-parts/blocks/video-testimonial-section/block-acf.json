@@ -1,0 +1,159 @@
+{
+  "key": "group_video_testimonial_section_fields",
+  "title": "Video Testimonial Section Fields",
+  "fields": [
+    {
+      "key": "field_video_testimonial_section_title",
+      "label": "Section Title",
+      "name": "section_title",
+      "type": "text",
+      "required": 1,
+      "default_value": "What Our Clients Say About Us?",
+      "placeholder": "Enter section title",
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_video_testimonial_section_description",
+      "label": "Section Description",
+      "name": "section_description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "See how our Optimizely test developers have helped businesses like yours achieve measurable growth and maximize their potential.",
+      "placeholder": "Enter section description",
+      "rows": 3,
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_video_testimonial_section_testimonials",
+      "label": "Testimonials",
+      "name": "testimonials",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "max": 10,
+      "layout": "block",
+      "button_label": "Add Testimonial",
+      "sub_fields": [
+        {
+          "key": "field_video_testimonial_section_wistia_video_id",
+          "label": "Wistia Video ID",
+          "name": "wistia_video_id",
+          "type": "text",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter Wistia video ID (e.g., 2iu6hq6ljd)",
+          "instructions": "Enter the Wistia video ID from the embed URL. Example: For 'https://fast.wistia.net/embed/iframe/2iu6hq6ljd', the ID is '2iu6hq6ljd'",
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "key": "field_video_testimonial_section_quote",
+          "label": "Testimonial Quote",
+          "name": "quote",
+          "type": "textarea",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter testimonial quote",
+          "rows": 4,
+          "wrapper": {
+            "width": "100",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "key": "field_video_testimonial_section_company_logo",
+          "label": "Company Logo",
+          "name": "company_logo",
+          "type": "image",
+          "required": 0,
+          "return_format": "url",
+          "preview_size": "thumbnail",
+          "library": "all",
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "key": "field_video_testimonial_section_author_name",
+          "label": "Author Name",
+          "name": "author_name",
+          "type": "text",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter author name",
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "key": "field_video_testimonial_section_author_title",
+          "label": "Author Title",
+          "name": "author_title",
+          "type": "text",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter author title",
+          "wrapper": {
+            "width": "50",
+            "class": "",
+            "id": ""
+          }
+        }
+      ],
+      "default_value": [
+        {
+          "wistia_video_id": "2iu6hq6ljd",
+          "quote": "\"I can't imagine any other companies out there in a similar situation where we are that couldn't benefit from the services that Brillmark offers.\"",
+          "company_logo": "../images/65a7a806c4af33bfc009126c06899a50f7473189.png",
+          "author_name": "Gayla Worrell",
+          "author_title": "CRO at Snap Finance"
+        },
+        {
+          "wistia_video_id": "mcrgmpq1xb",
+          "quote": "\"Finding competent professionals to bring conversion research ideas to life and deliver results for clients without breaking their websites was challenging – until I found Brillmark. Abdullah and his team are a group of technical A-players with whom anyone serious about CRO and experimentation should work*. I've collaborated with them on multiple projects, and they consistently prove they're the real deal.\"",
+          "company_logo": "",
+          "author_name": "Amara Abara",
+          "author_title": "Founder at Conversion Central"
+        }
+      ],
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/video-testimonial-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Video Testimonial Section block"
+}

@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Hero with Form Section Block Styles
+   Scoped to: .hero-with-form-section-section
+   ========================================================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---- Section Root ---- */
+.hero-with-form-section-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(180deg, #FFF 0%, #DFEEF7 100%);
+}
+
+/* ---- Container ---- */
+.hero-with-form-section-section .container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ---- Inner Row — two-column layout ---- */
+.hero-with-form-section-section .hero-with-form-section-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---- Left Content Column ---- */
+.hero-with-form-section-section .hero-with-form-section-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  width: 561px;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+/* ---- Text Group ---- */
+.hero-with-form-section-section .hero-with-form-section-text-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ---- Subtitle ---- */
+.hero-with-form-section-section .hero-with-form-section-subtitle {
+  max-width: 100%;
+  margin: 0;
+  color: #112446;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  /* 155.556% */
+}
+
+/* ---- Title ---- */
+.hero-with-form-section-section .hero-with-form-section-title {
+  margin: 0;
+  color: #112446;
+  font-family: Poppins;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px;
+  /* 127.273% */
+}
+
+/* ---- Description ---- */
+.hero-with-form-section-section .hero-with-form-section-description {
+  margin: 0;
+  color: #313F58;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 150% */
+}
+
+/* ---- Form Wrapper ---- */
+.hero-with-form-section-section .hero-with-form-section-form-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 530px;
+  max-width: 100%;
+}
+
+/* ---- Form ---- */
+.hero-with-form-section-section .hero-with-form-section-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+}
+
+/* ---- Inputs Wrapper ---- */
+.hero-with-form-section-section .hero-with-form-section-inputs-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* ---- Input Field Container ---- */
+
+.hero-with-form-section-section .form-group p {
+  margin: 0;
+}
+
+.hero-with-form-section-section .form-group:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.hero-with-form-section-section span input {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  background: #FFF;
+  padding: 10px 0 10px 20px;
+  color: rgba(23, 23, 23, 0.50);
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  height: 50px;
+}
+
+.hero-with-form-section-section .submit-btn {
+  margin-top: 20px;
+}
+
+.hero-with-form-section-section .submit-btn input {
+  color: #FFF;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 6px;
+  background: #201E4B;
+  padding: 13px 16px 13px 16px;
+  width: 100%;
+  height: 50px;
+}
+
+.hero-with-form-section-section .submit-btn input:hover {
+  background: #0960A8 !important;
+  border: none;
+}
+
+.hero-with-form-section-section .submit-btn input+span {
+  display: none;
+}
+
+/* ---- Image Wrapper ---- */
+.hero-with-form-section-section .hero-with-form-section-image-wrapper {
+  box-sizing: border-box;
+  width: 600px;
+  flex-shrink: 1;
+  flex-grow: 0;
+}
+
+/* ---- Hero Image ---- */
+.hero-with-form-section-section .hero-with-form-section-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 466;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive: Tablet (≤1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-with-form-section-section .hero-with-form-section-inner {
+    gap: 40px;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-content {
+    width: auto;
+    flex: 1 1 50%;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-image-wrapper {
+    width: auto;
+    flex: 1 1 50%;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-subtitle {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-description {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-form-wrapper {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Responsive: Mobile (≤768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-with-form-section-section {
+    padding: 60px 20px;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-inputs-wrapper {
+    gap: 15px;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-content {
+    flex: 1 1 100%;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-form {
+    gap: 15px;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-text-group {
+    align-items: center;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-subtitle {
+    text-align: center;
+    width: auto;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-with-form-section-section .hero-with-form-section-image-wrapper {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "key": "group_shopify_dev_services_section_fields",
+  "title": "Shopify Dev Services Section Fields",
+  "fields": [
+    {
+      "key": "field_shopify-dev-services-section_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "required": 1,
+      "default_value": "We Provide All Inclusive Shopify Development Services"
+    },
+    {
+      "key": "field_shopify-dev-services-section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "Our flexible process ensures seamless collaboration, allowing for successful and efficient project delivery, every time."
+    },
+    {
+      "key": "field_shopify-dev-services-section_services",
+      "label": "Services",
+      "name": "services",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "max": 20,
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_shopify-dev-services-section_service_title",
+          "label": "Service Title",
+          "name": "service_title",
+          "type": "text",
+          "required": 1,
+          "default_value": ""
+        },
+        {
+          "key": "field_shopify-dev-services-section_service_description",
+          "label": "Service Description",
+          "name": "service_description",
+          "type": "textarea",
+          "required": 0,
+          "default_value": ""
+        },
+        {
+          "key": "field_shopify-dev-services-section_bullet_points",
+          "label": "Bullet Points",
+          "name": "bullet_points",
+          "type": "repeater",
+          "required": 0,
+          "min": 0,
+          "max": 10,
+          "layout": "table",
+          "sub_fields": [
+            {
+              "key": "field_shopify-dev-services-section_bullet_text",
+              "label": "Bullet Text",
+              "name": "bullet_text",
+              "type": "text",
+              "required": 1,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "key": "field_shopify-dev-services-section_button_text",
+          "label": "Button Text",
+          "name": "button_text",
+          "type": "text",
+          "required": 0,
+          "default_value": "Schedule FREE strategy session"
+        },
+        {
+          "key": "field_shopify-dev-services-section_button_link",
+          "label": "Button Link",
+          "name": "button_link",
+          "type": "url",
+          "required": 0,
+          "default_value": "#"
+        }
+      ],
+      "default_value": [
+        {
+          "service_title": "Shopify Store Setup",
+          "service_description": "Our expert Shopify development services will have you up and running in no time, perfectly configured to your needs.",
+          "bullet_points": [
+            { "bullet_text": "Comprehensive Store Build: From theme selection/custom design to complete setup and configuration." },
+            { "bullet_text": "Rapid Launch: Get your fully functional Shopify store ready to launch in days or weeks." },
+            { "bullet_text": "Full-Service Support: We handle theme installation, design, development, and configuration for a seamless launch." },
+            { "bullet_text": "Payment Setup: We offer help with integrating third party solutions for payment gateway setup." },
+            { "bullet_text": "Custom Domain Configuration: Buy domain, update DNS settings, point to host, configure records, set SSL, verify propagation, test site." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Custom Shopify Theme Development",
+          "service_description": "Whether it's a pre-existing theme or needs a completely custom design, we can help you get it done quickly.",
+          "bullet_points": [
+            { "bullet_text": "Pixel perfect: Code-level theme implementation using HTML, CSS, and Liquid." },
+            { "bullet_text": "App setup & Support: Seamless integration of third-party apps and APIs." },
+            { "bullet_text": "Custom functionality development: Custom scripts, animations, and dynamic elements can be built to as per your liking." },
+            { "bullet_text": "Optimized Navigation & Search: Guide your customers effortlessly with optimized navigation and powerful search capabilities." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Shopify App Integration & Custom Solutions",
+          "service_description": "Extend your store's functionality through seamless setup, configuration, and customization for your cart, checkout, pages and for overall data collection.",
+          "bullet_points": [
+            { "bullet_text": "Custom Solutions: If your business needs a unique solution, we'll build custom solutions backed by our 10+ years of shopify experience." },
+            { "bullet_text": "Platform-Specific Expertise: We build custom apps for Shopify Admin, POS, and Online Store." },
+            { "bullet_text": "Top-Tier App Integrations: Seamlessly integrate Klaviyo, Mailchimp, AMP, Google Shopping, Metafields Editor, Nitro Wishlist, Omnisend, Email Marketing, Product Reviews, SMS, and more." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Performance & Page Speed Optimization",
+          "service_description": "BrillMark optimizes website performance through site analysis, image compression, code optimization, caching, CDN integration, lazy loading, server improvements, and continuous monitoring to enhance speed and SEO.",
+          "bullet_points": [
+            { "bullet_text": "Performance-Driven Development: We optimize custom themes and apps for speed and efficiency." },
+            { "bullet_text": "Image Optimization & Code Minification: Implement best practices for image compression and clean code." },
+            { "bullet_text": "Third-Party App Optimization: Ensure installed apps are optimized and do not negatively impact load times." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Shopify 2.0 Migration",
+          "service_description": "BrillMark offers Shopify Plus upgrades and maintenance, including seamless theme updates, app integrations, performance enhancements, security patches, and ongoing support to ensure optimal store functionality.",
+          "bullet_points": [
+            { "bullet_text": "Data Migration Expertise: Seamlessly migrate your existing store data to Shopify or Shopify Plus." },
+            { "bullet_text": "Mobile-First Design: Ensure a flawless shopping experience across devices while implying best CRO practices." },
+            { "bullet_text": "Personalized Training: Empower your team with training to utilise Shopify plus's advanced capabilities." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Website Rebranding & Redesign",
+          "service_description": "Website Rebranding & Redesign driven by our conversion rate experimentation expertise. Maximize impact with proven designs and a streamlined development process.",
+          "bullet_points": [
+            { "bullet_text": "Tested Designs: We leverage winning templates and data-driven insights for optimal conversion." },
+            { "bullet_text": "Conversion-Focused Approach: Our CRO expertise ensures every redesign element improves user engagement and sales." },
+            { "bullet_text": "Efficient Development: Easy-to-use, developer-friendly mockups minimize delays and ensure a smooth redesign process." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Shopify Analytics & Third party Integration",
+          "service_description": "BrillMark offers GA4 setup, attribution configurations, custom events and conversions, and advanced user tracking to ensure accurate data collection and optimize marketing strategies.",
+          "bullet_points": [
+            { "bullet_text": "Data-Driven Decisions: We set up Google Analytics, Hotjar, and more to track performance." },
+            { "bullet_text": "Analytical Team Expertise: Our team excels in Looker Studio, CRM dashboards, and Shopify analytics." },
+            { "bullet_text": "Leakage & Discrepancy Solutions: We identify and resolve data discrepancies with our GTM expertise." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Store Development from Scratch",
+          "service_description": "BrillMark crafts bespoke Shopify stores, blending beautiful design with strategic functionality.",
+          "bullet_points": [
+            { "bullet_text": "Brand-Tailored Stores: We build fully functional Shopify stores reflecting your brand's unique identity." },
+            { "bullet_text": "Mobile-First & UX Focused: Creating a seamless and intuitive shopping experience for all users." },
+            { "bullet_text": "SEO & CRO Optimized: Maximizing visibility and sales through strategic design and implementation." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        },
+        {
+          "service_title": "Headless Commerce Solutions",
+          "service_description": "BrillMark offers help to your brand with Headless Commerce, delivering unmatched flexibility, performance, and omnichannel reach on the Shopify platform.",
+          "bullet_points": [
+            { "bullet_text": "Unmatched Flexibility: Decouple your frontend for complete design and content freedom." },
+            { "bullet_text": "Performance Boost: Experience lightning-fast loading speeds and optimized user interactions." }
+          ],
+          "button_text": "Schedule FREE strategy session",
+          "button_link": "#"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/shopify-dev-services-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Shopify Development Services section with tabbed navigation on desktop and stacked cards on mobile."
+}

@@ -1,0 +1,178 @@
+{
+    "key": "group_ab_test_why_choose_section",
+    "title": "AB Test Why Choose Section Block Fields",
+    "fields": [
+        {
+            "key": "field_ab_test_why_choose_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "Enter the main heading for the Why Choose section",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Why Choose BrillMark For A\/B Test Development?",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Enter the introductory description below the title",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Compare how BrillMark's full-service, CRO-focused team outperforms a traditional, non-A\/B testing developer setup.",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_header_brillmark",
+            "label": "BrillMark Column Header",
+            "name": "header_brillmark",
+            "type": "text",
+            "instructions": "Header text for the BrillMark column",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BrillMark Dev Package",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_header_other",
+            "label": "Other Column Header",
+            "name": "header_other",
+            "type": "text",
+            "instructions": "Header text for the comparison column",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Non-AB Testing Developer",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_ab_test_why_choose_rows",
+            "label": "Comparison Rows",
+            "name": "rows",
+            "type": "repeater",
+            "instructions": "Add comparison rows. Each row has a criteria label and two cell contents.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Row",
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_ab_test_why_choose_row_criteria",
+                    "label": "Criteria",
+                    "name": "criteria",
+                    "type": "text",
+                    "instructions": "Row criteria label (e.g. Team Composition)",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_ab_test_why_choose_row_cell_brillmark",
+                    "label": "BrillMark Cell Content",
+                    "name": "cell_brillmark",
+                    "type": "wysiwyg",
+                    "instructions": "Content for the BrillMark column",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_ab_test_why_choose_row_cell_other",
+                    "label": "Other Cell Content",
+                    "name": "cell_other",
+                    "type": "wysiwyg",
+                    "instructions": "Content for the other column",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "media_upload": 0,
+                    "toolbar": "basic",
+                    "tabs": "all",
+                    "delay": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/ab-test-why-choose-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "Fields for AB Test Why Choose Section custom block",
+    "modified": 1770820002
+}

@@ -1,0 +1,196 @@
+{
+    "key": "group_blog_section_fields",
+    "title": "Blog Section Fields",
+    "fields": [
+        {
+            "key": "field_blog_section_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Enter the main heading for the blog section.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Insights & Resources",
+            "placeholder": "Enter section title",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_blog_section_section_description",
+            "label": "Section Description",
+            "name": "section_description",
+            "type": "textarea",
+            "instructions": "Enter a brief description for the blog section.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Stay informed with our latest articles, guides, and industry insights.",
+            "placeholder": "Enter section description",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_blog_section_posts_per_page",
+            "label": "Number of Posts",
+            "name": "posts_per_page",
+            "type": "number",
+            "instructions": "Number of blog posts to display (default: 3).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 3,
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_blog_section_post_categories",
+            "label": "Post Categories",
+            "name": "post_categories",
+            "type": "taxonomy",
+            "instructions": "Select specific categories to filter posts (leave empty to show all).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_blog_section_orderby",
+            "label": "Order By",
+            "name": "orderby",
+            "type": "select",
+            "instructions": "Select how to order the posts.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "date": "Date",
+                "title": "Title",
+                "menu_order": "Menu Order",
+                "rand": "Random"
+            },
+            "default_value": "date",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_blog_section_order",
+            "label": "Order",
+            "name": "order",
+            "type": "select",
+            "instructions": "Select the sort order.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "DESC": "Descending",
+                "ASC": "Ascending"
+            },
+            "default_value": "DESC",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_blog_section_read_more_text",
+            "label": "Read More Text",
+            "name": "read_more_text",
+            "type": "text",
+            "instructions": "Text to display for the read more link on each card.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read Full Story...",
+            "placeholder": "Read Full Story...",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_blog_section_cta_button",
+            "label": "CTA Button",
+            "name": "cta_button",
+            "type": "link",
+            "instructions": "Configure the main call-to-action button for the blog section.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "default_value": {
+                "title": "READ MORE ARTICLES",
+                "url": "#",
+                "target": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/blog-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the Blog Section block displaying articles, guides, and industry insights.",
+    "modified": 1770616527
+}

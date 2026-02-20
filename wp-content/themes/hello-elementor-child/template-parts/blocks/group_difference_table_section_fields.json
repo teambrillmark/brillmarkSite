@@ -1,0 +1,368 @@
+{
+    "key": "group_difference_table_section_fields",
+    "title": "Difference Table Section Fields",
+    "fields": [
+        {
+            "key": "field_difference-table-section_title",
+            "label": "Section Title",
+            "name": "difference_table_section_title",
+            "type": "text",
+            "instructions": "The main title for the difference table section",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "The Brillmark Difference: Beyond Basic Migration",
+            "placeholder": "The Brillmark Difference: Beyond Basic Migration",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_difference-table-section_description",
+            "label": "Section Description",
+            "name": "difference_table_section_description",
+            "type": "textarea",
+            "instructions": "Description for the difference table section",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Unlike general development agencies, we specialize exclusively in e-commerce platforms and have completed 200+ migrations. We've seen every edge case and know how to handle complex scenarios.",
+            "placeholder": "",
+            "new_lines": "",
+            "maxlength": "",
+            "rows": ""
+        },
+        {
+            "key": "field_difference-table-section_metrics",
+            "label": "Metrics",
+            "name": "difference_table_section_metrics",
+            "type": "repeater",
+            "instructions": "Add metrics to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Metric",
+            "default_value": [
+                {
+                    "metric_item": "Metric"
+                },
+                {
+                    "metric_item": "Others"
+                },
+                {
+                    "metric_item": "With BrillMark"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_metric_item",
+                    "label": "Metric Item",
+                    "name": "metric_item",
+                    "type": "text",
+                    "instructions": "Metric item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Metric",
+                    "placeholder": "Enter metric",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_difference-table-section_delivery_times",
+            "label": "Delivery Times",
+            "name": "difference_table_section_delivery_times",
+            "type": "repeater",
+            "instructions": "Add delivery times to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Delivery Time",
+            "default_value": [
+                {
+                    "delivery_time_item": "Delivery Time"
+                },
+                {
+                    "delivery_time_item": "Undefined (60 - ? Days)"
+                },
+                {
+                    "delivery_time_item": "On Time (30 DAYS)"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_delivery_time_item",
+                    "label": "Delivery Time Item",
+                    "name": "delivery_time_item",
+                    "type": "text",
+                    "instructions": "Delivery time item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Delivery Time",
+                    "placeholder": "Enter delivery time",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_difference-table-section_looks",
+            "label": "Looks",
+            "name": "difference_table_section_looks",
+            "type": "repeater",
+            "instructions": "Add looks to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Look",
+            "default_value": [
+                {
+                    "look_item": "The Look"
+                },
+                {
+                    "look_item": "Standard New Template"
+                },
+                {
+                    "look_item": "Custom Theme Design & Optimization for Conversions"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_look_item",
+                    "label": "Look Item",
+                    "name": "look_item",
+                    "type": "text",
+                    "instructions": "Look item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "The Look",
+                    "placeholder": "Enter look",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_difference-table-section_quality",
+            "label": "Quality",
+            "name": "difference_table_section_quality",
+            "type": "repeater",
+            "instructions": "Add quality items to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Quality Item",
+            "default_value": [
+                {
+                    "quality_item": "Quality"
+                },
+                {
+                    "quality_item": "Not Assured"
+                },
+                {
+                    "quality_item": "Assured with Pre- Post-Launch Optimization"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_quality_item",
+                    "label": "Quality Item",
+                    "name": "quality_item",
+                    "type": "text",
+                    "instructions": "Quality item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Quality",
+                    "placeholder": "Enter quality",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_difference-table-section_performance",
+            "label": "Performance",
+            "name": "difference_table_section_performance",
+            "type": "repeater",
+            "instructions": "Add performance items to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Performance Item",
+            "default_value": [
+                {
+                    "performance_item": "The Speed"
+                },
+                {
+                    "performance_item": "Default Performance"
+                },
+                {
+                    "performance_item": "Profit-Optimized Speed"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_performance_item",
+                    "label": "Performance Item",
+                    "name": "performance_item",
+                    "type": "text",
+                    "instructions": "Performance item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "The Speed",
+                    "placeholder": "Enter performance",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_difference-table-section_integrity",
+            "label": "Integrity",
+            "name": "difference_table_section_integrity",
+            "type": "repeater",
+            "instructions": "Add integrity items to display",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Integrity Item",
+            "default_value": [
+                {
+                    "integrity_item": "Data Integrity"
+                },
+                {
+                    "integrity_item": "Moving products and orders."
+                },
+                {
+                    "integrity_item": "Full tracking setup (GA4\/GTM)"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_difference-table-section_integrity_item",
+                    "label": "Integrity Item",
+                    "name": "integrity_item",
+                    "type": "text",
+                    "instructions": "Integrity item text",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Data Integrity",
+                    "placeholder": "Enter integrity",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/difference-table-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1770816613
+}

@@ -1,0 +1,278 @@
+{
+    "key": "group_faq_section_fields",
+    "title": "FAQ Section Fields",
+    "fields": [
+        {
+            "key": "field_faq-section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Frequently asked questions",
+            "placeholder": "Enter section title",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_faq-section_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Develop top-line strategies and ensure value through tested procedures. Generate effective testing protocols to support sustainable and visionary growth strategies.",
+            "placeholder": "Enter section description",
+            "rows": 3,
+            "new_lines": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_faq-section_left_column_faqs",
+            "label": "Left Column FAQs",
+            "name": "left_column_faqs",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add FAQ Item",
+            "default_value": [
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "How do I get started with BrillMark?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "What services does BrillMark offer?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "What industries does BrillMark serve?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "Can BrillMark work with our existing team?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "How does BrillMark ensure project quality?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "What makes BrillMark different from other service providers?"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_faq-section_left_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "default_value": "..\/images\/plus.png",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_faq-section_left_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Enter FAQ question",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_faq-section_left_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Enter FAQ answer",
+                    "rows": 4,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_faq-section_right_column_faqs",
+            "label": "Right Column FAQs",
+            "name": "right_column_faqs",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add FAQ Item",
+            "default_value": [
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "What is your typical process when working with clients?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "How quickly can we start seeing results from A\/B testing with BrillMark?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "How does BrillMark stay ahead in a rapidly evolving digital landscape?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "Why should we partner with BrillMark for A\/B testing and development?"
+                },
+                {
+                    "icon": "..\/images\/plus.png",
+                    "question": "What if we already have an in-house team?"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_faq-section_right_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "default_value": "..\/images\/plus.png",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_faq-section_right_question",
+                    "label": "Question",
+                    "name": "question",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Enter FAQ question",
+                    "default_value": "",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_faq-section_right_answer",
+                    "label": "Answer",
+                    "name": "answer",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placeholder": "Enter FAQ answer",
+                    "rows": 4,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/faq-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF field group for the FAQ Section block",
+    "modified": 1770616527
+}

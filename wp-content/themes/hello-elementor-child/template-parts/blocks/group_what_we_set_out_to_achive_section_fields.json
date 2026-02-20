@@ -1,0 +1,260 @@
+{
+    "key": "group_what_we_set_out_to_achive_section_fields",
+    "title": "What We Set Out to Achieve Section Fields",
+    "fields": [
+        {
+            "key": "field_what_we_set_out_to_achive_section_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "Main heading for the metrics comparison section",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "What We Set Out to Achieve",
+            "placeholder": "Enter section title",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_set_out_to_achive_section_metric_header",
+            "label": "Metric Column Header",
+            "name": "metric_header",
+            "type": "text",
+            "instructions": "Header text for the metrics column",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Metric",
+            "placeholder": "Metric",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_set_out_to_achive_section_before_header",
+            "label": "Before Column Header",
+            "name": "before_header",
+            "type": "text",
+            "instructions": "Header text for the 'before' values column",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Before (Oct 24 - Nov 24)",
+            "placeholder": "Before (Oct 24 - Nov 24)",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_set_out_to_achive_section_after_header",
+            "label": "After Column Header",
+            "name": "after_header",
+            "type": "text",
+            "instructions": "Header text for the 'after' values column",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "After (Dec 24 - Jan 25)",
+            "placeholder": "After (Dec 24 - Jan 25)",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_set_out_to_achive_section_increase_header",
+            "label": "Increase Column Header",
+            "name": "increase_header",
+            "type": "text",
+            "instructions": "Header text for the increase\/change percentage column",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Increase (%)",
+            "placeholder": "Increase (%)",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_what_we_set_out_to_achive_section_metrics_data",
+            "label": "Metrics Data",
+            "name": "metrics_data",
+            "type": "repeater",
+            "instructions": "Add rows for each metric to compare",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 20,
+            "layout": "table",
+            "button_label": "Add Metric Row",
+            "default_value": [
+                {
+                    "metric_label": "Total Sessions",
+                    "before_value": "16,521",
+                    "after_value": "16786",
+                    "increase_value": "-"
+                },
+                {
+                    "metric_label": "Orders Fulfilled",
+                    "before_value": "205",
+                    "after_value": "333",
+                    "increase_value": "+62.4%"
+                },
+                {
+                    "metric_label": "Total Sales",
+                    "before_value": "5 figures",
+                    "after_value": "-",
+                    "increase_value": "+34.5%"
+                },
+                {
+                    "metric_label": "Conversion Rate",
+                    "before_value": "0.99%",
+                    "after_value": "2.06%",
+                    "increase_value": "+108%"
+                },
+                {
+                    "metric_label": "Added to Cart RateG",
+                    "before_value": "2.45%",
+                    "after_value": "6.42%",
+                    "increase_value": "161.6%"
+                },
+                {
+                    "metric_label": "Reached Checkout Rate",
+                    "before_value": "0.58%",
+                    "after_value": "0.81%",
+                    "increase_value": "+39.7%"
+                },
+                {
+                    "metric_label": "Completed Checkout",
+                    "before_value": "0.99%",
+                    "after_value": "1.99%",
+                    "increase_value": "+100%"
+                }
+            ],
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_what_we_set_out_to_achive_section_metric_label",
+                    "label": "Metric Label",
+                    "name": "metric_label",
+                    "type": "text",
+                    "instructions": "Name of the metric",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "e.g., Total Sessions",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_set_out_to_achive_section_before_value",
+                    "label": "Before Value",
+                    "name": "before_value",
+                    "type": "text",
+                    "instructions": "Value before the change",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "e.g., 16,521",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_set_out_to_achive_section_after_value",
+                    "label": "After Value",
+                    "name": "after_value",
+                    "type": "text",
+                    "instructions": "Value after the change",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "e.g., 16,786",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_what_we_set_out_to_achive_section_increase_value",
+                    "label": "Increase Value",
+                    "name": "increase_value",
+                    "type": "text",
+                    "instructions": "Percentage increase or change",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "e.g., +62.4%",
+                    "maxlength": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/what-we-set-out-to-achive-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF field group for the What We Set Out to Achieve metrics comparison section block",
+    "modified": 1770373091
+}

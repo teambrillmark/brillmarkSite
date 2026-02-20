@@ -1,0 +1,86 @@
+{
+  "key": "group_video_testimonial_2_section_fields",
+  "title": "Video Testimonial 2 Section Fields",
+  "fields": [
+    {
+      "key": "field_video_testimonial_2_section_title",
+      "label": "Section Title",
+      "name": "video_testimonial_2_section_title",
+      "type": "text",
+      "instructions": "The main title for the video testimonial section",
+      "required": 0,
+      "default_value": "Proven Results, Satisfied Clients",
+      "placeholder": "Proven Results, Satisfied Clients"
+    },
+    {
+      "key": "field_video_testimonial_2_section_testimonials",
+      "label": "Testimonials",
+      "name": "video_testimonial_2_section_testimonials",
+      "type": "repeater",
+      "instructions": "Add testimonials to display",
+      "required": 0,
+      "min": 0,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add Testimonial",
+      "sub_fields": [
+        {
+          "key": "field_video_testimonial_2_section_testimonial_quote",
+          "label": "Quote",
+          "name": "quote",
+          "type": "textarea",
+          "instructions": "The testimonial quote",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter quote"
+        },
+        {
+          "key": "field_video_testimonial_2_section_testimonial_author_name",
+          "label": "Author Name",
+          "name": "author_name",
+          "type": "text",
+          "instructions": "The name of the testimonial author",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter author name"
+        },
+        {
+          "key": "field_video_testimonial_2_section_testimonial_author_title",
+          "label": "Author Title",
+          "name": "author_title",
+          "type": "text",
+          "instructions": "The title of the testimonial author",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Enter author title"
+        },
+        {
+          "key": "field_video_testimonial_2_section_testimonial_image",
+          "label": "Image",
+          "name": "image",
+          "type": "image",
+          "instructions": "Image for the testimonial",
+          "required": 0,
+          "return_format": "url"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/video-testimonial-2-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": ""
+}

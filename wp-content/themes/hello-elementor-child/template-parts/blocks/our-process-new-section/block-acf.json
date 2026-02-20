@@ -1,0 +1,154 @@
+{
+  "key": "group_our_process_new_section_fields",
+  "title": "Our Process New Section Fields",
+  "fields": [
+    {
+      "key": "field_our_process_new_section_title",
+      "label": "Section Title",
+      "name": "section_title",
+      "type": "text",
+      "instructions": "The main title for the Our Process section",
+      "required": 0,
+      "default_value": "Our Process",
+      "placeholder": "Our Process"
+    },
+    {
+      "key": "field_our_process_new_section_description",
+      "label": "Section Description",
+      "name": "section_description",
+      "type": "textarea",
+      "instructions": "Description of the process",
+      "required": 0,
+      "default_value": "At BrillMark, we follow a collaborative process designed to deliver exceptional results across all our services. Our methodology ensures each project is tailored to your needs and achieves your business objectives.",
+      "placeholder": "Enter description"
+    },
+    {
+      "key": "field_our_process_new_section_tabs",
+      "label": "Process Tabs",
+      "name": "process_tabs",
+      "type": "repeater",
+      "instructions": "Add tabs for the process steps",
+      "required": 1,
+      "min": 1,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add Tab",
+      "sub_fields": [
+        {
+          "key": "field_our_process_new_section_tab_icon",
+          "label": "Tab Icon",
+          "name": "tab_icon",
+          "type": "image",
+          "instructions": "Icon/image displayed on the tab button",
+          "required": 1,
+          "return_format": "array",
+          "preview_size": "thumbnail",
+          "library": "all"
+        },
+        {
+          "key": "field_our_process_new_section_tab_title",
+          "label": "Tab Title",
+          "name": "tab_title",
+          "type": "text",
+          "instructions": "Title displayed on the tab button",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "e.g., 1. Assess the Idea"
+        },
+        {
+          "key": "field_our_process_new_section_tab_content_image",
+          "label": "Content Image",
+          "name": "content_image",
+          "type": "image",
+          "instructions": "Image displayed in the tab content area",
+          "required": 0,
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_our_process_new_section_tab_description",
+          "label": "Description",
+          "name": "description",
+          "type": "textarea",
+          "instructions": "Description text for this tab",
+          "required": 0,
+          "default_value": "",
+          "placeholder": "Enter description"
+        },
+        {
+          "key": "field_our_process_new_section_tab_checklist",
+          "label": "Checklist Items",
+          "name": "checklist_items",
+          "type": "repeater",
+          "instructions": "Add checklist items for this tab",
+          "required": 0,
+          "min": 0,
+          "max": 0,
+          "layout": "table",
+          "button_label": "Add Checklist Item",
+          "sub_fields": [
+            {
+              "key": "field_our_process_new_section_checklist_item",
+              "label": "Item Text",
+              "name": "item_text",
+              "type": "text",
+              "instructions": "Text for the checklist item",
+              "required": 1,
+              "default_value": "",
+              "placeholder": "Enter checklist item"
+            }
+          ]
+        },
+        {
+          "key": "field_our_process_new_section_tab_cta",
+          "label": "Call to Action",
+          "name": "cta",
+          "type": "group",
+          "instructions": "Call to action link for this tab (optional)",
+          "required": 0,
+          "layout": "block",
+          "sub_fields": [
+            {
+              "key": "field_our_process_new_section_tab_cta_text",
+              "label": "CTA Text",
+              "name": "text",
+              "type": "text",
+              "instructions": "Call to action text",
+              "required": 0,
+              "default_value": "",
+              "placeholder": "e.g., Let's Start the Conversation"
+            },
+            {
+              "key": "field_our_process_new_section_tab_cta_url",
+              "label": "CTA URL",
+              "name": "url",
+              "type": "url",
+              "instructions": "Link URL for the call to action",
+              "required": 0,
+              "default_value": "",
+              "placeholder": "https://example.com"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/our-process-new-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for the Our Process New Section block"
+}

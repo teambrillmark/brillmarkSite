@@ -1,0 +1,123 @@
+[
+    {
+        "key": "group_development_service",
+        "title": "Development Service Block Fields",
+        "fields": [
+            {
+                "key": "field_development_service_section_title",
+                "label": "Section Title",
+                "name": "section_title",
+                "type": "text",
+                "instructions": "Main heading for the development services block",
+                "default_value": "All Inclusive A/B Test Development Services"
+            },
+            {
+                "key": "field_development_service_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea",
+                "instructions": "Intro paragraph below the section title",
+                "default_value": "BrillMark extends your team to deliver fast, high-quality A/B testing and optimization that drives real conversion growth."
+            },
+            {
+                "key": "field_development_service_services",
+                "label": "Services",
+                "name": "services",
+                "type": "repeater",
+                "instructions": "List of service tabs and their content",
+                "min": 0,
+                "max": 20,
+                "layout": "block",
+                "button_label": "Add Service",
+                "sub_fields": [
+                    {
+                        "key": "field_development_service_tab_title",
+                        "label": "Tab Title",
+                        "name": "tab_title",
+                        "type": "text",
+                        "instructions": "Label shown on the tab (e.g. A/B Test Development)",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_development_service_tab_id",
+                        "label": "Tab ID",
+                        "name": "tab_id",
+                        "type": "text",
+                        "instructions": "Unique ID for the tab (e.g. ab-test-development). Used for linking tab and content.",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_development_service_info_title",
+                        "label": "Info Title",
+                        "name": "info_title",
+                        "type": "text",
+                        "instructions": "Heading inside the content panel",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "field_development_service_info_description",
+                        "label": "Info Description",
+                        "name": "info_description",
+                        "type": "wysiwyg",
+                        "instructions": "Main description paragraph",
+                        "default_value": "",
+                        "media_upload": 0,
+                        "toolbar": "basic"
+                    },
+                    {
+                        "key": "field_development_service_info_list",
+                        "label": "Info List",
+                        "name": "info_list",
+                        "type": "wysiwyg",
+                        "instructions": "Bullet list content (use list formatting in editor)",
+                        "default_value": "",
+                        "media_upload": 0,
+                        "toolbar": "basic"
+                    },
+                    {
+                        "key": "field_development_service_cta_text",
+                        "label": "CTA Button Text",
+                        "name": "cta_text",
+                        "type": "text",
+                        "instructions": "Text for the call-to-action link",
+                        "default_value": "Schedule FREE strategy session"
+                    },
+                    {
+                        "key": "field_development_service_cta_url",
+                        "label": "CTA Button URL",
+                        "name": "cta_url",
+                        "type": "url",
+                        "instructions": "URL for the CTA link",
+                        "default_value": "/contact-us/"
+                    }
+                ]
+            },
+            {
+                "key": "field_development_service_session_cta_text",
+                "label": "Session CTA Text (Mobile)",
+                "name": "session_cta_text",
+                "type": "text",
+                "instructions": "Button text shown below accordion on mobile",
+                "default_value": "Schedule FREE strategy session"
+            },
+            {
+                "key": "field_development_service_session_cta_url",
+                "label": "Session CTA URL (Mobile)",
+                "name": "session_cta_url",
+                "type": "url",
+                "instructions": "URL for the session CTA button",
+                "default_value": "/contact-us/"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf/development-service"
+                }
+            ]
+        ],
+        "description": "Fields for Development Service custom block"
+    }
+]

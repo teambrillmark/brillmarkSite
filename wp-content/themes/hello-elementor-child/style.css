@@ -1,0 +1,263 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+Template: hello-elementor
+Author: Elementor Team
+Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+Description: A plain-vanilla &amp; lightweight theme for Elementor page builder
+Tags: flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 2.3.0.1610341244
+Updated: 2021-01-10 22:00:44
+
+*/
+
+/* Regular */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Medium */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* SemiBold */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/wp-content/uploads/2026/02/Poppins-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+.ripple-circle:after,
+.ripple-circle:before{
+    display: none !important;
+}
+.bmcol-12 input,
+.bmcol-12 textarea{
+	background-color:transparent;
+	border:1px solid #8EC0CF !important;
+	color: #AEAEAE;
+	padding:7px 20px !important; 
+}
+.bmcol-12 textarea{
+	max-height:80px !important;
+}
+.bmcol-12 textarea::placeholder,
+.bmcol-12 input::placeholder{
+    color: #AEAEAE;
+}
+.bmrow{
+	margin-top:10px
+}
+.bmSubmit input{
+    background-color: #8EC0CF;
+	border:1px solid #8EC0CF;
+	width:100%;
+	color: #FFFFFF;
+    padding:7px;
+	font-size:14px;
+}
+.bmSubmit input:hover{
+    background-color:  white;
+   border:1px solid #8EC0CF;
+	color: #8EC0CF;
+}
+.bmSubmit{
+	margin-top:20px;
+}
+
+.bmServicebox:hover i,
+.bmServicebox:hover h3,
+.bmServicebox:hover p,
+.bmServicebox:hover a{
+    color: white !Important
+}
+/*--accordion--*/
+.bm-accordion .elementor-accordion-item {
+    background: white;
+    margin: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px -8px
+}
+.bm-light-accordion .bm-accordion .fa-plus,
+.bm-light-accordion .bm-accordion .fa-minus{
+    border: 1px solid #98CDF2;
+    padding: 5px
+}
+/*--second home--*/
+.bm-dark-accordion .bm-accordion .fa-minus,
+.bm-dark-accordion .bm-accordion .fa-plus{
+	border:1px solid #003284 !important;
+	 padding: 5px
+}
+.bm-service-list a{
+    color:#6EC1E4
+}
+.bm-service-list li{
+    color: #6EC1E4
+}
+.bm-service-list li:hover a{
+    color:#BD0113
+}
+.bm-service-list li:hover{
+     color:#BD0113
+}
+.bm-service-list ul{
+    padding-left: 20px
+}
+.bm-header-menu .menu-item-4681 .elementor-item{
+	background:#13367D !important
+}
+/*--new header */
+.bm-new-header .menu-item-4681 .elementor-item{
+    color: white !important;
+    border-radius:4px;
+    border: 1px solid #8DCA0A;
+	background-color: #8dca0a
+}
+.bm-new-header .menu-item-4681 .elementor-item:hover{
+    background-color:#A5E027 !important;
+    border: 1px solid #A5E027;
+    color: #ffffff !important
+}
+/*--footer submit btn ----*/
+.submit-btn input{
+   background-color:#13367D !important;
+	border:1px solid #13367D;
+}
+.submit-btn input:hover{
+	background-color:white !important;
+	color:#13367D
+}
+.bm-new-footer .submit-btn input{
+	background-color:#8DCA0A !important	;
+	border-radius:4px;
+    border:1px solid #8DCA0A
+}
+.bm-new-footer .submit-btn input:hover{
+ background-color:#A5E027 !important;
+	color:white !important;
+	border:1px solid #A5E027
+}
+.bm-new-footer .row .form-group input{
+	color:White
+}
+.bm-new-footer textarea{
+     background-color: #354689;
+     border: 1px solid white;
+     color: white;
+     border-radius: 0px;
+     max-height: 120px
+}
+.bm-footer textarea{
+	max-height:120px
+}
+.row .textarea{
+	 padding-top:0px !important
+}
+.bm-row{
+	margin-bottom:10px
+}
+/*--banner section vertical slider --*/
+.bm-vertical-slider .elementor-headline-dynamic-wrapper{
+	background-color:white;
+	padding:0px 5px
+}
+.elementor-headline-dynamic-wrapper.elementor-headline-typing-selected{
+	background-color:white !important
+}
+/*--blog input--*/
+.bm-blog-input .elementor-field-group-email{
+	display:block;
+	margin:0 auto;
+}
+/*--footer hide--*/
+.bm-optimize-form textarea{
+	max-height:160px
+}
+.bm-before-after .bmimg{
+    margin: 0px 20px !Important;
+    overflow: scroll;
+    max-height: 600px;
+    background-color: #eee !Important;
+}
+.bm-blog-iframe .bmimg{
+    max-height: 200px;
+    margin: 0px 20px !Important;
+    overflow: scroll;
+	background-color: #eee !Important;
+}
+.elementor-widget-portfolio a .elementor-portfolio-item__overlay {
+  background-color: #13367d!important;
+}
+.elementor-922 .elementor-element.elementor-element-8cfd65e a .elementor-portfolio-item__title {
+  color: #fff!important;
+  line-height: 130%!important;
+}
+[aria-label="Feedback - Show survey"] {
+        display: none !important;
+    }
+body div#wpadminbar {
+    display: block !important;
+}
+#content{
+	max-width: 100% !important;
+	padding: 0px !important;
+}
+[class*=".bm-header"] .elementor-column-gap-default,
+[class*=".bm-header"] .elementor-column-gap-default{
+	max-width: 1240px !important;
+}
+[class*=".bm-header"] .elementor-motion-effects-container,
+[class*=".bm-header"] .elementor-motion-effects-container{
+	background-color: #fff;
+}
+[class*=".bm-header"] .elementor-column-gap-default nav ul li a,
+[class*=".bm-header"] .elementor-column-gap-default nav ul li a{
+	font-family: Poppins !important;
+	font-weight: 400 !important;
+}
+.page-header,
+#site-footer{
+	display: none;
+}

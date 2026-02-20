@@ -1,0 +1,370 @@
+{
+    "key": "group_hero_section_fields",
+    "title": "Hero Section Fields",
+    "fields": [
+        {
+            "key": "field_hero_section_layout",
+            "label": "Layout",
+            "name": "layout",
+            "type": "select",
+            "instructions": "Choose the hero section layout variant.",
+            "required": 1,
+            "choices": {
+                "1": "Variant 1 – Two-column with process graphic",
+                "2": "Variant 2 – Centered layout",
+                "3": "Variant 3 – Two-column with form",
+                "4": "Variant 4 – Two-column with quote & logos"
+            },
+            "default_value": "1",
+            "return_format": "value"
+        },
+        {
+            "key": "field_hero_section_tag_text",
+            "label": "Tag Text",
+            "name": "tag_text",
+            "type": "text",
+            "instructions": "Small label text above the title.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "2" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "required": 1,
+            "instructions": "Main heading text."
+        },
+        {
+            "key": "field_hero_section_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "Supporting paragraph text below the title.",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_hero_section_checklist_items",
+            "label": "Checklist Items",
+            "name": "checklist_items",
+            "type": "repeater",
+            "instructions": "Feature bullet points with check icons.",
+            "min": 0,
+            "max": 10,
+            "layout": "table",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_hero_section_checklist_item_text",
+                    "label": "Item Text",
+                    "name": "item_text",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        },
+        {
+            "key": "field_hero_section_button_text",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "instructions": "CTA button label.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "2" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_button_url",
+            "label": "Button URL",
+            "name": "button_url",
+            "type": "url",
+            "instructions": "CTA button link destination.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "2" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_button_icon",
+            "label": "Button Icon",
+            "name": "button_icon",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "instructions": "Optional icon displayed inside the CTA button.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "2" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_hero_image",
+            "label": "Hero Image",
+            "name": "hero_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "instructions": "Right-side featured image.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }],
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_quote_text",
+            "label": "Quote Text",
+            "name": "quote_text",
+            "type": "text",
+            "instructions": "Inspirational quote displayed below the hero image.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_quote_author",
+            "label": "Quote Author",
+            "name": "quote_author",
+            "type": "text",
+            "instructions": "Attribution line for the quote (e.g. 'Name | Title | Company').",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_email_placeholder",
+            "label": "Email Placeholder",
+            "name": "form_email_placeholder",
+            "type": "text",
+            "default_value": "Email Address",
+            "instructions": "Placeholder text for the email input field.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_website_placeholder",
+            "label": "Website Placeholder",
+            "name": "form_website_placeholder",
+            "type": "text",
+            "default_value": "Your Website",
+            "instructions": "Placeholder text for the website input field.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_button_text",
+            "label": "Form Button Text",
+            "name": "form_button_text",
+            "type": "text",
+            "default_value": "Ready to Migrate!",
+            "instructions": "Submit button label for the form.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_action_url",
+            "label": "Form Action URL",
+            "name": "form_action_url",
+            "type": "url",
+            "instructions": "URL where the form data is submitted.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_use_custom_code",
+            "label": "Use custom code",
+            "name": "form_use_custom_code",
+            "type": "true_false",
+            "instructions": "When enabled, show the Custom code block instead of the email/website form.",
+            "default_value": 0,
+            "ui": 1,
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "3" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_form_custom_code",
+            "label": "Custom code",
+            "name": "form_custom_code",
+            "type": "textarea",
+            "instructions": "HTML or embed code shown when \"Use custom code\" is enabled.",
+            "rows": 8,
+            "conditional_logic": [
+                [
+                    { "field": "field_hero_section_layout", "operator": "==", "value": "3" },
+                    { "field": "field_hero_section_form_use_custom_code", "operator": "==", "value": "1" }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_section_wistia_video_id",
+            "label": "Wistia Video ID",
+            "name": "wistia_video_id",
+            "type": "text",
+            "instructions": "Wistia video ID (e.g. from https://home.wistia.com/medias/abc123 — use abc123). When set, the video is embedded in the right column.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_background_image",
+            "label": "Background Pattern",
+            "name": "background_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "instructions": "Optional decorative background pattern overlay.",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }]
+            ]
+        },
+        {
+            "key": "field_hero_section_process_steps",
+            "label": "Process Steps",
+            "name": "process_steps",
+            "type": "repeater",
+            "instructions": "Steps displayed around the circular orbit graphic (Ideate, Design, Develop, QA, Deploy, Analyze).",
+            "min": 0,
+            "max": 6,
+            "layout": "table",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_hero_section_step_icon",
+                    "label": "Icon",
+                    "name": "step_icon",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_hero_section_step_label",
+                    "label": "Label",
+                    "name": "step_label",
+                    "type": "text",
+                    "required": 1
+                }
+            ]
+        },
+        {
+            "key": "field_hero_section_center_logos",
+            "label": "Center Logos",
+            "name": "center_logos",
+            "type": "repeater",
+            "instructions": "Brand logos displayed inside the center circle.",
+            "min": 0,
+            "max": 8,
+            "layout": "table",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_hero_section_center_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                }
+            ]
+        },
+        {
+            "key": "field_hero_section_testimonials",
+            "label": "Testimonials",
+            "name": "testimonials",
+            "type": "repeater",
+            "instructions": "Testimonial slides shown in the center circle slider.",
+            "min": 0,
+            "max": 10,
+            "layout": "block",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "1" }]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_hero_section_testimonial_avatar",
+                    "label": "Avatar",
+                    "name": "avatar",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_hero_section_testimonial_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hero_section_testimonial_position",
+                    "label": "Position / Title",
+                    "name": "position",
+                    "type": "text"
+                },
+                {
+                    "key": "field_hero_section_testimonial_quote",
+                    "label": "Quote",
+                    "name": "quote",
+                    "type": "textarea",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_hero_section_testimonial_rating",
+                    "label": "Rating Image",
+                    "name": "rating_image",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "instructions": "Star rating or review platform logo image."
+                }
+            ]
+        },
+        {
+            "key": "field_hero_section_partner_logos",
+            "label": "Partner / Tool Logos",
+            "name": "partner_logos",
+            "type": "repeater",
+            "instructions": "Logos displayed in the bottom bar (e.g. testing platforms, partners).",
+            "min": 0,
+            "max": 20,
+            "layout": "table",
+            "conditional_logic": [
+                [{ "field": "field_hero_section_layout", "operator": "==", "value": "4" }]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_hero_section_partner_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/hero-section"
+            }
+        ]
+    ]
+}

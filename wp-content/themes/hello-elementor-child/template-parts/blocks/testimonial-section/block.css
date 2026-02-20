@@ -1,0 +1,248 @@
+/**
+ * Testimonial Section Block Styles
+ */
+
+.testimonial-wrapper .clients-say {
+  color: var(--Heading, #112446);
+  font-family: Poppins, sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%;
+}
+
+.testimonial-wrapper .testimonial-txt-wrapper {
+  max-width: 365px;
+}
+
+.testimonial-wrapper .testimonial-col-2 {
+  max-width: 780px;
+}
+
+.testimonial-wrapper p.testimonial-txt {
+  font-weight: 600;
+}
+
+.testimonial-main .testimonial-cols .col-2-cols {
+  max-width: fit-content;
+}
+
+.testimonial-wrapper .bm-testimonial-img img {
+  width: 80px;
+}
+
+.testimonial-wrapper .bm-testimonial-img {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-wrapper .bm-testimonial-img .col-2-col2-designation {
+  flex-direction: column;
+}
+
+.testimonial-wrapper .bm-testimonial-img .img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.testimonial-wrapper .bm-testimonial-img .img img {
+  width: 100%;
+}
+
+
+
+#testimonial-section {
+    padding: 0px 0px 60px;
+}
+
+/* #testimonial-section .swiper-slide {
+    height: 375px;
+} */
+
+.get-in-touch-form-business {
+  width: 100%;
+}
+
+p.testimonial-txt {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.3em;
+  text-align: left;
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #13367d;
+  margin-bottom: 23px;
+}
+
+.clients-say {
+  font-family: Nunito;
+  font-size: 41px;
+  font-weight: 700;
+  line-height: 52.5px;
+  text-align: left;
+  color: #112446;
+}
+
+.testimonial-txt-wrapper {
+  max-width: 350px;
+}
+
+.testimonial-main{
+  max-width: 1240px;
+  margin: auto;
+}
+
+.testimonial-cols {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 42px; */
+  /* gap: 100px; */
+}
+
+p.col-2-col2-txt {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26.56px;
+  text-align: left;
+  color: #313f58;
+}
+
+p.col-2-col2-name {
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  color: #112446;
+  margin-bottom: 0;
+}
+
+.col-2-col2-designation {
+  font-family: Be Vietnam Pro;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16.8px;
+  text-align: left;
+  color: #112446;
+  display: flex;
+  gap: 5px;
+}
+
+.col-2-cols {
+  display: flex;
+  align-items: center;
+  max-width: 755px;
+  gap: 37px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1019607843);
+  padding: 35px 44px;
+  background: #f4f7fa;
+  border-radius: 12px;
+}
+
+.col-2-col1-img-wrapper {
+  width: 238px;
+}
+
+img.col-2col1-img {
+  width: 100%;
+  display: none;
+}
+
+.col-2-col1 {
+  display: none;
+}
+
+p.col-2-col2-txt {
+  margin-bottom: 32px;
+  font-family: "Be Vietnam Pro";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.testimonial-col-2 {
+  max-width: 800px;
+}
+
+.swiper-wrapper-2 {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-col-2 .swiper-btn-prev-2 {
+  width: 40px !important;
+  height: 40px !important;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  background-color: #ffffff;
+  left: 10px !important;
+  font-weight: bold;
+  color: #13367d !important;
+}
+
+.swiper-btn-prev-2:after {
+  content: "prev";
+  font-size: 16px !important;
+  color: #13367d !important;
+}
+
+.swiper-rtl .swiper-button-next:after {
+  content: "prev";
+  font-size: 16px !important;
+   color: #13367d !important;
+}
+
+.testimonial-col-2 .swiper-btn-next-2 {
+  width: 40px !important;
+  height: 40px !important;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute !important;
+  right: 10px !important;
+  font-weight: bold;
+  color: #13367d !important;
+}
+
+.swiper-btn-next-2:after {
+  content: "next";
+  font-size: 16px !important;
+  color: #13367D  !important;;
+}
+
+.swiper-rtl .swiper-button-next:after {
+  content: "prev";
+  font-size: 16px !important;
+color: #13367D !important;
+}
+
+img.col-2-col2-quote {
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial-col-2 .swiper-slide-2 {
+  padding: 0px 30px;
+}
+.testimonial-col-2 .swiper-wrapper {
+   margin-bottom: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .testimonial-wrapper div.col-2-col2-quote-wrapper {
+    order: -2;
+  }
+	.testimonial-cols{
+		flex-direction: column;
+	}
+	#testimonial-section {
+    padding: 0px 0px 40px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+  .testimonial-wrapper .testimonial-col-2 {
+    max-width: 100%;
+  }
+}
+
+

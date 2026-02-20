@@ -1,0 +1,123 @@
+[
+    {
+        "key": "group_test_development_process",
+        "title": "Test Development Process Block Fields",
+        "fields": [
+            {
+                "key": "field_test_development_process_heading",
+                "label": "Section Heading",
+                "name": "heading",
+                "type": "text",
+                "instructions": "Main heading for the A/B test development process section",
+                "default_value": "What's Our A/B Test Development Process"
+            },
+            {
+                "key": "field_test_development_process_description",
+                "label": "Description",
+                "name": "description",
+                "type": "text",
+                "instructions": "Short description below the heading",
+                "default_value": "The most common we hear are below."
+            },
+            {
+                "key": "field_test_development_process_steps",
+                "label": "Process Steps",
+                "name": "steps",
+                "type": "repeater",
+                "instructions": "Add each step of the A/B test development process",
+                "min": 1,
+                "max": 10,
+                "layout": "block",
+                "button_label": "Add Step",
+                "sub_fields": [
+                    {
+                        "key": "field_test_development_process_tab_label",
+                        "label": "Tab Label",
+                        "name": "tab_label",
+                        "type": "text",
+                        "instructions": "Label shown on the tab (e.g. \"1. Assess the Idea\")",
+                        "default_value": "1. Assess the Idea"
+                    },
+                    {
+                        "key": "field_test_development_process_tab_icon",
+                        "label": "Tab Icon",
+                        "name": "tab_icon",
+                        "type": "image",
+                        "instructions": "Icon image for the tab (SVG or PNG)",
+                        "return_format": "array"
+                    },
+                    {
+                        "key": "field_test_development_process_panel_image",
+                        "label": "Panel Image",
+                        "name": "panel_image",
+                        "type": "image",
+                        "instructions": "Image displayed in the step content panel",
+                        "return_format": "array"
+                    },
+                    {
+                        "key": "field_test_development_process_panel_image_alt",
+                        "label": "Panel Image Alt Text",
+                        "name": "panel_image_alt",
+                        "type": "text",
+                        "instructions": "Alt text for the panel image",
+                        "default_value": "Step illustration"
+                    },
+                    {
+                        "key": "field_test_development_process_panel_description",
+                        "label": "Panel Description",
+                        "name": "panel_description",
+                        "type": "textarea",
+                        "instructions": "Short description for this step",
+                        "default_value": "We start by immersing ourselves in your project to fully grasp your vision."
+                    },
+                    {
+                        "key": "field_test_development_process_panel_list",
+                        "label": "Panel List Items",
+                        "name": "panel_list",
+                        "type": "repeater",
+                        "instructions": "Bullet list items for this step",
+                        "min": 0,
+                        "max": 20,
+                        "layout": "table",
+                        "button_label": "Add Item",
+                        "sub_fields": [
+                            {
+                                "key": "field_test_development_process_list_item",
+                                "label": "Item",
+                                "name": "item",
+                                "type": "text",
+                                "default_value": "Idea Assessment"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_test_development_process_cta_text",
+                        "label": "CTA Button Text",
+                        "name": "cta_text",
+                        "type": "text",
+                        "instructions": "Call-to-action button text",
+                        "default_value": "Let's Start the Conversation"
+                    },
+                    {
+                        "key": "field_test_development_process_cta_url",
+                        "label": "CTA Button URL",
+                        "name": "cta_url",
+                        "type": "url",
+                        "instructions": "Link URL for the CTA button",
+                        "default_value": "#"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf/test-development-process"
+                }
+            ]
+        ],
+        "description": "Fields for A/B Test Development Process custom block"
+    }
+]

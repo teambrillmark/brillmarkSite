@@ -1,0 +1,454 @@
+{
+    "key": "group_our_service_mobile_section_fields",
+    "title": "Our Service Mobile Section Fields",
+    "fields": [
+        {
+            "key": "field_our_service_section_section_title",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our Services",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_our_service_section_check_icon",
+            "label": "Check Icon",
+            "name": "check_icon",
+            "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "default_value": "..\/images\/check.png",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_our_service_section_service_tabs",
+            "label": "Services",
+            "name": "service_tabs",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "layout": "block",
+            "button_label": "Add Service",
+            "default_value": [
+                {
+                    "service_title": "A\/B Test Development",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/ab-tasty.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/vwo.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/adobetarget.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/sitespect.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/varify.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/kameleoon.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Custom A\/B Test Setup: Creating split tests, multivariate tests, and personalization strategies with accurate events and tags to track and observe every move of the users."
+                        },
+                        {
+                            "feature_text": "Full Implementation: Handling everything from coding variations to setting up tests on your preferred platforms."
+                        },
+                        {
+                            "feature_text": "In-Depth Analysis: Monitoring experiments, creating GA reports, and interpreting results to visualize and inform data-driven decisions."
+                        },
+                        {
+                            "feature_text": "Continuous Optimization: Providing and helping to implement recommendations for ongoing optimizations."
+                        }
+                    ],
+                    "cta_text": "Know More About A\/B Testing Services",
+                    "cta_link": "#"
+                },
+                {
+                    "service_title": "Shopify Development",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/ab-tasty.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Custom Shopify Theme Development: Building tailored themes that match your brand identity and business requirements."
+                        },
+                        {
+                            "feature_text": "App Integration: Seamlessly integrating third-party apps to enhance your store's functionality."
+                        },
+                        {
+                            "feature_text": "Performance Optimization: Improving site speed and user experience for better conversions."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Wordpress Development",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Custom Theme Development: Creating unique WordPress themes tailored to your brand and business needs."
+                        },
+                        {
+                            "feature_text": "Plugin Development: Building custom plugins to extend WordPress functionality."
+                        },
+                        {
+                            "feature_text": "Website Optimization: Enhancing performance, security, and SEO for your WordPress site."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Web Development",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/ab-tasty.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Full-Stack Development: End-to-end web development using modern technologies and frameworks."
+                        },
+                        {
+                            "feature_text": "Responsive Design: Creating mobile-friendly websites that work across all devices."
+                        },
+                        {
+                            "feature_text": "API Integration: Connecting your website with third-party services and platforms."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Design Services",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "UI\/UX Design: Creating intuitive and visually appealing user interfaces."
+                        },
+                        {
+                            "feature_text": "Brand Identity: Developing comprehensive brand guidelines and visual assets."
+                        },
+                        {
+                            "feature_text": "Prototyping: Building interactive prototypes to validate design concepts."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Quality Assurance",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Manual Testing: Comprehensive testing to identify bugs and usability issues."
+                        },
+                        {
+                            "feature_text": "Automated Testing: Setting up automated test suites for continuous quality assurance."
+                        },
+                        {
+                            "feature_text": "Performance Testing: Load and stress testing to ensure your application handles traffic."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Google Analytics Setup & Support",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "GA4 Implementation: Setting up Google Analytics 4 with proper tracking configurations."
+                        },
+                        {
+                            "feature_text": "Custom Reports: Creating tailored dashboards and reports for data-driven insights."
+                        },
+                        {
+                            "feature_text": "Event Tracking: Implementing comprehensive event tracking for user behavior analysis."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "(CRO) Strategies",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/optimizely.png"
+                        },
+                        {
+                            "logo_image": "..\/images\/ab-tasty.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Conversion Audits: Analyzing your website to identify conversion optimization opportunities."
+                        },
+                        {
+                            "feature_text": "Landing Page Optimization: Improving landing pages to maximize conversions."
+                        },
+                        {
+                            "feature_text": "User Research: Conducting user studies to understand behavior and preferences."
+                        }
+                    ]
+                },
+                {
+                    "service_title": "Dedicated Development Resources",
+                    "platform_logos": [
+                        {
+                            "logo_image": "..\/images\/convert.png"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "feature_text": "Dedicated Teams: Providing skilled developers exclusively for your projects."
+                        },
+                        {
+                            "feature_text": "Flexible Engagement: Scalable resources based on your project requirements."
+                        },
+                        {
+                            "feature_text": "Technical Expertise: Access to specialists in various technologies and frameworks."
+                        }
+                    ]
+                }
+            ],
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_our_service_section_service_title",
+                    "label": "Service Title",
+                    "name": "service_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_our_service_section_platform_logos",
+                    "label": "Platform Logos",
+                    "name": "platform_logos",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 0,
+                    "layout": "table",
+                    "button_label": "Add Logo",
+                    "max": 0,
+                    "collapsed": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_our_service_section_logo_image",
+                            "label": "Logo Image",
+                            "name": "logo_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_our_service_section_features",
+                    "label": "Features",
+                    "name": "features",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "layout": "table",
+                    "button_label": "Add Feature",
+                    "max": 0,
+                    "collapsed": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_our_service_section_feature_text",
+                            "label": "Feature Text",
+                            "name": "feature_text",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "rows": 2,
+                            "default_value": "",
+                            "new_lines": "",
+                            "maxlength": "",
+                            "placeholder": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_our_service_section_tab_cta_text",
+                    "label": "CTA Button Text",
+                    "name": "cta_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_our_service_section_tab_cta_link",
+                    "label": "CTA Button Link",
+                    "name": "cta_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/our-service-mobile-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "modified": 1770616528
+}
