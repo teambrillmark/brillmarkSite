@@ -104,3 +104,4 @@ wp-config.php
 *.wmv
 *.avi
 
+node_modules
