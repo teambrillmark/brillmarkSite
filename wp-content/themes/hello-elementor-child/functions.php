@@ -1,5 +1,5 @@
 <?php
-// testing branch connection
+// testing workflow in branch connection
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
