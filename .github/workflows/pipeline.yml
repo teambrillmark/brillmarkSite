@@ -3,17 +3,24 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - '**'
+      - main
   workflow_dispatch:
 
 jobs:
   lint:
-    name: Lint
+    name: PHP Lint Check
     runs-on: ubuntu-latest
     container: php:8.0
     steps:
       - uses: actions/checkout@v3
-      - run: bash lint.bash
+
+      - name: Run PHP Syntax Check
+        run: |
+          echo "Running PHP lint check..."
+          find wp-content -type f -name "*.php" -print0 | while IFS= read -r -d '' file; do
+            php -l "$file" || exit 1
+          done
+          echo "No PHP syntax errors found ✅"
 
   deploy-staging:
     name: Deploy to Staging
