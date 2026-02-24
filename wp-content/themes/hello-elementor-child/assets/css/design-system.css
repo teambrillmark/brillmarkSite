@@ -6,10 +6,9 @@
 @import "./typography.css";
 @import "./header.css";
 @import "./footer.css";
+@import "./layout.css";
 
-body{
-	background-color: red;
-}
+
 /**
  * Brillmark Design System — memorable global classes.
  * Load this file before block CSS (e.g. in your theme with common.css).
