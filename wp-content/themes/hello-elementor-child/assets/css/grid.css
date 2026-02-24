@@ -22,8 +22,6 @@
   max-width:     var(--container-desktop);   /* --container-desktop → 1240px */
   margin-right:  auto;
   margin-left:   auto;
-  padding-right: var(--space-5);             /* --space-5 → 20px             */
-  padding-left:  var(--space-5);             /* --space-5 → 20px             */
 }
 
 /* Tablet — up to 1239px */
@@ -37,8 +35,6 @@
 @media (max-width: 767px) {
   .container {
     max-width: var(--container-mobile);      /* --container-mobile → 767px   */
-    padding-right: var(--space-4);           /* --space-4 → 16px             */
-    padding-left:  var(--space-4);           /* --space-4 → 16px             */
   }
 }
 
@@ -46,14 +42,6 @@
 /* ─────────────────────────────────────────
    SECTION ANCHOR OFFSETS
 ───────────────────────────────────────── */
-.section-anchor {
-  position: relative;
-  top: -95px;
-}
-
-body.logged-in .section-anchor {
-  top: -125px;
-}
 
 article            { margin: 0; }
 article .post,
