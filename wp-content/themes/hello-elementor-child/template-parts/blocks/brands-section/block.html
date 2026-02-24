@@ -1,55 +1,39 @@
-<!-- Brands Section - Clean HTML Structure -->
-<section class="brands-section-section">
+<!-- Static structure reference. Actual output is in block.php with ACF fields. -->
+<section class="brands-section-section brands-section-section--grid">
   <div class="container">
-    <div class="brands-section-wrapper">
+    <div class="brands-section-content">
       <div class="brands-section-header">
-        <div class="brands-section-titles">
-          <span class="brands-section-subtitle">Trusted by</span>
-          <h2 class="brands-section-heading">200+ Leading Agencies and Global Brands</h2>
-        </div>
-        <p class="brands-section-description">Our expertise has accelerated growth for companies worldwide. Join the businesses that trust BrillMark for high-velocity A/B testing and comprehensive digital solutions.</p>
+        <h2 class="brands-section-title">Section title</h2>
+        <p class="brands-section-description">Optional description text.</p>
       </div>
+
+      <!-- Grid layout -->
       <div class="brands-section-logos">
-        <div class="brands-section-logos-row">
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="31" alt="Funnel" src="../images/funnel.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="22" alt="Growth" src="../images/growth.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="56" alt="Conversion" src="../images/conversion.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="30" alt="Test" src="../images/test.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="28" alt="Rock" src="../images/rock.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="43" alt="Reap" src="../images/reap.png">
+        <div class="brands-section-logo-row brands-section-logo-row-1">
+          <div class="brands-section-logo-item brands-section-logo-item--1"><img src="" alt="Brand logo 1"></div>
+          <div class="brands-section-logo-item brands-section-logo-item--2"><img src="" alt="Brand logo 2"></div>
+          <!-- ... up to 6 -->
+        </div>
+        <div class="brands-section-logo-row brands-section-logo-row-2">
+          <div class="brands-section-logo-item brands-section-logo-item--7"><img src="" alt="Brand logo 7"></div>
+          <!-- ... -->
+        </div>
+      </div>
+
+      <!-- Slider layout (alternative): .brands-section-section--slider -->
+      <!-- <div class="brands-section-slider">
+        <button type="button" class="brands-section-slider-prev">←</button>
+        <div class="brands-section-slider-viewport">
+          <div class="brands-section-slider-track">
+            <div class="brands-section-slider-slide">...</div>
           </div>
         </div>
-        <div class="brands-section-logos-row">
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="29" alt="Avid" src="../images/avid.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="96" alt="Biglight" src="../images/biglight.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="60" alt="Relias" src="../images/relias.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="31" alt="Empire" src="../images/empire.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="58" alt="Elite" src="../images/elite.png">
-          </div>
-          <div class="brands-section-logo-item">
-            <img class="brands-section-logo-img" width="150" height="40" alt="Loreal" src="../images/loreal.png">
-          </div>
-        </div>
+        <button type="button" class="brands-section-slider-next">→</button>
+      </div> -->
+
+      <!-- CTA (when enabled) -->
+      <div class="brands-section-cta">
+        <a href="#" class="brands-section-cta-link">Learn more</a>
       </div>
     </div>
   </div>

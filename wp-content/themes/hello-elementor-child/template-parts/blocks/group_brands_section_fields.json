@@ -1,13 +1,13 @@
 {
     "key": "group_brands_section_fields",
-    "title": "Brands Section Fields",
+    "title": "Brands Section Block Fields",
     "fields": [
         {
-            "key": "field_brands-section_subtitle",
-            "label": "Subtitle",
-            "name": "subtitle",
+            "key": "field_brands_section_title",
+            "label": "Title",
+            "name": "title",
             "type": "text",
-            "instructions": "Small text displayed above the main heading (e.g., 'Trusted by')",
+            "instructions": "",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
@@ -15,37 +15,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Trusted by",
-            "placeholder": "Enter subtitle text",
+            "default_value": "",
             "maxlength": "",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_brands-section_heading",
-            "label": "Heading",
-            "name": "heading",
-            "type": "text",
-            "instructions": "Main section heading",
-            "required": 1,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "200+ Leading Agencies and Global Brands",
-            "placeholder": "Enter main heading",
-            "maxlength": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_brands-section_description",
+            "key": "field_brands_section_description",
             "label": "Description",
             "name": "description",
             "type": "textarea",
-            "instructions": "Description text below the heading",
+            "instructions": "",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
@@ -53,18 +34,158 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Our expertise has accelerated growth for companies worldwide. Join the businesses that trust BrillMark for high-velocity A\/B testing and comprehensive digital solutions.",
-            "placeholder": "Enter section description",
-            "rows": 3,
+            "default_value": "",
             "new_lines": "",
-            "maxlength": ""
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
-            "key": "field_brands-section_brand_logos",
-            "label": "Brand Logos",
+            "key": "field_brands_section_logo_layout",
+            "label": "Logo layout",
+            "name": "logo_layout",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid": "Grid",
+                "slider": "Slider"
+            },
+            "default_value": "grid",
+            "allow_null": 0,
+            "return_format": "value",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_brands_section_slides_to_show",
+            "label": "Slides to show",
+            "name": "slides_to_show",
+            "type": "number",
+            "instructions": "Number of logos visible at once (slider layout). Leave 0 or empty for automatic width.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_brands_section_logo_layout",
+                        "operator": "==",
+                        "value": "slider"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 8,
+            "step": 1,
+            "default_value": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_brands_section_background_color",
+            "label": "Background (color or gradient)",
+            "name": "background_color",
+            "type": "text",
+            "instructions": "Solid color (e.g. #f5f5f5 or rgb(255,255,255)) or CSS gradient (e.g. linear-gradient(to right, #fff, #eee)).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placeholder": "#ffffff or linear-gradient(...)",
+            "default_value": "",
+            "maxlength": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_brands_section_show_cta",
+            "label": "Show CTA",
+            "name": "show_cta",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 0,
+            "message": "",
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_brands_section_cta_text",
+            "label": "CTA text",
+            "name": "cta_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_brands_section_show_cta",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_brands_section_cta_url",
+            "label": "CTA URL",
+            "name": "cta_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_brands_section_show_cta",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_brands_section_brand_logos",
+            "label": "Brand logos",
             "name": "brand_logos",
             "type": "repeater",
-            "instructions": "Add brand\/partner logos. Logos will be arranged in rows automatically.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
@@ -73,68 +194,18 @@
                 "id": ""
             },
             "min": 0,
-            "max": 24,
-            "layout": "table",
-            "button_label": "Add Logo",
-            "default_value": [
-                {
-                    "field_brands-section_logo_image": "..\/images\/funnel.png",
-                    "field_brands-section_logo_alt": "Funnel"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/growth.png",
-                    "field_brands-section_logo_alt": "Growth"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/conversion.png",
-                    "field_brands-section_logo_alt": "Conversion"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/test.png",
-                    "field_brands-section_logo_alt": "Test"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/rock.png",
-                    "field_brands-section_logo_alt": "Rock"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/reap.png",
-                    "field_brands-section_logo_alt": "Reap"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/avid.png",
-                    "field_brands-section_logo_alt": "Avid"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/biglight.png",
-                    "field_brands-section_logo_alt": "Biglight"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/relias.png",
-                    "field_brands-section_logo_alt": "Relias"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/empire.png",
-                    "field_brands-section_logo_alt": "Empire"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/elite.png",
-                    "field_brands-section_logo_alt": "Elite"
-                },
-                {
-                    "field_brands-section_logo_image": "..\/images\/loreal.png",
-                    "field_brands-section_logo_alt": "Loreal"
-                }
-            ],
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add logo",
             "collapsed": "",
             "sub_fields": [
                 {
-                    "key": "field_brands-section_logo_image",
-                    "label": "Logo Image",
+                    "key": "field_brands_section_logo_image",
+                    "label": "Logo image",
                     "name": "logo_image",
                     "type": "image",
-                    "instructions": "Upload brand logo (recommended: PNG with transparent background)",
-                    "required": 1,
+                    "instructions": "",
+                    "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
                         "width": "",
@@ -142,7 +213,7 @@
                         "id": ""
                     },
                     "return_format": "array",
-                    "preview_size": "thumbnail",
+                    "preview_size": "medium",
                     "library": "all",
                     "min_width": 0,
                     "min_height": 0,
@@ -153,11 +224,11 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_brands-section_logo_alt",
-                    "label": "Logo Alt Text",
+                    "key": "field_brands_section_logo_alt",
+                    "label": "Logo alt text",
                     "name": "logo_alt",
                     "type": "text",
-                    "instructions": "Alternative text for accessibility (defaults to image alt if empty)",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
@@ -165,51 +236,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "placeholder": "Brand name",
                     "default_value": "",
                     "maxlength": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_brands-section_logo_width",
-                    "label": "Logo Width",
-                    "name": "logo_width",
-                    "type": "number",
-                    "instructions": "Image width",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "placeholder": "Logo Width",
-                    "default_value": "",
-                    "min": "",
-                    "max": "",
-                    "step": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_brands-section_logo_height",
-                    "label": "Logo Height",
-                    "name": "logo_height",
-                    "type": "number",
-                    "instructions": "Image height",
-                    "required": 0,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "placeholder": "Logo Height",
-                    "default_value": "",
-                    "min": "",
-                    "max": "",
-                    "step": "",
+                    "placeholder": "",
                     "prepend": "",
                     "append": ""
                 }
@@ -230,8 +259,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": true,
-    "description": "Fields for the Brands Section block displaying trusted partner logos",
-    "modified": 1771239712
+    "description": "",
+    "modified": 1771903193
 }

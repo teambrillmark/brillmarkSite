@@ -1,0 +1,49 @@
+/* ============================================================
+   layout.css — Brillmark Design System
+   Flex and layout utility classes
+   Requires: variables.css
+   Rule: NO hardcoded values — use var(--token) only
+   ============================================================ */
+
+/* ─────────────────────────────────────────
+   FLEX CONTAINER
+───────────────────────────────────────── */
+.flex       { display: flex; }
+.flex-row   { flex-direction: row; }
+.flex-col   { flex-direction: column; }
+.items-center     { align-items: center; }
+.items-start      { align-items: flex-start; }
+.items-end        { align-items: flex-end; }
+.justify-center   { justify-content: center; }
+.justify-start    { justify-content: flex-start; }
+.justify-between  { justify-content: space-between; }
+.flex-wrap  { flex-wrap: wrap; }
+
+/* ─────────────────────────────────────────
+   GAP (uses --space-* from variables.css)
+───────────────────────────────────────── */
+.gap-1  { gap: var(--space-1);  }
+.gap-2  { gap: var(--space-2);  }
+.gap-3  { gap: var(--space-3);  }
+.gap-4  { gap: var(--space-4);  }
+.gap-5  { gap: var(--space-5);  }
+.gap-6  { gap: var(--space-6);  }
+.gap-8  { gap: var(--space-8);  }
+.gap-10 { gap: var(--space-10); }
+.gap-12 { gap: var(--space-12); }
+.gap-15 { gap: var(--space-15); }
+.gap-20 { gap: var(--space-20); }
+
+/* ─────────────────────────────────────────
+   TEXT ALIGN
+───────────────────────────────────────── */
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+
+/* ─────────────────────────────────────────
+   MARGIN & PADDING UTILITIES
+───────────────────────────────────────── */
+.m-0    { margin: 0; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.p-0    { padding: 0; }

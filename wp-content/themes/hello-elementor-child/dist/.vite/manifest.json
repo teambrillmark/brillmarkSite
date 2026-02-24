@@ -1,0 +1,11 @@
+{
+  "assets/js/blocks-entry.js": {
+    "file": "js/blocks.min.js",
+    "name": "blocks",
+    "src": "assets/js/blocks-entry.js",
+    "isEntry": true,
+    "css": [
+      "css/blocks.min.css"
+    ]
+  }
+}

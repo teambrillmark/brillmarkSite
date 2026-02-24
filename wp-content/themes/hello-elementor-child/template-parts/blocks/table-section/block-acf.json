@@ -1,0 +1,150 @@
+{
+  "key": "group_table_section_fields",
+  "title": "Table Section Fields",
+  "fields": [
+    {
+      "key": "field_table_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": ""
+    },
+    {
+      "key": "field_table_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": ""
+    },
+    {
+      "key": "field_table_section_columns",
+      "label": "Table Columns",
+      "name": "columns",
+      "type": "repeater",
+      "instructions": "Add one item per column. Each column has a header and its own list of cells (one per row). Column-based structure makes it easy to style or popout a whole column.",
+      "min": 1,
+      "layout": "block",
+      "button_label": "Add Column",
+      "sub_fields": [
+        {
+          "key": "field_table_section_col_header",
+          "label": "Header",
+          "name": "header_label",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_table_section_col_header_bg",
+          "label": "Header Background Color",
+          "name": "header_background_color",
+          "type": "color_picker",
+          "instructions": "Optional. Header cell only."
+        },
+        {
+          "key": "field_table_section_col_full_bg",
+          "label": "Whole Column Background Color",
+          "name": "column_background_color",
+          "type": "color_picker",
+          "instructions": "Optional. Header + all body cells in this column."
+        },
+        {
+          "key": "field_table_section_col_cells",
+          "label": "Cells",
+          "name": "cells",
+          "type": "repeater",
+          "instructions": "One cell per row (add same number of cells in each column for a uniform table).",
+          "min": 0,
+          "layout": "table",
+          "button_label": "Add Cell",
+          "sub_fields": [
+            {
+              "key": "field_table_section_cell_content",
+              "label": "Content",
+              "name": "content",
+              "type": "textarea",
+              "rows": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_table_section_tab_options",
+      "label": "Table Options",
+      "name": "",
+      "type": "tab"
+    },
+    {
+      "key": "field_table_section_transpose",
+      "label": "Transpose table",
+      "name": "transpose_table",
+      "type": "true_false",
+      "instructions": "When OFF (default): header row at top (e.g. FEATURE | BENEFIT), then one row per pair. When ON: one displayed row per column (all features in one row, all benefits in another).",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_table_section_popout",
+      "label": "Popout Column",
+      "name": "popout_column",
+      "type": "true_false",
+      "instructions": "Visually highlight one column (e.g. border or shadow).",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_table_section_popout_index",
+      "label": "Column to Popout",
+      "name": "popout_column_index",
+      "type": "number",
+      "instructions": "Which column to popout (1 = first column).",
+      "min": 1,
+      "default_value": 1,
+      "conditional_logic": [[{"field": "field_table_section_popout", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_table_section_odd_row_bg",
+      "label": "Odd Row Background",
+      "name": "odd_row_bg",
+      "type": "true_false",
+      "instructions": "Apply a background color to odd rows (1st, 3rd, 5th…).",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_table_section_odd_row_bg_color",
+      "label": "Odd Row Background Color",
+      "name": "odd_row_bg_color",
+      "type": "color_picker",
+      "default_value": "#f4f7fa",
+      "conditional_logic": [[{"field": "field_table_section_odd_row_bg", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_table_section_even_row_bg",
+      "label": "Even Row Background",
+      "name": "even_row_bg",
+      "type": "true_false",
+      "instructions": "Apply a background color to even rows (2nd, 4th, 6th…).",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_table_section_even_row_bg_color",
+      "label": "Even Row Background Color",
+      "name": "even_row_bg_color",
+      "type": "color_picker",
+      "default_value": "#ffffff",
+      "conditional_logic": [[{"field": "field_table_section_even_row_bg", "operator": "==", "value": "1"}]]
+    }
+  ],
+  "location": [[{"param": "block", "operator": "==", "value": "acf/table-section"}]],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Column-based table: each column has header + its cells; popout and column colors apply per column."
+}

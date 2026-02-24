@@ -1,0 +1,104 @@
+/* ============================================================
+   buttons.css — Brillmark Design System
+   Source: 3 real button patterns unified
+   Requires: variables.css
+   Rule: NO hardcoded values — use var(--token) only
+
+   USAGE:
+   <a class="btn btn-primary">Label</a>              default
+   <a class="btn btn-primary btn-lg">Label</a>       large / banner
+   <a class="btn btn-primary btn-sm">Label</a>       small / card
+   <a class="btn btn-primary btn-full">Label</a>     full width
+   <a class="btn btn-outline">Label</a>              outline / ghost
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   BASE — shared across all buttons
+───────────────────────────────────────── */
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  font-family:     var(--font-primary);         /* --font-primary        */
+  font-size:       var(--fs-body);              /* --fs-body    → 16px   */
+  font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+  font-style:      normal;
+  line-height:     var(--lh-small);             /* --lh-small   → 22px   */
+  text-decoration: none;
+  white-space:     nowrap;
+  cursor:          pointer;
+  border:          none;
+  border-radius:   var(--radius-sm);            /* --radius-sm  →  6px   */
+  transition:      var(--transition-btn);       /* --transition-btn      */
+}
+
+
+/* ─────────────────────────────────────────
+   PRIMARY — default size
+   padding: 10px 20px
+   Source: .navbar-section-cta-btn
+───────────────────────────────────────── */
+.btn-primary {
+  padding:          var(--space-2) var(--space-5);  /* --space-2 --space-5 → 8px 20px */
+  background-color: var(--color-cta);               /* --color-cta   → #13367D        */
+  color:            var(--color-bg-light);           /* --color-bg-light → #F4F7FA     */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--color-cta-hover);         /* --color-cta-hover → #0960A8    */
+  color:            var(--color-bg-light);           /* --color-bg-light → #F4F7FA     */
+}
+
+
+/* ─────────────────────────────────────────
+   PRIMARY — LARGE
+   padding: 13px 33px · max-width: 363px
+   Source: .banner-experimentation-section .btn
+───────────────────────────────────────── */
+.btn-primary.btn-lg {
+  padding:   var(--space-3) var(--space-8);    /* --space-3 --space-8 → 12px 32px */
+  max-width: 363px;
+  width:     100%;
+}
+
+
+/* ─────────────────────────────────────────
+   PRIMARY — SMALL
+   height: 50px · min-width: 116px
+   Source: .flexible-card-btn
+───────────────────────────────────────── */
+.btn-primary.btn-sm {
+  padding:   var(--space-2) var(--space-5);    /* --space-2 --space-5 → 8px 20px  */
+  min-width: 116px;
+  height:    50px;
+}
+
+
+/* ─────────────────────────────────────────
+   FULL WIDTH MODIFIER
+───────────────────────────────────────── */
+.btn-full {
+  display:   inline-block;
+  width:     100%;
+  max-width: 363px;
+}
+
+
+/* ─────────────────────────────────────────
+   OUTLINE / GHOST
+   Secondary actions on light backgrounds
+───────────────────────────────────────── */
+.btn-outline {
+  padding:          var(--space-2) var(--space-5);  /* --space-2 --space-5 → 8px 20px */
+  background-color: transparent;
+  border:           1px solid var(--color-cta);     /* --color-cta → #13367D           */
+  color:            var(--color-cta);               /* --color-cta → #13367D           */
+}
+
+.btn-outline:hover {
+  background-color: var(--color-cta);               /* --color-cta   → #13367D         */
+  color:            var(--color-white);             /* --color-white → #ffffff          */
+}

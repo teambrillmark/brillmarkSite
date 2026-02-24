@@ -1,0 +1,147 @@
+/* ============================================================
+   typography.css — Brillmark Design System
+   Font import · Headings · Body · Links
+   Requires: variables.css
+   Rule: NO hardcoded values — use var(--token) only
+   ============================================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+
+   /* ─────────────────────────────────────────
+      BASE BODY
+   ───────────────────────────────────────── */
+   body {
+     font-family:  var(--font-primary);         /* --font-primary        */
+     font-size:    var(--fs-body);              /* --fs-body             */
+     font-weight:  var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:  var(--lh-body);              /* --lh-body             */
+     color:        var(--color-primary);        /* --color-primary       */
+     -webkit-font-smoothing: antialiased;
+   }
+   
+   
+   /* ─────────────────────────────────────────
+      HEADINGS — H1 to H6
+      Desktop sizes (base)
+      Mobile overrides at bottom of file
+   ───────────────────────────────────────── */
+   h1 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h1);               /* --fs-h1  → 44px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h1);               /* --lh-h1  → 56px       */
+     text-decoration: none;
+   }
+   
+   h2 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h2);               /* --fs-h2  → 40px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h2);               /* --lh-h2  → 54px       */
+     text-decoration: none;
+   }
+   
+   h3 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h3);               /* --fs-h3  → 30px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h3);               /* --lh-h3  → 44px       */
+     text-decoration: none;
+   }
+   
+   h4 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h4);               /* --fs-h4  → 24px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h4);               /* --lh-h4  → 36px       */
+     text-decoration: none;
+   }
+   
+   h5 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h5);               /* --fs-h5  → 20px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h5);               /* --lh-h5  → 30px       */
+     text-decoration: none;
+   }
+   
+   h6 {
+     font-family:     var(--font-primary);         /* --font-primary        */
+     font-size:       var(--fs-h6);               /* --fs-h6  → 18px       */
+     font-weight:     var(--font-weight-regular);  /* --font-weight-regular */
+     line-height:     var(--lh-h6);               /* --lh-h6  → 28px       */
+     text-decoration: none;
+   }
+   
+   
+   /* ─────────────────────────────────────────
+      PARAGRAPH & SMALL TEXT
+   ───────────────────────────────────────── */
+   p {
+     font-family:     var(--font-primary);        /* --font-primary      */
+     font-size:       var(--fs-body);             /* --fs-body → 16px    */
+     font-weight:     var(--font-weight-light);   /* --font-weight-light */
+     line-height:     var(--lh-body);             /* --lh-body → 24px    */
+     text-decoration: none;
+   }
+   
+   small,
+   .text-small {
+     font-family:  var(--font-primary);           /* --font-primary      */
+     font-size:    var(--fs-small);               /* --fs-small → 14px   */
+     line-height:  var(--lh-small);               /* --lh-small → 22px   */
+   }
+   
+   
+   /* ─────────────────────────────────────────
+      UTILITY CLASSES (for use on spans, divs, etc.)
+   ───────────────────────────────────────── */
+   .text-body {
+     font-family:  var(--font-primary);
+     font-size:    var(--fs-body);
+     line-height:  var(--lh-body);
+   }
+   
+   .text-h6 {
+     font-family:  var(--font-primary);
+     font-size:    var(--fs-h6);
+     line-height:  var(--lh-h6);
+   }
+   
+   .font-weight-light {
+     font-weight: var(--font-weight-light);
+   }
+   
+   .leading-1 {
+     line-height: 1;
+   }
+   
+   
+   /* ─────────────────────────────────────────
+      LINKS
+   ───────────────────────────────────────── */
+   a {
+     color:           var(--color-link);          /* --color-link        */
+     text-decoration: underline;
+     transition:      var(--transition-btn);      /* --transition-btn    */
+   }
+   
+   a:hover {
+     opacity: 0.75;
+   }
+   
+   
+   /* ─────────────────────────────────────────
+      RESPONSIVE — MOBILE (max 767px)
+      Scale headings down for small screens
+   ───────────────────────────────────────── */
+   @media (max-width: 767px) {
+     h1 { font-size: 32px; line-height: 42px; }
+     h2 { font-size: 28px; line-height: 38px; }
+     h3 { font-size: 24px; line-height: 34px; }
+     h4 { font-size: 20px; line-height: 30px; }
+     h5 { font-size: 18px; line-height: 28px; }
+     h6 { font-size: var(--fs-body); line-height: var(--lh-body); }  /* --fs-body --lh-body */
+   }
+   

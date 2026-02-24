@@ -30,276 +30,6 @@ function load_custom_scripts() {
 add_action('wp_enqueue_scripts', 'load_custom_scripts');
 
 
-function get_rebranding_header() {
-    get_template_part('/global-templates/rebranding-header');
-}
-
-function get_rebranding_footer() {
-    get_template_part('/global-templates/rebranding-footer');
-}
-
-function get_rebranding_nav() {
-    get_template_part('/global-templates/rebranding-nav');
-}
-
-// Main Sections
-
-function get_rebranding_hero() {
-    get_template_part('/main-sections-templates/rebranding-hero');
-}
-
-function get_rebranding_client_slider() {
-    get_template_part('/main-sections-templates/rebranding-client-slider');
-}
-function get_rebranding_pill_group() {
-    get_template_part('/main-sections-templates/rebranding-pill-group');
-}
-
-function get_rebranding_galaxy_advanced_web(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-advanced-web');
-}
-
-function get_rebranding_galaxy_mockup_design(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-mockup-design');
-}
-
-function get_rebranding_galaxy_data_driven_cro(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-data-driven-cro');
-}
-
-function get_rebranding_galaxy_technical_support(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-technical-support');
-}
-
-function get_rebranding_galaxy_shopify_dev(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-shopify-dev');
-}
-
-function get_rebranding_galaxy_wordpress_dev(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-wordpress-dev');
-}
-
-function get_rebranding_galaxy_quality_assurance(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-quality-assurance');
-}
-
-function get_rebranding_galaxy_ab_test(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-ab-test');
-}
-
-function get_rebranding_ready_to_work(){
-    get_template_part('/main-sections-templates/rebranding-ready-to-work');
-}
-
-function get_rebranding_cro_shop_accordion(){
-    get_template_part('/main-sections-templates/rebranding-cro-shop-accordion');
-}
-
-function get_rebranding_cro_dev_process_tab(){
-    get_template_part('/main-sections-templates/rebranding-cro-dev-process-tab');
-}
-
-function get_rebranding_testimonial(){
-    get_template_part('/main-sections-templates/rebranding-testimonial');
-}
-
-function get_rebranding_counter(){
-    get_template_part('/main-sections-templates/rebranding-counter');
-}
-
-function get_rebranding_blog_slider(){
-    get_template_part('/main-sections-templates/rebranding-blog-slider');
-}
-
-function get_rebranding_pricing(){
-    get_template_part('/main-sections-templates/rebranding-pricing');
-}
-
-function get_rebranding_testing_process(){
-    get_template_part('/main-sections-templates/rebranding-testing-process');
-}
-
-function get_rebranding_contact_form(){
-    get_template_part('/main-sections-templates/rebranding-contact-form');
-}
-
-function get_rebranding_faq(){
-    get_template_part('/main-sections-templates/rebranding-faq');
-}
-
-function get_rebranding_services_hero(){
-    get_template_part('/small-templates/rebranding-services-hero');
-}
-function get_rebranding_service_bundle(){
-    get_template_part('/small-templates/rebranding-service-bundle');
-}
-function get_rebranding_scroller(){
-    get_template_part('/main-sections-templates/rebranding-scroller-faq');
-}
-
-function get_rebranding_galaxy_new_ab_test(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-new-ab-test-web');
-}
-function get_rebranding_galaxy_new_wordpress_development(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-new-wordpress-development');
-}
-function get_rebranding_galaxy_new_shopify_development(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-new-shopify-development');
-}
-function get_rebranding_galaxy_new_mockup_design(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-new-mockup-design');
-}
-function get_rebranding_galaxy_new_quality_assurance(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-new-quality-assurance');
-}
-
-function get_rebranding_galaxy_dedicated_dev(){
-    get_template_part('/main-sections-templates/rebranding-galaxy-dedicated-dev');
-}
-
-// function custom_filter_assets_on_template() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Ensure Contact Form 7 assets are enqueued correctly
-//         add_action( 'wp_enqueue_scripts', function() {
-//             // Dequeue all styles and scripts except Contact Form 7 and allowed assets
-//             global $wp_styles, $wp_scripts;
-
-//             // Define the handles of scripts and styles you want to keep
-//             $allowed_styles = array( 'contact-form-7' );
-//             $allowed_scripts = array( 'contact-form-7' );
-
-//             // Dequeue styles
-//             foreach ( $wp_styles->queue as $handle ) {
-//                 if ( strpos( $handle, 'pojo-a11y' ) === false && ! in_array( $handle, $allowed_styles ) ) {
-//                     wp_dequeue_style( $handle );
-//                 }
-//             }
-
-//             // Dequeue scripts
-//             foreach ( $wp_scripts->queue as $handle ) {
-//                 if ( strpos( $handle, 'pojo-a11y' ) === false && ! in_array( $handle, $allowed_scripts ) ) {
-//                     wp_dequeue_script( $handle );
-//                 }
-//             }
-//         }, 100 );
-
-//         // Remove unwanted elements from wp_head and wp_footer
-//         add_action( 'wp_head', 'custom_remove_unwanted_wp_head_elements', 1 );
-//         add_action( 'wp_footer', 'custom_remove_unwanted_wp_footer_elements', 1 );
-//     }
-// }
-
-// function custom_remove_unwanted_wp_head_elements() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Remove all unwanted tags from wp_head
-//         remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // Remove emojis
-//         remove_action( 'wp_head', 'wp_generator' ); // Remove WP version info
-//         // Retain styles related to Contact Form 7
-//         add_action( 'wp_enqueue_scripts', function() {
-//             if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
-//                 wpcf7_enqueue_styles();
-//             }
-//         }, 100 );
-//     }
-// }
-
-// function custom_remove_unwanted_wp_footer_elements() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Remove all unwanted tags from wp_footer
-//         remove_action( 'wp_footer', 'wp_footer' ); // Remove default footer actions
-//         // Retain scripts related to Contact Form 7
-//         add_action( 'wp_enqueue_scripts', function() {
-//             if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
-//                 wpcf7_enqueue_scripts();
-//             }
-//         }, 100 );
-//     }
-// }
-
-// add_action( 'wp_enqueue_scripts', 'custom_filter_assets_on_template' );
-
-
-
-
-
-// function custom_filter_assets_on_template() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Dequeue all styles and scripts except Contact Form 7 and allowed assets
-//         add_action( 'wp_enqueue_scripts', function() {
-//             global $wp_styles, $wp_scripts;
-
-//             // Define the handles of scripts and styles you want to keep
-//             $allowed_styles = array( 'contact-form-7' );
-//             $allowed_scripts = array( 'contact-form-7' );
-
-//             // Dequeue styles
-//             foreach ( $wp_styles->queue as $handle ) {
-//                 if ( strpos( $handle, 'pojo-a11y' ) === false && ! in_array( $handle, $allowed_styles ) ) {
-//                     wp_dequeue_style( $handle );
-//                 }
-//             }
-
-//             // Dequeue scripts
-//             foreach ( $wp_scripts->queue as $handle ) {
-//                 if ( strpos( $handle, 'pojo-a11y' ) === false && ! in_array( $handle, $allowed_scripts ) ) {
-//                     wp_dequeue_script( $handle );
-//                 }
-//             }
-//         }, 100 );
-
-//         // Remove unwanted elements from wp_head and wp_footer
-//         add_action( 'wp_head', 'custom_remove_unwanted_wp_head_elements', 1 );
-//         add_action( 'wp_footer', 'custom_remove_unwanted_wp_footer_elements', 1 );
-//     }
-// }
-
-// function custom_remove_unwanted_wp_head_elements() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Remove all unwanted tags from wp_head
-//         remove_action( 'wp_head', 'wp_print_styles', 8 ); // Remove styles
-//         remove_action( 'wp_head', 'wp_print_scripts', 8 ); // Remove scripts
-//         remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // Remove emojis
-//         remove_action( 'wp_head', 'wp_generator' ); // Remove WP version info
-//     }
-// }
-
-// function custom_remove_unwanted_wp_footer_elements() {
-//     if ( is_page_template( 'bm-website-rebranding.php' ) ) {
-//         // Remove all unwanted tags from wp_footer
-//         remove_action( 'wp_footer', 'wp_print_footer_scripts', 5 ); // Remove footer scripts
-//         remove_action( 'wp_footer', 'wp_footer' ); // Remove default footer actions
-//     }
-// }
-
-// add_action( 'wp_enqueue_scripts', 'custom_filter_assets_on_template' );
-
-
-
-// function custom_remove_elementor_assets() {
-//     if (is_page_template('bm-website-rebranding.php')) {
-//         global $wp_styles, $wp_scripts;
-
-//         // Loop through and dequeue styles
-//         foreach ($wp_styles->registered as $handle => $style) {
-//             if (strpos($handle, 'elementor') !== false) {
-//                 wp_dequeue_style($handle);
-//                 wp_deregister_style($handle);
-//             }
-//         }
-
-//         // Loop through and dequeue scripts
-//         foreach ($wp_scripts->registered as $handle => $script) {
-//             if (strpos($handle, 'elementor') !== false) {
-//                 wp_dequeue_script($handle);
-//                 wp_deregister_script($handle);
-//             }
-//         }
-//     }
-// }
-// add_action('wp_enqueue_scripts', 'custom_remove_elementor_assets', 100);
-
-
-
 function custom_remove_elementor_assets() {
     if (is_page_template('bm-website-rebranding.php')) {
         global $wp_styles, $wp_scripts;
@@ -728,28 +458,6 @@ function debug_acf_field_groups() {
     }
 }
 
-/* =========================================================
-   SWIPER GLOBAL REGISTRATION
-========================================================= */
-function theme_register_swiper() {
-
-    wp_register_style(
-        'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
-        [],
-        null
-    );
-
-    wp_register_script(
-        'swiper-js',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
-        [],
-        null,
-        true
-    );
-}
-add_action('wp_enqueue_scripts', 'theme_register_swiper');
-add_action('enqueue_block_editor_assets', 'theme_register_swiper');
 
 //add a global option in the side panel
 if( function_exists('acf_add_options_page') ) {
@@ -765,45 +473,6 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-//Global header and footer js and css
-function theme_global_styles() {
-   wp_enqueue_style(
-		'header-style',
-		get_stylesheet_directory_uri() . '/assets/css/header.css',
-		array('hello-elementor', 'hello-elementor-theme-style'),
-		filemtime(get_stylesheet_directory() . '/assets/css/header.css')
-	);
-
-	wp_enqueue_style(
-		'common',
-		get_stylesheet_directory_uri() . '/assets/css/common.css',
-		array('hello-elementor', 'hello-elementor-theme-style'),
-		filemtime(get_stylesheet_directory() . '/assets/css/common.css')
-	);
-
-	wp_enqueue_style(
-		'design-system',
-		get_stylesheet_directory_uri() . '/assets/css/design-system.css',
-		array('hello-elementor', 'hello-elementor-theme-style'),
-		filemtime(get_stylesheet_directory() . '/assets/css/design-system.css')
-	);
-
-	wp_enqueue_style(
-		'footer-style',
-		get_stylesheet_directory_uri() . '/assets/css/footer.css',
-		array('hello-elementor', 'hello-elementor-theme-style'),
-		filemtime(get_stylesheet_directory() . '/assets/css/footer.css')
-	);
-	
-	// HEADER JS
-    wp_enqueue_script(
-        'theme-header-script',
-        get_stylesheet_directory_uri() . '/assets/js/header.js',
-        array('jquery'), // remove if not using jQuery
-        true // load in footer
-    );
-}
-add_action('wp_enqueue_scripts', 'theme_global_styles');
 
 /**
  * Helper: Generate ACF Block ID and Classes
@@ -857,3 +526,40 @@ function allow_woff2_uploads($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'allow_woff2_uploads');
+
+function theme_enqueue_vite_assets() {
+
+    $manifest_path = get_stylesheet_directory() . '/dist/.vite/manifest.json';
+
+    if (!file_exists($manifest_path)) {
+        return;
+    }
+
+    $manifest = json_decode(file_get_contents($manifest_path), true);
+
+    if (!isset($manifest['assets/js/blocks-entry.js'])) {
+        return;
+    }
+
+    $main = $manifest['assets/js/blocks-entry.js'];
+
+    wp_enqueue_script(
+        'theme-main',
+        get_stylesheet_directory_uri() . '/dist/' . $main['file'],
+        [],
+        null,
+        true
+    );
+
+    if (!empty($main['css'])) {
+        foreach ($main['css'] as $css_file) {
+            wp_enqueue_style(
+                'theme-style',
+                get_stylesheet_directory_uri() . '/dist/' . $css_file,
+                [],
+                null
+            );
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_vite_assets');

@@ -19,25 +19,6 @@ if (function_exists('acf_register_block_type')) {
         'icon'            => 'cover-image',
         'mode'            => 'preview',
         'supports'        => ['align' => ['wide', 'full']],
-        'enqueue_assets'  => function () use ($dir, $uri) {
-            if (file_exists($dir . '/block.css')) {
-                wp_enqueue_style(
-                    'hero-section-style',
-                    $uri . '/block.css',
-                    [],
-                    filemtime($dir . '/block.css')
-                );
-            }
-            if (file_exists($dir . '/block.js')) {
-                wp_enqueue_script(
-                    'hero-section-js',
-                    $uri . '/block.js',
-                    [],
-                    filemtime($dir . '/block.js'),
-                    true
-                );
-            }
-        }
     ]);
 }
 ?>

@@ -1,80 +1,70 @@
 (function () {
 
-  /* ---------------------------
-     INIT ONE BLOCK
-  ---------------------------- */
-  function initBrandsBlock(section) {
+  /* ---
+     INIT ONE BLOCK (ONCE ONLY)
+     ---- */
+  function initBrandsSection(section) {
     if (!section || section.dataset.jsInitialized) return;
     section.dataset.jsInitialized = "true";
 
-    /* --- Logo Entrance Animation --- */
-    const logoItems = section.querySelectorAll('.brands-section-logo-item');
-
-    logoItems.forEach((item, index) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(20px)';
-      item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            }, index * 100);
-            observer.unobserve(item);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      observer.observe(item);
-    });
-
-    /* --- Hover Scale Effect --- */
-    const logoImages = section.querySelectorAll('.brands-section-logo-img');
-
-    logoImages.forEach(img => {
-      img.addEventListener('mouseenter', () => {
-        img.style.transform = 'scale(1.05)';
-        img.style.transition = 'transform 0.3s ease';
-      });
-
-      img.addEventListener('mouseleave', () => {
-        img.style.transform = 'scale(1)';
-      });
-    });
-
+    try {
+      if (typeof window.initSwiperInRoot === 'function') {
+        window.initSwiperInRoot(section);
+      }
+    } catch (error) {
+      console.error('BrandsSection block init error:', error);
+    }
   }
 
-  /* ---------------------------
-     INIT ALL EXISTING BLOCKS
-  ---------------------------- */
-  function initAllBrands() {
-    document.querySelectorAll('.brands-section-section')
-      .forEach(initBrandsBlock);
+  /* ---
+     INIT ALL BLOCKS
+     ---- */
+  function initAllBrandsSections() {
+    document.querySelectorAll('.brands-section-section').forEach(function (section) {
+      try {
+        initBrandsSection(section);
+      } catch (e) {
+        console.error('BrandsSection section init error:', e);
+      }
+    });
   }
 
-  /* ---------------------------
+  /* ---
      FRONTEND LOAD
-  ---------------------------- */
-  document.addEventListener('DOMContentLoaded', initAllBrands);
+     ---- */
+  if (!document.body.classList.contains('block-editor-page')) {
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        initAllBrandsSections();
+      } catch (e) {
+        console.error('BrandsSection load error:', e);
+      }
+    });
+  }
 
-  /* ---------------------------
-     ACF EDITOR PREVIEW
-  ---------------------------- */
+  /* ---
+     ACF EDITOR PREVIEW (must not break editor)
+     ---- */
   if (window.acf) {
     window.acf.addAction('render_block_preview/type=brands-section', function ($block) {
-      initBrandsBlock($block[0]);
+      try {
+        if ($block && $block[0]) initBrandsSection($block[0]);
+      } catch (e) {
+        console.error('BrandsSection preview error:', e);
+      }
     });
   }
 
-  /* ---------------------------
-     GUTENBERG RE-RENDER WATCHER
-  ---------------------------- */
-  const observer = new MutationObserver(initAllBrands);
+  /* ---
+     GUTENBERG RERENDER WATCHER
+     ---- */
+  var observer = new MutationObserver(function () {
+    try {
+      initAllBrandsSections();
+    } catch (e) {
+      console.error('BrandsSection rerender error:', e);
+    }
+  });
   observer.observe(document.body, { childList: true, subtree: true });
 
 })();

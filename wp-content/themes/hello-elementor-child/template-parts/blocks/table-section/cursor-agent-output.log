@@ -1,0 +1,86 @@
+Let me first look at the visual references and existing block structure for patterns.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/table-section-1.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/table-section-2.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/table-section-3.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/table-section-4.png
+
+Searched files (template-parts/components/blocks/*/block-config.php)
+
+Searched files (template-parts/components/blocks/*/block.php)
+
+Searched files (template-parts/**/block-config.php)
+
+Searched files (template-parts/**/block.php)
+
+Grepped (theme_get_block_wrapper_attributes)
+
+Grepped (theme_get_block_wrapper_attributes)
+
+Searched files (**/blocks/**/block-config.php)
+
+Searched files (**/brands-section/**)
+
+Searched files (assets/css/*.css)
+
+Searched files (**/block-config.php)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/example-output/faq-section/block-config.php
+
+Searched files (example-output/faq-section/*)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/variables.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/typography.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/example-output/faq-section/block.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/example-output/faq-section/block-acf.json
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/layout.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/spacing.css
+I'll analyze all 4 variants, review the design system, and create the complete block. Let me set up the task and start building.
+$ mkdir -p /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section (exit 0)
+Now I'll create all 6 files. Let me start with `block-config.php`, `block.html`, and `block-acf.json` in parallel.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block-config.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.html
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block-acf.json
+Now creating the block.php with all 4 variant layouts.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.php
+Now creating block.css and block.js.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.js
+Now creating the comprehensive block.css with all 4 variant styles.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.css
+Let me verify all 6 files are in place.
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/ (exit 0)
+All 6 files are created. Let me do a quick validation pass to check for any issues.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.css
+I notice the section padding is missing from the common styles. Let me add it.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.css
+Now let me also add the mobile section padding override to the responsive section.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/table-section/block.css
+All 6 files are complete. Here's a summary of what was created:
+
+**`template-parts/components/blocks/table-section/`**
+
+| File | Purpose |
+|------|---------|
+| `block-config.php` | ACF block registration (no enqueue_assets; Vite handles bundles) |
+| `block.html` | Clean reference HTML for Variant 1 |
+| `block.php` | Conditional layout markup using `$layout = get_field('layout')` with `if/elseif` for all 4 variants. Uses `theme_get_block_wrapper_attributes` and `data-variant` attribute. |
+| `block.css` | All styles scoped per variant via `[data-variant="N"]` selectors. Uses design-system vars (`--fs-h2`, `--color-primary`, `--container-desktop`, etc.). Responsive with horizontal scroll on tablet/mobile. |
+| `block.js` | IIFE with `initTableSection(section)` guard, ACF preview hook (`render_block_preview/type=table-section`), MutationObserver, and try-catch error handling throughout. |
+| `block-acf.json` | Layout select field (1-4) + `title`, `description`, `col1_header`-`col4_header` (col3/col4 with conditional_logic), and `table_rows` repeater with 4 column sub_fields. |
+
+**Variant layout mapping:**
+- **1** -- 3-column comparison grid (Metric / Others / With BrillMark), white bg, highlight column in `#e4f1f9`
+- **2** -- 2-column feature/benefit (Feature sidebar + Benefit descriptions), `#f4f7fa` bg, blue `#0960a8` header for benefits, alternating row colors
+- **3** -- 3-column criteria comparison (Criteria dimmed at 60% opacity / BrillMark elevated with shadow / Competitor), `#f4f7fa` bg, 15px border-radius corners
+- **4** -- 4-column metrics table (Metric / Before / After / Increase %), `#ecf5fa` bg, alternating `#eceff1`/white stripes, larger font on increase column

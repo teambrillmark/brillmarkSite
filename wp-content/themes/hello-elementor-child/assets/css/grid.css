@@ -1,0 +1,60 @@
+/* ============================================================
+   grid.css — Brillmark Design System
+   Container widths · Breakpoints
+   Requires: variables.css
+   Rule: NO hardcoded values — use var(--token) only
+
+   Breakpoints:
+   Desktop  → 1240px+
+   Tablet   → 768px – 1239px
+   Mobile   → up to 767px
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   CONTAINER
+   Desktop:  1240px  → --container-desktop
+   Tablet:    991px  → --container-tablet
+   Mobile:    767px  → --container-mobile
+───────────────────────────────────────── */
+.container {
+  width:         100%;
+  max-width:     var(--container-desktop);   /* --container-desktop → 1240px */
+  margin-right:  auto;
+  margin-left:   auto;
+  padding-right: var(--space-5);             /* --space-5 → 20px             */
+  padding-left:  var(--space-5);             /* --space-5 → 20px             */
+}
+
+/* Tablet — up to 1239px */
+@media (max-width: 1239px) {
+  .container {
+    max-width: var(--container-tablet);      /* --container-tablet → 991px   */
+  }
+}
+
+/* Mobile — up to 767px */
+@media (max-width: 767px) {
+  .container {
+    max-width: var(--container-mobile);      /* --container-mobile → 767px   */
+    padding-right: var(--space-4);           /* --space-4 → 16px             */
+    padding-left:  var(--space-4);           /* --space-4 → 16px             */
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   SECTION ANCHOR OFFSETS
+───────────────────────────────────────── */
+.section-anchor {
+  position: relative;
+  top: -95px;
+}
+
+body.logged-in .section-anchor {
+  top: -125px;
+}
+
+article            { margin: 0; }
+article .post,
+article .page      { margin: 0; }

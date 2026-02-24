@@ -1,0 +1,31 @@
+/* ============================================================
+   colors.css — Brillmark Design System
+   Background · Text color utility classes
+   Requires: variables.css
+   Rule: NO hardcoded values — use var(--token) only
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   BACKGROUND COLORS
+───────────────────────────────────────── */
+.bg-primary   { background-color: var(--color-primary);   }  /* --color-primary   #112446 */
+.bg-secondary { background-color: var(--color-secondary); }  /* --color-secondary #313F58 */
+.bg-cta       { background-color: var(--color-cta);       }  /* --color-cta       #13367D */
+.bg-footer    { background-color: var(--color-footer-bg); }  /* --color-footer-bg #0960A8 */
+.bg-blue-tint { background-color: var(--color-bg-blue);   }  /* --color-bg-blue   #DAEEF8 */
+.bg-light     { background-color: var(--color-bg-light);  }  /* --color-bg-light  #F4F7FA */
+.bg-white     { background-color: var(--color-white);     }  /* --color-white     #ffffff */
+.bg-black     { background-color: var(--color-black);     }  /* --color-black     #000000 */
+
+
+/* ─────────────────────────────────────────
+   TEXT COLORS
+───────────────────────────────────────── */
+.text-primary   { color: var(--color-primary);   }  /* --color-primary   #112446 */
+.text-secondary { color: var(--color-secondary); }  /* --color-secondary #313F58 */
+.text-cta       { color: var(--color-cta);       }  /* --color-cta       #13367D */
+.text-white     { color: var(--color-white);     }  /* --color-white     #ffffff */
+.text-black     { color: var(--color-black);     }  /* --color-black     #000000 */
+.text-link      { color: var(--color-link);      }  /* --color-link      #007AFF */
+.text-icon      { color: var(--color-icon);      }  /* --color-icon      #333333 */

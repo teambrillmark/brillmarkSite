@@ -3,118 +3,193 @@
     "title": "Video Testimonial Section Fields",
     "fields": [
         {
+            "key": "field_video_testimonial_section_layout",
+            "label": "Layout",
+            "name": "layout",
+            "type": "select",
+            "instructions": "Variant 1: Two video cards side by side. Variant 2: Video card + text testimonial cards. Variant 3: Two video cards + text testimonial slider.",
+            "required": 1,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Variant 1",
+                "2": "Variant 2",
+                "3": "Variant 3"
+            },
+            "default_value": 1,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_video_testimonial_section_title",
-            "label": "Section Title",
-            "name": "section_title",
+            "label": "Title",
+            "name": "title",
             "type": "text",
             "instructions": "",
             "required": 1,
             "conditional_logic": false,
             "wrapper": {
-                "width": "100",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "What Our Clients Say About Us?",
-            "placeholder": "Enter section title",
             "maxlength": "",
+            "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
             "key": "field_video_testimonial_section_description",
-            "label": "Section Description",
-            "name": "section_description",
+            "label": "Description",
+            "name": "description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
-                "width": "100",
+                "width": "",
                 "class": "",
                 "id": ""
             },
             "default_value": "See how our Optimizely test developers have helped businesses like yours achieve measurable growth and maximize their potential.",
-            "placeholder": "Enter section description",
-            "rows": 3,
             "new_lines": "",
-            "maxlength": ""
+            "maxlength": "",
+            "placeholder": "",
+            "rows": ""
         },
         {
-            "key": "field_video_testimonial_section_testimonials",
-            "label": "Testimonials",
-            "name": "testimonials",
-            "type": "repeater",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": false,
+            "key": "field_video_testimonial_section_flip_layout",
+            "label": "Flip Layout",
+            "name": "flip_layout",
+            "type": "true_false",
+            "instructions": "Swap the video and text columns (video moves to right).",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_video_testimonial_section_layout",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "100",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "min": 1,
-            "max": 10,
+            "default_value": 0,
+            "ui": 1,
+            "message": "",
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_video_testimonial_section_video_testimonials",
+            "label": "Video Testimonials",
+            "name": "video_testimonials",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
             "layout": "block",
-            "button_label": "Add Testimonial",
-            "default_value": [
-                {
-                    "wistia_video_id": "2iu6hq6ljd",
-                    "quote": "\"I can't imagine any other companies out there in a similar situation where we are that couldn't benefit from the services that Brillmark offers.\"",
-                    "company_logo": "..\/images\/65a7a806c4af33bfc009126c06899a50f7473189.png",
-                    "author_name": "Gayla Worrell",
-                    "author_title": "CRO at Snap Finance"
-                },
-                {
-                    "wistia_video_id": "mcrgmpq1xb",
-                    "quote": "\"Finding competent professionals to bring conversion research ideas to life and deliver results for clients without breaking their websites was challenging – until I found Brillmark. Abdullah and his team are a group of technical A-players with whom anyone serious about CRO and experimentation should work*. I've collaborated with them on multiple projects, and they consistently prove they're the real deal.\"",
-                    "company_logo": "",
-                    "author_name": "Amara Abara",
-                    "author_title": "Founder at Conversion Central"
-                }
-            ],
+            "button_label": "Add Video Testimonial",
             "collapsed": "",
             "sub_fields": [
                 {
-                    "key": "field_video_testimonial_section_wistia_video_id",
+                    "key": "field_video_testimonial_section_vt_wistia_id",
                     "label": "Wistia Video ID",
-                    "name": "wistia_video_id",
+                    "name": "wistia_id",
                     "type": "text",
-                    "instructions": "Enter the Wistia video ID from the embed URL. Example: For 'https:\/\/fast.wistia.net\/embed\/iframe\/2iu6hq6ljd', the ID is '2iu6hq6ljd'",
-                    "required": 1,
+                    "instructions": "Enter the Wistia video ID (e.g. from share URL company.wistia.com\/medias\/abc123xyz use abc123xyz).",
+                    "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Enter Wistia video ID (e.g., 2iu6hq6ljd)",
                     "maxlength": "",
+                    "placeholder": "",
                     "prepend": "",
                     "append": ""
                 },
                 {
-                    "key": "field_video_testimonial_section_quote",
-                    "label": "Testimonial Quote",
+                    "key": "field_video_testimonial_section_vt_quote",
+                    "label": "Quote",
                     "name": "quote",
                     "type": "textarea",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "100",
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 4,
+                    "new_lines": "br",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_video_testimonial_section_vt_person_name",
+                    "label": "Person Name",
+                    "name": "person_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Enter testimonial quote",
-                    "rows": 4,
-                    "new_lines": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
-                    "key": "field_video_testimonial_section_company_logo",
+                    "key": "field_video_testimonial_section_vt_person_title",
+                    "label": "Person Title",
+                    "name": "person_title",
+                    "type": "text",
+                    "instructions": "Role and company, e.g. \"CRO at Snap Finance\".",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_video_testimonial_section_vt_company_logo",
                     "label": "Company Logo",
                     "name": "company_logo",
                     "type": "image",
@@ -122,11 +197,11 @@
                     "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "array",
                     "preview_size": "thumbnail",
                     "library": "all",
                     "min_width": 0,
@@ -136,44 +211,108 @@
                     "max_height": 0,
                     "max_size": 0,
                     "mime_types": ""
-                },
+                }
+            ]
+        },
+        {
+            "key": "field_video_testimonial_section_text_testimonials",
+            "label": "Text Testimonials",
+            "name": "text_testimonials",
+            "type": "repeater",
+            "instructions": "Used in Variant 2 (stacked cards) and Variant 3 (slider).",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Text Testimonial",
+            "collapsed": "",
+            "sub_fields": [
                 {
-                    "key": "field_video_testimonial_section_author_name",
-                    "label": "Author Name",
-                    "name": "author_name",
-                    "type": "text",
+                    "key": "field_video_testimonial_section_tt_quote",
+                    "label": "Quote",
+                    "name": "quote",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 4,
+                    "new_lines": "br",
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_video_testimonial_section_tt_person_name",
+                    "label": "Person Name",
+                    "name": "person_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Enter author name",
                     "maxlength": "",
+                    "placeholder": "",
                     "prepend": "",
                     "append": ""
                 },
                 {
-                    "key": "field_video_testimonial_section_author_title",
-                    "label": "Author Title",
-                    "name": "author_title",
+                    "key": "field_video_testimonial_section_tt_person_title",
+                    "label": "Person Title",
+                    "name": "person_title",
                     "type": "text",
-                    "instructions": "",
-                    "required": 1,
+                    "instructions": "Role and company, e.g. \"Executive Creative Director at Ritual Beverage Company\".",
+                    "required": 0,
                     "conditional_logic": false,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "Enter author title",
                     "maxlength": "",
+                    "placeholder": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_video_testimonial_section_tt_company_logo",
+                    "label": "Company Logo",
+                    "name": "company_logo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         }
@@ -192,8 +331,8 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [],
     "active": true,
-    "description": "Fields for the Video Testimonial Section block",
-    "modified": 1770616528
+    "description": "Video testimonial section with 3 layout variants.",
+    "modified": 1771903193
 }
