@@ -3,6 +3,19 @@
   "title": "Table Section Fields",
   "fields": [
     {
+      "key": "field_table_section_variant",
+      "label": "Variant",
+      "name": "variant",
+      "type": "select",
+      "instructions": "Style variant for this block. The selected value is added as a class and data-variant on the section for custom styling.",
+      "choices": {
+        "default": "Default",
+        "compact": "Compact",
+        "bordered": "Bordered"
+      },
+      "default_value": "default"
+    },
+    {
       "key": "field_table_section_title",
       "label": "Title",
       "name": "title",

@@ -3,157 +3,147 @@
    Dynamic columns/rows; options: popout column, odd/even row bg, per-column bg
    ================================================================ */
 
-   .table-section-section {
-    font-family: var(--font-primary);
-  }
-  
-  .table-section-header {
-    margin-bottom: var(--space-10);
-  }
-  
-  .table-section-description {
-    max-width: 964px;
-  }
-  
+.table-section-section {
+  font-family: var(--font-primary);
+}
+
+.table-section-description {
+  max-width: 964px;
+}
+
+.table-section-table {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.table-section-row {
+  min-height: 56px;
+}
+
+.table-section-cell {
+  box-sizing: border-box;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+.table-section-row--header .table-section-cell {
+  min-height: 64px;
+  font-weight: 600;
+}
+
+.table-section-cell--header {
+  background-color: var(--color-cta);
+}
+
+/* Popout column: visual emphasis (border + shadow) */
+.table-section-cell--popout {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+/* First/last cell corner radius */
+.table-section-row:first-child .table-section-cell:first-child {
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+.table-section-row:first-child .table-section-cell:last-child {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.table-section-row:last-child .table-section-cell:first-child {
+  border-radius: 0 0 0 var(--radius-sm);
+}
+
+.table-section-row:last-child .table-section-cell:last-child {
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+/* Scrollable on small viewports */
+.table-section-table--scrollable {
+  position: relative;
+}
+
+/* Transposed layout: one row per column; first cell = row label, rest = content */
+
+/* Row label (first cell): white bg, dark primary text, bold, top-left aligned */
+.table-section-table--transposed .table-section-cell--transposed-header {
+  min-height: 64px;
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  border-right-width: 0;
+}
+
+.table-section-table--transposed .table-section-row .table-section-cell--transposed-header:only-child {
+  border-right-width: 1px;
+}
+
+/* Content cells: lighter grey text, top-left aligned; row odd/even bg shows through */
+.table-section-table--transposed .table-section-row .table-section-cell:not(.table-section-cell--transposed-header) {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-regular);
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+/* Vertical divider: first content cell gets left border to separate from label */
+.table-section-table--transposed .table-section-row .table-section-cell--transposed-header + .table-section-cell {
+  border-left: 1px solid rgba(51, 51, 51, 0.1);
+}
+
+/* Keep first column (label) white so row striping only shows on content cells */
+.table-section-table--transposed .table-section-row--odd .table-section-cell--transposed-header,
+.table-section-table--transposed .table-section-row--even .table-section-cell--transposed-header {
+  background-color: var(--color-white);
+}
+
+/* Optional: when user sets a custom header/column bg on transposed label, keep text readable */
+.table-section-table--transposed .table-section-cell--transposed-header[style*="background-color"] {
+  color: var(--color-white);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 1239px) {
   .table-section-table {
-    width: 100%;
-    max-width: 1200px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  
+
   .table-section-row {
-    display: grid;
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .table-section-title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .table-section-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .table-section-cell {
+    padding: var(--space-3) var(--space-4);
+    min-height: 48px;
+  }
+
+  .table-section-row--header .table-section-cell {
     min-height: 56px;
   }
-  
-  .table-section-cell {
-    box-sizing: border-box;
-    padding: var(--space-4) var(--space-5);
-    border: 1px solid rgba(51, 51, 51, 0.1);
-  }
-  
-  .table-section-row--header .table-section-cell {
-    min-height: 64px;
-    font-weight: 600;
-  }
-  
-  .table-section-cell--header {
-    background-color: var(--color-cta);
-  }
-  
-  /* Popout column: visual emphasis (border + shadow) */
-  .table-section-cell--popout {
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  }
-  
-  /* First/last cell corner radius */
-  .table-section-row:first-child .table-section-cell:first-child {
-    border-radius: var(--radius-sm) 0 0 0;
-  }
-  
-  .table-section-row:first-child .table-section-cell:last-child {
-    border-radius: 0 var(--radius-sm) 0 0;
-  }
-  
-  .table-section-row:last-child .table-section-cell:first-child {
-    border-radius: 0 0 0 var(--radius-sm);
-  }
-  
-  .table-section-row:last-child .table-section-cell:last-child {
-    border-radius: 0 0 var(--radius-sm) 0;
-  }
-  
-  /* Scrollable on small viewports */
-  .table-section-table--scrollable {
-    position: relative;
-  }
-  
-  /* Transposed layout: one row per column; first cell = row label, rest = content */
-  .table-section-table--transposed .table-section-row {
-    display: grid;
-    align-items: stretch;
-  }
-  
-  /* Row label (first cell): white bg, dark primary text, bold, top-left aligned */
-  .table-section-table--transposed .table-section-cell--transposed-header {
-    min-height: 64px;
-    padding: var(--space-4) var(--space-5);
-    background-color: var(--color-white);
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    border: 1px solid rgba(51, 51, 51, 0.1);
-    border-right-width: 0;
-  }
-  
-  .table-section-table--transposed .table-section-row .table-section-cell--transposed-header:only-child {
-    border-right-width: 1px;
-  }
-  
-  /* Content cells: lighter grey text, top-left aligned; row odd/even bg shows through */
-  .table-section-table--transposed .table-section-row .table-section-cell:not(.table-section-cell--transposed-header) {
-    color: var(--color-secondary);
-    font-weight: var(--font-weight-regular);
-    text-align: left;
-    display: flex;
-    align-items: flex-start;
-    padding: var(--space-4) var(--space-5);
-    border: 1px solid rgba(51, 51, 51, 0.1);
-  }
-  
-  /* Vertical divider: first content cell gets left border to separate from label */
-  .table-section-table--transposed .table-section-row .table-section-cell--transposed-header + .table-section-cell {
-    border-left: 1px solid rgba(51, 51, 51, 0.1);
-  }
-  
-  /* Keep first column (label) white so row striping only shows on content cells */
-  .table-section-table--transposed .table-section-row--odd .table-section-cell--transposed-header,
-  .table-section-table--transposed .table-section-row--even .table-section-cell--transposed-header {
-    background-color: var(--color-white);
-  }
-  
-  /* Optional: when user sets a custom header/column bg on transposed label, keep text readable */
-  .table-section-table--transposed .table-section-cell--transposed-header[style*="background-color"] {
-    color: var(--color-white);
-  }
-  
-  /* ================================================================
-     RESPONSIVE
-     ================================================================ */
-  @media (max-width: 1239px) {
-    .table-section-table {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  
-    .table-section-row {
-      min-width: 600px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .table-section-title {
-      font-size: 28px;
-      line-height: 38px;
-    }
-  
-    .table-section-header {
-      margin-bottom: var(--space-8);
-    }
-  
-    .table-section-cell {
-      padding: var(--space-3) var(--space-4);
-      min-height: 48px;
-    }
-  
-    .table-section-row--header .table-section-cell {
-      min-height: 56px;
-    }
-  }
-  
+}

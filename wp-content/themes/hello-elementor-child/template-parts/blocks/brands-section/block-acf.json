@@ -3,6 +3,19 @@
   "title": "Brands Section Block Fields",
   "fields": [
     {
+      "key": "field_brands_section_variant",
+      "label": "Variant",
+      "name": "variant",
+      "type": "select",
+      "instructions": "Style variant for this block. The selected value is added as a class and data-variant on the section for custom styling.",
+      "choices": {
+        "default": "Default",
+        "minimal": "Minimal",
+        "featured": "Featured"
+      },
+      "default_value": "default"
+    },
+    {
       "key": "field_brands_section_title",
       "label": "Title",
       "name": "title",

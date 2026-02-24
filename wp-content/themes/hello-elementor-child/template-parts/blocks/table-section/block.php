@@ -11,6 +11,11 @@
  */
 
 $wrapper   = theme_get_block_wrapper_attributes($block, 'table-section-section');
+$variant_id = get_field('variant');
+if (empty($variant_id)) {
+  $variant_id = 'default';
+}
+$variant_id = sanitize_html_class($variant_id);
 $title     = get_field('title');
 $desc      = get_field('description');
 $columns   = get_field('columns');
@@ -34,10 +39,10 @@ if ($col_count > 0) {
 }
 ?>
 
-<section id="<?php echo $wrapper['id']; ?>" class="<?php echo $wrapper['class']; ?> section">
+<section id="<?php echo $wrapper['id']; ?>" class="<?php echo $wrapper['class']; ?> section table-section-section--<?php echo esc_attr($variant_id); ?>" data-variant="<?php echo esc_attr($variant_id); ?>">
   <div class="table-section-container container m-0 mx-auto">
 
-    <div class="table-section-header flex flex-col items-center gap-3">
+    <div class="table-section-header flex flex-col items-center gap-3 bm-margin-bottom-space-10">
       <?php if (!empty($title)): ?>
         <h2 class="table-section-title component-title text-center text-primary m-0"><?php echo esc_html($title); ?></h2>
       <?php endif; ?>
@@ -56,7 +61,7 @@ if ($col_count > 0) {
     <div class="<?php echo esc_attr($table_class); ?>" data-columns="<?php echo (int) $col_count; ?>">
       <?php if (!$transpose): ?>
       <!-- Header row: one cell per column -->
-      <div class="table-section-row table-section-row--header" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, 1fr));">
+      <div class="table-section-row table-section-row--header bm-display-grid bm-align-items-stretch" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, 1fr));">
         <?php foreach ($columns as $col_index => $col): ?>
           <?php
           $header_bg = '';
