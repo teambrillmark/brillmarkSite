@@ -1,0 +1,408 @@
+/* ============================================================
+   Our Service Section Block
+   Tabbed slider with service details and feature lists
+   Scoped to .our-service-section
+   ============================================================ */
+
+/* ─── Section Root ─── */
+.our-service-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-light);
+}
+
+/* ─── Wrapper ─── */
+.our-service-section .our-service-section-wrapper {
+  width: 100%;
+}
+
+/* ─── Header ─── */
+
+/* ─── Tabs Container ─── */
+
+.our-service-section .our-service-section-tabs-area {
+  width: 100%;
+}
+
+.our-service-section .our-service-section-tabs-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── Tab Buttons ─── */
+.our-service-section .our-service-section-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  padding: 0 20px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  font-family: var(--font-primary);
+  flex-shrink: 0;
+}
+
+.our-service-section .our-service-section-tab.active,
+.our-service-section .our-service-section-tab[aria-selected="true"] {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: var(--color-white);
+}
+
+.our-service-section .our-service-section-tab:hover:not(.active) {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+}
+
+.our-service-section .our-service-section-tab:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 2px;
+}
+
+.our-service-section .our-service-section-tab-label {
+  pointer-events: none;
+}
+
+/* ─── Slider Area ─── */
+.our-service-section .our-service-section-slider {
+  width: 100%;
+}
+
+.our-service-section .our-service-section-slider-row {
+  position: relative;
+  width: 100%;
+}
+
+/* ─── Swiper container ─── */
+.our-service-section .our-service-section-swiper {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.our-service-section .our-service-section-swiper .swiper-slide {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Panels inside slides: always visible (Swiper controls which slide is shown) */
+
+/* ─── Decorative Side Images ─── */
+.our-service-section .our-service-section-decor-left,
+.our-service-section .our-service-section-decor-right {
+  width: 100px;
+  height: 509px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  object-fit: cover;
+}
+
+.our-service-section .our-service-section-decor-left {
+  mask-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  -webkit-mask-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.our-service-section .our-service-section-decor-right {
+  mask-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  -webkit-mask-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+/* ─── Panel (Tab Content) ─── */
+.our-service-section .our-service-section-panel-mobile-trigger {
+  display: none;
+}
+
+.our-service-section .our-service-section-panel {
+  padding: 50px 0;
+  width: 100%;
+  max-width: 1160px;
+  background-color: var(--color-bg-blue);
+  border-radius: var(--radius-sm);
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+.our-service-section .our-service-section-panel-inner {
+  width: 100%;
+  max-width: 956px;
+  box-sizing: border-box;
+}
+
+.our-service-section .our-service-section-panel-body {
+  width: 100%;
+}
+
+/* ─── Panel Columns (Image + Features) ─── */
+.our-service-section .our-service-section-panel-columns {
+  width: 100%;
+}
+
+.our-service-section .our-service-section-panel-image {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+/* ─── Features List ─── */
+.our-service-section .our-service-section-features-list {
+  width: 100%;
+  max-width: 496px;
+}
+
+.our-service-section .our-service-section-feature-item {
+  gap: 11px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.our-service-section .our-service-section-check-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  object-fit: contain;
+  margin-top: 5px;
+}
+
+/* ─── Navigation Arrows ─── */
+.our-service-section .our-service-section-nav-prev,
+.our-service-section .our-service-section-nav-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.our-service-section .our-service-section-nav-prev:hover,
+.our-service-section .our-service-section-nav-next:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.our-service-section .our-service-section-nav-prev {
+  left: 0;
+}
+
+.our-service-section .our-service-section-nav-next {
+  right: 0;
+}
+
+.our-service-section .our-service-section-nav-prev img,
+.our-service-section .our-service-section-nav-next img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.our-service-section .our-service-section-nav-prev svg,
+.our-service-section .our-service-section-nav-next svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Per-panel CTA: hidden on desktop, shown on mobile ─── */
+
+/* ─── CTA (Desktop — shared below slider) ─── */
+
+.our-service-section .our-service-section-cta {
+  height: 50px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ─── CTA (Mobile — per-panel, hidden on desktop) ─── */
+
+/* ============================================================
+   RESPONSIVE — Tablet (max 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .our-service-section .our-service-section-header {
+    max-width: 100%;
+  }
+
+  .our-service-section .our-service-section-tabs-outer {
+    max-width: 100%;
+  }
+
+  .our-service-section .our-service-section-panel-columns {
+    flex-direction: column;
+  }
+
+  .our-service-section .our-service-section-panel-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .our-service-section .our-service-section-features-list {
+    max-width: 100%;
+  }
+
+  .our-service-section .our-service-section-decor-left,
+  .our-service-section .our-service-section-decor-right {
+    display: none;
+  }
+
+  .our-service-section .our-service-section-slider-row {
+    gap: 0;
+  }
+
+  .our-service-section .our-service-section-panel {
+    max-width: 100%;
+  }
+
+  .our-service-section .our-service-section-panel-inner {
+    max-width: 100%;
+    padding: 0 var(--space-5);
+  }
+
+  .our-service-section .our-service-section-nav-prev {
+    left: -10px;
+  }
+
+  .our-service-section .our-service-section-nav-next {
+    right: -10px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (max 768px)
+   Stacked: all panels visible in a column; tabs/nav/shared CTA hidden
+   ============================================================ */
+@media (max-width: 768px) {
+
+  .our-service-section .our-service-section-header {
+    gap: var(--space-4);
+  }
+
+  /* Hide tabs, shared CTA, and nav on mobile */
+  .our-service-section.our-service-section--stacked .our-service-section-tabs-outer,
+  .our-service-section.our-service-section--stacked .our-service-section-cta-wrap,
+  .our-service-section.our-service-section--stacked .our-service-section-nav-prev,
+  .our-service-section.our-service-section--stacked .our-service-section-nav-next {
+    display: none !important;
+  }
+
+  /* Hide mobile accordion triggers — stacked shows all panels */
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger {
+    display: none !important;
+  }
+
+  /* Stacked: all slides and panels visible in a column */
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide .our-service-section-panel {
+    display: flex;
+  }
+
+  .our-service-section .our-service-section-tabs-area {
+    gap: var(--space-2);
+  }
+
+  .our-service-section .our-service-section-tabs-row {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .our-service-section .our-service-section-tab {
+    height: 32px;
+    padding: 0 var(--space-4);
+  }
+
+  /* Stacked layout: swiper wrapper visible, no transform */
+  .our-service-section.our-service-section--stacked .our-service-section-swiper {
+    overflow: visible;
+    height: auto;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-wrapper {
+    transform: none !important;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Content order: title → features list → image → CTA (match mobile design) */
+
+  .our-service-section.our-service-section--stacked .our-service-section-features-list {
+    order: 1;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-image {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .our-service-section .our-service-section-panel,
+  .our-service-section .our-service-section-panel[hidden] {
+    max-width: 100%;
+  }
+
+  .our-service-section .our-service-section-panel {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  /* Per-panel CTA visible on mobile */
+  .our-service-section .our-service-section-panel-cta {
+    padding-top: var(--space-5);
+  }
+
+  .our-service-section .our-service-section-cta {
+    width: 100%;
+    max-width: 345px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Small Mobile (max 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .our-service-section .our-service-section-panel {
+    padding: var(--space-6) 0;
+  }
+
+  .our-service-section .our-service-section-panel-inner {
+    padding: 0 var(--space-4);
+  }
+
+  .our-service-section .our-service-section-panel-columns {
+    gap: var(--space-4);
+  }
+
+  .our-service-section .our-service-section-feature-item {
+    gap: var(--space-2);
+  }
+}

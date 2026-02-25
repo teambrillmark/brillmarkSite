@@ -1,0 +1,159 @@
+{
+  "key": "group_optimization_tab_section_fields",
+  "title": "Optimization Tab Section Fields",
+  "fields": [
+    {
+      "key": "field_optimization_tab_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Conversion Optimization That Actually Works"
+    },
+    {
+      "key": "field_optimization_tab_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "See how our conversion optimization strategy helped an online store like TopLids achieve measurable growth\u2014fast.",
+      "rows": 3
+    },
+    {
+      "key": "field_optimization_tab_section_tabs",
+      "label": "Tabs",
+      "name": "tabs",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "max": 10,
+      "layout": "block",
+      "button_label": "Add Tab",
+      "sub_fields": [
+        {
+          "key": "field_optimization_tab_section_tab_label",
+          "label": "Tab Label",
+          "name": "tab_label",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_optimization_tab_section_old_label",
+          "label": "Old Label",
+          "name": "old_label",
+          "type": "text",
+          "required": 0,
+          "default_value": "Old"
+        },
+        {
+          "key": "field_optimization_tab_section_old_description",
+          "label": "Old Description",
+          "name": "old_description",
+          "type": "textarea",
+          "required": 0,
+          "rows": 3
+        },
+        {
+          "key": "field_optimization_tab_section_old_image",
+          "label": "Old Image",
+          "name": "old_image",
+          "type": "image",
+          "required": 0,
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
+        },
+        {
+          "key": "field_optimization_tab_section_new_label",
+          "label": "New Label",
+          "name": "new_label",
+          "type": "text",
+          "required": 0,
+          "default_value": "New"
+        },
+        {
+          "key": "field_optimization_tab_section_new_description",
+          "label": "New Description",
+          "name": "new_description",
+          "type": "textarea",
+          "required": 0,
+          "rows": 3
+        },
+        {
+          "key": "field_optimization_tab_section_new_image",
+          "label": "New Image",
+          "name": "new_image",
+          "type": "image",
+          "required": 0,
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
+        }
+      ],
+      "default_value": [
+        {
+          "tab_label": "Header & Navigation Redesign",
+          "old_label": "Old",
+          "old_description": "Cluttered layout with minimal interaction cues, making it hard for users to navigate and engage effectively.",
+          "old_image": "",
+          "new_label": "New",
+          "new_description": "Clean, structured design with intuitive navigation and guided steps, enhancing user flow and overall experience.",
+          "new_image": ""
+        },
+        {
+          "tab_label": "Content & User Experience",
+          "old_label": "Old",
+          "old_description": "Dense, text-heavy content with limited visual hierarchy made it difficult for users to find relevant information quickly.",
+          "old_image": "",
+          "new_label": "New",
+          "new_description": "Streamlined content layout with clear headings and visual hierarchy, enabling users to scan and find information effortlessly.",
+          "new_image": ""
+        },
+        {
+          "tab_label": "Visual Design & Aesthetics",
+          "old_label": "Old",
+          "old_description": "Outdated visual elements with inconsistent styling created a disjointed and unprofessional browsing experience.",
+          "old_image": "",
+          "new_label": "New",
+          "new_description": "Modern, cohesive visual design with consistent branding that builds trust and enhances the overall brand perception.",
+          "new_image": ""
+        },
+        {
+          "tab_label": "Functional Engagement",
+          "old_label": "Old",
+          "old_description": "Basic product display with no interactive elements, resulting in low user engagement and minimal conversion opportunities.",
+          "old_image": "",
+          "new_label": "New",
+          "new_description": "Interactive product features with dynamic elements that encourage exploration, boost engagement, and drive conversions.",
+          "new_image": ""
+        },
+        {
+          "tab_label": "Collection Page Design",
+          "old_label": "Old",
+          "old_description": "Flat collection page layout with poor filtering and no visual differentiation between product categories.",
+          "old_image": "",
+          "new_label": "New",
+          "new_description": "Organized collection layout with smart filters and visual category highlights that enable effortless browsing.",
+          "new_image": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/optimization-tab-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Tabbed before/after comparison section for conversion optimization case studies."
+}

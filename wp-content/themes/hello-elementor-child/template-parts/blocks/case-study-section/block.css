@@ -1,0 +1,310 @@
+/* ========================================
+   Case Study Section Block
+   ======================================== */
+
+/* Root section */
+.case-study-section-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 80px 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-white, #ffffff);
+}
+
+/* Inner wrapper */
+.case-study-section-section .case-study-section-inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1241px;
+}
+
+/* Header */
+.case-study-section-section .case-study-section-header {
+  box-sizing: border-box;
+  max-width: 989px;
+  width: 100%;
+}
+
+/* Section title */
+.case-study-section-section .case-study-section-title {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Section description */
+.case-study-section-section .case-study-section-description {
+  align-self: stretch;
+  width: 100%;
+  line-height: 1.6;
+}
+
+/* Card group wrapper */
+.case-study-section-section .case-study-section-card-group {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1241px;
+  border-radius: 15px;
+}
+
+/* Card */
+.case-study-section-section .case-study-section-card {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-bg-light, #f4f7fa);
+  border-radius: 15px;
+  padding: 40px 20px;
+}
+
+/* Card content — two-column on desktop */
+.case-study-section-section .case-study-section-card-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1149px;
+  width: 100%;
+}
+
+/* Flipped content order */
+.case-study-section-section .case-study-section-card-content--flipped {
+  flex-direction: row-reverse;
+}
+
+/* Card text column */
+.case-study-section-section .case-study-section-card-text {
+  box-sizing: border-box;
+  max-width: 666px;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Card title */
+.case-study-section-section .case-study-section-card-title {
+  max-width: 639px;
+  font-size: var(--fs-h3, 30px);
+}
+
+/* Stats wrapper */
+.case-study-section-section .case-study-section-stats-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 666px;
+}
+
+/* Stats row */
+.case-study-section-section .case-study-section-stats-row {
+  box-sizing: border-box;
+  gap: 100px;
+}
+
+.case-study-section-section .case-study-section-stats-row + .case-study-section-stats-row {
+  gap: 113px;
+}
+
+/* Stat item */
+.case-study-section-section .case-study-section-stat-item {
+  box-sizing: border-box;
+}
+
+/* Stat label */
+
+/* Stat value */
+.case-study-section-section .case-study-section-stat-value {
+  line-height: 1.2;
+}
+
+/* CTA button */
+.case-study-section-section .case-study-section-cta {
+  box-sizing: border-box;
+  width: 227px;
+  height: 50px;
+  background-color: var(--color-cta, #13367d);
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+.case-study-section-section .case-study-section-cta:hover,
+.case-study-section-section .case-study-section-cta:focus {
+  background-color: var(--color-cta-hover, #0960A8);
+  opacity: 1;
+}
+
+/* CTA text */
+.case-study-section-section .case-study-section-cta-text {
+  font-size: var(--fs-body, 16px);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Card image */
+.case-study-section-section .case-study-section-card-image {
+  width: 428px;
+  height: 470px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: var(--radius-sm, 6px);
+}
+
+/* ========================================
+   RESPONSIVE — Tablet (max-width: 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .case-study-section-section .case-study-section-inner {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .case-study-section-section .case-study-section-header {
+    max-width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-card-content {
+    gap: 30px;
+  }
+
+  .case-study-section-section .case-study-section-card-image {
+    width: 350px;
+    height: auto;
+    aspect-ratio: 428 / 470;
+  }
+}
+
+/* ========================================
+   RESPONSIVE — Tablet Portrait (max-width: 768px)
+   Mobile layout: stacked column, reordered
+   ======================================== */
+
+@media (max-width: 768px) {
+  .case-study-section-section {
+    padding: 60px 0;
+    background-color: #d0e6f2;
+  }
+
+  .case-study-section-section .case-study-section-inner {
+    gap: 50px;
+    padding: 0 20px;
+  }
+
+  .case-study-section-section .case-study-section-header {
+    max-width: 390px;
+  }
+
+  .case-study-section-section .case-study-section-title {
+    font-weight: var(--font-weight-regular, 400);
+  }
+
+  .case-study-section-section .case-study-section-description {
+    max-width: 380px;
+  }
+
+  .case-study-section-section .case-study-section-card-group {
+    max-width: 390px;
+  }
+
+  .case-study-section-section .case-study-section-card {
+    background-color: var(--color-white, #ffffff);
+    padding: 40px 5px;
+  }
+
+  .case-study-section-section .case-study-section-card-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .case-study-section-section .case-study-section-card-content--flipped {
+    flex-direction: column;
+  }
+
+  .case-study-section-section .case-study-section-card-text {
+    display: contents;
+  }
+
+  .case-study-section-section .case-study-section-card-title {
+    order: 1;
+    max-width: 380px;
+    width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-stats-wrapper {
+    order: 2;
+    max-width: 342px;
+  }
+
+  .case-study-section-section .case-study-section-stats-row {
+    width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-stat-value {
+    font-size: 36px;
+  }
+
+  .case-study-section-section .case-study-section-card-image {
+    order: 3;
+    width: 100%;
+    max-width: 390px;
+    height: 428px;
+  }
+
+  .case-study-section-section .case-study-section-cta {
+    order: 4;
+  }
+}
+
+/* ========================================
+   RESPONSIVE — Small Mobile (max-width: 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+  .case-study-section-section {
+    padding: 40px 0;
+  }
+
+  .case-study-section-section .case-study-section-inner {
+    padding: 0 16px;
+  }
+
+  .case-study-section-section .case-study-section-header {
+    max-width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-card-group {
+    max-width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-card {
+    padding: 30px 10px;
+  }
+
+  .case-study-section-section .case-study-section-card-title {
+    font-size: 24px;
+    max-width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-stat-value {
+    font-size: 30px;
+  }
+
+  .case-study-section-section .case-study-section-card-image {
+    height: auto;
+    aspect-ratio: 390 / 428;
+    max-width: 100%;
+  }
+
+  .case-study-section-section .case-study-section-cta {
+    width: 100%;
+    max-width: 227px;
+  }
+}

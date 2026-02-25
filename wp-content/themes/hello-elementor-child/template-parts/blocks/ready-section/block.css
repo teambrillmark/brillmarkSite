@@ -1,0 +1,54 @@
+/* ============================================================
+   Ready Section Block
+   Design system variables only — no bm- classes
+   ============================================================ */
+
+.ready-section-section {
+  background-color: var(--color-footer-bg);
+  color: var(--color-white);
+}
+
+.ready-section-section .ready-section-content {
+  gap: var(--space-10);
+  max-width: var(--container-desktop);
+}
+
+.ready-section-section .ready-section-text-wrapper {
+  gap: var(--space-4);
+}
+
+.ready-section-section .ready-section-title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-h2);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.ready-section-section .ready-section-description {
+  font-family: var(--font-primary);
+  font-size: var(--fs-h6);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--lh-body);
+  color: var(--color-white);
+}
+
+.ready-section-section .ready-section-stat-number {
+  font-family: var(--font-primary);
+  font-size: var(--fs-h2);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.2;
+}
+
+.ready-section-section .ready-section-stat-label {
+  font-family: var(--font-primary);
+  font-size: var(--fs-h6);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .ready-section-section .ready-section-stats {
+    flex-direction: column;
+  }
+}

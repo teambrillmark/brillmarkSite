@@ -1,0 +1,229 @@
+{
+  "key": "group_service_section_fields",
+  "title": "Service Section Fields",
+  "fields": [
+    {
+      "key": "field_service_section_title",
+      "label": "Section Title",
+      "name": "section_title",
+      "type": "text",
+      "required": 1,
+      "default_value": "We Provide All Inclusive Shopify Development Services",
+      "placeholder": "Enter section heading"
+    },
+    {
+      "key": "field_service_section_description",
+      "label": "Section Description",
+      "name": "section_description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "Our flexible process ensures seamless collaboration, allowing for successful and efficient project delivery, every time.",
+      "rows": 3
+    },
+    {
+      "key": "field_service_section_services",
+      "label": "Services",
+      "name": "services",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "max": 20,
+      "layout": "block",
+      "button_label": "Add Service",
+      "sub_fields": [
+        {
+          "key": "field_service_section_tab_title",
+          "label": "Tab Title",
+          "name": "tab_title",
+          "type": "text",
+          "required": 1,
+          "instructions": "Short title shown in the left tab navigation (desktop)",
+          "placeholder": "e.g. Shopify Store Setup"
+        },
+        {
+          "key": "field_service_section_panel_title",
+          "label": "Panel Title",
+          "name": "panel_title",
+          "type": "text",
+          "required": 1,
+          "instructions": "Heading shown in the content panel",
+          "placeholder": "e.g. Shopify Store Setup"
+        },
+        {
+          "key": "field_service_section_panel_description",
+          "label": "Panel Description",
+          "name": "panel_description",
+          "type": "textarea",
+          "required": 0,
+          "rows": 3,
+          "placeholder": "Brief description of this service"
+        },
+        {
+          "key": "field_service_section_bullet_points",
+          "label": "Bullet Points",
+          "name": "bullet_points",
+          "type": "repeater",
+          "required": 0,
+          "min": 0,
+          "max": 10,
+          "layout": "table",
+          "button_label": "Add Bullet Point",
+          "sub_fields": [
+            {
+              "key": "field_service_section_bullet_text",
+              "label": "Bullet Text",
+              "name": "bullet_text",
+              "type": "text",
+              "required": 1
+            }
+          ]
+        },
+        {
+          "key": "field_service_section_cta_text",
+          "label": "CTA Button Text",
+          "name": "cta_text",
+          "type": "text",
+          "required": 0,
+          "default_value": "Schedule FREE strategy session"
+        },
+        {
+          "key": "field_service_section_cta_url",
+          "label": "CTA Button URL",
+          "name": "cta_url",
+          "type": "url",
+          "required": 0,
+          "default_value": "#"
+        }
+      ],
+      "default_value": [
+        {
+          "field_service_section_tab_title": "Shopify Store Setup",
+          "field_service_section_panel_title": "Shopify Store Setup",
+          "field_service_section_panel_description": "Our expert Shopify development services will have you up and running in no time, perfectly configured to your needs.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Comprehensive Store Build: From theme selection/custom design to complete setup and configuration." },
+            { "field_service_section_bullet_text": "Rapid Launch: Get your fully functional Shopify store ready to launch in days or weeks." },
+            { "field_service_section_bullet_text": "Full-Service Support: We handle theme installation, design, development, and configuration for a seamless launch." },
+            { "field_service_section_bullet_text": "Payment Setup: We offer help with integrating third party solutions for payment gateway setup." },
+            { "field_service_section_bullet_text": "Custom Domain Configuration: Buy domain, update DNS settings, point to host, configure records, set SSL, verify propagation, test site." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Custom Shopify Theme Development",
+          "field_service_section_panel_title": "Custom Shopify Theme Development",
+          "field_service_section_panel_description": "Stand out with a unique Shopify theme tailored to your brand identity and business goals.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Bespoke Design: Fully custom themes built from scratch to match your vision." },
+            { "field_service_section_bullet_text": "Responsive Layouts: Optimized for all devices and screen sizes." },
+            { "field_service_section_bullet_text": "Performance Focused: Lightweight code for fast load times and better SEO." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Shopify App Integration & Custom Solutions",
+          "field_service_section_panel_title": "Shopify App Integration & Custom Solutions",
+          "field_service_section_panel_description": "Extend your store's functionality with seamless app integrations and custom-built solutions.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Third-Party App Integration: Connect popular tools and services effortlessly." },
+            { "field_service_section_bullet_text": "Custom App Development: Build tailored apps for unique business requirements." },
+            { "field_service_section_bullet_text": "API Integrations: Seamlessly connect your store with external systems and platforms." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Performance & Page Speed Optimization",
+          "field_service_section_panel_title": "Performance & Page Speed Optimization",
+          "field_service_section_panel_description": "Boost your store's performance and deliver lightning-fast page loads for higher conversions.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Core Web Vitals: Optimize LCP, FID, and CLS for search ranking and user experience." },
+            { "field_service_section_bullet_text": "Image Optimization: Compress and lazy-load assets for faster rendering." },
+            { "field_service_section_bullet_text": "Code Audit: Remove bloat, minify scripts, and streamline your theme code." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Shopify 2.0 Migration",
+          "field_service_section_panel_title": "Shopify 2.0 Migration",
+          "field_service_section_panel_description": "Upgrade to Shopify 2.0 and unlock the power of sections everywhere, app blocks, and metafields.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Theme Migration: Seamlessly move from vintage to Online Store 2.0 architecture." },
+            { "field_service_section_bullet_text": "Data Preservation: Ensure all products, collections, and content migrate cleanly." },
+            { "field_service_section_bullet_text": "Feature Enablement: Leverage JSON templates, metafields, and sections on every page." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Website Rebranding & Redesign",
+          "field_service_section_panel_title": "Website Rebranding & Redesign",
+          "field_service_section_panel_description": "Refresh your online presence with a complete rebranding and redesign that drives engagement.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Brand Strategy: Align your visual identity with your business goals and audience." },
+            { "field_service_section_bullet_text": "UX Overhaul: Redesign user flows and navigation for higher conversions." },
+            { "field_service_section_bullet_text": "Seamless Transition: Migrate content and SEO equity without disruption." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Shopify Analytics & Third Party Integration",
+          "field_service_section_panel_title": "Shopify Analytics & Third Party Integration",
+          "field_service_section_panel_description": "Gain actionable insights by connecting your store with leading analytics and marketing platforms.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Analytics Setup: Configure GA4, GTM, and custom tracking for deep data insights." },
+            { "field_service_section_bullet_text": "Marketing Integrations: Connect Klaviyo, Mailchimp, Facebook Pixel, and more." },
+            { "field_service_section_bullet_text": "Custom Dashboards: Build tailored reporting dashboards for informed decision-making." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Store Development from Scratch",
+          "field_service_section_panel_title": "Store Development from Scratch",
+          "field_service_section_panel_description": "Build your dream Shopify store from the ground up with a fully custom development approach.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Custom Architecture: Design and develop a store tailored to your exact specifications." },
+            { "field_service_section_bullet_text": "Scalable Foundation: Built to handle growth in traffic, products, and markets." },
+            { "field_service_section_bullet_text": "End-to-End Delivery: From wireframes to launch, we handle every detail." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        },
+        {
+          "field_service_section_tab_title": "Headless Commerce Solutions",
+          "field_service_section_panel_title": "Headless Commerce Solutions",
+          "field_service_section_panel_description": "Decouple your frontend from Shopify's backend for ultimate flexibility and performance.",
+          "field_service_section_bullet_points": [
+            { "field_service_section_bullet_text": "Headless Architecture: Use React, Next.js, or Hydrogen for blazing-fast storefronts." },
+            { "field_service_section_bullet_text": "API-First Approach: Leverage Shopify Storefront API for seamless data flow." },
+            { "field_service_section_bullet_text": "Omnichannel Ready: Deliver content across web, mobile apps, and IoT devices." }
+          ],
+          "field_service_section_cta_text": "Schedule FREE strategy session",
+          "field_service_section_cta_url": "#"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/service-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Service section with tabbed navigation on desktop and stacked cards on mobile"
+}

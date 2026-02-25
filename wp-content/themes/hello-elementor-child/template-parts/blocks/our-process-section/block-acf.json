@@ -1,0 +1,223 @@
+{
+  "key": "group_our-process-section_fields",
+  "title": "Our Process Section Fields",
+  "fields": [
+    {
+      "key": "field_our-process-section_title",
+      "label": "Section Title",
+      "name": "title",
+      "type": "text",
+      "instructions": "Main heading for the Our Process section",
+      "required": 1,
+      "default_value": "Our Process",
+      "placeholder": "Our Process"
+    },
+    {
+      "key": "field_our-process-section_description",
+      "label": "Section Description",
+      "name": "description",
+      "type": "textarea",
+      "instructions": "Introductory paragraph below the title",
+      "required": 0,
+      "default_value": "At BrillMark, we follow a collaborative process designed to deliver exceptional results across all our services. Our methodology ensures each project is tailored to your needs and achieves your business objectives.",
+      "rows": 3
+    },
+    {
+      "key": "field_our-process-section_check_icon",
+      "label": "Checklist Icon",
+      "name": "check_icon",
+      "type": "image",
+      "instructions": "Shared icon displayed next to each checklist item (e.g. a checkmark)",
+      "required": 0,
+      "return_format": "url",
+      "preview_size": "thumbnail"
+    },
+    {
+      "key": "field_our-process-section_tabs",
+      "label": "Process Tabs",
+      "name": "tabs",
+      "type": "repeater",
+      "instructions": "Each tab represents a step in the process",
+      "required": 0,
+      "min": 1,
+      "max": 10,
+      "layout": "block",
+      "button_label": "Add Process Step",
+      "sub_fields": [
+        {
+          "key": "field_our-process-section_tab_title",
+          "label": "Tab Title",
+          "name": "tab_title",
+          "type": "text",
+          "instructions": "Label shown on the tab button (e.g. '1. Assess the Idea')",
+          "required": 1,
+          "default_value": ""
+        },
+        {
+          "key": "field_our-process-section_tab_icon",
+          "label": "Tab Icon",
+          "name": "tab_icon",
+          "type": "image",
+          "instructions": "Icon displayed in the tab button",
+          "required": 0,
+          "return_format": "url",
+          "preview_size": "thumbnail"
+        },
+        {
+          "key": "field_our-process-section_tab_description",
+          "label": "Tab Content Description",
+          "name": "tab_description",
+          "type": "textarea",
+          "instructions": "Description paragraph shown in the content panel for this tab",
+          "required": 0,
+          "rows": 2,
+          "default_value": ""
+        },
+        {
+          "key": "field_our-process-section_tab_image",
+          "label": "Tab Content Image",
+          "name": "tab_image",
+          "type": "image",
+          "instructions": "Image displayed in the content panel for this tab",
+          "required": 0,
+          "return_format": "url",
+          "preview_size": "medium"
+        },
+        {
+          "key": "field_our-process-section_checklist_items",
+          "label": "Checklist Items",
+          "name": "checklist_items",
+          "type": "repeater",
+          "instructions": "List items shown with the checkmark icon in this tab's content",
+          "required": 0,
+          "min": 0,
+          "max": 10,
+          "layout": "table",
+          "button_label": "Add Checklist Item",
+          "sub_fields": [
+            {
+              "key": "field_our-process-section_checklist_item_text",
+              "label": "Item Text",
+              "name": "item_text",
+              "type": "text",
+              "required": 1,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "key": "field_our-process-section_cta_text",
+          "label": "CTA Button Text",
+          "name": "cta_text",
+          "type": "text",
+          "instructions": "Call-to-action button label for this tab",
+          "required": 0,
+          "default_value": "Let's Start the Conversation"
+        },
+        {
+          "key": "field_our-process-section_cta_link",
+          "label": "CTA Button Link",
+          "name": "cta_link",
+          "type": "url",
+          "instructions": "URL the CTA button links to",
+          "required": 0,
+          "default_value": "#"
+        }
+      ],
+      "default_value": [
+        {
+          "tab_title": "1. Assess the Idea",
+          "tab_icon": "",
+          "tab_description": "We start by immersing ourselves in your project to fully grasp your vision.",
+          "tab_image": "",
+          "checklist_items": [
+            { "item_text": "Idea Assessment" },
+            { "item_text": "Feasibility Analysis" },
+            { "item_text": "Vision Alignment" },
+            { "item_text": "Detailed Estimations" },
+            { "item_text": "Approval to Proceed" }
+          ],
+          "cta_text": "Let's Start the Conversation",
+          "cta_link": "#"
+        },
+        {
+          "tab_title": "2. Design and Plan",
+          "tab_icon": "",
+          "tab_description": "We create detailed blueprints and design systems to guide your project forward.",
+          "tab_image": "",
+          "checklist_items": [
+            { "item_text": "Wireframing" },
+            { "item_text": "UI/UX Design" },
+            { "item_text": "Architecture Planning" },
+            { "item_text": "Technical Specs" },
+            { "item_text": "Timeline Definition" }
+          ],
+          "cta_text": "Let's Start the Conversation",
+          "cta_link": "#"
+        },
+        {
+          "tab_title": "3. Build the Test",
+          "tab_icon": "",
+          "tab_description": "Our team develops and tests every component to ensure quality and performance.",
+          "tab_image": "",
+          "checklist_items": [
+            { "item_text": "Development Sprint" },
+            { "item_text": "Component Testing" },
+            { "item_text": "Integration Testing" },
+            { "item_text": "Performance Review" },
+            { "item_text": "Iteration Cycles" }
+          ],
+          "cta_text": "Let's Start the Conversation",
+          "cta_link": "#"
+        },
+        {
+          "tab_title": "4. Quality Assurance",
+          "tab_icon": "",
+          "tab_description": "Rigorous testing ensures your product meets the highest standards before launch.",
+          "tab_image": "",
+          "checklist_items": [
+            { "item_text": "Functional Testing" },
+            { "item_text": "Cross-browser Testing" },
+            { "item_text": "Mobile Responsiveness" },
+            { "item_text": "Security Audit" },
+            { "item_text": "User Acceptance" }
+          ],
+          "cta_text": "Let's Start the Conversation",
+          "cta_link": "#"
+        },
+        {
+          "tab_title": "5. Launch & Deploy",
+          "tab_icon": "",
+          "tab_description": "We deploy your project with precision and provide ongoing support for success.",
+          "tab_image": "",
+          "checklist_items": [
+            { "item_text": "Deployment Strategy" },
+            { "item_text": "Go-Live Execution" },
+            { "item_text": "Monitoring Setup" },
+            { "item_text": "Post-Launch Support" },
+            { "item_text": "Optimization Plan" }
+          ],
+          "cta_text": "Let's Start the Conversation",
+          "cta_link": "#"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/our-process-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Tabbed process section showing steps with icons, descriptions, checklists, and CTAs"
+}

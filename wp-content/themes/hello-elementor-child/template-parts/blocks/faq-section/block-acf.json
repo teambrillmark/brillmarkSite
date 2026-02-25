@@ -1,0 +1,125 @@
+{
+  "key": "group_faq_section_fields",
+  "title": "FAQ Section Fields",
+  "fields": [
+    {
+      "key": "field_faq_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Frequently asked questions"
+    },
+    {
+      "key": "field_faq_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "Develop top-line strategies and ensure value through tested procedures. Generate effective testing protocols to support sustainable and visionary growth strategies."
+    },
+    {
+      "key": "field_faq_section_faq_icon",
+      "label": "FAQ Toggle Icon",
+      "name": "faq_icon",
+      "type": "image",
+      "required": 0,
+      "return_format": "url",
+      "preview_size": "thumbnail",
+      "instructions": "Plus/toggle icon displayed next to each FAQ question (20x20px recommended)."
+    },
+    {
+      "key": "field_faq_section_faq_items",
+      "label": "FAQ Items",
+      "name": "faq_items",
+      "type": "repeater",
+      "required": 1,
+      "min": 2,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add FAQ Item",
+      "sub_fields": [
+        {
+          "key": "field_faq_section_question",
+          "label": "Question",
+          "name": "question",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_faq_section_answer",
+          "label": "Answer",
+          "name": "answer",
+          "type": "wysiwyg",
+          "required": 0,
+          "toolbar": "basic",
+          "media_upload": 0,
+          "tabs": "visual"
+        }
+      ],
+      "default_value": [
+        {
+          "question": "How do I get started with BrillMark?",
+          "answer": "<p>Getting started is easy! Simply reach out to our team through the contact form, and we'll schedule a discovery call to understand your needs and goals.</p>"
+        },
+        {
+          "question": "What services does BrillMark offer?",
+          "answer": "<p>BrillMark offers A/B testing, web development, CRO, UX optimization, and full-stack digital solutions tailored to your business.</p>"
+        },
+        {
+          "question": "What industries does BrillMark serve?",
+          "answer": "<p>We serve a wide range of industries including e-commerce, SaaS, healthcare, finance, and education.</p>"
+        },
+        {
+          "question": "Can BrillMark work with our existing team?",
+          "answer": "<p>Absolutely! We seamlessly integrate with your existing team to augment capabilities and deliver results together.</p>"
+        },
+        {
+          "question": "How does BrillMark ensure project quality?",
+          "answer": "<p>We follow rigorous QA processes, code reviews, and testing protocols to ensure every deliverable meets the highest standards.</p>"
+        },
+        {
+          "question": "What makes BrillMark different from other service providers?",
+          "answer": "<p>Our data-driven approach, deep expertise in experimentation, and commitment to measurable results set us apart from other providers.</p>"
+        },
+        {
+          "question": "What is your typical process when working with clients?",
+          "answer": "<p>Our process includes discovery, strategy development, implementation, testing, and continuous optimization for long-term growth.</p>"
+        },
+        {
+          "question": "How quickly can we start seeing results from A/B testing with BrillMark?",
+          "answer": "<p>Most clients begin seeing actionable insights within the first 2-4 weeks of launching tests, depending on traffic volume.</p>"
+        },
+        {
+          "question": "How does BrillMark stay ahead in a rapidly evolving digital landscape?",
+          "answer": "<p>We invest in continuous learning, attend industry conferences, and stay on top of the latest tools and methodologies.</p>"
+        },
+        {
+          "question": "Why should we partner with BrillMark for A/B testing and development?",
+          "answer": "<p>Our proven track record, technical expertise, and client-centric approach make us the ideal partner for sustainable growth.</p>"
+        },
+        {
+          "question": "What if we already have an in-house team?",
+          "answer": "<p>We complement your in-house team by providing specialized expertise and additional bandwidth for key projects.</p>"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/faq-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "FAQ accordion section with two-column layout on desktop and single-column on mobile."
+}

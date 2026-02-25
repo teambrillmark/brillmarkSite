@@ -1,0 +1,6 @@
+
+Error (unhandledRejection): WritableIterable is closed
+Error: WritableIterable is closed
+    at Object.close (file:///opt/homebrew/Caskroom/cursor-cli/2025.08.27-24c29c1/dist-package/index.js:186:5601)
+    at UTe.consume (file:///opt/homebrew/Caskroom/cursor-cli/2025.08.27-24c29c1/dist-package/index.js:186:7537)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

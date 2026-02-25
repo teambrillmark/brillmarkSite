@@ -1,0 +1,68 @@
+Let me first look at the reference screenshots and any existing blocks for patterns.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/ai-section.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/ai-mobile-section.png
+
+Searched files (template-parts/components/blocks/*/block-config.php)
+
+Searched files (assets/css/*.css)
+
+Searched files (template-parts/**/blocks/*/block-config.php)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/layout.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/variables.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/colors.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/spacing.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/typography.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/common.css
+
+Searched files (template-parts/**/blocks/*/block.php)
+Let me check for existing block examples and the `theme_get_block_wrapper_attributes` function.
+Grepped (theme_get_block_wrapper_attributes)
+
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ 2>/dev/null || echo "Directory does not exist" (exit 0)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block-config.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block.css
+Now I have a good understanding of the existing patterns. Let me create all 6 files for the `ai-section` block.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block.html
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block.css
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block.js
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block-acf.json
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/block-config.php
+Now let me verify all 6 files were created successfully.
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ai-section/ (exit 0)
+All 6 files have been created successfully in `template-parts/components/blocks/ai-section/`. Here's a summary of what was built:
+
+**Block structure analysis:**
+
+- **Desktop**: Two-column layout - image (550x600) on left, 4 feature items with blue dots on right, plus a bottom summary text and 3 decorative dividers
+- **Mobile**: Stacks to single column - image on top (full width, 400px height), features below. Title drops from 40px/light to 30px/regular. Feature gap reduces from 30px to 25px
+
+**Files created:**
+
+1. **block.html** - Clean semantic HTML preserving the desktop DOM structure: section > container > inner wrapper > header (title + subtitle) + content area (image + features group with repeating feature items, bottom text, and 3 dividers)
+
+2. **block.css** - All Figma styles extracted and scoped to `.ai-section-section`. Uses CSS variables from the design system (`--font-primary`, `--fs-h2`, `--color-primary`, etc.). Responsive breakpoints at 1024px (reduce image), 768px (stack to column matching mobile screenshot), and 480px (tighter spacing)
+
+3. **block.php** - ACF-powered template using `theme_get_block_wrapper_attributes()`. Fields: `title`, `subtitle`, `image` (background-image), `content_order` (flip layout toggle), `features` repeater (title + description per item), `bottom_text`. All fields wrapped in `!empty()` checks with proper escaping
+
+4. **block.js** - IIFE pattern with `initAiSection` per-section init, `dataset.jsInitialized` guard, ACF preview hook, MutationObserver for Gutenberg, and full try-catch error handling
+
+5. **block-acf.json** - Complete field definitions with 4 pre-populated feature rows matching the original HTML content, content order select (default/flipped), and proper location targeting `acf/ai-section`
+
+6. **block-config.php** - Block registration with no `enqueue_assets` (theme enqueues Vite bundles), parent/child theme path resolution

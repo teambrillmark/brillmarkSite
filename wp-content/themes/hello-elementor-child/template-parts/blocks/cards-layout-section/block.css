@@ -1,0 +1,112 @@
+/* ================================================================
+   CARDS LAYOUT SECTION — design system tokens only
+   ================================================================ */
+
+.cards-layout-section-section {
+  font-family: var(--font-primary);
+}
+
+.cards-layout-header {
+  margin-bottom: var(--space-10);
+}
+
+.cards-layout-grid {
+  display: grid;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .cards-layout-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+.cards-layout-card {
+  padding: var(--space-5);
+  min-height: 200px;
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+}
+
+.cards-layout-card--cta {
+  background-color: var(--color-bg-blue);
+}
+
+.cards-layout-badge {
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-cta);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.cards-layout-card-icon {
+  display: block;
+  width: 49px;
+  height: 49px;
+  object-fit: contain;
+}
+
+.cards-layout-card-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
+  font-weight: var(--font-weight-regular);
+}
+
+.cards-layout-card-desc {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.cards-layout-card-desc p {
+  margin: 0 0 var(--space-3);
+}
+
+.cards-layout-card-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.cards-layout-card-desc ul,
+.cards-layout-card-desc ol {
+  margin: 0 0 var(--space-3);
+  padding-left: 1.25em;
+}
+
+.cards-layout-cta-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cards-layout-cta-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.cards-layout-check-icon {
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.cards-layout-cta-title {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
+  font-weight: var(--font-weight-regular);
+}
+
+.cards-layout-cta-desc {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.cards-layout-cta-btn {
+  margin-top: var(--space-3);
+}
+
+.cards-layout-arrow {
+  flex-shrink: 0;
+}

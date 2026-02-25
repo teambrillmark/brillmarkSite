@@ -1,0 +1,379 @@
+/* ============================================================
+   our-process-section — Block Styles
+   Scoped to .our-process-section-section
+   ============================================================ */
+
+/* ----- SECTION ROOT ----- */
+.our-process-section-section {
+  box-sizing: border-box;
+}
+
+/* ----- INNER CONTAINER ----- */
+.our-process-section-section .our-process-section-inner {
+  width: 100%;
+}
+
+/* ----- HEADER ----- */
+.our-process-section-section .our-process-section-header {
+  max-width: 1012px;
+  width: 100%;
+}
+
+/* ----- TITLE ----- */
+.our-process-section-section .our-process-section-title {
+  font-size: var(--fs-h2);
+  text-transform: capitalize;
+}
+
+/* ----- DESCRIPTION ----- */
+.our-process-section-section .our-process-section-description {
+  font-size: var(--fs-h6);
+  line-height: var(--lh-h6);
+}
+
+/* ----- TABS WRAPPER ----- */
+.our-process-section-section .our-process-section-tabs-wrapper {
+  width: 100%;
+}
+
+/* ----- TAB BAR ----- */
+
+/* ----- INDIVIDUAL TAB ----- */
+.our-process-section-section .our-process-section-tab {
+  box-sizing: border-box;
+  flex: 1;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-bottom: none;
+  padding: 15px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-primary);
+}
+
+.our-process-section-section .our-process-section-tab:first-child {
+  border-radius: var(--radius-md) 0 0 0;
+}
+
+.our-process-section-section .our-process-section-tab:last-child {
+  border-radius: 0 var(--radius-md) 0 0;
+}
+
+/* ----- ACTIVE TAB ----- */
+.our-process-section-section .our-process-section-tab--active,
+.our-process-section-section .our-process-section-tab.our-process-section-tab--active {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+}
+
+.our-process-section-section .our-process-section-tab--active .our-process-section-tab-icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* ----- TAB INNER ----- */
+
+/* ----- TAB ICON ----- */
+.our-process-section-section .our-process-section-tab-icon {
+  height: 50px;
+}
+
+.our-process-section-section .our-process-section-tab-icon img {
+  max-width: 100%;
+  height: auto;
+  max-height: 50px;
+  transition: filter 0.3s ease;
+}
+
+/* ----- TAB LABEL ----- */
+
+/* ----- MOBILE ACCORDION TRIGGER (hidden on desktop) ----- */
+.our-process-section-section .our-process-section-panel-mobile-trigger {
+  display: none;
+}
+
+/* ----- PANEL WRAPPER ----- */
+.our-process-section-section .our-process-section-panel-wrapper {
+  background-color: var(--color-white);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  width: 100%;
+}
+
+/* ----- INDIVIDUAL PANEL ----- */
+.our-process-section-section .our-process-section-panel {
+  display: none;
+  padding: 52px 50px;
+}
+
+.our-process-section-section .our-process-section-panel.our-process-section-panel--active {
+  display: block;
+}
+
+/* ----- PANEL INNER LAYOUT ----- */
+
+/* ----- PANEL IMAGE ----- */
+.our-process-section-section .our-process-section-panel-image {
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.our-process-section-section .our-process-section-panel-image img {
+  width: 100%;
+  height: 276px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* ----- PANEL BODY ----- */
+
+/* ----- PANEL TEXT GROUP ----- */
+
+/* ----- PANEL DESCRIPTION ----- */
+
+/* ----- CHECKLIST ----- */
+
+/* ----- CHECKLIST ITEM ----- */
+
+/* ----- CHECK ICON ----- */
+.our-process-section-section .our-process-section-check-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ----- CHECKLIST TEXT ----- */
+
+/* ----- CTA WRAPPER ----- */
+
+/* ----- CTA BUTTON ----- */
+.our-process-section-section .our-process-section-cta {
+  padding: 10px var(--space-5);
+  min-width: 258px;
+  height: 50px;
+  text-decoration: none;
+}
+
+.our-process-section-section .our-process-section-cta:hover {
+  opacity: 1;
+}
+
+/* ----- CTA TEXT ----- */
+.our-process-section-section .our-process-section-cta-text {
+  white-space: nowrap;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (max 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .our-process-section-section .our-process-section-header {
+    max-width: 100%;
+  }
+
+  .our-process-section-section .our-process-section-tab {
+    height: 120px;
+    padding: 12px 8px;
+  }
+
+  .our-process-section-section .our-process-section-tab-label {
+    font-size: var(--fs-small);
+    text-align: center;
+  }
+
+  .our-process-section-section .our-process-section-panel {
+    padding: 40px 30px;
+  }
+
+  .our-process-section-section .our-process-section-panel-image {
+    width: 320px;
+  }
+
+  .our-process-section-section .our-process-section-panel-image img {
+    height: 230px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL TABLET (max 768px) — Accordion on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Hide tab bar; use per-panel mobile trigger as accordion header */
+  .our-process-section-section .our-process-section-tab-bar {
+    display: none;
+  }
+
+  /* Show all panels so each accordion header is visible; override [hidden] */
+  .our-process-section-section .our-process-section-panel-wrapper .our-process-section-panel[hidden] {
+    display: block !important;
+  }
+
+  /* Only the active panel’s content is visible */
+  .our-process-section-section .our-process-section-panel:not(.our-process-section-panel--active) .our-process-section-panel-inner {
+    display: none !important;
+  }
+
+  /* Mobile accordion trigger = accordion header */
+  .our-process-section-section .our-process-section-panel-mobile-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-5) var(--space-6);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-top: none;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    color: var(--color-primary, #1a1a1a);
+    text-align: left;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .our-process-section-section .our-process-section-panel:first-child .our-process-section-panel-mobile-trigger {
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+  }
+
+  .our-process-section-section .our-process-section-panel-mobile-trigger:hover {
+    background-color: var(--color-blue-tint, #f5f9fc);
+  }
+
+  .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger {
+    background-color: var(--color-cta-hover);
+    border-color: var(--color-cta-hover);
+    color: var(--color-white);
+  }
+
+  .our-process-section-section .our-process-section-panel-mobile-trigger-icon {
+    display: flex;
+    align-items: center;
+    margin-right: var(--space-4);
+  }
+
+  .our-process-section-section .our-process-section-panel-mobile-trigger-icon img {
+    max-height: 30px;
+    width: auto;
+  }
+
+  .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger-icon img {
+    filter: brightness(0) invert(1);
+  }
+
+  .our-process-section-section .our-process-section-panel-mobile-trigger-label {
+    flex: 1;
+  }
+
+  .our-process-section-section .our-process-section-panel-mobile-trigger-chevron {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: var(--space-3);
+    transition: transform 0.2s ease;
+  }
+
+  .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger-chevron {
+    transform: rotate(-135deg);
+  }
+
+  .our-process-section-section .our-process-section-tab {
+    flex: 1 1 calc(50% - 1px);
+    height: 100px;
+    border-radius: 0;
+  }
+
+  .our-process-section-section .our-process-section-tab:first-child {
+    border-radius: var(--radius-md) 0 0 0;
+  }
+
+  .our-process-section-section .our-process-section-tab:nth-child(2) {
+    border-radius: 0 var(--radius-md) 0 0;
+  }
+
+  .our-process-section-section .our-process-section-tab:last-child {
+    border-radius: 0;
+  }
+
+  .our-process-section-section .our-process-section-tab-icon {
+    height: 35px;
+  }
+
+  .our-process-section-section .our-process-section-tab-icon img {
+    max-height: 35px;
+  }
+
+  .our-process-section-section .our-process-section-tab-label {
+    text-align: center;
+  }
+
+  .our-process-section-section .our-process-section-panel {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .our-process-section-section .our-process-section-panel-image {
+    width: 100%;
+  }
+
+  .our-process-section-section .our-process-section-panel-image img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .our-process-section-section .our-process-section-cta {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+
+  .our-process-section-section .our-process-section-description {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+  .our-process-section-section .our-process-section-tab {
+    flex: 1 1 100%;
+    height: auto;
+    padding: 12px 10px;
+    border-radius: 0;
+  }
+
+  .our-process-section-section .our-process-section-tab:first-child {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .our-process-section-section .our-process-section-tab:nth-child(2) {
+    border-radius: 0;
+  }
+
+  .our-process-section-section .our-process-section-tab-inner {
+    flex-direction: row;
+  }
+
+  .our-process-section-section .our-process-section-tab-icon {
+    height: 30px;
+  }
+
+  .our-process-section-section .our-process-section-tab-icon img {
+    max-height: 30px;
+  }
+
+  .our-process-section-section .our-process-section-panel {
+    padding: 20px 15px;
+  }
+
+  .our-process-section-section .our-process-section-panel-image img {
+    max-height: 220px;
+  }
+}

@@ -11,6 +11,7 @@ if (function_exists('acf_register_block_type')) {
         $dir = get_template_directory() . $block_path;
         $uri = get_template_directory_uri() . $block_path;
     }
+
     acf_register_block_type([
         'name'            => 'video-testimonial-section',
         'title'           => __('Video Testimonial Section', 'theme'),

@@ -1,0 +1,104 @@
+{
+  "key": "group_case_study_content_section_fields",
+  "title": "Case Study Content Section Fields",
+  "fields": [
+    {
+      "key": "field_case_study_content_section_content_order",
+      "label": "Content Order",
+      "name": "content_order",
+      "type": "select",
+      "instructions": "Choose the column order for desktop layout.",
+      "required": 0,
+      "choices": {
+        "default": "Text Left, Card Right",
+        "flipped": "Card Left, Text Right"
+      },
+      "default_value": "default",
+      "return_format": "value",
+      "allow_null": 0
+    },
+    {
+      "key": "field_case_study_content_section_subtitle",
+      "label": "Subtitle",
+      "name": "subtitle",
+      "type": "text",
+      "instructions": "Short label above the title (e.g. client name + 'Case Study:').",
+      "required": 0,
+      "default_value": "Toplids Case Study:"
+    },
+    {
+      "key": "field_case_study_content_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "instructions": "Main case study headline.",
+      "required": 1,
+      "default_value": "Increasing Conversions by 128% in 3 Months"
+    },
+    {
+      "key": "field_case_study_content_section_client_label",
+      "label": "Client Label",
+      "name": "client_label",
+      "type": "text",
+      "instructions": "Client name line (e.g. 'Client : Toplids').",
+      "required": 0,
+      "default_value": "Client : Toplids"
+    },
+    {
+      "key": "field_case_study_content_section_requirement",
+      "label": "Requirement",
+      "name": "requirement",
+      "type": "textarea",
+      "instructions": "Project requirements summary.",
+      "required": 0,
+      "default_value": "Requirement: 2.0 Migration, Theme building, Redesign, Custom development",
+      "rows": 3
+    },
+    {
+      "key": "field_case_study_content_section_testimonial_image",
+      "label": "Testimonial Card Image",
+      "name": "testimonial_image",
+      "type": "image",
+      "instructions": "Background image for the testimonial card.",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "medium"
+    },
+    {
+      "key": "field_case_study_content_section_testimonial_quote",
+      "label": "Testimonial Quote",
+      "name": "testimonial_quote",
+      "type": "textarea",
+      "instructions": "Client testimonial quote.",
+      "required": 0,
+      "default_value": "The whole experience has been fantastic all in all. The site is performing very well.",
+      "rows": 3
+    },
+    {
+      "key": "field_case_study_content_section_testimonial_author",
+      "label": "Testimonial Author",
+      "name": "testimonial_author",
+      "type": "text",
+      "instructions": "Attribution line (e.g. '— Name, Title, Company').",
+      "required": 0,
+      "default_value": "— Tyler Moon, CEO, Top Lids"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/case-study-content-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Case study content section with testimonial card and flip layout option."
+}

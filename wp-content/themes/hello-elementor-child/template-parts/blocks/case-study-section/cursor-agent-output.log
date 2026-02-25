@@ -1,0 +1,87 @@
+Let me look at the reference screenshots and existing blocks for context.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/case-study-section.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/case-study-mobile-section.png
+
+Searched files (template-parts/components/blocks/*/block-config.php)
+
+Searched files (assets/css/*.css)
+
+Searched files (template-parts/**/blocks/*/block-config.php)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/layout.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/colors.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/buttons.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/variables.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/typography.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/spacing.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/common.css
+
+Searched files (template-parts/components/blocks/*/block.php)
+Let me check for any existing blocks for reference and look at the grid.css.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/grid.css
+
+Searched files (template-parts/**/block.php)
+
+$ ls /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ 2>/dev/null || echo "Directory does not exist" (exit 0)
+
+Grepped (theme_get_block_wrapper_attributes)
+
+$ ls /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/ 2>/dev/null || echo "Empty" (exit 0)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block-config.php
+Now I have all the context I need. Let me analyze the desktop vs mobile differences and create all 6 block files.
+$ mkdir -p /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section (exit 0)
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.html
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.css
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.js
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block-acf.json
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block-config.php
+All 6 files are created. Now let me validate them.
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/ (exit 0)
+All 6 files are present. Let me now run a validation read across all files to check consistency.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.html
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block-config.php
+I notice the block-config.php title should match the exact format specified. Let me fix that.
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block-config.php
+Now let me verify the block-config.php path uses the correct `components` path structure.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-section/block-config.php
+All 6 files have been created and validated in `template-parts/components/blocks/case-study-section/`. Here's a summary:
+
+**Desktop vs Mobile Analysis:**
+- **Desktop**: White background (`#ffffff`), 80px vertical padding, two-column layout (text left / image right), stats in 2 rows of 2, left-aligned text
+- **Mobile**: Blue tint background (`#d0e6f2`), 60px padding, single column stacked, stats stacked vertically and centered, image reordered between stats and CTA button
+
+**Key design decisions:**
+
+1. **`block.html`** — Preserves all 28 desktop DOM elements (+ required container wrapper). Figma classes renamed to semantic names (e.g. `case-study-section-card-title`, `case-study-section-stat-item`). Tags converted semantically: `span` → `h2`/`h3`/`p`, button-div → `<a>`, background-image div → `<img>`.
+
+2. **`block.css`** — Every Figma CSS rule mapped to semantic selectors, scoped to `.case-study-section-section`. Uses design system CSS variables (`--font-primary`, `--color-primary`, `--fs-h2`, etc.) with fallbacks. Mobile reordering achieved via `display: contents` on `.case-study-section-card-text` + CSS `order` so image appears between stats and CTA on mobile. Responsive breakpoints at 1024px, 768px, and 480px.
+
+3. **`block.php`** — ACF-annotated template with `theme_get_block_wrapper_attributes`. Stats repeater split into two rows using `array_slice` to preserve the 2×2 desktop grid. All fields wrapped in `!empty()` checks with proper escaping. Includes flip/content-order support.
+
+4. **`block.js`** — Standard IIFE pattern with `initCaseStudySection` per-instance init, `jsInitialized` guard, ACF preview hook, MutationObserver, and try-catch error handling throughout.
+
+5. **`block-acf.json`** — 8 fields: `title` (text), `description` (textarea), `card_title` (text), `stats` (repeater with 4 default rows), `cta_text`, `cta_link` (url), `card_image` (image/array), `content_order` (select: default/flipped). All defaults populated from the Figma HTML content.
+
+6. **`block-config.php`** — Registration with flat path, parent/child theme resolution, no `enqueue_assets` (theme Vite bundle handles CSS/JS).

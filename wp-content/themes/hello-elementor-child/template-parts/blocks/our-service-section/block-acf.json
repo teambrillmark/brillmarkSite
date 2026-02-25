@@ -1,0 +1,333 @@
+{
+  "key": "group_our_service_section_fields",
+  "title": "Our Service Section Fields",
+  "fields": [
+    {
+      "key": "field_our-service-section_section_title",
+      "label": "Section Title",
+      "name": "section_title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Our Services",
+      "instructions": "Main heading displayed above the service tabs"
+    },
+    {
+      "key": "field_our-service-section_check_icon",
+      "label": "Check Icon",
+      "name": "check_icon",
+      "type": "image",
+      "return_format": "url",
+      "preview_size": "thumbnail",
+      "instructions": "Icon displayed next to each feature item (shared across all services)"
+    },
+    {
+      "key": "field_our-service-section_left_decorative_image",
+      "label": "Left Decorative Image",
+      "name": "left_decorative_image",
+      "type": "image",
+      "return_format": "url",
+      "preview_size": "medium",
+      "instructions": "Decorative image on the left side of the slider (desktop only)"
+    },
+    {
+      "key": "field_our-service-section_right_decorative_image",
+      "label": "Right Decorative Image",
+      "name": "right_decorative_image",
+      "type": "image",
+      "return_format": "url",
+      "preview_size": "medium",
+      "instructions": "Decorative image on the right side of the slider (desktop only)"
+    },
+    {
+      "key": "field_our-service-section_services",
+      "label": "Services",
+      "name": "services",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "layout": "block",
+      "button_label": "Add Service",
+      "instructions": "Each service creates a tab and its corresponding content panel",
+      "sub_fields": [
+        {
+          "key": "field_our-service-section_tab_label",
+          "label": "Tab Label",
+          "name": "tab_label",
+          "type": "text",
+          "required": 1,
+          "instructions": "Short label shown on the tab button"
+        },
+        {
+          "key": "field_our-service-section_service_title",
+          "label": "Service Title",
+          "name": "service_title",
+          "type": "text",
+          "required": 1,
+          "instructions": "Heading displayed inside the content panel"
+        },
+        {
+          "key": "field_our-service-section_service_image",
+          "label": "Service Image",
+          "name": "service_image",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "instructions": "Main image shown in the panel (400x400 recommended)"
+        },
+        {
+          "key": "field_our-service-section_cta_text",
+          "label": "CTA Button Text",
+          "name": "cta_text",
+          "type": "text",
+          "default_value": "Know More",
+          "instructions": "Call-to-action button label for this service"
+        },
+        {
+          "key": "field_our-service-section_cta_link",
+          "label": "CTA Button Link",
+          "name": "cta_link",
+          "type": "url",
+          "instructions": "URL the CTA button links to"
+        },
+        {
+          "key": "field_our-service-section_features",
+          "label": "Features",
+          "name": "features",
+          "type": "repeater",
+          "min": 1,
+          "max": 6,
+          "layout": "table",
+          "button_label": "Add Feature",
+          "instructions": "Feature checklist items for this service",
+          "sub_fields": [
+            {
+              "key": "field_our-service-section_feature_title",
+              "label": "Feature Title",
+              "name": "feature_title",
+              "type": "text",
+              "required": 1
+            },
+            {
+              "key": "field_our-service-section_feature_description",
+              "label": "Feature Description",
+              "name": "feature_description",
+              "type": "textarea",
+              "rows": 3
+            }
+          ]
+        }
+      ],
+      "default_value": [
+        {
+          "tab_label": "A/B Test Development",
+          "service_title": "A/B Testing & Experimentation",
+          "cta_text": "Know More About A/B Testing Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "A/B Testing & CRO",
+              "feature_description": "Sophisticated testing and optimization strategies to maximize revenue and engagement."
+            },
+            {
+              "feature_title": "Performance Optimization",
+              "feature_description": "Enhanced page speed, security, and site performance for better UX and SEO rankings."
+            },
+            {
+              "feature_title": "Analytics & Tracking",
+              "feature_description": "Actionable insights into customer behavior, sales performance, and marketing effectiveness."
+            },
+            {
+              "feature_title": "Deploy with full implementation",
+              "feature_description": "Handle everything from coding variations to configuring tests on Convert, Kameleon, Optimizely, VWO, Adobe Target, and more. Ensuring flawless test delivery"
+            }
+          ]
+        },
+        {
+          "tab_label": "Shopify Development",
+          "service_title": "Shopify Development",
+          "cta_text": "Know More About Shopify Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Custom Theme Development",
+              "feature_description": "Build unique, high-performance Shopify themes tailored to your brand identity."
+            },
+            {
+              "feature_title": "App Integration",
+              "feature_description": "Seamlessly integrate third-party apps and custom solutions for enhanced functionality."
+            },
+            {
+              "feature_title": "Store Migration",
+              "feature_description": "Smooth migration from other platforms to Shopify with zero data loss."
+            },
+            {
+              "feature_title": "Performance Optimization",
+              "feature_description": "Speed and conversion-focused optimization for your Shopify store."
+            }
+          ]
+        },
+        {
+          "tab_label": "Wordpress Development",
+          "service_title": "WordPress Development",
+          "cta_text": "Know More About WordPress Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Custom Theme Development",
+              "feature_description": "Build pixel-perfect WordPress themes with modern design standards."
+            },
+            {
+              "feature_title": "Plugin Development",
+              "feature_description": "Custom plugin solutions to extend WordPress functionality."
+            },
+            {
+              "feature_title": "WooCommerce Integration",
+              "feature_description": "Full-featured ecommerce solutions powered by WooCommerce."
+            },
+            {
+              "feature_title": "Site Maintenance",
+              "feature_description": "Ongoing support, updates, and security monitoring for your WordPress site."
+            }
+          ]
+        },
+        {
+          "tab_label": "Web Development",
+          "service_title": "Web Development",
+          "cta_text": "Know More About Web Development",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Custom Web Applications",
+              "feature_description": "Tailored web solutions built with modern frameworks and technologies."
+            },
+            {
+              "feature_title": "Responsive Design",
+              "feature_description": "Pixel-perfect responsive websites optimized for all devices and screen sizes."
+            },
+            {
+              "feature_title": "API Development",
+              "feature_description": "Robust API design and integration for seamless data flow between systems."
+            }
+          ]
+        },
+        {
+          "tab_label": "Design Services",
+          "service_title": "Design Services",
+          "cta_text": "Know More About Design Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "UI/UX Design",
+              "feature_description": "User-centered design that drives engagement and conversion."
+            },
+            {
+              "feature_title": "Brand Identity",
+              "feature_description": "Cohesive brand strategy and visual identity development."
+            },
+            {
+              "feature_title": "Prototyping",
+              "feature_description": "Interactive prototypes for rapid validation and stakeholder alignment."
+            }
+          ]
+        },
+        {
+          "tab_label": "Quality Assurance",
+          "service_title": "Quality Assurance",
+          "cta_text": "Know More About QA Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Automated Testing",
+              "feature_description": "Comprehensive test automation to ensure consistent quality across releases."
+            },
+            {
+              "feature_title": "Manual QA",
+              "feature_description": "Thorough manual testing for edge cases and user experience validation."
+            },
+            {
+              "feature_title": "Performance Testing",
+              "feature_description": "Load and stress testing to ensure your application handles traffic spikes."
+            }
+          ]
+        },
+        {
+          "tab_label": "Google Analytics Setup & Support",
+          "service_title": "Google Analytics Setup & Support",
+          "cta_text": "Know More About Analytics Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "GA4 Setup & Migration",
+              "feature_description": "Complete Google Analytics 4 setup, migration, and configuration."
+            },
+            {
+              "feature_title": "Custom Dashboards",
+              "feature_description": "Tailored reporting dashboards for actionable business insights."
+            },
+            {
+              "feature_title": "Conversion Tracking",
+              "feature_description": "Advanced conversion tracking and attribution modeling."
+            }
+          ]
+        },
+        {
+          "tab_label": "(CRO) Strategies",
+          "service_title": "Conversion Rate Optimization Strategies",
+          "cta_text": "Know More About CRO Services",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Data-Driven Optimization",
+              "feature_description": "Evidence-based strategies to improve conversion rates and revenue."
+            },
+            {
+              "feature_title": "User Research",
+              "feature_description": "Qualitative and quantitative research to understand user behavior."
+            },
+            {
+              "feature_title": "Landing Page Optimization",
+              "feature_description": "High-converting landing pages designed for maximum impact."
+            }
+          ]
+        },
+        {
+          "tab_label": "Dedicated Development Resources",
+          "service_title": "Dedicated Development Resources",
+          "cta_text": "Know More About Dedicated Resources",
+          "cta_link": "#",
+          "features": [
+            {
+              "feature_title": "Dedicated Teams",
+              "feature_description": "Full-time development teams dedicated to your projects and goals."
+            },
+            {
+              "feature_title": "Flexible Scaling",
+              "feature_description": "Scale your team up or down based on project requirements."
+            },
+            {
+              "feature_title": "Seamless Integration",
+              "feature_description": "Resources that integrate with your existing workflows and processes."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/our-service-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Our Services tabbed section with service details, feature lists, and per-service CTA"
+}

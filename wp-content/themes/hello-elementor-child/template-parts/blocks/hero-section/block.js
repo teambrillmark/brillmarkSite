@@ -8,10 +8,30 @@
     section.dataset.jsInitialized = "true";
 
     try {
-      console.log(typeof window.initSwiperInRoot , 'typeof window.initSwiperInRoot ');
-      
-      if (typeof window.initSwiperInRoot === 'function') {
-        window.initSwiperInRoot(section);
+      var variant = section.dataset.variant || '1';
+
+      if (variant === '1') {
+        if (typeof window.initSwiperInRoot === 'function') {
+          window.initSwiperInRoot(section);
+        }
+      }
+
+      if (variant === '3') {
+        var form = section.querySelector('.hero-form');
+        if (form && !form.dataset.jsBound) {
+          form.dataset.jsBound = "true";
+          form.addEventListener('submit', function (e) {
+            try {
+              var email = form.querySelector('input[type="email"]');
+              if (email && !email.value.trim()) {
+                e.preventDefault();
+                email.focus();
+              }
+            } catch (err) {
+              console.error('HeroSection form submit error:', err);
+            }
+          });
+        }
       }
     } catch (error) {
       console.error('HeroSection block init error:', error);
@@ -22,7 +42,7 @@
      INIT ALL BLOCKS
      ---- */
   function initAllHeroSections() {
-    document.querySelectorAll('.hero-testimonial-slider')
+    document.querySelectorAll('.hero-section-section')
       .forEach(function (section) {
         try {
           initHeroSection(section);

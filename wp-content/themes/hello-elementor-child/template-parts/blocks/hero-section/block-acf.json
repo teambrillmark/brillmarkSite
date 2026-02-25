@@ -3,6 +3,34 @@
   "title": "Hero Section Fields",
   "fields": [
     {
+      "key": "field_hero-section_variant",
+      "label": "Variant",
+      "name": "variant",
+      "type": "select",
+      "instructions": "Style variant for this block. The selected value is added as a class and data-style-variant on the section for custom styling.",
+      "choices": {
+        "default": "Default",
+        "minimal": "Minimal",
+        "featured": "Featured"
+      },
+      "default_value": "default"
+    },
+    {
+      "key": "field_hero-section_layout",
+      "label": "Layout",
+      "name": "layout",
+      "type": "select",
+      "required": 1,
+      "choices": {
+        "1": "Variant 1 \u2014 Orbit + Testimonial",
+        "2": "Variant 2 \u2014 Centered",
+        "3": "Variant 3 \u2014 Form + Image",
+        "4": "Variant 4 \u2014 Image + Quote + Logos"
+      },
+      "default_value": "1",
+      "return_format": "value"
+    },
+    {
       "key": "field_hero-section_title",
       "label": "Title",
       "name": "title",
@@ -18,14 +46,15 @@
     },
     {
       "key": "field_hero-section_tag_text",
-      "label": "Tag text",
+      "label": "Tag Text",
       "name": "tag_text",
       "type": "text",
-      "required": 0
+      "required": 0,
+      "instructions": "Small label above the title (used in variants 2, 3, 4)"
     },
     {
       "key": "field_hero-section_button_text",
-      "label": "Button text",
+      "label": "Button Text",
       "name": "button_text",
       "type": "text",
       "required": 0
@@ -38,176 +67,72 @@
       "required": 0
     },
     {
-      "key": "field_hero-section_button_icon",
-      "label": "Button icon",
-      "name": "button_icon",
-      "type": "image",
-      "return_format": "array",
-      "required": 0
-    },
-    {
       "key": "field_hero-section_background_color",
-      "label": "Background color",
+      "label": "Background Color Override",
       "name": "background_color",
       "type": "color_picker",
       "required": 0,
       "default_value": ""
     },
     {
+      "key": "field_hero-section_flip_layout",
+      "label": "Flip Layout (reverse column order)",
+      "name": "flip_layout",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 0,
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }],
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "3" }],
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_button_icon",
+      "label": "Button Icon",
+      "name": "button_icon",
+      "type": "image",
+      "return_format": "array",
+      "required": 0,
+      "instructions": "Icon displayed inside the CTA button",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "2" }]
+      ]
+    },
+    {
       "key": "field_hero-section_checklist_items",
-      "label": "Checklist items",
+      "label": "Checklist Items",
       "name": "checklist_items",
       "type": "repeater",
       "layout": "block",
-      "button_label": "Add item",
+      "button_label": "Add Item",
       "sub_fields": [
         {
           "key": "field_hero-section_checklist_item_text",
-          "label": "Item text",
+          "label": "Item Text",
           "name": "item_text",
           "type": "text",
           "required": 0
         }
       ],
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_show_feature",
-      "label": "Show feature",
-      "name": "show_feature",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 0,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_feature",
-      "label": "Feature",
-      "name": "feature",
-      "type": "wysiwyg",
       "required": 0,
       "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_feature",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_show_custom_code",
-      "label": "Show custom code",
-      "name": "show_custom_code",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 0,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_custom_code",
-      "label": "Custom code",
-      "name": "custom_code",
-      "type": "textarea",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_custom_code",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_show_wistia_video",
-      "label": "Show Wistia video",
-      "name": "show_wistia_video",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 0,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_wistia_video_id",
-      "label": "Wistia video ID",
-      "name": "wistia_video_id",
-      "type": "text",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_wistia_video",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_video_caption",
-      "label": "Caption underneath video",
-      "name": "video_caption",
-      "type": "textarea",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_wistia_video",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_show_visual",
-      "label": "Show visual (orbit and images)",
-      "name": "show_visual",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 1,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_show_slider",
-      "label": "Show slider",
-      "name": "show_slider",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 0,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_hero_image",
-      "label": "Hero image",
-      "name": "hero_image",
-      "type": "image",
-      "return_format": "array",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_visual",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }],
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
       ]
     },
     {
       "key": "field_hero-section_process_steps",
-      "label": "Process steps (orbit)",
+      "label": "Process Steps (Orbit)",
       "name": "process_steps",
       "type": "repeater",
       "layout": "block",
-      "button_label": "Add step",
+      "button_label": "Add Step",
       "sub_fields": [
         {
           "key": "field_hero-section_step_icon",
-          "label": "Step icon",
+          "label": "Step Icon",
           "name": "step_icon",
           "type": "image",
           "return_format": "array",
@@ -215,7 +140,7 @@
         },
         {
           "key": "field_hero-section_step_label",
-          "label": "Step label",
+          "label": "Step Label",
           "name": "step_label",
           "type": "text",
           "required": 0
@@ -223,116 +148,16 @@
       ],
       "required": 0,
       "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_visual",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_testimonials",
-      "label": "Testimonials (slider)",
-      "name": "testimonials",
-      "type": "repeater",
-      "layout": "block",
-      "button_label": "Add testimonial",
-      "sub_fields": [
-        {
-          "key": "field_hero-section_author_photo",
-          "label": "Author photo",
-          "name": "author_photo",
-          "type": "image",
-          "return_format": "array",
-          "required": 0
-        },
-        {
-          "key": "field_hero-section_author_name",
-          "label": "Author name",
-          "name": "author_name",
-          "type": "text",
-          "required": 0
-        },
-        {
-          "key": "field_hero-section_author_role",
-          "label": "Author role",
-          "name": "author_role",
-          "type": "text",
-          "required": 0
-        },
-        {
-          "key": "field_hero-section_testimonial_text",
-          "label": "Testimonial text",
-          "name": "testimonial_text",
-          "type": "textarea",
-          "required": 0
-        },
-        {
-          "key": "field_hero-section_rating_image",
-          "label": "Rating image",
-          "name": "rating_image",
-          "type": "image",
-          "return_format": "array",
-          "required": 0
-        }
-      ],
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_slider",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_hero-section_show_logos_beneath_slider",
-      "label": "Show logos beneath slider",
-      "name": "show_logos_beneath_slider",
-      "type": "true_false",
-      "ui": 1,
-      "default_value": 0,
-      "required": 0
-    },
-    {
-      "key": "field_hero-section_logos_beneath_slider",
-      "label": "Logos beneath slider",
-      "name": "logos_beneath_slider",
-      "type": "repeater",
-      "layout": "block",
-      "button_label": "Add logo",
-      "sub_fields": [
-        {
-          "key": "field_hero-section_logo_beneath",
-          "label": "Logo",
-          "name": "logo",
-          "type": "image",
-          "return_format": "array",
-          "required": 0
-        }
-      ],
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_logos_beneath_slider",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }]
       ]
     },
     {
       "key": "field_hero-section_center_logos",
-      "label": "Center logos (orbit)",
+      "label": "Center Logos (Orbit)",
       "name": "center_logos",
       "type": "repeater",
       "layout": "block",
-      "button_label": "Add logo",
+      "button_label": "Add Logo",
       "sub_fields": [
         {
           "key": "field_hero-section_center_logo",
@@ -345,13 +170,144 @@
       ],
       "required": 0,
       "conditional_logic": [
-        [
-          {
-            "field": "field_hero-section_show_visual",
-            "operator": "==",
-            "value": "1"
-          }
-        ]
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_testimonials",
+      "label": "Testimonials (Slider)",
+      "name": "testimonials",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add Testimonial",
+      "sub_fields": [
+        {
+          "key": "field_hero-section_author_photo",
+          "label": "Author Photo",
+          "name": "author_photo",
+          "type": "image",
+          "return_format": "array",
+          "required": 0
+        },
+        {
+          "key": "field_hero-section_author_name",
+          "label": "Author Name",
+          "name": "author_name",
+          "type": "text",
+          "required": 0
+        },
+        {
+          "key": "field_hero-section_author_role",
+          "label": "Author Role",
+          "name": "author_role",
+          "type": "text",
+          "required": 0
+        },
+        {
+          "key": "field_hero-section_testimonial_text",
+          "label": "Testimonial Text",
+          "name": "testimonial_text",
+          "type": "textarea",
+          "required": 0
+        },
+        {
+          "key": "field_hero-section_rating_image",
+          "label": "Rating Image",
+          "name": "rating_image",
+          "type": "image",
+          "return_format": "array",
+          "required": 0
+        }
+      ],
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_hero_image",
+      "label": "Hero Image",
+      "name": "hero_image",
+      "type": "image",
+      "return_format": "array",
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "3" }],
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_form_email_placeholder",
+      "label": "Form: Email Placeholder",
+      "name": "form_email_placeholder",
+      "type": "text",
+      "required": 0,
+      "default_value": "Email Address",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "3" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_form_website_placeholder",
+      "label": "Form: Website Placeholder",
+      "name": "form_website_placeholder",
+      "type": "text",
+      "required": 0,
+      "default_value": "Your Website",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "3" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_form_action_url",
+      "label": "Form: Action URL",
+      "name": "form_action_url",
+      "type": "url",
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "3" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_quote_text",
+      "label": "Quote Text",
+      "name": "quote_text",
+      "type": "textarea",
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_quote_author",
+      "label": "Quote Author",
+      "name": "quote_author",
+      "type": "text",
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_platform_logos",
+      "label": "Platform Logos",
+      "name": "platform_logos",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add Logo",
+      "sub_fields": [
+        {
+          "key": "field_hero-section_platform_logo",
+          "label": "Logo",
+          "name": "logo",
+          "type": "image",
+          "return_format": "array",
+          "required": 0
+        }
+      ],
+      "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
       ]
     }
   ],

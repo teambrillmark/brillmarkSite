@@ -1,0 +1,392 @@
+/* ============================================================
+   Contact Us Section — All Variants
+   Scoped by .contact-us-section-section[data-variant="N"]
+   Uses design-system tokens from variables.css
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   SHARED STYLES (all variants)
+───────────────────────────────────────── */
+
+.contact-us-section-section {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contact-us-section-section *,
+.contact-us-section-section *::before,
+.contact-us-section-section *::after {
+  box-sizing: border-box;
+}
+
+.contact-us-columns {
+  width: 100%;
+}
+
+/* Flip layout: swap left/right columns (desktop) */
+@media (min-width: 768px) {
+}
+
+/* Form card shared */
+.contact-us-form-card {
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.contact-us-form-title {
+  margin: 0 0 var(--space-5) 0;
+}
+
+/* Form fields shared */
+.contact-us-form {
+  gap: 18px;
+}
+
+.form-row .form-field {
+  flex: 1;
+}
+
+.form-field--full {
+  width: 100%;
+}
+
+.contact-us-form input[type="text"],
+.contact-us-form input[type="email"],
+.contact-us-form input[type="tel"],
+.contact-us-form input[type="url"],
+.contact-us-form select,
+.contact-us-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.contact-us-form input::placeholder,
+.contact-us-form textarea::placeholder {
+  color: #757575;
+}
+
+.contact-us-form input:focus,
+.contact-us-form select:focus,
+.contact-us-form textarea:focus {
+  border-color: var(--color-cta);
+}
+
+.contact-us-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23757575' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  color: #757575;
+}
+
+.form-dropdown-label {
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.form-consent {
+  gap: 13px;
+  cursor: pointer;
+}
+
+.form-consent input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  accent-color: var(--color-cta);
+}
+
+.contact-us-submit {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 50px;
+  max-width: 100%;
+}
+
+.contact-us-form-footer {
+  margin-top: 18px;
+}
+
+.form-footer-text {
+  margin: 0 0 5px 0;
+}
+
+.form-footer-subtext {
+  color: var(--color-black);
+}
+
+/* Rich text features (replaces checklist/steps) */
+
+.contact-us-features p {
+  margin: 0 0 var(--space-3) 0;
+}
+
+.contact-us-features p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-us-custom-code {
+  width: 100%;
+}
+
+/* Checklist shared (V2 + V3) */
+
+
+/* ─────────────────────────────────────────
+   VARIANT 1 — Blue tint bg, form left, steps right
+───────────────────────────────────────── */
+
+.contact-us-section-section[data-variant="1"] {
+  background-color: var(--color-bg-blue, #deeef7);
+  padding: var(--space-20) var(--space-5);
+}
+
+/* Custom section background (color or gradient) overrides variant bg when set via ACF */
+
+.contact-us-section-section[data-variant="1"] .contact-us-header {
+  margin-bottom: var(--space-15);
+  max-width: 581px;
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-header .contact-us-title {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-header .contact-us-description {
+  margin-top: 15px;
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-columns {
+  gap: var(--space-20);
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-form-col {
+  flex: 0 1 556px;
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-form-card {
+  padding: 22px;
+}
+
+.contact-us-section-section[data-variant="1"] .contact-us-info-col {
+  flex: 1;
+}
+
+.contact-us-email-link {
+  text-decoration: underline;
+}
+
+.contact-us-email-link:hover {
+  opacity: 0.75;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.85;
+}
+
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-icon--linkedin {
+  background-color: #0077b5;
+}
+
+.social-icon--twitter {
+  background-color: #1da1f2;
+}
+
+.social-icon--facebook {
+  background-color: #3b5998;
+}
+
+
+/* ─────────────────────────────────────────
+   VARIANT 2 — Light bg, info left, form right
+───────────────────────────────────────── */
+
+.contact-us-section-section[data-variant="2"] {
+  background-color: var(--color-bg-light);
+  padding: var(--section-padding-top-desktop) 0;
+}
+
+.contact-us-section-section[data-variant="2"] .contact-us-columns {
+  gap: 74px;
+}
+
+.contact-us-section-section[data-variant="2"] .contact-us-info-col {
+  flex: 0 1 606px;
+}
+
+.contact-us-email-btn {
+  text-decoration: none;
+}
+
+.contact-us-email-btn .email-icon {
+  flex-shrink: 0;
+}
+
+.contact-us-section-section[data-variant="2"] .contact-us-form-col {
+  flex: 0 1 592px;
+}
+
+.contact-us-section-section[data-variant="2"] .contact-us-form-card {
+  border: none;
+}
+
+.contact-us-section-section[data-variant="2"] .contact-us-submit {
+  height: 50px;
+}
+
+
+/* ─────────────────────────────────────────
+   VARIANT 3 — Dark blue bg, centered header, simplified form
+───────────────────────────────────────── */
+
+.contact-us-section-section[data-variant="3"] {
+  background-color: var(--color-cta-hover);
+  padding: var(--section-padding-top-desktop) var(--space-5);
+}
+
+.contact-us-section-section[data-variant="3"] .contact-us-header {
+  max-width: 972px;
+}
+
+.contact-us-section-section[data-variant="3"] .contact-us-columns {
+  gap: 168px;
+}
+
+.contact-us-section-section[data-variant="3"] .contact-us-info-col {
+  flex: 0 1 418px;
+}
+
+.contact-us-section-section[data-variant="3"] .checklist-icon {
+  margin-top: 6px;
+}
+
+.contact-us-section-section[data-variant="3"] .contact-us-form-col {
+  flex: 0 1 650px;
+}
+
+.contact-us-section-section[data-variant="3"] .contact-us-form-card {
+  border-radius: var(--radius-md);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  gap: 8px;
+}
+
+.contact-us-form--v3 input,
+.contact-us-form--v3 textarea {
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-body);
+  padding: 14px 16px;
+}
+
+.contact-us-form--v3 input::placeholder,
+.contact-us-form--v3 textarea::placeholder {
+  color: #525252;
+}
+
+.contact-us-submit--v3 {
+  background-color: #201e4b;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.contact-us-submit--v3:hover,
+.contact-us-submit--v3:focus {
+  background-color: #2d2a6b;
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — Tablet (max 1239px)
+───────────────────────────────────────── */
+
+@media (max-width: 1239px) {
+
+  .contact-us-section-section[data-variant="3"] .contact-us-columns {
+    gap: var(--space-15);
+  }
+}
+
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — Mobile (max 767px)
+───────────────────────────────────────── */
+
+@media (max-width: 767px) {
+
+  /* Shared mobile */
+  .contact-us-columns {
+    gap: var(--space-10);
+  }
+
+  .contact-us-form-col,
+  .contact-us-info-col {
+    flex: 1 1 100% !important;
+    width: 100%;
+  }
+
+  .form-row {
+    gap: 18px;
+  }
+
+  /* V1 mobile */
+  .contact-us-section-section[data-variant="1"] {
+    padding: var(--section-padding-top-mobile) var(--section-padding-left-mobile);
+  }
+
+  .contact-us-section-section[data-variant="1"] .contact-us-header {
+    max-width: 100%;
+    margin-bottom: var(--space-10);
+  }
+
+  .contact-us-section-section[data-variant="1"] .contact-us-header .contact-us-title {
+    line-height: 42px;
+  }
+
+  /* V2 mobile — put header + checklist above form */
+  .contact-us-section-section[data-variant="2"] {
+    padding: var(--section-padding-top-mobile) var(--section-padding-left-mobile);
+  }
+
+  .contact-us-section-section[data-variant="2"] .contact-us-info-col {
+    gap: var(--space-8);
+  }
+
+  /* V3 mobile */
+  .contact-us-section-section[data-variant="3"] {
+    padding: var(--section-padding-top-mobile) var(--section-padding-left-mobile);
+  }
+
+  .contact-us-section-section[data-variant="3"] .contact-us-header {
+    max-width: 100%;
+  }
+}

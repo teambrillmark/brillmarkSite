@@ -1,0 +1,175 @@
+{
+  "key": "group_contact_us_section_fields",
+  "title": "Contact Us Section Fields",
+  "fields": [
+    {
+      "key": "field_contact_us_section_layout",
+      "label": "Layout variant",
+      "name": "layout",
+      "type": "select",
+      "instructions": "Choose the section layout variant.",
+      "choices": {
+        "1": "Variant 1 (blue tint, form + steps)",
+        "2": "Variant 2 (light bg, checklist + form)",
+        "3": "Variant 3 (dark blue, simplified)"
+      },
+      "default_value": "1"
+    },
+    {
+      "key": "field_contact_us_section_flip_layout",
+      "label": "Swap left/right layout",
+      "name": "flip_layout",
+      "type": "true_false",
+      "instructions": "Swap the order of the two columns (form/custom code vs info/features).",
+      "ui": 1,
+      "default_value": 0
+    },
+    {
+      "key": "field_contact_us_section_section_background",
+      "label": "Section background",
+      "name": "section_background",
+      "type": "text",
+      "instructions": "CSS value for background. Accepts color (e.g. #fff) or gradient (e.g. linear-gradient(135deg, #667eea 0%, #764ba2 100%)). Leave empty to use the variant default.",
+      "placeholder": "#deeef7 or linear-gradient(...)"
+    },
+    {
+      "key": "field_contact_us_section_section_textcolor",
+      "label": "Section textcolor",
+      "name": "section_textcolor",
+      "type": "text",
+      "instructions": "CSS value for text color. Accepts color (e.g. #fff) or gradient (e.g. linear-gradient(135deg, #667eea 0%, #764ba2 100%)). Leave empty to use the variant default.",
+      "placeholder": "#deeef7 or linear-gradient(...)"
+    },
+    {
+      "key": "field_contact_us_section_show_cta",
+      "label": "Show CTA button",
+      "name": "show_cta",
+      "type": "true_false",
+      "instructions": "Show the primary CTA button below the custom code area.",
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_contact_us_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "key": "field_contact_us_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "rows": 3
+    },
+    {
+      "key": "field_contact_us_section_form_title",
+      "label": "Form title",
+      "name": "form_title",
+      "type": "text",
+      "instructions": "Optional heading above the form (custom code) area."
+    },
+    {
+      "key": "field_contact_us_section_custom_code",
+      "label": "Form (custom code)",
+      "name": "custom_code",
+      "type": "text",
+      "instructions": "The form area uses only this custom code. Add your contact form HTML or shortcode here (e.g. [contact-form-7 id=\"123\"]). No built-in form is rendered—this field defines the entire form content.",
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0
+    },
+    {
+      "key": "field_contact_us_section_button_text",
+      "label": "CTA button text",
+      "name": "button_text",
+      "type": "text",
+      "default_value": "Get in Touch"
+    },
+    {
+      "key": "field_contact_us_section_email_address",
+      "label": "Email address",
+      "name": "email_address",
+      "type": "email",
+      "default_value": "info@brillmark.com"
+    },
+    {
+      "key": "field_contact_us_section_footer_text",
+      "label": "Footer text",
+      "name": "footer_text",
+      "type": "text"
+    },
+    {
+      "key": "field_contact_us_section_footer_subtext",
+      "label": "Footer subtext",
+      "name": "footer_subtext",
+      "type": "text"
+    },
+    {
+      "key": "field_contact_us_section_sidebar_heading",
+      "label": "Sidebar heading",
+      "name": "sidebar_heading",
+      "type": "text"
+    },
+    {
+      "key": "field_contact_us_section_features_richtext",
+      "label": "Features / list content",
+      "name": "features_richtext",
+      "type": "wysiwyg",
+      "instructions": "Rich text for the sidebar (replaces the old checklist/step list).",
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 0
+    },
+    {
+      "key": "field_contact_us_section_consent_text",
+      "label": "Consent text",
+      "name": "consent_text",
+      "type": "text",
+      "default_value": "I consent to have BrillMark collect my details via this form and agree to the Privacy Policy"
+    },
+    {
+      "key": "field_contact_us_section_social_links",
+      "label": "Social links",
+      "name": "social_links",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Add link",
+      "sub_fields": [
+        {
+          "key": "field_contact_us_section_platform",
+          "label": "Platform",
+          "name": "platform",
+          "type": "select",
+          "choices": {
+            "linkedin": "LinkedIn",
+            "twitter": "Twitter",
+            "facebook": "Facebook"
+          }
+        },
+        {
+          "key": "field_contact_us_section_url",
+          "label": "URL",
+          "name": "url",
+          "type": "url"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/contact-us-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true
+}

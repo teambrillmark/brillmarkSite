@@ -1,0 +1,260 @@
+{
+  "key": "group_cards_layout_section_fields",
+  "title": "Cards Layout Section Fields",
+  "fields": [
+    {
+      "key": "field_cards_layout_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1
+    },
+    {
+      "key": "field_cards_layout_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "rows": 3
+    },
+    {
+      "key": "field_cards_layout_section_tab_options",
+      "label": "Options",
+      "name": "",
+      "type": "tab"
+    },
+    {
+      "key": "field_cards_layout_section_show_badge",
+      "label": "Show badge",
+      "name": "show_badge",
+      "type": "true_false",
+      "instructions": "Show badge text on each card when set.",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_cards_layout_section_show_icon",
+      "label": "Show icon",
+      "name": "show_icon",
+      "type": "true_false",
+      "instructions": "Show card icon on each card when set.",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_cards_layout_section_last_card_is_cta",
+      "label": "Last card is CTA",
+      "name": "last_card_is_cta",
+      "type": "true_false",
+      "instructions": "When ON, the last card shows CTA content and the section button.",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_cards_layout_section_cta_card_shows_checklist",
+      "label": "CTA card shows checklist",
+      "name": "cta_card_shows_checklist",
+      "type": "true_false",
+      "instructions": "When ON, CTA card shows checklist items; when OFF, shows title and description.",
+      "default_value": 0,
+      "ui": 1,
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_section_background",
+      "label": "Section background",
+      "name": "section_background",
+      "type": "text",
+      "instructions": "CSS value only. E.g. #f4f7fa or linear-gradient(90deg,#fff,#f0f0f0). Leave empty for default.",
+      "default_value": ""
+    },
+    {
+      "key": "field_cards_layout_section_cards",
+      "label": "Cards",
+      "name": "cards",
+      "type": "repeater",
+      "instructions": "Add cards. Each card has title and rich text content. Optional badge, icon, and background (color or gradient).",
+      "min": 1,
+      "max": 6,
+      "layout": "block",
+      "button_label": "Add Card",
+      "sub_fields": [
+        {
+          "key": "field_cards_layout_section_cards_badge_text",
+          "label": "Badge text",
+          "name": "badge_text",
+          "type": "text",
+          "instructions": "e.g. Week 1, Step 1. Shown when \"Show badge\" is ON."
+        },
+        {
+          "key": "field_cards_layout_section_cards_card_icon",
+          "label": "Card icon",
+          "name": "card_icon",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "thumbnail",
+          "instructions": "Shown when \"Show icon\" is ON."
+        },
+        {
+          "key": "field_cards_layout_section_cards_card_title",
+          "label": "Card title",
+          "name": "card_title",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_cards_layout_section_cards_card_content",
+          "label": "Card content",
+          "name": "card_content",
+          "type": "wysiwyg",
+          "instructions": "Rich text: paragraphs, lists, etc. Replaces separate description and checklist.",
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1,
+          "delay": 0
+        },
+        {
+          "key": "field_cards_layout_section_cards_card_background",
+          "label": "Card background",
+          "name": "card_background",
+          "type": "text",
+          "instructions": "Optional. E.g. #e0e0e0 or linear-gradient(90deg,#fff,#eee). Applied to this card only; set on multiple cards to color multiple."
+        }
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_tab_cta",
+      "label": "CTA (when last card is CTA)",
+      "name": "",
+      "type": "tab"
+    },
+    {
+      "key": "field_cards_layout_section_cta_button_text",
+      "label": "CTA button text",
+      "name": "cta_button_text",
+      "type": "text",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_cta_button_url",
+      "label": "CTA button URL",
+      "name": "cta_button_url",
+      "type": "url",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_cta_title",
+      "label": "CTA card title",
+      "name": "cta_title",
+      "type": "text",
+      "instructions": "Shown on the CTA (last) card when \"CTA card shows checklist\" is OFF.",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          },
+          {
+            "field": "field_cards_layout_section_cta_card_shows_checklist",
+            "operator": "!=",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_cta_description",
+      "label": "CTA card description",
+      "name": "cta_description",
+      "type": "textarea",
+      "rows": 2,
+      "instructions": "Shown on the CTA (last) card when \"CTA card shows checklist\" is OFF.",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          },
+          {
+            "field": "field_cards_layout_section_cta_card_shows_checklist",
+            "operator": "!=",
+            "value": "1"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_cards_layout_section_cta_checklist_items",
+      "label": "CTA checklist items",
+      "name": "cta_checklist_items",
+      "type": "repeater",
+      "instructions": "Shown on the CTA (last) card when \"CTA card shows checklist\" is ON.",
+      "min": 0,
+      "max": 5,
+      "layout": "table",
+      "button_label": "Add item",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_cards_layout_section_last_card_is_cta",
+            "operator": "==",
+            "value": "1"
+          },
+          {
+            "field": "field_cards_layout_section_cta_card_shows_checklist",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "sub_fields": [
+        {
+          "key": "field_cards_layout_section_cta_checklist_item_text",
+          "label": "Item text",
+          "name": "item_text",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/cards-layout-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true
+}

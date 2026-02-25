@@ -4,7 +4,7 @@
  */
 
 if (function_exists('acf_register_block_type')) {
-    $block_path = '/template-parts/blocks/hero-section';
+    $block_path = '/template-parts/components/blocks/hero-section';
     $dir = get_stylesheet_directory() . $block_path;
     $uri = get_stylesheet_directory_uri() . $block_path;
     if (!file_exists($dir . '/block.php')) {

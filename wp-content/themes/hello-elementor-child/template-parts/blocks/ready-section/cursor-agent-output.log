@@ -1,0 +1,65 @@
+I'll analyze the desktop and mobile HTML, check reference images and existing block patterns, then create all 6 files.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/ready-section.png
+
+Searched files (template-parts/components/blocks/*/block-config.php)
+
+Searched files (assets/css/*.css)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/ready-mobile-section.png
+Let me check the design system files and an existing block for reference patterns.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/colors.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/layout.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/variables.css
+
+Searched files (template-parts/components/blocks/*/block-config.php)
+Let me check for existing blocks to follow the pattern.
+Searched files (template-parts/**/blocks/*/block-config.php)
+
+Grepped (theme_get_block_wrapper_attributes)
+
+Grepped (function theme_get_block_wrapper_attributes)
+
+$ mkdir -p /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section (exit 0)
+Now I have a clear picture of the structure and design system. Let me create all 6 block files.
+
+**Desktop vs Mobile diff:**
+- Stats row: `flex-direction: row` (desktop) → `column` (mobile)
+- Stats gap: 150px → 30px
+- Title: 44px → 36px
+- Stat numbers: 40px/weight 400 → 48px/weight 500
+- One DOM, CSS media queries handle differences
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block.html
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block.css
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block.js
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block-acf.json
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/block-config.php
+Now let me verify all files were created.
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/ready-section/ (exit 0)
+All 6 files created successfully in `template-parts/components/blocks/ready-section/`. Here's a summary:
+
+**Structure preservation:** The desktop HTML structure is preserved 1:1 — section > container > content wrapper > (text-wrapper + stats row) with 3 stat items, each containing a number + label. All Figma classes renamed to semantic names, `data-figma` attributes removed.
+
+**Desktop/Mobile responsive strategy (one DOM, CSS only):**
+- **Desktop (1440px):** Stats in a horizontal row with 150px gap, title at 44px, stat numbers at 40px/weight-400
+- **Tablet (≤1024px):** Stats gap reduces to 60px, title to 38px
+- **Mobile (≤768px):** Stats stack vertically with 30px gap, title at 36px, stat numbers grow to 48px with weight-500 (matching mobile Figma)
+- **Small mobile (≤480px):** Tighter padding, title 32px, stat numbers 42px
+
+**ACF fields:**
+- `title` (text) — default: "Ready to Elevate Your Digital Presence?"
+- `description` (textarea) — default: the full paragraph
+- `stats` (repeater) — 3 default rows with `stat_number` and `stat_label` sub-fields, pre-populated from the HTML
+
+**Key details:**
+- `block.php` uses `theme_get_block_wrapper_attributes()` for the root section
+- All `get_field()`/`get_sub_field()` calls wrapped in `!empty()` checks with proper escaping
+- `block.js` follows the IIFE pattern with init guard, ACF preview hook, and full try-catch error handling
+- `block-config.php` uses the flat path with no `enqueue_assets` (Vite bundle handles CSS/JS)

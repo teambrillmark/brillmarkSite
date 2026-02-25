@@ -1,0 +1,413 @@
+/* ============================================================
+   optimization-tab-section — Block Styles
+   All selectors scoped to .optimization-tab-section-section
+   ============================================================ */
+
+.optimization-tab-section-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 10px);
+  padding: var(--section-padding-top-desktop, 60px) var(--space-2, 10px);
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-white, #ffffff);
+}
+
+.optimization-tab-section-section *,
+.optimization-tab-section-section *::before,
+.optimization-tab-section-section *::after {
+  box-sizing: border-box;
+}
+
+.optimization-tab-section-section .container {
+  width: 100%;
+  max-width: var(--container-desktop, 1240px);
+  margin: 0 auto;
+}
+
+/* ─── Wrapper ─── */
+
+/* ─── Header ─── */
+.optimization-tab-section-section .optimization-tab-section-header {
+  width: 100%;
+  max-width: 884px;
+}
+
+.optimization-tab-section-section .optimization-tab-section-heading-group {
+  width: 100%;
+}
+
+.optimization-tab-section-section .optimization-tab-section-title {
+  width: 100%;
+  max-width: 870px;
+  font-size: var(--fs-h2, 40px);
+  font-weight: var(--font-weight-light, 300);
+  line-height: var(--lh-h2, 54px);
+}
+
+.optimization-tab-section-section .optimization-tab-section-description {
+  width: 100%;
+  max-width: 884px;
+  font-size: var(--fs-h6, 18px);
+  line-height: var(--lh-h6, 28px);
+}
+
+/* ─── Content / Tabs Area ─── */
+
+/* ─── Tab strip (slider: no wrap, horizontal scroll + arrows) ─── */
+.optimization-tab-section-section .optimization-tab-section-tabs-strip {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-nav-wrapper {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-prev,
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-next {
+  flex-shrink: 0;
+  width: 40px;
+  height: auto;
+  min-height: 116px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-2);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-prev:hover,
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-next:hover {
+  background-color: rgba(9, 96, 168, 0.08);
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-prev.tabs-scroll-disabled,
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-next.tabs-scroll-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid rgba(51, 51, 51, 0.10);
+  border-radius: 50%;
+  color: var(--color-primary, #112446);
+}
+
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-prev svg,
+.optimization-tab-section-section .optimization-tab-section-tabs-scroll-next svg {
+  color: inherit;
+}
+
+/* ─── Tab Navigation ─── */
+
+.optimization-tab-section-section .optimization-tab-section-tab {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-2, 10px);
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 120px;
+  min-height: 116px;
+  border: 1px solid rgba(51, 51, 51, 0.10);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-primary, "Poppins", sans-serif);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tab:hover {
+  background-color: rgba(9, 96, 168, 0.1);
+}
+
+.optimization-tab-section-section .optimization-tab-section-tab.active {
+  background-color: var(--color-cta-hover, #0960a8);
+}
+
+.optimization-tab-section-section .optimization-tab-section-tab.active .optimization-tab-section-tab-label {
+  color: var(--color-white, #ffffff);
+}
+
+/* ─── Tab Panels ─── */
+.optimization-tab-section-section .optimization-tab-section-tab-panel {
+  display: none;
+}
+
+.optimization-tab-section-section .optimization-tab-section-tab-panel.active {
+  display: block;
+}
+
+/* ─── Mobile panel title (hidden on desktop, shown on mobile) ─── */
+
+/* ─── Panels Container (Old vs New) ─── */
+.optimization-tab-section-section .optimization-tab-section-panels {
+  width: 100%;
+}
+
+/* ─── Old Panel ─── */
+.optimization-tab-section-section .optimization-tab-section-panel-old {
+  width: 50%;
+  border: 1px solid rgba(51, 51, 51, 0.10);
+}
+
+.optimization-tab-section-section .optimization-tab-section-panel-inner {
+  width: 100%;
+}
+
+.optimization-tab-section-section .optimization-tab-section-panel-label {
+  width: 100%;
+  font-size: var(--fs-h5, 20px);
+  line-height: var(--lh-h5, 30px);
+}
+
+.optimization-tab-section-section .optimization-tab-section-panel-desc {
+  width: 100%;
+  line-height: var(--lh-body, 24px);
+}
+
+.optimization-tab-section-section .optimization-tab-section-panel-image {
+  width: 450px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 450 / 780;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: var(--radius-md, 10px);
+}
+
+/* ─── New Panel ─── */
+.optimization-tab-section-section .optimization-tab-section-panel-new {
+  width: 50%;
+}
+
+.optimization-tab-section-section .optimization-tab-section-new-body {
+  width: 100%;
+}
+
+/* ─── Navigation Arrows ─── */
+.optimization-tab-section-section .optimization-tab-section-nav {
+  gap: var(--space-4, 16px);
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-prev,
+.optimization-tab-section-section .optimization-tab-section-nav-next {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-prev:hover .optimization-tab-section-nav-circle,
+.optimization-tab-section-section .optimization-tab-section-nav-next:hover .optimization-tab-section-nav-circle {
+  background-color: var(--color-bg-light, #f4f7fa);
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-prev svg,
+.optimization-tab-section-section .optimization-tab-section-nav-next svg {
+  color: var(--color-primary, #112446);
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-prev.disabled,
+.optimization-tab-section-section .optimization-tab-section-nav-next.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.optimization-tab-section-section .optimization-tab-section-nav-prev.disabled svg,
+.optimization-tab-section-section .optimization-tab-section-nav-next.disabled svg {
+  color: rgba(51, 51, 51, 0.20);
+}
+
+/* ============================================================
+   Responsive: Tablet (≤1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .optimization-tab-section-section {
+    padding: var(--section-padding-top-mobile, 50px) var(--space-2, 10px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-tab {
+    min-height: 90px;
+    padding: 20px 15px;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-tabs-scroll-prev,
+  .optimization-tab-section-section .optimization-tab-section-tabs-scroll-next {
+    min-height: 90px;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-old,
+  .optimization-tab-section-section .optimization-tab-section-panel-new {
+    padding: var(--space-10) var(--space-2) var(--space-2);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-image {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* ============================================================
+   Responsive: Mobile (≤768px)
+   Keep slider: tabs + prev/next, one panel visible (no accordion)
+   ============================================================ */
+@media (max-width: 768px) {
+  .optimization-tab-section-section {
+    padding: var(--section-padding-top-mobile, 50px) 0;
+    background-color: var(--color-bg-blue, #daeef8);
+    justify-content: center;
+  }
+
+  .optimization-tab-section-section .container {
+    max-width: 390px;
+    gap: 0;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-wrapper {
+    gap: var(--space-8);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-header {
+    max-width: 100%;
+    padding: 0 var(--space-5, 20px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-title {
+    font-size: var(--fs-h3, 30px);
+    line-height: var(--lh-h3, 44px);
+    text-transform: capitalize;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-description {
+    font-size: var(--fs-h6, 18px);
+    line-height: var(--lh-h6, 28px);
+  }
+
+  /* Keep tabs and nav visible on mobile for slider */
+  .optimization-tab-section-section .optimization-tab-section-nav {
+    display: flex !important;
+  }
+
+  /* Slider: only the active panel visible (same as desktop) */
+  .optimization-tab-section-section .optimization-tab-section-tab-panel {
+    display: none;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-tab-panel.active {
+    display: block;
+  }
+
+  /* Hide mobile accordion header; we use tabs + nav as slider */
+  .optimization-tab-section-section .optimization-tab-section-panel-mobile-title {
+    display: none !important;
+  }
+
+  /* Panels container */
+  .optimization-tab-section-section .optimization-tab-section-panels {
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background-color: var(--color-white, #ffffff);
+    border: 0.8px solid var(--color-cta-hover, #0960a8);
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-old,
+  .optimization-tab-section-section .optimization-tab-section-panel-new {
+    width: 100%;
+    padding: var(--space-5) 0 0 0;
+    border: none;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-body,
+  .optimization-tab-section-section .optimization-tab-section-new-body {
+    gap: var(--space-6, 24px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-text-group,
+  .optimization-tab-section-section .optimization-tab-section-new-text-group {
+    gap: var(--space-3, 12px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-image {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 450 / 780;
+  }
+}
+
+/* ============================================================
+   Responsive: Small Mobile (≤480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .optimization-tab-section-section {
+    padding: var(--space-10) 0;
+  }
+
+  .optimization-tab-section-section .container {
+    max-width: 350px;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-description {
+    font-size: var(--fs-body, 16px);
+    line-height: var(--lh-body, 24px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panels {
+    padding: var(--space-4);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-label {
+    font-size: var(--fs-h6, 18px);
+  }
+
+  .optimization-tab-section-section .optimization-tab-section-panel-desc {
+    font-size: var(--fs-small, 14px);
+    line-height: var(--lh-small, 22px);
+  }
+}

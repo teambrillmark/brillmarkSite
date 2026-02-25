@@ -1,0 +1,131 @@
+{
+  "key": "group_case_study_section_fields",
+  "title": "Case Study Section Fields",
+  "fields": [
+    {
+      "key": "field_case_study_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Our Shopify Development Case Studies"
+    },
+    {
+      "key": "field_case_study_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "Discover how Brillmark helped Hemp House to scale their Shopify Store & provide exceptional user experience through their store with our innovative design & ideas!",
+      "rows": 3
+    },
+    {
+      "key": "field_case_study_section_card_title",
+      "label": "Card Title",
+      "name": "card_title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Hemp house website redesign helped combat Amazon competitors"
+    },
+    {
+      "key": "field_case_study_section_stats",
+      "label": "Stats",
+      "name": "stats",
+      "type": "repeater",
+      "required": 0,
+      "min": 1,
+      "max": 8,
+      "layout": "table",
+      "sub_fields": [
+        {
+          "key": "field_case_study_section_stat_label",
+          "label": "Stat Label",
+          "name": "stat_label",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_case_study_section_stat_value",
+          "label": "Stat Value",
+          "name": "stat_value",
+          "type": "text",
+          "required": 1
+        }
+      ],
+      "default_value": [
+        {
+          "field_case_study_section_stat_label": "Desktop Conversion Rate",
+          "field_case_study_section_stat_value": "+ 59%"
+        },
+        {
+          "field_case_study_section_stat_label": "New Visitor Conversion Rate",
+          "field_case_study_section_stat_value": "+ 47%"
+        },
+        {
+          "field_case_study_section_stat_label": "Mobile Conversion Rate",
+          "field_case_study_section_stat_value": "+ 62%"
+        },
+        {
+          "field_case_study_section_stat_label": "Google Page Speed Score On Desktop",
+          "field_case_study_section_stat_value": "+ 57%"
+        }
+      ]
+    },
+    {
+      "key": "field_case_study_section_cta_text",
+      "label": "CTA Text",
+      "name": "cta_text",
+      "type": "text",
+      "required": 0,
+      "default_value": "Read Full Case Study"
+    },
+    {
+      "key": "field_case_study_section_cta_link",
+      "label": "CTA Link",
+      "name": "cta_link",
+      "type": "url",
+      "required": 0,
+      "default_value": "#"
+    },
+    {
+      "key": "field_case_study_section_card_image",
+      "label": "Card Image",
+      "name": "card_image",
+      "type": "image",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_case_study_section_content_order",
+      "label": "Content Order",
+      "name": "content_order",
+      "type": "select",
+      "required": 0,
+      "choices": {
+        "default": "Default (Text Left, Image Right)",
+        "flipped": "Flipped (Image Left, Text Right)"
+      },
+      "default_value": "default",
+      "return_format": "value"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/case-study-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Case study section with stats, image, and CTA button."
+}

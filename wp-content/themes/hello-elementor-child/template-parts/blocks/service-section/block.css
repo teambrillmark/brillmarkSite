@@ -1,0 +1,289 @@
+/* ==========================================================
+   Service Section Block
+   Scoped to .service-section-section
+   ========================================================== */
+
+   .service-section-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: var(--space-20) 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-bg-light);
+  }
+  
+  .service-section-section *,
+  .service-section-section *::before,
+  .service-section-section *::after {
+    box-sizing: border-box;
+  }
+  
+  /* ── Inner container ── */
+  .service-section-section .service-section-inner {
+    width: 100%;
+    max-width: 1235px;
+  }
+  
+  /* ── Header (title + description) ── */
+  .service-section-section .service-section-header {
+    width: 100%;
+    max-width: 1068px;
+  }
+  
+  .service-section-section .service-section-title {
+    width: 100%;
+    max-width: 1068px;
+  }
+  
+  .service-section-section .service-section-description {
+    width: 100%;
+    max-width: 1068px;
+  }
+  
+  /* ── Content area (two-column on desktop) ── */
+  .service-section-section .service-section-content {
+    gap: 65px;
+    width: 100%;
+    max-width: 1235px;
+  }
+  
+  /* ── Tab navigation (left column) ── */
+  .service-section-section .service-section-tabs {
+    width: 360px;
+    min-width: 360px;
+    flex-shrink: 0;
+  }
+  
+  .service-section-section .service-section-tab-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px 20px;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .service-section-section .service-section-tab-item:hover {
+    background-color: #eef3f8;
+  }
+  
+  .service-section-section .service-section-tab-inner {
+    width: 100%;
+  }
+  
+  .service-section-section .service-section-tab-title {
+    flex: 1;
+  }
+  
+  .service-section-section .service-section-tab-arrow-wrap {
+    padding: 5px 12px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+  }
+  
+  .service-section-section .service-section-tab-arrow {
+    width: 6px;
+    height: 11px;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+  
+  /* Active tab state */
+  .service-section-section .service-section-tab-item.active .service-section-tab-arrow-wrap {
+    background-color: var(--color-cta-hover);
+  }
+  
+  /* ── Panels wrapper (right column) ── */
+  .service-section-section .service-section-panels-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .service-section-section .service-section-panel {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px 50px 130px 50px;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+  }
+  
+  .service-section-section .service-section-panel.active {
+    display: flex;
+  }
+  
+  .service-section-section .service-section-panel-inner {
+    width: 100%;
+  }
+  
+  .service-section-section .service-section-panel-content {
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* ── Bullet list ── */
+  .service-section-section .service-section-panel-bullets {
+    padding: 0 0 0 20px;
+    width: 100%;
+  }
+  
+  .service-section-section .service-section-bullet-item {
+    width: 100%;
+  }
+  
+  .service-section-section .service-section-bullet-dot-wrap {
+    padding: 9px 0 0 0;
+    width: 6px;
+    min-width: 6px;
+    flex-shrink: 0;
+  }
+  
+  .service-section-section .service-section-bullet-dot {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    min-height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    flex-shrink: 0;
+  }
+  
+  .service-section-section .service-section-bullet-text {
+    flex: 1;
+  }
+  
+  /* ── CTA Button ── */
+  .service-section-section .service-section-cta {
+    max-width: 307px;
+    background-color: var(--color-cta);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .service-section-section .service-section-cta:hover {
+    background-color: var(--color-cta-hover);
+    opacity: 1;
+  }
+  
+  /* ==========================================================
+     RESPONSIVE — Tablet (≤ 1024px)
+     ========================================================== */
+  @media (max-width: 1024px) {
+  
+    .service-section-section .service-section-tabs {
+      width: 300px;
+      min-width: 300px;
+    }
+  
+    .service-section-section .service-section-panel {
+      padding: 40px 40px 80px 40px;
+    }
+  
+    .service-section-section .service-section-title {
+      font-size: 34px;
+      line-height: 46px;
+    }
+  }
+  
+  /* ==========================================================
+     RESPONSIVE — Mobile (≤ 768px)
+     Stacked: hide tabs, show all panels in a column
+     ========================================================== */
+  @media (max-width: 768px) {
+    .service-section-section {
+      padding: 50px 10px;
+    }
+  
+    .service-section-section .service-section-inner {
+      max-width: 390px;
+    }
+  
+    .service-section-section .service-section-header {
+      max-width: 390px;
+    }
+  
+    /* Stacked layout: single column, tabs hidden */
+    .service-section-section .service-section-content {
+      flex-direction: column;
+      gap: var(--space-6);
+      align-items: stretch;
+    }
+  
+    .service-section-section .service-section-tabs {
+      display: none !important;
+    }
+  
+    /* Show all panels stacked (override [hidden]) */
+    .service-section-section .service-section-panels-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+  
+    .service-section-section .service-section-panel,
+    .service-section-section .service-section-panel[hidden] {
+      display: flex !important;
+      padding: 30px;
+      width: 100%;
+    }
+  
+    .service-section-section .service-section-panel-content {
+      gap: 20px;
+    }
+  
+    .service-section-section .service-section-panel-title {
+      font-size: var(--fs-h5);
+      line-height: var(--lh-h5);
+    }
+  
+    .service-section-section .service-section-panel-bullets {
+      padding: 0;
+      gap: 10px;
+    }
+  
+    .service-section-section .service-section-cta {
+      max-width: 307px;
+      width: 100%;
+      height: 50px;
+    }
+  }
+  
+  /* ==========================================================
+     RESPONSIVE — Small mobile (≤ 480px)
+     ========================================================== */
+  @media (max-width: 480px) {
+    .service-section-section {
+      padding: 40px 10px;
+    }
+  
+    .service-section-section .service-section-inner {
+      max-width: 100%;
+    }
+  
+    .service-section-section .service-section-panel {
+      padding: 24px 20px;
+    }
+  
+    .service-section-section .service-section-panel-title {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  
+    .service-section-section .service-section-cta {
+      max-width: 100%;
+      padding: 10px 20px;
+    }
+  }
+  

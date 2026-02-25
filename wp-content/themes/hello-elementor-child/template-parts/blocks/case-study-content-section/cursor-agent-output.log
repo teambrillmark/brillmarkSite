@@ -1,0 +1,64 @@
+Let me start by viewing the reference screenshots and checking the target directory.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/case-study-content-section.png
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/output-components/section/case-study-content-mobile-section.png
+
+Searched files (**/assets/css/*.css)
+
+$ ls /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/ 2>/dev/null || echo "DIR_NOT_FOUND" (exit 0)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/layout.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/colors.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/variables.css
+
+Searched files (**/blocks/*/block-config.php)
+Let me check an existing block for reference patterns.
+Searched files (**/blocks/*/block-config.php)
+
+Grepped (theme_get_block_wrapper_attributes)
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/spacing.css
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/assets/css/typography.css
+Let me look at an existing block for reference.
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block-config.php
+
+Read /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/brands-section/block.php
+Now let me create the block directory and all 6 files. I'll start with the first three files in parallel.
+$ mkdir -p /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section (exit 0)
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block-config.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block.html
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block.php
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block.css
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block.js
+
+Edited /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/block-acf.json
+All files created. Let me verify they all exist and do a final validation.
+$ ls -la /Users/kshitijkaushik/Desktop/Git/figma-to-wordpress/template-parts/components/blocks/case-study-content-section/ (exit 0)
+All 6 files are created and verified in `template-parts/components/blocks/case-study-content-section/`. Here's a summary of what was generated:
+
+**Desktop/Mobile Analysis:**
+- Desktop: Two-column layout (text left + testimonial card right, 120px gap) inside a `#DAEEF8` blue-tint section
+- Mobile: Same DOM stacked vertically (30px gap), centered content, testimonial quote centered
+- One unified DOM; layout differences handled entirely via CSS media queries
+
+**Files created:**
+
+1. **block-config.php** - ACF block registration (no `enqueue_assets` per Vite bundle strategy), resolves parent/child theme paths
+2. **block.html** - Clean semantic HTML preserving all 15 Figma elements: subtitle, h3 title, h6 client label, p requirement, testimonial card (card-bg + card-image + quote-wrapper with quote text and cite author), wrapped in `.container`
+3. **block.php** - ACF template using `theme_get_block_wrapper_attributes`, all fields wrapped in `!empty()` checks, proper escaping (`esc_html`, `esc_url`, `wp_kses_post`), flip layout class support
+4. **block.css** - All 16 scoped selectors under `.case-study-content-section-section`, uses design system tokens (`var(--font-primary)`, `var(--fs-h6)`, `var(--radius-sm)`, etc.), responsive breakpoints at 1024px, 768px, and 480px
+5. **block.js** - IIFE pattern with `initCaseStudyContentSection()`, duplicate-init guard, scoped queries, ACF preview hook, MutationObserver, full try-catch error handling
+6. **block-acf.json** - 8 fields: `content_order` (select: default/flipped), `subtitle`, `title`, `client_label`, `requirement`, `testimonial_image` (image array), `testimonial_quote`, `testimonial_author`, all with default values from the Figma HTML
+
+**Key features:**
+- Content order flip (ACF select toggles `flex-direction: row-reverse`)
+- Design system classes used: `.section`, `.bg-blue-tint`, `.flex`, `.flex-col`, `.items-center`, `.text-primary`, `.text-secondary`, `.container`
+- Testimonial card uses layered positioning (white bg, image layer, quote overlay with z-index)

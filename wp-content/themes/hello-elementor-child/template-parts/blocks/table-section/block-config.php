@@ -4,7 +4,7 @@
  */
 
 if (function_exists('acf_register_block_type')) {
-    $block_path = '/template-parts/components/blocks/table-section';
+    $block_path = '/template-parts/blocks/table-section';
     $dir = get_stylesheet_directory() . $block_path;
     if (!file_exists($dir . '/block.php')) {
         $dir = get_template_directory() . $block_path;
