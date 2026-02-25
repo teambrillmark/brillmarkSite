@@ -1,8 +1,12 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
   root: process.cwd(),
+  plugins: [
+    basicSsl()
+  ],
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -33,12 +37,16 @@ export default defineConfig({
   // Development server configuration
   server: {
     // Set to your local development URL
-    host: "localhost",
+    host: true,
     port: 3000,
+    strictPort: true,
+    cors: true,
+    https: true,
 
     // Hot Module Replacement
     hmr: {
       host: "localhost",
+      protocol: "wss",
     },
 
     // Watch for changes in all relevant files

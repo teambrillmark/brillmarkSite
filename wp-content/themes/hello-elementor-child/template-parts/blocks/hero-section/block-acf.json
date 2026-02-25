@@ -225,6 +225,43 @@
       ]
     },
     {
+      "key": "field_hero-section_checklist_icon",
+      "label": "Checklist Icon",
+      "name": "checklist_icon",
+      "type": "image",
+      "return_format": "array",
+      "required": 0,
+      "instructions": "Upload a custom checkmark icon for checklist items. Leave empty to use the default SVG.",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }],
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_testimonial_prev_icon",
+      "label": "Testimonial Slider: Previous Arrow",
+      "name": "testimonial_prev_icon",
+      "type": "image",
+      "return_format": "array",
+      "required": 0,
+      "instructions": "Upload custom icon for previous button. Leave empty to use default SVG.",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_testimonial_next_icon",
+      "label": "Testimonial Slider: Next Arrow",
+      "name": "testimonial_next_icon",
+      "type": "image",
+      "return_format": "array",
+      "required": 0,
+      "instructions": "Upload custom icon for next button. Leave empty to use default SVG.",
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "1" }]
+      ]
+    },
+    {
       "key": "field_hero-section_hero_image",
       "label": "Hero Image",
       "name": "hero_image",
@@ -284,6 +321,17 @@
       "name": "quote_author",
       "type": "text",
       "required": 0,
+      "conditional_logic": [
+        [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
+      ]
+    },
+    {
+      "key": "field_hero-section_wistia_video_id",
+      "label": "Wistia Video ID",
+      "name": "wistia_video_id",
+      "type": "text",
+      "required": 0,
+      "instructions": "Wistia video hash (e.g. abc12345). When set, the video loads in place of the hero image. Leave empty to use the hero image.",
       "conditional_logic": [
         [{ "field": "field_hero-section_layout", "operator": "==", "value": "4" }]
       ]

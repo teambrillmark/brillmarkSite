@@ -5,6 +5,12 @@
  */
 
 $wrapper   = theme_get_block_wrapper_attributes($block, 'cards-layout-section-section');
+$variant_id = get_field('variant');
+if (empty($variant_id)) {
+  $variant_id = 'default';
+}
+$variant_id = sanitize_html_class($variant_id);
+
 $title     = get_field('title');
 $description = get_field('description');
 $show_badge = (bool) get_field('show_badge');
@@ -21,7 +27,7 @@ $cards = get_field('cards');
 $cards_count = is_array($cards) ? count($cards) : 0;
 
 $section_style = '';
-$section_class = $wrapper['class'] . ' section';
+$section_class = $wrapper['class'] . ' cards-layout-section-section cards-layout-section-section--' . $variant_id . ' section';
 if (!empty($section_bg)) {
   $section_style = ' style="background: ' . esc_attr($section_bg) . ';"';
 } else {
@@ -32,10 +38,11 @@ if (!empty($section_bg)) {
 <section
   id="<?php echo esc_attr($wrapper['id']); ?>"
   class="<?php echo esc_attr($section_class); ?>"
+  data-style-variant="<?php echo esc_attr($variant_id); ?>"
   <?php echo $section_style; ?>
 >
   <div class="cards-layout-container container flex flex-col items-center">
-    <div class="cards-layout-header flex flex-col items-center gap-10 text-center">
+    <div class="cards-layout-header flex flex-col items-center gap-10 text-center bm-margin-bottom-space-10">
       <?php if (!empty($title)): ?>
         <h2 class="cards-layout-title component-title text-center text-primary m-0"><?php echo esc_html($title); ?></h2>
       <?php endif; ?>
@@ -45,7 +52,7 @@ if (!empty($section_bg)) {
     </div>
 
     <?php if ($cards_count > 0): ?>
-      <div class="cards-layout-grid flex flex-wrap justify-center gap-5">
+      <div class="cards-layout-grid flex flex-wrap justify-center gap-5 bm-gap-space-5 bm-display-grid">
         <?php
         $row_index = 0;
         foreach ($cards as $card):
@@ -68,11 +75,11 @@ if (!empty($section_bg)) {
           <div class="<?php echo esc_attr($card_class); ?>"<?php echo $card_style; ?>>
             <div class="cards-layout-card-inner flex flex-col justify-center gap-5">
               <?php if ($show_badge && $badge_text !== ''): ?>
-                <span class="cards-layout-badge inline-flex justify-center items-center font-normal text-white"><?php echo esc_html($badge_text); ?></span>
+                <span class="cards-layout-badge inline-flex justify-center items-center font-normal text-white bm-font-size-fs-small bm-line-height-lh-small"><?php echo esc_html($badge_text); ?></span>
               <?php endif; ?>
               <?php if ($show_icon && $card_icon && !empty($card_icon['url'])): ?>
                 <img
-                  class="cards-layout-card-icon"
+                  class="cards-layout-card-icon bm-display-block"
                   src="<?php echo esc_url($card_icon['url']); ?>"
                   alt="<?php echo esc_attr(!empty($card_icon['alt']) ? $card_icon['alt'] : ''); ?>"
                   width="49"
@@ -82,10 +89,10 @@ if (!empty($section_bg)) {
               <div class="cards-layout-card-content flex flex-col gap-10">
                 <div class="cards-layout-card-text flex flex-col gap-10">
                   <?php if ($card_title !== ''): ?>
-                    <h3 class="cards-layout-card-title text-primary m-0"><?php echo esc_html($card_title); ?></h3>
+                    <h3 class="cards-layout-card-title text-primary m-0 bm-fw-var-font-wei bm-font-size-fs-h5 bm-line-height-lh-h5 bm-font-weight-font-weight-regular"><?php echo esc_html($card_title); ?></h3>
                   <?php endif; ?>
                   <?php if ($card_content !== ''): ?>
-                    <div class="cards-layout-card-desc text-secondary m-0 text-body"><?php echo wp_kses_post($card_content); ?></div>
+                    <div class="cards-layout-card-desc text-secondary m-0 text-body bm-text-ada5 bm-font-size-fs-body bm-line-height-lh-body"><?php echo wp_kses_post($card_content); ?></div>
                   <?php endif; ?>
                 </div>
 
@@ -106,10 +113,10 @@ if (!empty($section_bg)) {
                       </ul>
                     <?php elseif (!$cta_card_shows_checklist): ?>
                       <?php if (!empty($cta_title)): ?>
-                        <h3 class="cards-layout-cta-title text-primary m-0"><?php echo esc_html($cta_title); ?></h3>
+                        <h3 class="cards-layout-cta-title text-primary m-0 bm-fw-var-font-wei bm-font-size-fs-h5 bm-line-height-lh-h5 bm-font-weight-font-weight-regular"><?php echo esc_html($cta_title); ?></h3>
                       <?php endif; ?>
                       <?php if (!empty($cta_description)): ?>
-                        <p class="cards-layout-cta-desc text-primary m-0 text-body"><?php echo wp_kses_post($cta_description); ?></p>
+                        <p class="cards-layout-cta-desc text-primary m-0 text-body bm-text-ada5 bm-font-size-fs-body bm-line-height-lh-body"><?php echo wp_kses_post($cta_description); ?></p>
                       <?php endif; ?>
                     <?php endif; ?>
                     <?php if (!empty($cta_button_text)): ?>

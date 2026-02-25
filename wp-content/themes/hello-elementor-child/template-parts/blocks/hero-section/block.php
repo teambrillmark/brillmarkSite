@@ -18,9 +18,13 @@ $hero_image  = get_field('hero_image');
 $button_icon = get_field('button_icon');
 $quote_text  = get_field('quote_text');
 $quote_author = get_field('quote_author');
+$wistia_video_id = get_field('wistia_video_id');
 $form_email_placeholder   = get_field('form_email_placeholder');
 $form_website_placeholder = get_field('form_website_placeholder');
 $form_action_url = get_field('form_action_url');
+$checklist_icon = get_field('checklist_icon');
+$testimonial_prev_icon = get_field('testimonial_prev_icon');
+$testimonial_next_icon = get_field('testimonial_next_icon');
 
 $section_style = '';
 if (!empty($background_color)) {
@@ -52,9 +56,13 @@ $flip_class = (!empty($flip_layout) && in_array($layout, ['1', '3', '4'])) ? ' h
               <?php $item_text = get_sub_field('item_text'); ?>
               <?php if (!empty($item_text)) : ?>
                 <li class="hero-checklist-item flex flex-row items-center bm-gap-space-3 bm-gap-space-1">
-                  <svg class="hero-check-icon bm-color-color-primary" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
-                    <path d="M13.5 1.5L5.25 12L1.5 8.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <?php if (!empty($checklist_icon['url'])) : ?>
+                    <img src="<?php echo esc_url($checklist_icon['url']); ?>" alt="" class="hero-check-icon bm-color-color-primary" width="15" height="15" aria-hidden="true">
+                  <?php else : ?>
+                    <svg class="hero-check-icon bm-color-color-primary" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                      <path d="M13.5 1.5L5.25 12L1.5 8.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <?php endif; ?>
                   <span class="hero-checklist-text bm-font-weight-font-weight-regular bm-color-color-secondary bm-color-color-primary bm-font-size-fs-body bm-font-weight-500"><?php echo esc_html($item_text); ?></span>
                 </li>
               <?php endif; ?>
@@ -153,10 +161,18 @@ $flip_class = (!empty($flip_layout) && in_array($layout, ['1', '3', '4'])) ? ' h
                 <?php endwhile; ?>
               </div>
               <button class="hero-testimonial-prev" aria-label="<?php esc_attr_e('Previous testimonial', 'theme'); ?>">
-                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2"/></svg>
+                <?php if (!empty($testimonial_prev_icon['url'])) : ?>
+                  <img src="<?php echo esc_url($testimonial_prev_icon['url']); ?>" alt="" class="hero-testimonial-arrow-icon" width="8" height="14" aria-hidden="true">
+                <?php else : ?>
+                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2"/></svg>
+                <?php endif; ?>
               </button>
               <button class="hero-testimonial-next bm-color-color-primary bm-padding-space-2" aria-label="<?php esc_attr_e('Next testimonial', 'theme'); ?>">
-                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2"/></svg>
+                <?php if (!empty($testimonial_next_icon['url'])) : ?>
+                  <img src="<?php echo esc_url($testimonial_next_icon['url']); ?>" alt="" class="hero-testimonial-arrow-icon" width="8" height="14" aria-hidden="true">
+                <?php else : ?>
+                  <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2"/></svg>
+                <?php endif; ?>
               </button>
             </div>
           <?php endif; ?>
@@ -247,9 +263,13 @@ $flip_class = (!empty($flip_layout) && in_array($layout, ['1', '3', '4'])) ? ' h
               <?php $item_text = get_sub_field('item_text'); ?>
               <?php if (!empty($item_text)) : ?>
                 <li class="hero-checklist-item flex flex-row items-center">
-                  <svg class="hero-check-icon" width="18" height="17" viewBox="0 0 18 17" fill="none" aria-hidden="true">
-                    <path d="M16.5 1.5L6.5 13.5L1.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+                  <?php if (!empty($checklist_icon['url'])) : ?>
+                    <img src="<?php echo esc_url($checklist_icon['url']); ?>" alt="" class="hero-check-icon" width="18" height="17" aria-hidden="true">
+                  <?php else : ?>
+                    <svg class="hero-check-icon" width="18" height="17" viewBox="0 0 18 17" fill="none" aria-hidden="true">
+                      <path d="M16.5 1.5L6.5 13.5L1.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <?php endif; ?>
                   <span class="hero-checklist-text"><?php echo esc_html($item_text); ?></span>
                 </li>
               <?php endif; ?>
@@ -265,7 +285,14 @@ $flip_class = (!empty($flip_layout) && in_array($layout, ['1', '3', '4'])) ? ' h
     </div>
 
     <div class="hero-media flex flex-col items-center bm-util-efee bm-util-3146">
-      <?php if (!empty($hero_image)) : ?>
+      <?php if (!empty($wistia_video_id)) : ?>
+        <?php $wistia_id = preg_replace('/[^a-zA-Z0-9]/', '', $wistia_video_id); ?>
+        <?php if (!empty($wistia_id)) : ?>
+          <div class="hero-wistia-wrap">
+            <iframe src="<?php echo esc_url('https://fast.wistia.net/embed/iframe/' . $wistia_id . '?videoFoam=true'); ?>" title="<?php echo esc_attr(!empty($title) ? $title : 'Video'); ?>" allow="autoplay; fullscreen" allowfullscreen class="hero-wistia-iframe"></iframe>
+          </div>
+        <?php endif; ?>
+      <?php elseif (!empty($hero_image)) : ?>
         <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>" class="hero-image">
       <?php endif; ?>
       <?php if (!empty($quote_text) || !empty($quote_author)) : ?>

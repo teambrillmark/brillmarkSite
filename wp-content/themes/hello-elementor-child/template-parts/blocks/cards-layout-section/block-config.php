@@ -11,6 +11,12 @@ if (function_exists('acf_register_block_type')) {
         $dir = get_template_directory() . $block_path;
         $uri = get_template_directory_uri() . $block_path;
     }
+
+    $acf_fields = $dir . '/block-acf-fields.php';
+    if (file_exists($acf_fields)) {
+        require_once $acf_fields;
+    }
+
     acf_register_block_type([
         'name'            => 'cards-layout-section',
         'title'           => __('Cards Layout Section', 'theme'),

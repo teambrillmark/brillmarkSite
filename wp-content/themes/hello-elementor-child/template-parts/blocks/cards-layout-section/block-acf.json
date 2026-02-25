@@ -3,6 +3,21 @@
   "title": "Cards Layout Section Fields",
   "fields": [
     {
+      "key": "field_cards_layout_section_variant",
+      "label": "Variant",
+      "name": "variant",
+      "type": "select",
+      "instructions": "Style variant for this block. Added as class cards-layout-section-section--{value} and data-style-variant for custom styling.",
+      "required": 0,
+      "choices": {
+        "default": "Default",
+        "minimal": "Minimal",
+        "featured": "Featured",
+        "compact": "Compact"
+      },
+      "default_value": "default"
+    },
+    {
       "key": "field_cards_layout_section_title",
       "label": "Title",
       "name": "title",

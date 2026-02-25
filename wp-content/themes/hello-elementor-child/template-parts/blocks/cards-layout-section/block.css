@@ -6,13 +6,7 @@
   font-family: var(--font-primary);
 }
 
-.cards-layout-header {
-  margin-bottom: var(--space-10);
-}
-
 .cards-layout-grid {
-  display: grid;
-  gap: var(--space-5);
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -40,26 +34,12 @@
   padding: var(--space-2) var(--space-4);
   background-color: var(--color-cta);
   border-radius: var(--radius-sm);
-  font-size: var(--fs-small);
-  line-height: var(--lh-small);
 }
 
 .cards-layout-card-icon {
-  display: block;
   width: 49px;
   height: 49px;
   object-fit: contain;
-}
-
-.cards-layout-card-title {
-  font-size: var(--fs-h5);
-  line-height: var(--lh-h5);
-  font-weight: var(--font-weight-regular);
-}
-
-.cards-layout-card-desc {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
 }
 
 .cards-layout-card-desc p {
@@ -90,17 +70,6 @@
 .cards-layout-check-icon {
   flex-shrink: 0;
   font-weight: bold;
-}
-
-.cards-layout-cta-title {
-  font-size: var(--fs-h5);
-  line-height: var(--lh-h5);
-  font-weight: var(--font-weight-regular);
-}
-
-.cards-layout-cta-desc {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
 }
 
 .cards-layout-cta-btn {
