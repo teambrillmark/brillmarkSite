@@ -19,7 +19,8 @@
 .case-study-section-section .case-study-section-inner {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1241px;
+  max-width: 1240px;
+  gap: var(--space-12);
 }
 
 /* Header */
@@ -57,6 +58,8 @@
 .case-study-section-section .case-study-section-slider {
   width: 100%;
   overflow: hidden;
+  padding-left: var(--space-5);
+  padding-right: var(--space-5);
 }
 
 .case-study-section-section .case-study-section-slider .swiper-wrapper {
@@ -95,11 +98,11 @@
 }
 
 .case-study-section-section .case-study-section-slider-prev {
-  left: -12px;
+  left: 0px;
 }
 
 .case-study-section-section .case-study-section-slider-next {
-  right: -12px;
+  right: 0px;
 }
 
 .case-study-section-section .case-study-section-slider-prev::after,
@@ -127,7 +130,7 @@
   width: 100%;
   background-color: var(--color-bg-light, #f4f7fa);
   border-radius: 15px;
-  padding: 40px 20px;
+  padding: var(--space-11);
 }
 
 /* Card content — two-column on desktop */
@@ -171,24 +174,37 @@
 
 /* Stats row */
 .case-study-section-section .case-study-section-stats-row {
-  box-sizing: border-box;
-  gap: 100px;
+    box-sizing: border-box;
+    gap: var(--space-25) !important;
+    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.case-study-section-section .case-study-section-stats-row + .case-study-section-stats-row {
+/* .case-study-section-section .case-study-section-stats-row + .case-study-section-stats-row {
   gap: 113px;
-}
+} */
 
 /* Stat item */
 .case-study-section-section .case-study-section-stat-item {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    gap: var(--space-10px);
+    width: 100%;
+    max-width: 280px;
+    text-align: left;
+    align-items: flex-start;
 }
 
 /* Stat label */
 
 /* Stat value */
 .case-study-section-section .case-study-section-stat-value {
-  line-height: 1.2;
+    text-align: left;
+    display: block !important;
+    width: 100%;
+    font-size: var(--fs-h2);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--lh-h2);
 }
 
 /* CTA button */
@@ -234,7 +250,6 @@
 @media (max-width: 1024px) {
   .case-study-section-section .case-study-section-inner {
     max-width: 100%;
-    padding: 0 20px;
   }
 
   .case-study-section-section .case-study-section-header {
@@ -243,6 +258,7 @@
 
   .case-study-section-section .case-study-section-card-content {
     gap: 30px;
+    flex-direction: column;
   }
 
   .case-study-section-section .case-study-section-card-image {
@@ -262,26 +278,14 @@
     padding: 60px 0;
     background-color: #d0e6f2;
   }
-
-  .case-study-section-section .case-study-section-inner {
-    gap: 50px;
-    padding: 0 20px;
-  }
-
-  .case-study-section-section .case-study-section-header {
-    max-width: 390px;
-  }
-
+  .case-study-section-section .case-study-section-stat-value,
+.case-study-section-section .case-study-section-stat-item{
+  max-width: 100%;
+  align-items: center;
+  text-align: center;
+}
   .case-study-section-section .case-study-section-title {
     font-weight: var(--font-weight-regular, 400);
-  }
-
-  .case-study-section-section .case-study-section-description {
-    max-width: 380px;
-  }
-
-  .case-study-section-section .case-study-section-card-group {
-    max-width: 390px;
   }
 
   .case-study-section-section .case-study-section-card {
@@ -305,17 +309,16 @@
 
   .case-study-section-section .case-study-section-card-title {
     order: 1;
-    max-width: 380px;
     width: 100%;
   }
-
   .case-study-section-section .case-study-section-stats-wrapper {
     order: 2;
-    max-width: 342px;
   }
 
   .case-study-section-section .case-study-section-stats-row {
     width: 100%;
+    grid-template-columns: 1fr;
+    gap: var(--space-8) !important;
   }
 
   .case-study-section-section .case-study-section-stat-value {
@@ -350,19 +353,6 @@
   .case-study-section-section {
     padding: 40px 0;
   }
-
-  .case-study-section-section .case-study-section-inner {
-    padding: 0 16px;
-  }
-
-  .case-study-section-section .case-study-section-header {
-    max-width: 100%;
-  }
-
-  .case-study-section-section .case-study-section-card-group {
-    max-width: 100%;
-  }
-
   .case-study-section-section .case-study-section-card {
     padding: 30px 10px;
   }
