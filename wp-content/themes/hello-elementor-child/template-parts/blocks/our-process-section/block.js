@@ -36,6 +36,26 @@
     }
   }
 
+  function deactivatePanel(section, targetIndex) {
+    var tab = section.querySelector('.our-process-section-tab[data-tab="' + targetIndex + '"]');
+    var panel = section.querySelector('.our-process-section-panel[data-panel="' + targetIndex + '"]');
+    var trigger = section.querySelector('.our-process-section-panel-mobile-trigger[data-panel="' + targetIndex + '"]');
+
+    if (tab) {
+      tab.classList.remove('our-process-section-tab--active');
+      tab.setAttribute('aria-selected', 'false');
+    }
+
+    if (panel) {
+      panel.classList.remove('our-process-section-panel--active');
+      panel.setAttribute('hidden', '');
+    }
+
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  }
+
   function initOurProcessSection(section) {
     if (!section || section.dataset.jsInitialized) return;
     section.dataset.jsInitialized = 'true';
@@ -47,6 +67,7 @@
 
       if (!tabs.length || !panels.length) return;
 
+      /* Desktop tab bar: switch panel only, no toggle (always one panel open) */
       tabs.forEach(function (tab) {
         if (!tab || tab.dataset.jsBound) return;
         tab.dataset.jsBound = 'true';
@@ -62,6 +83,7 @@
         });
       });
 
+      /* Mobile accordion triggers: toggle open/close (triggers only visible on mobile) */
       triggers.forEach(function (trigger) {
         if (!trigger || trigger.dataset.jsBound) return;
         trigger.dataset.jsBound = 'true';
@@ -70,7 +92,15 @@
           try {
             var targetIndex = trigger.getAttribute('data-panel');
             if (targetIndex === null) return;
-            activatePanel(section, targetIndex);
+            var targetPanel = section.querySelector('.our-process-section-panel[data-panel="' + targetIndex + '"]');
+            var isActive = targetPanel && targetPanel.classList.contains('our-process-section-panel--active');
+
+            if (isActive) {
+              // Toggle off when clicking the already active accordion header
+              deactivatePanel(section, targetIndex);
+            } else {
+              activatePanel(section, targetIndex);
+            }
           } catch (err) {
             console.error('OurProcessSection accordion trigger click error:', err);
           }
