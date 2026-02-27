@@ -1,23 +1,175 @@
-/* ================================================================
-   CARDS LAYOUT SECTION — design system tokens only
-   ================================================================ */
-
 .cards-layout-section-section {
   font-family: var(--font-primary);
+  max-width: 1420px;
+  margin: 0 auto;
+  background: #F4F7FA;
+  padding: 60px 10px;
 }
 
 .cards-layout-grid {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
 }
+
+.cards-layout-header{
+  max-width: 966px;
+  width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  font-family: var(--font-primary);
+  margin-bottom: 40px;
+}
+.cards-layout-header h2.cards-layout-title{
+  color: #112446;
+font-size: 40px;
+font-style: normal;
+font-weight: 300;
+line-height: 54px; /* 135% */
+margin: 0 0 10px;
+}
+.cards-layout-header p.cards-layout-description{
+  color: #313F58;  
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+  max-width: 733px;
+  width: 100%;  
+  margin: 0 auto;
+
+}
+
+.cards-layout-grid.flex {
+  display: flex;
+  flex-direction: row;
+    flex-wrap: wrap;
+    gap: 37px 20px;
+    justify-content: center;
+
+}
+
+.cards-layout-card.flex{
+  border-radius: 6px;
+    background: #FFF;
+}
+.cards-layout-card{
+  flex: 1 1 390px;
+}
+.cards-layout-card-inner{
+  margin: 51px 50px;
+}
+.cards-layout-card-inner span {
+  color: #FFF;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  border-radius: 17px;
+  background: #0960A8;
+  padding: 4px 15px;
+}
+
+.cards-layout-card-desc p{
+  color: #313F58;
+  font-family: var(--font-primary);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+.cards-layout-card-desc{
+  padding: 0;
+}
+
+.cards-layout-card-content .cards-layout-card-desc ul{
+list-style: none;
+padding: 0;
+}
+.cards-layout-card-desc ul li {
+  padding-bottom: 10px;
+}
+.cards-layout-card-desc ul li img{
+  padding-right: 10px;
+}
+.cards-layout-card-text h3.cards-layout-card-title {
+  padding: 20px 0 10px;
+  color: #112446;
+  font-family: var(--font-primary);
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 150% */
+margin: 0;
+}
+
+.cards-layout-card--cta{
+  border-radius: 6px;
+}
+.cards-layout-cta-content{
+  border-radius: 6px;
+    color: #fff;
+  background:#13367D;
+    padding: 13px 20px;
+    width: 214px;
+    margin-top: 20px;
+}
+.cards-layout-cta-content span{
+  background:#13367D
+}
+.cards-layout-cta-content svg{
+  color: white;
+}
+/* why choose section css........................... */
+
+.cards-layout-card.cards-layout-card--cta{
+  border-radius: 6px;
+background: #DAEEF8;
+}
+
+
+
 
 @media (min-width: 768px) {
   .cards-layout-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
+@media (max-width: 768px) {
+  .cards-layout-card-inner {
+    margin: 48px 45px;
+  }  
+  .cards-layout-card.flex {
+    padding: 0 10px;
+}
+
+.cards-layout-header h2.cards-layout-title {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+}
+.cards-layout-section-section {
+  padding: 60px 20px;
+}
+.cards-layout-grid.flex{
+  max-width: 400px;
+  width: 100%;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ............................................... */
+}
+
+
+
+
+
+
+
 
 .cards-layout-card {
   padding: var(--space-5);
@@ -45,6 +197,7 @@
 .cards-layout-card-desc p {
   margin: 0 0 var(--space-3);
 }
+
 
 .cards-layout-card-desc p:last-child {
   margin-bottom: 0;

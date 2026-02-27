@@ -101,63 +101,87 @@
 .brands-section-section--grid .brands-section-logo-item--12 { width: 248px; height: 50px; }
  */
 /* ----- Slider layout ----- */
+/* Desktop: show slider, hide mobile grid. Mobile: show grid, hide slider. */
+.brands-section-section--slider .brands-section-slider-wrap--desktop {
+  display: flex;
+  width: 100%;
+}
+.brands-section-section--slider .brands-section-logos--mobile-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .brands-section-section--slider .brands-section-slider-wrap--desktop {
+    display: none;
+  }
+  .brands-section-section--slider .brands-section-logos--mobile-only {
+    display: flex;
+  }
+  /* Slider layout on mobile: use same grid as grid layout */
+  .brands-section-section--slider .brands-section-logos--mobile-only .brands-section-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .brands-section-section--slider .brands-section-logos--mobile-only .brands-section-logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .brands-section-section--slider .brands-section-slider {
-  gap: var(--space-4);
   width: 100%;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
 }
 
-.brands-section-slider-viewport {
-  flex: 1;
-  overflow: hidden;
+.brands-section-section--slider .brands-section-slider-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: fit-content;
+  animation: brands-section-slider-scroll 80s infinite linear;
 }
 
-/* Track is direct child of slider for Swiper; needs to take remaining space */
-.brands-section-slider-track {
-  transition: transform 0.3s ease;
-  will-change: transform;
+.brands-section-section--slider .brands-section-slider-slide {
+  padding: 0 12px;
+  flex-shrink: 0;
+  list-style: none;
 }
 
-/* Let Swiper control slide width and spacing when active (slidesPerView from block options) */
-.brands-section-slider.swiper .brands-section-slider-track .brands-section-slider-slide {
-  flex: none;
-  min-width: 0;
+.brands-section-section--slider .brands-section-slider .brands-section-logo-item {
   width: auto;
-}
-
-.brands-section-section--slider .brands-section-logo-item {
-  width: 100%;
   max-width: 180px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.brands-section-section--slider .brands-section-logo-item img {
+.brands-section-section--slider .brands-section-slider .brands-section-logo-item img {
   display: block;
   max-width: 100%;
-  max-height: 50px;
+  max-height: 60px;
+  width: auto;
   height: auto;
   object-fit: contain;
 }
 
-.brands-section-slider-prev,
-.brands-section-slider-next {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid var(--color-primary);
-  border-radius: 50%;
-  background: var(--color-white);
-  color: var(--color-primary);
-  font-size: var(--fs-h6);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.brands-section-slider-next:hover,
-.brands-section-slider-prev:hover {
-  background: var(--color-bg-light);
+@keyframes brands-section-slider-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ----- CTA ----- */
@@ -284,32 +308,6 @@
     font-size: var(--fs-small);
     max-width: 100%;
   }
-
-  .brands-section-slider {
-    gap: var(--space-3);
-  }
-
-  .brands-section-slider-prev,
-  .brands-section-slider-next {
-    width: 36px;
-    height: 36px;
-    font-size: var(--fs-small);
-  }
-
-/*   .brands-section-section--grid .brands-section-logo-item--1,
-  .brands-section-section--grid .brands-section-logo-item--2,
-  .brands-section-section--grid .brands-section-logo-item--3,
-  .brands-section-section--grid .brands-section-logo-item--4,
-  .brands-section-section--grid .brands-section-logo-item--5,
-  .brands-section-section--grid .brands-section-logo-item--6,
-  .brands-section-section--grid .brands-section-logo-item--7,
-  .brands-section-section--grid .brands-section-logo-item--8,
-  .brands-section-section--grid .brands-section-logo-item--9,
-  .brands-section-section--grid .brands-section-logo-item--10,
-  .brands-section-section--grid .brands-section-logo-item--11,
-  .brands-section-section--grid .brands-section-logo-item--12 {
-    max-width: 130px;
-  } */
 
   .brands-section-section--grid .brands-section-logo-item img {
     max-height: auto;
