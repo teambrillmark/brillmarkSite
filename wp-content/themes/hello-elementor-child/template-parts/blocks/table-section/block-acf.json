@@ -9,9 +9,10 @@
       "type": "select",
       "instructions": "Style variant for this block. The selected value is added as a class and data-variant on the section for custom styling.",
       "choices": {
-        "default": "Default",
-        "compact": "Compact",
-        "bordered": "Bordered"
+        "3column": "3column",
+        "4column": "4column",
+        "2columnPop": "2columnPop",
+        "3columnPop": "3columnPop"
       },
       "default_value": "default"
     },
@@ -82,6 +83,13 @@
           ]
         }
       ]
+    },
+    {
+      "key": "field_table_section_col_full_width",
+      "label": "Whole Column width",
+      "name": "column_width",
+      "type": "text",
+      "instructions": "Optional. Set width of header + all body cells in this column."
     },
     {
       "key": "field_table_section_tab_options",

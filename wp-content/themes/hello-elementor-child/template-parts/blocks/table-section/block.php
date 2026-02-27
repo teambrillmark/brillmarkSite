@@ -28,9 +28,11 @@ $odd_bg    = (bool) get_field('odd_row_bg');
 $odd_color = get_field('odd_row_bg_color') ?: '#f4f7fa';
 $even_bg   = (bool) get_field('even_row_bg');
 $even_color = get_field('even_row_bg_color') ?: '#ffffff';
+$grid_style = get_field('column_width') ?: '1fr';
 
 $col_count = is_array($columns) ? count($columns) : 0;
 $row_count = 0;
+
 if ($col_count > 0) {
   foreach ($columns as $col) {
     $cells = isset($col['cells']) && is_array($col['cells']) ? $col['cells'] : [];
@@ -47,21 +49,70 @@ if ($col_count > 0) {
         <h2 class="table-section-title component-title text-center text-primary m-0"><?php echo esc_html($title); ?></h2>
       <?php endif; ?>
       <?php if (!empty($desc)): ?>
-        <p class="table-section-description component-description text-center text-secondary m-0"><?php echo wp_kses_post($desc); ?></p>
+        <p class="table-section-description text-center text-secondary m-0"><?php echo wp_kses_post($desc); ?></p>
       <?php endif; ?>
     </div>
 
     <?php if ($col_count > 0): ?>
     <?php
-    $table_class = 'table-section-table mx-auto';
+    $table_class = 'table-section-table mx-auto flex flex-col items-center justify-center';
     if ($transpose) {
       $table_class .= ' table-section-table--transposed';
+    }
+    if ($popout && !$transpose) {
+      $table_class .= ' table-section-table--column-based';
     }
     ?>
     <div class="<?php echo esc_attr($table_class); ?>" data-columns="<?php echo (int) $col_count; ?>">
       <?php if (!$transpose): ?>
-      <!-- Header row: one cell per column -->
-      <div class="table-section-row table-section-row--header bm-display-grid bm-align-items-stretch" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, 1fr));">
+      <?php if ($popout): ?>
+      <!-- Column-based: one wrapper per column (header + cells), popout column is a single column wrapper -->
+      <div class="table-section-columns" style="display: grid; grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));">
+        <?php foreach ($columns as $col_index => $col): ?>
+          <?php
+          $cells = isset($col['cells']) && is_array($col['cells']) ? $col['cells'] : [];
+          $header_bg = '';
+          if (!empty($col['column_background_color'])) {
+            $header_bg = $col['column_background_color'];
+          } elseif (!empty($col['header_background_color'])) {
+            $header_bg = $col['header_background_color'];
+          }
+          $col_num = $col_index + 1;
+          $is_popout_col = $popout_i === $col_num;
+          $col_class = 'table-section-column';
+          if ($is_popout_col) {
+            $col_class .= ' table-section-column--popout';
+          }
+          $col_style = isset($col['column_background_color']) && $col['column_background_color'] !== '' ? ' background-color: ' . esc_attr($col['column_background_color']) . ';' : '';
+          ?>
+          <div class="<?php echo esc_attr($col_class); ?>"<?php if ($col_style !== ''): ?> style="<?php echo $col_style; ?>"<?php endif; ?>>
+            <div class="table-section-cell table-section-cell--header"<?php if ($header_bg !== ''): ?> style="background-color: <?php echo esc_attr($header_bg); ?>;"<?php endif; ?>>
+              <?php echo esc_html($col['header_label'] ?? ''); ?>
+            </div>
+            <?php for ($row_index = 0; $row_index < $row_count; $row_index++): ?>
+              <?php
+              $cell_content = isset($cells[$row_index]['content']) ? $cells[$row_index]['content'] : '';
+              $is_odd = ($row_index % 2) === 0;
+              $cell_style = '';
+              if ($is_odd && $odd_bg) {
+                $cell_style = ' background-color: ' . esc_attr($odd_color) . ';';
+              } elseif (!$is_odd && $even_bg) {
+                $cell_style = ' background-color: ' . esc_attr($even_color) . ';';
+              }
+              if (isset($col['column_background_color']) && $col['column_background_color'] !== '') {
+                $cell_style = ' background-color: ' . esc_attr($col['column_background_color']) . ';';
+              }
+              ?>
+              <div class="table-section-cell table-section-cell--body<?php echo $is_popout_col ? ' table-section-cell--popout' : ''; ?>"<?php if ($cell_style !== ''): ?> style="<?php echo $cell_style; ?>"<?php endif; ?>>
+                <?php echo wp_kses_post($cell_content); ?>
+              </div>
+            <?php endfor; ?>
+          </div>
+        <?php endforeach; ?>
+      </div>
+      <?php else: ?>
+      <!-- Row-based: header row + body rows -->
+      <div class="table-section-row table-section-row--header bm-display-grid bm-align-items-stretch" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));">
         <?php foreach ($columns as $col_index => $col): ?>
           <?php
           $header_bg = '';
@@ -72,7 +123,7 @@ if ($col_count > 0) {
           }
           $col_num = $col_index + 1;
           $is_popout = $popout && ($popout_i === $col_num);
-          $header_class = 'table-section-cell table-section-cell--header flex items-center justify-center text-center text-white';
+          $header_class = 'table-section-cell table-section-cell--header flex text-primary';
           if ($is_popout) {
             $header_class .= ' table-section-cell--popout';
           }
@@ -100,7 +151,7 @@ if ($col_count > 0) {
           $row_class .= ' table-section-row--even';
         }
         ?>
-        <div class="<?php echo esc_attr($row_class); ?>" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, 1fr));<?php echo $row_style; ?>">
+        <div class="<?php echo esc_attr($row_class); ?>" style="grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));<?php echo $row_style; ?>">
           <?php foreach ($columns as $col_index => $col): ?>
             <?php
             $cells = isset($col['cells']) && is_array($col['cells']) ? $col['cells'] : [];
@@ -108,7 +159,7 @@ if ($col_count > 0) {
             $col_full_bg = isset($col['column_background_color']) && $col['column_background_color'] !== '' ? $col['column_background_color'] : '';
             $col_num = $col_index + 1;
             $is_popout = $popout && ($popout_i === $col_num);
-            $cell_class = 'table-section-cell text-secondary';
+            $cell_class = 'table-section-cell text-primary flex items-center';
             if ($is_popout) {
               $cell_class .= ' table-section-cell--popout';
             }
@@ -120,7 +171,7 @@ if ($col_count > 0) {
           <?php endforeach; ?>
         </div>
       <?php endfor; ?>
-
+      <?php endif; ?>
       <?php else: ?>
       <!-- Transposed: one row per column = [header, cell[0], cell[1], ...] -->
       <?php foreach ($columns as $col_index => $col): ?>
@@ -153,7 +204,7 @@ if ($col_count > 0) {
         }
         $col_full_bg = isset($col['column_background_color']) && $col['column_background_color'] !== '' ? $col['column_background_color'] : '';
         ?>
-        <div class="<?php echo esc_attr($row_class); ?>" style="grid-template-columns: repeat(<?php echo (int) $row_count + 1; ?>, minmax(0, 1fr));<?php echo $row_style; ?>">
+        <div class="<?php echo esc_attr($row_class); ?>" style="grid-template-columns: repeat(<?php echo (int) $row_count + 1; ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));<?php echo $row_style; ?>">
           <div class="<?php echo esc_attr($header_class); ?>"<?php if ($header_bg !== ''): ?> style="background-color: <?php echo esc_attr($header_bg); ?>;"<?php endif; ?>>
             <?php echo esc_html($col['header_label'] ?? ''); ?>
           </div>

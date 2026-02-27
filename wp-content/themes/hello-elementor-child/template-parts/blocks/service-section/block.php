@@ -70,7 +70,7 @@ $services            = get_field('services');
                    id="<?php echo esc_attr($panel_id); ?>"
                    aria-labelledby="<?php echo esc_attr($tab_id); ?>"
                    <?php echo $index !== 0 ? 'hidden' : ''; ?>>
-                <div class="service-section-panel-inner flex flex-col items-center gap-10">
+                <div class="service-section-panel-inner flex flex-col gap-10">
                   <div class="service-section-panel-content flex flex-col items-center">
                     <div class="service-section-panel-header flex flex-col gap-4 items-center">
                       <?php if (!empty($panel_title)): ?>

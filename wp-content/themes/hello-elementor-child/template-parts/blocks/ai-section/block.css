@@ -1,5 +1,4 @@
 /* AI Section Block */
-
 .ai-section-section {
   box-sizing: border-box;
   display: flex;
@@ -11,40 +10,33 @@
   width: 100%;
   background-color: var(--color-white);
 }
-
 .ai-section-section *,
 .ai-section-section *::before,
 .ai-section-section *::after {
   box-sizing: border-box;
 }
-
 /* Inner wrapper */
 .ai-section-section .ai-section-inner {
   max-width: 1217px;
   width: 100%;
 }
-
 /* Header area */
 .ai-section-section .ai-section-header {
   max-width: 905px;
   width: 100%;
 }
-
 .ai-section-section .ai-section-title {
   width: 100%;
 }
-
 .ai-section-section .ai-section-subtitle {
   max-width: 755px;
   width: 100%;
 }
-
 /* Content row: image + features side by side */
 .ai-section-section .ai-section-content {
   max-width: 1217px;
   width: 100%;
 }
-
 /* Image */
 .ai-section-section .ai-section-image {
   width: 550px;
@@ -54,31 +46,38 @@
   background-size: cover;
   background-position: center;
   border-radius: 0px 6px 6px 0px;
-  background-color: #e0e0e0;
 }
-
 /* Features group (right side) */
 .ai-section-section .ai-section-features-group {
   width: 100%;
   flex: 1;
   min-width: 0;
 }
-
 /* Features list container */
 .ai-section-section .ai-section-features-list {
   gap: 30px;
   width: 100%;
 }
-
 /* Individual feature item row */
-
 /* Blue dot wrapper */
 .ai-section-section .ai-section-dot-wrapper {
   padding: 5px 0 0 0;
   width: 20px;
   flex-shrink: 0;
+  position: relative;
 }
-
+.ai-section-section .ai-section-dot-wrapper::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: calc(100% + 30px);
+  border: 1px dashed #0960A8;
+  position: absolute;
+  left: 10px;
+}
+.ai-section-section .ai-section-feature-item:has(+ .ai-section-bottom-text-row) .ai-section-dot-wrapper::after {
+  display: none;
+}
 /* Blue dot */
 .ai-section-section .ai-section-dot {
   width: 20px;
@@ -86,49 +85,38 @@
   flex-shrink: 0;
   background-color: var(--color-cta-hover);
   border-radius: 50%;
-}
-
+} 
 /* Feature text content */
 .ai-section-section .ai-section-feature-text {
   flex: 1;
   min-width: 0;
+  gap: 5px;
 }
-
 /* Feature title */
-
 /* Feature description */
-
 /* Bottom text row */
-
 /* Bottom text wrapper */
-
 /* Bottom text */
-
 /* Divider lines */
 .ai-section-section .ai-section-divider {
   border: none;
   border-top: 1px solid var(--color-cta-hover);
   width: 100%;
 }
-
 /* Flipped layout */
-
 .ai-section-section.ai-section-section--flipped .ai-section-image {
   border-radius: 6px 0px 0px 6px;
 }
-
 /* ─────────────────────────────────────────
    RESPONSIVE: Tablet (max 1024px)
 ───────────────────────────────────────── */
 @media (max-width: 1024px) {
-
   .ai-section-section .ai-section-image {
     width: 400px;
     min-width: 400px;
     height: 480px;
   }
 }
-
 /* ─────────────────────────────────────────
    RESPONSIVE: Mobile (max 768px)
 ───────────────────────────────────────── */
@@ -136,51 +124,43 @@
   .ai-section-section {
     padding: var(--section-padding-top-mobile) var(--section-padding-left-mobile);
   }
-
   .ai-section-section .ai-section-header {
     max-width: 100%;
   }
-
   .ai-section-section .ai-section-subtitle {
     max-width: 100%;
   }
-
   .ai-section-section .ai-section-content {
     gap: 45px;
+    flex-direction: column;
   }
-
   .ai-section-section .ai-section-image {
+    max-width: 390px;
     width: 100%;
     min-width: unset;
     height: 400px;
+    background-size: contain;
   }
-
   .ai-section-section.ai-section-section--flipped .ai-section-image {
     border-radius: 0px 6px 6px 0px;
   }
-
   .ai-section-section .ai-section-features-group {
     width: 100%;
   }
-
   .ai-section-section .ai-section-feature-text {
     width: 100%;
   }
-
   .ai-section-section .ai-section-bottom-text {
     width: 100%;
   }
 }
-
 /* ─────────────────────────────────────────
    RESPONSIVE: Small mobile (max 480px)
 ───────────────────────────────────────── */
 @media (max-width: 480px) {
-
   .ai-section-section .ai-section-image {
     height: 300px;
   }
-
   .ai-section-section .ai-section-features-list {
     gap: var(--space-5);
   }

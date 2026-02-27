@@ -20,112 +20,98 @@
       "rows": 3
     },
     {
-      "key": "field_case_study_section_card_title",
-      "label": "Card Title",
-      "name": "card_title",
-      "type": "text",
-      "required": 1,
-      "default_value": "Hemp house website redesign helped combat Amazon competitors"
-    },
-    {
-      "key": "field_case_study_section_stats",
-      "label": "Stats",
-      "name": "stats",
+      "key": "field_case_study_section_case_studies",
+      "label": "Case study slides",
+      "name": "case_studies",
       "type": "repeater",
-      "required": 0,
+      "required": 1,
       "min": 1,
-      "max": 8,
-      "layout": "table",
+      "layout": "block",
+      "button_label": "Add case study",
+      "instructions": "Each item is one slide in the slider. Add multiple for a carousel.",
       "sub_fields": [
         {
-          "key": "field_case_study_section_stat_label",
-          "label": "Stat Label",
-          "name": "stat_label",
+          "key": "field_case_study_section_cs_card_title",
+          "label": "Card Title",
+          "name": "card_title",
           "type": "text",
-          "required": 1
+          "required": 1,
+          "default_value": "Hemp house website redesign helped combat Amazon competitors"
         },
         {
-          "key": "field_case_study_section_stat_value",
-          "label": "Stat Value",
-          "name": "stat_value",
+          "key": "field_case_study_section_cs_stats",
+          "label": "Stats",
+          "name": "stats",
+          "type": "repeater",
+          "required": 0,
+          "min": 0,
+          "max": 8,
+          "layout": "table",
+          "sub_fields": [
+            {
+              "key": "field_case_study_section_cs_stat_label",
+              "label": "Stat Label",
+              "name": "stat_label",
+              "type": "text",
+              "required": 1
+            },
+            {
+              "key": "field_case_study_section_cs_stat_value",
+              "label": "Stat Value",
+              "name": "stat_value",
+              "type": "text",
+              "required": 1
+            }
+          ]
+        },
+        {
+          "key": "field_case_study_section_cs_cta_text",
+          "label": "CTA Text",
+          "name": "cta_text",
           "type": "text",
-          "required": 1
-        }
-      ],
-      "default_value": [
-        {
-          "field_case_study_section_stat_label": "Desktop Conversion Rate",
-          "field_case_study_section_stat_value": "+ 59%"
+          "required": 0,
+          "default_value": "Read Full Case Study"
         },
         {
-          "field_case_study_section_stat_label": "New Visitor Conversion Rate",
-          "field_case_study_section_stat_value": "+ 47%"
+          "key": "field_case_study_section_cs_cta_link",
+          "label": "CTA Link",
+          "name": "cta_link",
+          "type": "url",
+          "required": 0,
+          "default_value": "#"
         },
         {
-          "field_case_study_section_stat_label": "Mobile Conversion Rate",
-          "field_case_study_section_stat_value": "+ 62%"
+          "key": "field_case_study_section_cs_card_image",
+          "label": "Card Image",
+          "name": "card_image",
+          "type": "image",
+          "required": 0,
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all"
         },
         {
-          "field_case_study_section_stat_label": "Google Page Speed Score On Desktop",
-          "field_case_study_section_stat_value": "+ 57%"
+          "key": "field_case_study_section_cs_content_order",
+          "label": "Content Order",
+          "name": "content_order",
+          "type": "select",
+          "required": 0,
+          "choices": {
+            "default": "Default (Text Left, Image Right)",
+            "flipped": "Flipped (Image Left, Text Right)"
+          },
+          "default_value": "default",
+          "return_format": "value"
         }
       ]
-    },
-    {
-      "key": "field_case_study_section_cta_text",
-      "label": "CTA Text",
-      "name": "cta_text",
-      "type": "text",
-      "required": 0,
-      "default_value": "Read Full Case Study"
-    },
-    {
-      "key": "field_case_study_section_cta_link",
-      "label": "CTA Link",
-      "name": "cta_link",
-      "type": "url",
-      "required": 0,
-      "default_value": "#"
-    },
-    {
-      "key": "field_case_study_section_card_image",
-      "label": "Card Image",
-      "name": "card_image",
-      "type": "image",
-      "required": 0,
-      "return_format": "array",
-      "preview_size": "medium",
-      "library": "all"
-    },
-    {
-      "key": "field_case_study_section_content_order",
-      "label": "Content Order",
-      "name": "content_order",
-      "type": "select",
-      "required": 0,
-      "choices": {
-        "default": "Default (Text Left, Image Right)",
-        "flipped": "Flipped (Image Left, Text Right)"
-      },
-      "default_value": "default",
-      "return_format": "value"
     }
   ],
-  "location": [
-    [
-      {
-        "param": "block",
-        "operator": "==",
-        "value": "acf/case-study-section"
-      }
-    ]
-  ],
+  "location": [[{"param": "block", "operator": "==", "value": "acf/case-study-section"}]],
   "menu_order": 0,
   "position": "normal",
   "style": "default",
   "label_placement": "top",
   "instruction_placement": "label",
-  "hide_on_screen": "",
   "active": true,
-  "description": "Case study section with stats, image, and CTA button."
+  "description": "Case study section slider: multiple cards, each with stats, image, and CTA."
 }

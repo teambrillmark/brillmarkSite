@@ -121,14 +121,11 @@
 }
 
 /* ─── Panel (Tab Content) ─── */
-.our-service-section .our-service-section-panel-mobile-trigger {
-  display: none;
-}
 
 .our-service-section .our-service-section-panel {
-  padding: 50px 0;
+  padding: 50px;
   width: 100%;
-  max-width: 1160px;
+  max-width: 1240px;
   background-color: var(--color-bg-blue);
   border-radius: var(--radius-sm);
   flex-shrink: 1;
@@ -139,6 +136,7 @@
   width: 100%;
   max-width: 956px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .our-service-section .our-service-section-panel-body {
@@ -194,11 +192,19 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
 }
 
 .our-service-section .our-service-section-nav-prev:hover,
-.our-service-section .our-service-section-nav-next:hover {
+.our-service-section .our-service-section-nav-next:hover,
+.our-service-section .our-service-section-nav-prev:focus,
+.our-service-section .our-service-section-nav-next:focus 
+{
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  color: #000;
 }
 
 .our-service-section .our-service-section-nav-prev {
@@ -218,12 +224,17 @@
 
 .our-service-section .our-service-section-nav-prev svg,
 .our-service-section .our-service-section-nav-next svg {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
 }
 
 /* ─── Per-panel CTA: hidden on desktop, shown on mobile ─── */
+
+/* Mobile accordion trigger: hidden on desktop, shown in stacked (mobile) mode */
+.our-service-section .our-service-section-panel-mobile-trigger {
+  display: none;
+}
 
 /* ─── CTA (Desktop — shared below slider) ─── */
 
@@ -234,6 +245,12 @@
   white-space: nowrap;
 }
 
+.our-service-section .our-service-section-panel-cta.mobile-cta{
+  display: none;
+}
+.our-service-section .our-service-section-panel-cta.desktop-cta{
+  display: flex;
+}
 /* ─── CTA (Mobile — per-panel, hidden on desktop) ─── */
 
 /* ============================================================
@@ -292,7 +309,7 @@
 
 /* ============================================================
    RESPONSIVE — Mobile (max 768px)
-   Stacked: all panels visible in a column; tabs/nav/shared CTA hidden
+   Stacked: accordion — one panel open at a time, toggleable
    ============================================================ */
 @media (max-width: 768px) {
 
@@ -300,22 +317,110 @@
     gap: var(--space-4);
   }
 
-  /* Hide tabs, shared CTA, and nav on mobile */
-  .our-service-section.our-service-section--stacked .our-service-section-tabs-outer,
-  .our-service-section.our-service-section--stacked .our-service-section-cta-wrap,
+  /* Hide desktop tabs and shared CTA on mobile; show accordion triggers */
+  .our-service-section.our-service-section--stacked .our-service-section-tabs-outer {
+    display: none;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-cta-wrap {
+    display: none;
+  }
+
+  .our-service-section .our-service-section-panel-cta.mobile-cta{
+    display: block;
+  }
+  .our-service-section .our-service-section-panel-cta.desktop-cta{
+    display: none;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-5);
+    margin: 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-blue);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--fs-h5);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-primary);
+    text-align: left;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger[aria-expanded="true"]{
+    padding: var(--space-10) var(--space-5) var(--space-4);
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger:hover {
+    background-color: var(--color-bg-blue);
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger[aria-expanded="true"] {
+    background-color: var(--color-bg-blue);
+    border: none;
+    border-color: var(--color-cta);
+    color: var(--color-primary);
+    position: relative;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger[aria-expanded="true"]::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 1px;
+    background-color: var(--color-cta);
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger-chevron {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: var(--space-2);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger[aria-expanded="true"] .our-service-section-panel-mobile-trigger-chevron {
+    transform: rotate(-135deg);
+    margin-top: 7px;
+  }
+
   .our-service-section.our-service-section--stacked .our-service-section-nav-prev,
   .our-service-section.our-service-section--stacked .our-service-section-nav-next {
-    display: none !important;
+    display: none;
   }
 
-  /* Hide mobile accordion triggers — stacked shows all panels */
-  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger {
-    display: none !important;
-  }
-
-  /* Stacked: all slides and panels visible in a column */
-  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide .our-service-section-panel {
+  /* Accordion: only the open slide’s panel is visible */
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide {
     display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: var(--space-4);
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide:not(.swiper-slide--open) .our-service-section-panel {
+    display: none;
+  }
+
+  .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide--open .our-service-section-panel {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 0px;
   }
 
   .our-service-section .our-service-section-tabs-area {
@@ -341,7 +446,6 @@
   .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-wrapper {
     transform: none !important;
     flex-direction: column;
-    gap: var(--space-8);
   }
 
   .our-service-section.our-service-section--stacked .our-service-section-swiper .swiper-slide {
@@ -349,12 +453,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
   }
 
   /* Content order: title → features list → image → CTA (match mobile design) */
 
   .our-service-section.our-service-section--stacked .our-service-section-features-list {
     order: 1;
+    gap: var(--space-10x);
   }
 
   .our-service-section.our-service-section--stacked .our-service-section-panel-image {
@@ -383,6 +490,9 @@
     width: 100%;
     max-width: 345px;
   }
+  .our-service-section-panel-title-wrap{
+    display: none !important;
+  }
 }
 
 /* ============================================================
@@ -391,7 +501,7 @@
 @media (max-width: 480px) {
 
   .our-service-section .our-service-section-panel {
-    padding: var(--space-6) 0;
+    padding: var(--space-8) 10px var(--space-10);
   }
 
   .our-service-section .our-service-section-panel-inner {
@@ -399,7 +509,7 @@
   }
 
   .our-service-section .our-service-section-panel-columns {
-    gap: var(--space-4);
+    gap: var(--space-8);
   }
 
   .our-service-section .our-service-section-feature-item {

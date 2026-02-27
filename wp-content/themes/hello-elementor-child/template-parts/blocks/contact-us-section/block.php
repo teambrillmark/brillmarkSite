@@ -1,239 +1,274 @@
 <!-- ACF-ANNOTATED: true -->
 <?php
-$wrapper            = theme_get_block_wrapper_attributes($block, 'contact-us-section-section');
-$layout             = get_field('layout') ?: '1';
-$flip               = get_field('flip_layout');
-$show_cta           = get_field('show_cta');
-$section_background = get_field('section_background');
-$section_textcolor = get_field('section_textcolor');
-$title              = get_field('title');
-$description        = get_field('description');
-$custom_code        = get_field('custom_code');
-$form_title         = get_field('form_title');
-$button_text        = get_field('button_text') ?: 'Get in Touch';
-$email_address      = get_field('email_address') ?: 'info@brillmark.com';
-$footer_text        = get_field('footer_text');
-$footer_subtext     = get_field('footer_subtext');
-$sidebar_heading    = get_field('sidebar_heading');
-$features_richtext  = get_field('features_richtext');
-$consent_text       = get_field('consent_text') ?: 'I consent to have BrillMark collect my details via this form and agree to the Privacy Policy';
-
-$flip_class   = $flip ? ' contact-us-section-section--flipped' : '';
+$wrapper   = theme_get_block_wrapper_attributes($block, 'contact-us-section-section');
+$variant   = get_field('variant');
+$section_color = get_field('section_color');
+$background = get_field('background');
+if (empty($variant)) {
+    $variant = 'default';
+}
+$variant = sanitize_html_class($variant);
+$heading   = get_field('heading');
+$show_intro = get_field('show_intro');
+$show_sub_intro = get_field('show_sub_intro');
+$intro     = get_field('intro');
+$sub_intro     = get_field('sub_intro');
+$show_feature_list = get_field('show_feature_list');
+$feature_list_subtitle = get_field('feature_list_subtitle');
+$feature_list_icon = get_field('feature_list_icon');
+$feature_list = get_field('feature_list');
+$show_email_button = get_field('show_email_button');
+$email_button_text = get_field('email_button_text');
+$email_button_url = get_field('email_button_url');
+$email_button_icon = get_field('email_button_icon');
+$form_intro = get_field('form_intro');
+$form_shortcode = get_field('form_shortcode');
+$form_fields = get_field('form_fields');
+$show_whats_next = get_field('show_whats_next');
+$what_next_title = get_field('what_next_title');
+$what_next_steps = get_field('what_next_steps');
+$what_next_feedback = get_field('what_next_feedback');
+$what_next_email_label = get_field('what_next_email_label');
+$what_next_email_address = get_field('what_next_email_address');
+$what_next_social = get_field('what_next_social');
+$show_consent = get_field('show_consent');
+$consent_label = get_field('consent_label');
+$privacy_policy_url = get_field('privacy_policy_url');
+$submit_button_text = get_field('submit_button_text');
+$form_action_url = get_field('form_action_url');
+$show_followup = get_field('show_followup');
+$followup_text = get_field('followup_text');
 $section_style = '';
 $styles = [];
-if ( ! empty( $section_background ) ) {
-	$styles[] = 'background: ' . esc_attr( $section_background );
-}
-if ( ! empty( $section_textcolor ) ) {
-  $styles[] = 'color: ' . esc_attr( $section_textcolor );
+if ( !empty( $background ) ) {
+    $styles[] = 'background: ' . esc_attr( $background );
 }
 if ( ! empty( $styles ) ) {
-  $section_style = ' style="' . implode( '; ', $styles ) . ';"';
+    $section_style = ' style="' . implode( '; ', $styles ) . ';"';
+}
+$content_color_style = '';
+if ( ! empty( $section_color ) ) {
+    $content_color_style = ' style="color: ' . esc_attr( $section_color ) . ';"';
+}
+$layout_swap = !empty(get_field('layout_swap'));
+$inner_class = 'contact-us-section-inner contact-us-section-inner--two-col';
+if ($layout_swap) {
+    $inner_class .= ' contact-us-section-inner--form-left';
+}
+$consent_html = '';
+if (!empty($consent_label)) {
+    $consent_html = esc_html($consent_label);
+    if (!empty($privacy_policy_url)) {
+        $consent_html = str_replace('Privacy Policy', '<a href="' . esc_url($privacy_policy_url) . '">Privacy Policy</a>', $consent_html);
+    }
+}
+if (!function_exists('contact_us_autolink_urls')) {
+    function contact_us_autolink_urls($text) {
+        $lines = explode("\n", (string) $text);
+        $out = [];
+        foreach ($lines as $line) {
+            $line_trim = trim($line);
+            if ($line_trim === '') {
+                $out[] = '';
+                continue;
+            }
+            if (preg_match('#^https?://#', $line_trim)) {
+                $out[] = '<a href="' . esc_url($line_trim) . '" rel="noopener">' . esc_html($line_trim) . '</a>';
+            } else {
+                $out[] = esc_html($line_trim);
+            }
+        }
+        return implode('<br>', $out);
+    }
 }
 ?>
-<section id="<?php echo esc_attr( $wrapper['id'] ); ?>" class="<?php echo esc_attr( $wrapper['class'] ); ?><?php echo $flip_class; ?> section" data-variant="<?php echo esc_attr( $layout ); ?>"<?php echo $section_style; ?>>
-  <div class="container contact-us-container flex flex-col items-center">
-
-    <?php if ( $layout === '1' ) : ?>
-    <!-- ======================== VARIANT 1 ======================== -->
-
-    <?php if ( ! empty( $title ) || ! empty( $description ) ) : ?>
-    <div class="contact-us-header text-left m-0">
-      <?php if ( ! empty( $title ) ) : ?>
-        <h2 class="contact-us-title text-primary m-0 font-weight-light"><?php echo esc_html( $title ); ?></h2>
-      <?php endif; ?>
-      <?php if ( ! empty( $description ) ) : ?>
-        <p class="contact-us-description text-secondary m-0 font-weight-light mt-3"><?php echo esc_html( $description ); ?></p>
-      <?php endif; ?>
+<section id="<?php echo esc_attr($wrapper['id']); ?>" class="<?php echo esc_attr($wrapper['class']); ?> contact-us-section-section contact-us-section-section--<?php echo $variant; ?>" data-variant="<?php echo esc_attr($variant); ?>"<?php echo $section_style; ?>>
+  <div class="contact-us-section-container">
+    <div class="contact-us-section-header"<?php echo $content_color_style; ?>>
+    <?php if (!empty($heading)): ?>
+          <h2 class="contact-us-section-heading text-white"><?php echo esc_html($heading); ?></h2>
+        <?php endif; ?>
+        <?php if (!empty($show_intro) && $intro !== ''): ?>
+          <div class="contact-us-section-subheading text-white"><?php echo wp_kses_post($intro); ?></div>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
-
-    <div class="contact-us-columns flex flex-col gap-10">
-      <!-- Form / custom code column -->
-      <div class="contact-us-form-col">
-        <div class="contact-us-form-card flex flex-col gap-5">
-          <?php if ( ! empty( $form_title ) ) : ?>
-            <p class="contact-us-form-title text-primary m-0"><?php echo esc_html( $form_title ); ?></p>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $custom_code ) ) : ?>
-            <div class="contact-us-custom-code">
-              <?php echo do_shortcode( wp_kses_post( $custom_code ) ); ?>
-            </div>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $show_cta ) && ! empty( $button_text ) ) : ?>
-            <div class="contact-us-cta-wrap">
-              <button type="button" class="btn btn-primary contact-us-submit"><?php echo esc_html( $button_text ); ?></button>
-            </div>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $footer_text ) || ! empty( $footer_subtext ) ) : ?>
-          <div class="contact-us-form-footer">
-            <?php if ( ! empty( $footer_text ) ) : ?>
-              <p class="form-footer-text text-primary m-0 text-body"><?php echo esc_html( $footer_text ); ?></p>
+    <div class="<?php echo esc_attr($inner_class); ?>">
+      <div class="contact-us-section-left flex flex-col gap-6"<?php echo $content_color_style; ?>>
+        
+        <?php if (!empty($show_feature_list) && (!empty($feature_list) || $feature_list_subtitle !== '')): ?>
+          <div class="contact-us-section-feature-block flex flex-col gap-3">
+            <?php if ($feature_list_subtitle !== ''): ?>
+              <h3 class="contact-us-section-feature-subtitle m-0 text-white"><?php echo esc_html($feature_list_subtitle); ?></h3>
             <?php endif; ?>
-            <?php if ( ! empty( $footer_subtext ) ) : ?>
-              <p class="form-footer-subtext m-0 text-body"><?php echo esc_html( $footer_subtext ); ?></p>
+            <?php if (!empty($show_sub_intro) && $sub_intro !== ''): ?>
+              <div class="contact-us-section-intro text-white"><?php echo esc_html($sub_intro); ?></div>
+            <?php endif; ?>
+            <?php if (!empty($feature_list) && is_array($feature_list)): ?>
+              <ul class="contact-us-section-feature-list flex flex-col gap-2 m-0 p-0 list-none">
+                <?php foreach ($feature_list as $item): ?>
+                  <?php if (!empty($item['item_text'])): ?>
+                    <li class="contact-us-section-feature-item flex items-start gap-2 text-white">
+                      <?php if (!empty($feature_list_icon) && is_array($feature_list_icon) && !empty($feature_list_icon['url'])): ?>
+                        <img src="<?php echo esc_url($feature_list_icon['url']); ?>" alt="" class="contact-us-section-feature-icon flex-shrink-0" width="20" height="20" aria-hidden="true">
+                      <?php else: ?>
+                        <span class="contact-us-section-feature-icon contact-us-section-feature-icon--check" aria-hidden="true">✓</span>
+                      <?php endif; ?>
+                      <span class="contact-us-section-feature-text"><?php echo esc_html($item['item_text']); ?></span>
+                    </li>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+              </ul>
             <?php endif; ?>
           </div>
-          <?php endif; ?>
-        </div>
+        <?php endif; ?>
+        <?php if (!empty($show_email_button) && ($email_button_text !== '' || $email_button_url !== '')): ?>
+          <div class="contact-us-section-email-wrap">
+            <a href="<?php echo esc_url($email_button_url ?: '#'); ?>" class="contact-us-section-email-btn btn btn-primary inline-flex items-center gap-2">
+              <?php if (!empty($email_button_icon) && is_array($email_button_icon) && !empty($email_button_icon['url'])): ?>
+                <img src="<?php echo esc_url($email_button_icon['url']); ?>" alt="" class="contact-us-section-email-icon" width="20" height="20" aria-hidden="true">
+              <?php endif; ?>
+              <span><?php echo esc_html($email_button_text ?: 'Contact'); ?></span>
+            </a>
+          </div>
+        <?php endif; ?>
       </div>
-
-      <!-- Info column -->
-      <div class="contact-us-info-col flex flex-col gap-5">
-        <?php if ( ! empty( $sidebar_heading ) ) : ?>
-          <h3 class="contact-us-sidebar-heading text-primary m-0 font-weight-light"><?php echo esc_html( $sidebar_heading ); ?></h3>
-        <?php endif; ?>
-
-        <?php if ( ! empty( $features_richtext ) ) : ?>
-        <div class="contact-us-features text-primary text-h6">
-          <?php echo wp_kses_post( $features_richtext ); ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if ( ! empty( $email_address ) ) : ?>
-          <a href="mailto:<?php echo esc_attr( $email_address ); ?>" class="contact-us-email-link text-primary text-h6">Email: <?php echo esc_html( $email_address ); ?></a>
-        <?php endif; ?>
-
-        <?php if ( have_rows( 'social_links' ) ) : ?>
-        <div class="contact-us-social flex items-center gap-4">
-          <?php
-          while ( have_rows( 'social_links' ) ) :
-            the_row();
-            $platform = get_sub_field( 'platform' );
-            $url     = get_sub_field( 'url' );
-            if ( empty( $url ) ) {
-              continue;
+      <div class="contact-us-section-right flex flex-col gap-6">
+        <div class="contact-us-section-form-card bm-form">
+          <?php if ($form_intro !== ''): ?>
+            <div class="contact-us-section-form-intro form-main-heading text-secondary mb-4"><?php echo nl2br(esc_html($form_intro)); ?></div>
+          <?php endif; ?>
+          <?php if ($form_shortcode !== ''): ?>
+            <div class="contact-us-section-form-shortcode">
+              <?php
+              $shortcode = trim($form_shortcode);
+              if (strpos($shortcode, '[') !== 0) {
+                  $shortcode = '[' . $shortcode . ']';
+              }
+              echo do_shortcode($shortcode);
+              ?>
+            </div>
+          <?php else: ?>
+          <form class="contact-us-section-form flex flex-col gap-4" action="<?php echo esc_url($form_action_url ?: '#'); ?>" method="post">
+            <?php
+            if (!empty($form_fields) && is_array($form_fields)) {
+                foreach ($form_fields as $row) {
+                    if (empty($row['show']) || empty($row['name'])) continue;
+                    $type = $row['type'] ?? 'text';
+                    $name = sanitize_key($row['name']);
+                    $label = isset($row['label']) ? $row['label'] : '';
+                    $placeholder = isset($row['placeholder']) ? $row['placeholder'] : '';
+                    $required = !empty($row['required']);
+                    $req_mark = $required ? ' <span class="contact-us-section-required">*</span>' : '';
+                    ?>
+                    <div class="contact-us-section-field">
+                      <?php if ($label !== ''): ?>
+                        <label for="contact-us-<?php echo esc_attr($name); ?>" class="contact-us-section-label"><?php echo esc_html($label); ?><?php echo $req_mark; ?></label>
+                      <?php endif; ?>
+                      <?php
+                      if ($type === 'textarea') {
+                          echo '<textarea id="contact-us-' . esc_attr($name) . '" name="' . esc_attr($name) . '" class="contact-us-section-input contact-us-section-textarea" placeholder="' . esc_attr($placeholder) . '" rows="4"' . ($required ? ' required' : '') . '></textarea>';
+                      } elseif ($type === 'select') {
+                          $opts = isset($row['options']) ? preg_split('/\r\n|\r|\n/', trim((string) $row['options']), -1, PREG_SPLIT_NO_EMPTY) : [];
+                          echo '<select id="contact-us-' . esc_attr($name) . '" name="' . esc_attr($name) . '" class="contact-us-section-input contact-us-section-select"' . ($required ? ' required' : '') . '>';
+                          echo '<option value="">' . esc_html($placeholder ?: 'Select...') . '</option>';
+                          foreach ($opts as $opt) {
+                              echo '<option value="' . esc_attr(trim($opt)) . '">' . esc_html(trim($opt)) . '</option>';
+                          }
+                          echo '</select>';
+                      } else {
+                          $input_type = in_array($type, ['email', 'url', 'tel'], true) ? $type : 'text';
+                          echo '<input id="contact-us-' . esc_attr($name) . '" type="' . esc_attr($input_type) . '" name="' . esc_attr($name) . '" class="contact-us-section-input" placeholder="' . esc_attr($placeholder) . '"' . ($required ? ' required' : '') . '>';
+                      }
+                      ?>
+                    </div>
+                    <?php
+                }
             }
-          ?>
-          <a href="<?php echo esc_url( $url ); ?>" class="social-icon social-icon--<?php echo esc_attr( $platform ); ?> flex items-center justify-center text-white" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr( ucfirst( $platform ) ); ?>">
-            <?php if ( $platform === 'linkedin' ) : ?>
-              <svg viewBox="0 0 448 512" fill="currentColor" width="22" height="22"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-            <?php elseif ( $platform === 'twitter' ) : ?>
-              <svg viewBox="0 0 512 512" fill="currentColor" width="22" height="22"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-            <?php elseif ( $platform === 'facebook' ) : ?>
-              <svg viewBox="0 0 320 512" fill="currentColor" width="22" height="22"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            ?>
+            <?php if (!empty($show_consent) && $consent_html !== ''): ?>
+              <div class="contact-us-section-consent flex items-start gap-2">
+                <input type="checkbox" name="consent" id="contact-us-consent" class="contact-us-section-checkbox" required>
+                <label for="contact-us-consent" class="contact-us-section-consent-label"><?php echo wp_kses_post($consent_html); ?></label>
+              </div>
             <?php endif; ?>
-          </a>
-          <?php endwhile; ?>
-        </div>
-        <?php endif; ?>
-      </div>
-    </div>
-
-    <?php elseif ( $layout === '2' ) : ?>
-    <!-- ======================== VARIANT 2 ======================== -->
-
-    <div class="contact-us-columns flex flex-col gap-10 bm-flex-direction-row-reverse-2 bm-flex-direction-row-2">
-      <!-- Info column -->
-      <div class="contact-us-info-col flex flex-col gap-5">
-        <?php if ( ! empty( $title ) || ! empty( $description ) ) : ?>
-        <div class="contact-us-header">
-          <?php if ( ! empty( $title ) ) : ?>
-            <h2 class="contact-us-title text-primary m-0"><?php echo esc_html( $title ); ?></h2>
+            <div class="contact-us-section-submit-wrap">
+              <button type="submit" class="contact-us-section-submit btn btn-primary btn-full">
+                <?php echo esc_html($submit_button_text ?: 'Submit'); ?>
+              </button>
+            </div>
+          </form>
           <?php endif; ?>
-          <?php if ( ! empty( $description ) ) : ?>
-            <p class="contact-us-description text-secondary mt-3"><?php echo esc_html( $description ); ?></p>
-          <?php endif; ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if ( ! empty( $features_richtext ) ) : ?>
-        <div class="contact-us-features text-primary">
-          <?php echo wp_kses_post( $features_richtext ); ?>
-        </div>
-        <?php endif; ?>
-
-        <?php if ( ! empty( $email_address ) ) : ?>
-        <a href="mailto:<?php echo esc_attr( $email_address ); ?>" class="btn btn-primary contact-us-email-btn flex items-center gap-2 text-white bm-gap-5">
-          <svg class="email-icon flex-shrink-0" width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <?php echo esc_html( $email_address ); ?>
-        </a>
-        <?php endif; ?>
-      </div>
-
-      <!-- Form / custom code column -->
-      <div class="contact-us-form-col">
-        <div class="contact-us-form-card flex flex-col gap-5">
-          <?php if ( ! empty( $form_title ) ) : ?>
-            <p class="contact-us-form-title text-primary m-0"><?php echo esc_html( $form_title ); ?></p>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $custom_code ) ) : ?>
-            <div class="contact-us-custom-code">
-              <?php echo do_shortcode( wp_kses_post( $custom_code ) ); ?>
+          <?php if (!empty($show_followup) && $followup_text !== ''): ?>
+            <div class="contact-us-section-followup text-secondary mt-4">
+              <?php echo wp_kses_post($followup_text); ?>
             </div>
           <?php endif; ?>
-
-          <?php if ( ! empty( $show_cta ) && ! empty( $button_text ) ) : ?>
-            <div class="contact-us-cta-wrap">
-              <button type="button" class="btn btn-primary contact-us-submit"><?php echo esc_html( $button_text ); ?></button>
-            </div>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $footer_text ) || ! empty( $footer_subtext ) ) : ?>
-          <div class="contact-us-form-footer">
-            <?php if ( ! empty( $footer_text ) ) : ?>
-              <p class="form-footer-text text-primary m-0"><?php echo esc_html( $footer_text ); ?></p>
+        </div>
+        <?php if (!empty($show_whats_next)): ?>
+          <div class="contact-us-section-whats-next"<?php echo $content_color_style; ?>>
+            <?php if ($what_next_title !== ''): ?>
+              <h3 class="contact-us-section-whats-next-title  text-primary"><?php echo esc_html($what_next_title); ?></h3>
             <?php endif; ?>
-            <?php if ( ! empty( $footer_subtext ) ) : ?>
-              <p class="form-footer-subtext m-0"><?php echo esc_html( $footer_subtext ); ?></p>
+            <?php if (!empty($what_next_steps) && is_array($what_next_steps)): ?>
+              <div class="contact-us-section-whats-next-steps">
+                <?php foreach ($what_next_steps as $step): ?>
+                  <?php
+                  $step_title = isset($step['step_title']) ? $step['step_title'] : '';
+                  $step_desc = isset($step['step_description']) ? $step['step_description'] : '';
+                  $step_link_text = isset($step['step_link_text']) ? trim($step['step_link_text']) : '';
+                  $step_link_url = isset($step['step_link_url']) ? $step['step_link_url'] : '';
+                  if ($step_desc !== '' && $step_link_text !== '' && $step_link_url !== '') {
+                      $step_desc_escaped = esc_html($step_desc);
+                      $step_link_escaped = esc_html($step_link_text);
+                      $step_desc = str_replace($step_link_escaped, '<a href="' . esc_url($step_link_url) . '" class="contact-us-section-whats-next-link">' . $step_link_escaped . '</a>', $step_desc_escaped);
+                  } else {
+                      $step_desc = esc_html($step_desc);
+                  }
+                  ?>
+                  <div class="contact-us-section-whats-next-step">
+                    <?php if ($step_title !== ''): ?>
+                      <h4 class="contact-us-section-whats-next-step-title m-0 text-primary"><?php echo esc_html($step_title); ?></h4>
+                    <?php endif; ?>
+<?php if (!empty($step_desc)): ?>
+  <div class="contact-us-section-whats-next-step-desc m-0 text-secondary">
+    <?php echo html_entity_decode($step_desc); ?>
+  </div>
+<?php endif; ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endif; ?>
+            <?php if ($what_next_feedback !== ''): ?>
+              <p class="contact-us-section-whats-next-feedback m-0 text-secondary"><?php echo nl2br(esc_html($what_next_feedback)); ?></p>
+            <?php endif; ?>
+            <?php if ($what_next_email_label !== '' || $what_next_email_address !== ''): ?>
+              <p class="contact-us-section-whats-next-email">
+                <?php if ($what_next_email_label !== ''): ?>
+                  <span class="contact-us-section-whats-next-email-label text-primary"><?php echo esc_html($what_next_email_label); ?></span>
+                <?php endif; ?>
+                <?php if ($what_next_email_address !== ''): ?>
+                  <a href="<?php echo esc_url('mailto:' . $what_next_email_address); ?>" class="contact-us-section-whats-next-email-link"><?php echo esc_html($what_next_email_address); ?></a>
+                <?php endif; ?>
+              </p>
+            <?php endif; ?>
+            <?php if (!empty($what_next_social) && is_array($what_next_social)): ?>
+              <div class="contact-us-section-whats-next-social flex flex-wrap gap-3">
+                <?php foreach ($what_next_social as $item): ?>
+                  <?php
+                  $icon = isset($item['icon']) && is_array($item['icon']) ? $item['icon'] : null;
+                  $url = isset($item['url']) ? $item['url'] : '#';
+                  $label = isset($item['label']) ? $item['label'] : '';
+                  if (empty($icon['url'])) continue;
+                  ?>
+                  <a href="<?php echo esc_url($url); ?>" class="contact-us-section-whats-next-social-link" <?php echo $label !== '' ? ' aria-label="' . esc_attr($label) . '"' : ''; ?> target="_blank" rel="noopener noreferrer">
+                    <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($label); ?>" width="40" height="40">
+                  </a>
+                <?php endforeach; ?>
+              </div>
             <?php endif; ?>
           </div>
-          <?php endif; ?>
-        </div>
-      </div>
-    </div>
-
-    <?php elseif ( $layout === '3' ) : ?>
-    <!-- ======================== VARIANT 3 ======================== -->
-
-    <?php if ( ! empty( $title ) || ! empty( $description ) ) : ?>
-    <div class="contact-us-header text-center">
-      <?php if ( ! empty( $title ) ) : ?>
-        <h2 class="contact-us-title text-primary m-0"><?php echo esc_html( $title ); ?></h2>
-      <?php endif; ?>
-      <?php if ( ! empty( $description ) ) : ?>
-        <p class="contact-us-description text-secondary m-0"><?php echo esc_html( $description ); ?></p>
-      <?php endif; ?>
-    </div>
-    <?php endif; ?>
-
-    <div class="contact-us-columns flex flex-col gap-10">
-      <!-- Info column -->
-      <div class="contact-us-info-col flex flex-col gap-5">
-        <?php if ( ! empty( $sidebar_heading ) ) : ?>
-          <h3 class="contact-us-sidebar-heading text-primary m-0"><?php echo esc_html( $sidebar_heading ); ?></h3>
-        <?php endif; ?>
-
-        <?php if ( ! empty( $features_richtext ) ) : ?>
-        <div class="contact-us-features text-primary">
-          <?php echo wp_kses_post( $features_richtext ); ?>
-        </div>
         <?php endif; ?>
       </div>
-
-      <!-- Form / custom code column -->
-      <div class="contact-us-form-col">
-        <div class="contact-us-form-card flex flex-col gap-5">
-          <?php if ( ! empty( $custom_code ) ) : ?>
-            <div class="contact-us-custom-code">
-              <?php echo do_shortcode( wp_kses_post( $custom_code ) ); ?>
-            </div>
-          <?php endif; ?>
-
-          <?php if ( ! empty( $show_cta ) && ! empty( $button_text ) ) : ?>
-            <div class="contact-us-cta-wrap">
-              <button type="button" class="btn btn-primary btn-full contact-us-submit contact-us-submit--v3"><?php echo esc_html( $button_text ); ?></button>
-            </div>
-          <?php endif; ?>
-        </div>
-      </div>
     </div>
-
-    <?php endif; ?>
-
   </div>
 </section>

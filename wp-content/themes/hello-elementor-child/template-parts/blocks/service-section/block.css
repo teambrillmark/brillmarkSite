@@ -14,7 +14,15 @@
     width: 100%;
     background-color: var(--color-bg-light);
   }
-  
+  .service-section-section .service-section-tab-item.active .service-section-tab-arrow path {
+    stroke: #ffffff;
+	}
+   .service-section-section .service-section-bullet-text strong {
+    font-weight: var(--font-weight-medium);
+	}
+.service-section-panel-header .service-section-panel-title {
+    width: 100%;
+}
   .service-section-section *,
   .service-section-section *::before,
   .service-section-section *::after {
@@ -28,16 +36,8 @@
   }
   
   /* ── Header (title + description) ── */
-  .service-section-section .service-section-header {
-    width: 100%;
-    max-width: 1068px;
-  }
-  
-  .service-section-section .service-section-title {
-    width: 100%;
-    max-width: 1068px;
-  }
-  
+  .service-section-section .service-section-header,
+  .service-section-section .service-section-title,
   .service-section-section .service-section-description {
     width: 100%;
     max-width: 1068px;
@@ -45,7 +45,7 @@
   
   /* ── Content area (two-column on desktop) ── */
   .service-section-section .service-section-content {
-    gap: 65px;
+    gap: var(--space-16);
     width: 100%;
     max-width: 1235px;
   }
@@ -189,11 +189,9 @@
     .service-section-section .service-section-panel {
       padding: 40px 40px 80px 40px;
     }
-  
-    .service-section-section .service-section-title {
-      font-size: 34px;
-      line-height: 46px;
-    }
+	  .service-section-section .service-section-content {
+		gap: var(--space-5);
+	  }
   }
   
   /* ==========================================================
@@ -204,15 +202,11 @@
     .service-section-section {
       padding: 50px 10px;
     }
-  
-    .service-section-section .service-section-inner {
-      max-width: 390px;
-    }
-  
-    .service-section-section .service-section-header {
-      max-width: 390px;
-    }
-  
+ 
+	  .service-section-section .service-section-title{
+		  font-size: var(--fs-h3);
+		line-height: var(--lh-h3);
+	  }
     /* Stacked layout: single column, tabs hidden */
     .service-section-section .service-section-content {
       flex-direction: column;
@@ -246,6 +240,7 @@
     .service-section-section .service-section-panel-title {
       font-size: var(--fs-h5);
       line-height: var(--lh-h5);
+		text-align: center;
     }
   
     .service-section-section .service-section-panel-bullets {

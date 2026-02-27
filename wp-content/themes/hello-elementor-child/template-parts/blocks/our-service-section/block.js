@@ -15,8 +15,62 @@
         swiperEl.swiper.destroy(true, true);
         delete swiperEl.dataset.swiperInitialized;
       }
+      initAccordion(section);
     } catch (e) {
       console.error('OurServiceSection applyMobileStacked error:', e);
+    }
+  }
+
+  /**
+   * Mobile accordion: one panel open at a time, toggleable (click open again to close).
+   */
+  function initAccordion(section) {
+    if (!section) return;
+    try {
+      var slides = section.querySelectorAll('.our-service-section-swiper .swiper-slide');
+      var triggers = section.querySelectorAll('.our-service-section-panel-mobile-trigger');
+      if (!slides.length || !triggers.length) return;
+
+      triggers.forEach(function (trigger) {
+        if (trigger.dataset.accordionBound === 'true') return;
+        trigger.dataset.accordionBound = 'true';
+
+        trigger.addEventListener('click', function () {
+          try {
+            var idx = parseInt(trigger.dataset.panelIndex, 10);
+            if (isNaN(idx)) return;
+
+            var slide = section.querySelector('.our-service-section-swiper .swiper-slide[data-slide-index="' + idx + '"]');
+            if (!slide) return;
+
+            var isOpen = slide.classList.contains('swiper-slide--open');
+
+            if (isOpen) {
+              slide.classList.remove('swiper-slide--open');
+              trigger.setAttribute('aria-expanded', 'false');
+            } else {
+              slides.forEach(function (s) { s.classList.remove('swiper-slide--open'); });
+              section.querySelectorAll('.our-service-section-panel-mobile-trigger').forEach(function (t) {
+                t.setAttribute('aria-expanded', 'false');
+              });
+              slide.classList.add('swiper-slide--open');
+              trigger.setAttribute('aria-expanded', 'true');
+            }
+          } catch (err) {
+            console.error('OurServiceSection accordion click error:', err);
+          }
+        });
+      });
+
+      /* Ensure at least first slide is open on init if none are */
+      var hasOpen = section.querySelector('.our-service-section-swiper .swiper-slide--open');
+      if (!hasOpen && slides[0]) {
+        slides[0].classList.add('swiper-slide--open');
+        var firstTrigger = section.querySelector('.our-service-section-panel-mobile-trigger[data-panel-index="0"]');
+        if (firstTrigger) firstTrigger.setAttribute('aria-expanded', 'true');
+      }
+    } catch (e) {
+      console.error('OurServiceSection initAccordion error:', e);
     }
   }
 
@@ -24,6 +78,11 @@
     if (!section) return;
     try {
       section.classList.remove('our-service-section--stacked');
+      /* Allow Swiper to be re-created: clear flag so initSwiperInRoot will run again after we destroyed it on mobile */
+      var swiperEl = section.querySelector('[data-swiper]');
+      if (swiperEl) {
+        delete swiperEl.dataset.swiperInitialized;
+      }
       delete section.dataset.jsInitialized;
       initOurServiceSection(section);
     } catch (e) {

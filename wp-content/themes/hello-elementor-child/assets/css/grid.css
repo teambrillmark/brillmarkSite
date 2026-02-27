@@ -21,7 +21,7 @@
   width:         100%;
   max-width:     var(--container-desktop);   /* --container-desktop → 1240px */
   margin-right:  auto;
-  margin-left:   auto;
+  margin-left:   auto;           /* --space-5 → 20px             */
 }
 
 /* Tablet — up to 1239px */
@@ -42,6 +42,14 @@
 /* ─────────────────────────────────────────
    SECTION ANCHOR OFFSETS
 ───────────────────────────────────────── */
+.section-anchor {
+  position: relative;
+  top: -95px;
+}
+
+body.logged-in .section-anchor {
+  top: -125px;
+}
 
 article            { margin: 0; }
 article .post,

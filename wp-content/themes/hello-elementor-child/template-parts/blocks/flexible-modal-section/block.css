@@ -1,0 +1,212 @@
+/* Flexible Modal Section — uses design system variables */
+.flexible-modal-section-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-2);
+  padding: var(--section-padding-top-desktop) var(--section-padding-left-desktop);
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-bg-blue);
+}
+
+.flexible-modal-section-section *,
+.flexible-modal-section-section *::before,
+.flexible-modal-section-section *::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.flexible-modal-section-section .container {
+  max-width: var(--container-desktop);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Wrapper */
+.flexible-modal-section-section .flexible-modal-section-wrapper {
+  width: 100%;
+}
+
+/* Header */
+.flexible-modal-section-section .flexible-modal-section-header {
+  gap: var(--space-4);
+  max-width: 1116px;
+  width: 100%;
+}
+
+/* Title */
+.flexible-modal-section-section .flexible-modal-section-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--font-weight-regular);
+  max-width: 573px;
+  font-family: var(--font-primary);
+  text-transform: capitalize;
+}
+
+/* Description */
+.flexible-modal-section-section .flexible-modal-section-description {
+  font-size: var(--fs-h6);
+  line-height: var(--lh-h6);
+  width: 100%;
+  font-family: var(--font-primary);
+}
+
+/* Cards Container */
+.flexible-modal-section-section .flexible-modal-section-cards {
+  width: 100%;
+}
+
+/* Responsive: cards stack on tablet/mobile */
+@media (max-width: 1024px) {
+  .flexible-modal-section-section .flexible-modal-section-cards.flexible-modal-section-cards--responsive {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Individual Card */
+.flexible-modal-section-section .flexible-modal-section-card {
+  padding: var(--space-10) var(--space-6);
+  flex: 1;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+}
+
+/* Card Inner */
+.flexible-modal-section-section .flexible-modal-section-card-inner {
+  width: 330px;
+  max-width: 100%;
+}
+
+/* Card Top */
+.flexible-modal-section-section .flexible-modal-section-card-top {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Card Icon Wrapper */
+.flexible-modal-section-section .flexible-modal-section-card-icon-wrap {
+  width: 100px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.flexible-modal-section-section .flexible-modal-section-card-icon {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card Text Wrapper */
+.flexible-modal-section-section .flexible-modal-section-card-text-wrap {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Card Title */
+.flexible-modal-section-section .flexible-modal-section-card-title {
+  font-size: var(--fs-h5);
+  font-family: var(--font-primary);
+}
+
+/* Card Description */
+.flexible-modal-section-section .flexible-modal-section-card-desc {
+  line-height: var(--lh-body);
+}
+
+/* Card Bottom */
+
+/* Features List */
+
+/* Feature Item */
+
+/* Check Icon */
+.flexible-modal-section-section .flexible-modal-section-check-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* Feature Text */
+
+/* Card Button — design system .btn .btn-primary .btn-sm; block only sets dimensions */
+.flexible-modal-section-section .flexible-modal-section-card-btn {
+  width: 131px;
+  min-width: 116px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition-btn);
+}
+
+/* Responsive: Tablet (<=1024px) */
+@media (max-width: 1024px) {
+  .flexible-modal-section-section .flexible-modal-section-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-card {
+    flex: 0 1 calc(50% - var(--space-4));
+    min-width: 320px;
+  }
+}
+
+/* Responsive: Mobile (<=768px) */
+@media (max-width: 768px) {
+  .flexible-modal-section-section {
+    padding: var(--section-padding-top-mobile) var(--section-padding-left-mobile);
+    background-color: var(--color-bg-light);
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-header {
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-title {
+    font-weight: var(--font-weight-regular);
+    max-width: 100%;
+    align-self: stretch;
+    font-size: var(--fs-h3);
+    line-height: var(--lh-40);
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-description {
+    font-size: var(--fs-h6);
+    width: 100%;
+    line-height: var(--lh-h6);
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-cards {
+    gap: var(--space-8);
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-card {
+    flex: none;
+    width: 100%;
+    max-width: 390px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-card-inner {
+    width: 330px;
+    max-width: 100%;
+  }
+}
+
+/* Responsive: Small Mobile (<=480px) */
+@media (max-width: 480px) {
+  .flexible-modal-section-section {
+    padding: var(--space-10) var(--section-padding-left-mobile);
+  }
+  
+  .flexible-modal-section-section .flexible-modal-section-card-btn {
+    width: 100%;
+  }
+
+  .flexible-modal-section-section .flexible-modal-section-card-btn-text {
+    text-align: center;
+  }
+}

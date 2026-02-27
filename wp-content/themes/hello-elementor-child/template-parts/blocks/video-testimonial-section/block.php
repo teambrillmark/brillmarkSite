@@ -20,18 +20,18 @@ if (!empty($section_background)) {
 <section id="<?php echo esc_attr($wrapper['id']); ?>" class="<?php echo esc_attr($wrapper['class']); ?> video-testimonial-section-section section bg-white" data-variant="<?php echo esc_attr($layout); ?>" data-slides-per-view="<?php echo esc_attr((string) $slides_per_view); ?>"<?php if ($section_style): ?> style="<?php echo $section_style; ?>"<?php endif; ?>>
   <div class="container">
 
-    <div class="section-header flex flex-col mx-auto gap-15 items-center text-center bm-margin-bottom-space-8 bm-margin-bottom-space-10">
+    <div class="section-header flex flex-col mx-auto items-center text-center gap-6">
       <?php if (!empty($title)): ?>
-        <h2 class="section-title text-primary m-0 bm-font-family-font-primary bm-text-transform-capitalize bm-font-size-fs-h2 bm-font-weight-font-weight-light"><?php echo esc_html($title); ?></h2>
+        <h2 class="section-title text-primary m-0"><?php echo esc_html($title); ?></h2>
       <?php endif; ?>
 
       <?php if (!empty($description) && in_array($layout, ['1', '3'], true)): ?>
-        <p class="section-description text-secondary m-0 bm-font-size-fs-h6 bm-line-height-lh-h6"><?php echo wp_kses_post($description); ?></p>
+        <p class="section-description text-secondary m-0"><?php echo wp_kses_post($description); ?></p>
       <?php endif; ?>
     </div>
 
     <?php if (!empty($common_images) && is_array($common_images)): ?>
-      <div class="vts-common-images flex flex-wrap justify-center gap-4 bm-margin-bottom-space-6">
+      <div class="vts-common-images flex flex-wrap justify-center gap-4">
         <?php foreach ($common_images as $img): ?>
           <?php if (!empty($img['url'])): ?>
             <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr(!empty($img['alt']) ? $img['alt'] : ''); ?>" width="120" height="80" class="vts-common-image" loading="lazy">
@@ -43,7 +43,7 @@ if (!empty($section_background)) {
     <?php if ($layout === '1'): ?>
       <?php /* ── VARIANT 1: Two video cards side by side ── */ ?>
       <?php if (have_rows('video_testimonials')): ?>
-        <div class="video-cards flex flex-row gap-12 bm-margin-bottom-space-8 bm-flex-direction-column-3">
+        <div class="video-cards flex flex-row gap-6">
           <?php while (have_rows('video_testimonials')): the_row();
             $thumb    = get_sub_field('video_thumbnail');
             $vid      = get_sub_field('video_id');
@@ -52,8 +52,8 @@ if (!empty($section_background)) {
             $name     = get_sub_field('person_name');
             $role     = get_sub_field('person_title');
           ?>
-            <div class="video-card flex flex-col bm-padding-space-6">
-              <div class="video-card-media bm-margin-bottom-space-4">
+            <div class="video-card flex flex-col">
+              <div class="video-card-media">
                 <?php if (!empty($vid)): ?>
                   <?php $wistia_id = preg_replace('/[^a-zA-Z0-9]/', '', $vid); ?>
                   <div class="vts-wistia-responsive" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
@@ -65,19 +65,19 @@ if (!empty($section_background)) {
               </div>
 
               <?php if (!empty($quote)): ?>
-                <p class="vts-quote text-secondary m-0 bm-margin-bottom-space-4"><?php echo wp_kses_post($quote); ?></p>
+                <p class="vts-quote text-secondary m-0"><?php echo wp_kses_post($quote); ?></p>
               <?php endif; ?>
 
-              <div class="video-card-author flex flex-row items-center gap-10 bm-display-flex bm-align-items-center bm-flex-direction-row bm-gap-space-5-3">
+              <div class="video-card-author flex flex-row items-center gap-5">
                 <?php if (!empty($logo)): ?>
                   <img class="video-card-logo" src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" width="100" height="56">
                 <?php endif; ?>
-                <div class="text-card-author-info flex flex-col bm-display-flex bm-flex-direction-column">
+                <div class="text-card-author-info flex flex-col">
                   <?php if (!empty($name)): ?>
-                    <span class="vts-author-name text-primary bm-font-size-fs-h6 bm-line-height-lh-h6"><?php echo esc_html($name); ?></span>
+                    <span class="vts-author-name text-primary"><?php echo esc_html($name); ?></span>
                   <?php endif; ?>
                   <?php if (!empty($role)): ?>
-                    <span class="text-card-role text-secondary bm-font-size-fs-body-2 bm-line-height-lh-body"><?php echo esc_html($role); ?></span>
+                    <span class="text-card-role text-secondary"><?php echo esc_html($role); ?></span>
                   <?php endif; ?>
                 </div>
               </div>
@@ -135,14 +135,14 @@ if (!empty($section_background)) {
         <?php endif; ?>
 
         <?php if (have_rows('text_testimonials')): ?>
-          <div class="text-column flex flex-col gap-12">
+          <div class="text-column flex flex-col gap-6">
             <?php while (have_rows('text_testimonials')): the_row();
               $tq    = get_sub_field('quote_text');
               $tlogo = get_sub_field('company_logo');
               $tname = get_sub_field('person_name');
               $trole = get_sub_field('person_title');
             ?>
-              <div class="text-card flex flex-col gap-5 bm-padding-space-6">
+              <div class="text-card flex flex-col gap-5">
                 <div class="text-card-body flex flex-col">
                   <?php if (!empty($quote_icon['url'])): ?>
                     <span class="text-card-quote-mark text-cta" aria-hidden="true">
@@ -247,8 +247,8 @@ if (!empty($section_background)) {
                   $srole = get_sub_field('person_title');
                 ?>
                   <div class="swiper-slide">
-                    <div class="text-card text-card--slider flex flex-col gap-10">
-                      <div class="text-card-content flex flex-col bm-gap-space-2">
+                    <div class="text-card text-card--slider flex flex-col gap-6">
+                      <div class="text-card-content flex flex-col gap-2">
                         <span class="text-card-quote-icon flex text-cta" aria-hidden="true">
                           <?php if (!empty($quote_icon['url'])): ?>
                             <img src="<?php echo esc_url($quote_icon['url']); ?>" alt="" class="text-card-quote-icon-img" width="40" height="40" aria-hidden="true">
@@ -262,7 +262,7 @@ if (!empty($section_background)) {
                           <p class="vts-slide-quote text-secondary m-0"><?php echo wp_kses_post($sq); ?></p>
                         <?php endif; ?>
                       </div>
-                      <div class="text-card-author flex flex-row items-center gap-10">
+                      <div class="text-card-author flex flex-row items-center gap-5">
                         <?php if (!empty($slogo)): ?>
                           <img class="text-card-logo" src="<?php echo esc_url($slogo['url']); ?>" alt="<?php echo esc_attr($slogo['alt']); ?>" width="100" height="62">
                         <?php endif; ?>
@@ -279,15 +279,15 @@ if (!empty($section_background)) {
                   </div>
                 <?php endwhile; ?>
               </div>
-              <div class="vts-slider-nav flex items-center justify-center bm-justify-content-space-between">
+              <div class="vts-slider-nav flex items-center justify-between">
                 <button type="button" class="text-testimonial-slider-prev" aria-label="<?php esc_attr_e('Previous slide', 'theme'); ?>">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>
                 </button>
-                <button type="button" class="text-testimonial-slider-next flex items-center justify-center bm-color-color-icon" aria-label="<?php esc_attr_e('Next slide', 'theme'); ?>">
+                <button type="button" class="text-testimonial-slider-next flex items-center justify-center" aria-label="<?php esc_attr_e('Next slide', 'theme'); ?>">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor"/></svg>
                 </button>
               </div>
-              <div class="vts-slider-pagination flex items-center justify-center bm-gap-space-2"></div>
+              <div class="vts-slider-pagination flex items-center justify-center gap-2"></div>
             </div>
           </div>
         </div>

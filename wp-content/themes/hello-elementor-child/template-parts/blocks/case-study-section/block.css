@@ -39,15 +39,86 @@
 .case-study-section-section .case-study-section-description {
   align-self: stretch;
   width: 100%;
-  line-height: 1.6;
 }
 
-/* Card group wrapper */
+/* Card group wrapper — slider container */
 .case-study-section-section .case-study-section-card-group {
   box-sizing: border-box;
   width: 100%;
   max-width: 1241px;
   border-radius: 15px;
+}
+
+.case-study-section-section .case-study-section-slider-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.case-study-section-section .case-study-section-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.case-study-section-section .case-study-section-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+.case-study-section-section .case-study-section-slider .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Navigation buttons */
+.case-study-section-section .case-study-section-slider-prev,
+.case-study-section-section .case-study-section-slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--color-white, #fff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.case-study-section-section .case-study-section-slider-prev:hover,
+.case-study-section-section .case-study-section-slider-next:hover {
+  background-color: var(--color-bg-light, #f4f7fa);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.case-study-section-section .case-study-section-slider-prev {
+  left: -12px;
+}
+
+.case-study-section-section .case-study-section-slider-next {
+  right: -12px;
+}
+
+.case-study-section-section .case-study-section-slider-prev::after,
+.case-study-section-section .case-study-section-slider-next::after {
+  content: none;
+}
+
+.case-study-section-section .case-study-section-slider-prev,
+.case-study-section-section .case-study-section-slider-next {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.case-study-section-section .case-study-section-slider-prev::before {
+  content: '←';
+}
+
+.case-study-section-section .case-study-section-slider-next::before {
+  content: '→';
 }
 
 /* Card */
@@ -260,6 +331,14 @@
 
   .case-study-section-section .case-study-section-cta {
     order: 4;
+  }
+
+  .case-study-section-section .case-study-section-slider-prev {
+    left: 8px;
+  }
+
+  .case-study-section-section .case-study-section-slider-next {
+    right: 8px;
   }
 }
 

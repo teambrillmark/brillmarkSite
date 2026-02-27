@@ -1,18 +1,15 @@
 <!-- ACF-ANNOTATED: true -->
 <?php
 $wrapper = theme_get_block_wrapper_attributes($block, 'ai-section-section');
-
 $title        = get_field('title');
 $subtitle     = get_field('subtitle');
 $image        = get_field('image');
 $bottom_text  = get_field('bottom_text');
 $content_order = get_field('content_order');
-
 $flip_class = '';
 if (!empty($content_order) && $content_order === 'flipped') {
     $flip_class = ' ai-section-section--flipped';
 }
-
 $image_url = '';
 if (!empty($image)) {
     $image_url = is_array($image) ? ($image['url'] ?? '') : (string) $image;
@@ -47,10 +44,10 @@ if (is_array($image) && !empty($image['alt'])) {
                 $feature_description = get_sub_field('feature_description');
               ?>
                 <div class="ai-section-feature-item flex flex-row gap-5">
-                  <div class="ai-section-dot-wrapper flex items-center gap-4 flex-row">
+                  <div class="ai-section-dot-wrapper flex gap-4 flex-row">
                     <div class="ai-section-dot"></div>
                   </div>
-                  <div class="ai-section-feature-text flex flex-col gap-5">
+                  <div class="ai-section-feature-text flex flex-col">
                     <?php if (!empty($feature_title)): ?>
                       <h5 class="ai-section-feature-title text-primary m-0 font-weight-light text-left"><?php echo esc_html($feature_title); ?></h5>
                     <?php endif; ?>

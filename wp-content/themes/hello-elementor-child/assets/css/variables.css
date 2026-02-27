@@ -3,132 +3,123 @@
    Single source of truth. All raw values live HERE only.
    All other files use var(--token) only.
    ============================================================ */
-
-:root {
-
-  /* ─────────────────────────────────────────
-     FONT FAMILY
-  ───────────────────────────────────────── */
-  --font-primary: 'Poppins', sans-serif;
-
-  /* ─────────────────────────────────────────
-     FONT WEIGHTS
-  ───────────────────────────────────────── */
-  --font-weight-light:   300;
-  --font-weight-regular: 400;
-
-  /* ─────────────────────────────────────────
-     FONT SIZES
-  ───────────────────────────────────────── */
-  --fs-h1:    44px;
-  --fs-h2:    40px;
-  --fs-h3:    30px;
-  --fs-h4:    24px;
-  --fs-h5:    20px;
-  --fs-h6:    18px;
-  --fs-body:  16px;
-  --fs-small: 14px;
-  --fs-60px: 60px;
-
-  /* ─────────────────────────────────────────
-     LINE HEIGHTS
-  ───────────────────────────────────────── */
-  --lh-h1:    56px;
-  --lh-h2:    54px;
-  --lh-h3:    44px;
-  --lh-h4:    36px;
-  --lh-h5:    30px;
-  --lh-h6:    28px;
-  --lh-body:  24px;
-  --lh-small: 22px;
-
-  /* ─────────────────────────────────────────
-     BORDER RADIUS
-  ───────────────────────────────────────── */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-
-  /* ─────────────────────────────────────────
-     SPACING — 8px base scale
-  ───────────────────────────────────────── */
-  --space-1:   4px;
-  --space-2:   8px;
-  --space-3:   12px;
-  --space-4:   16px;
-  --space-5:   20px;
-  --space-6:   24px;
-  --space-8:   30px;
-  --space-10:  40px;
-  --space-12:  50px;
-  --space-15:  60px;
-  --space-16:  64px;
-  --space-20:  80px;
-  --space-24:  96px;
-
-  /* ─────────────────────────────────────────
-     SECTION PADDING
-     Desktop: top/bottom 60px | left/right 20px
-     Mobile:  top/bottom 50px | left/right 20px
-  ───────────────────────────────────────── */
-
-  /* Desktop */
-  --section-padding-top-desktop:    60px;
-  --section-padding-bottom-desktop: 60px;
-  --section-padding-left-desktop:   20px;
-  --section-padding-right-desktop:  20px;
-
-  /* Mobile */
-  --section-padding-top-mobile:    50px;
-  --section-padding-bottom-mobile: 50px;
-  --section-padding-left-mobile:   20px;
-  --section-padding-right-mobile:  20px;
-
-  /* ─────────────────────────────────────────
-     CONTAINER WIDTHS
-     Desktop: 1240px
-     Tablet:   991px
-     Mobile:   767px
-  ───────────────────────────────────────── */
-  --container-desktop: 1240px;
-  --container-tablet:   991px;
-  --container-mobile:   767px;
-
-  /* ─────────────────────────────────────────
-     BREAKPOINTS (reference only)
-     Desktop: 1240px+
-     Tablet:   768px – 1239px
-     Mobile:   up to 767px
-  ───────────────────────────────────────── */
-  --bp-desktop: 1240px;
-  --bp-tablet:   768px;
-  --bp-mobile:   767px;
-
-  /* ─────────────────────────────────────────
-     TRANSITION
-  ───────────────────────────────────────── */
-  --transition-btn: background-color 0.2s ease;
-
-  /* ─────────────────────────────────────────
-     COLORS — Brand
-  ───────────────────────────────────────── */
-  --color-primary:   #112446;   /* Primary dark navy        */
-  --color-secondary: #313F58;   /* Secondary slate          */
-  --color-cta:       #13367D;   /* CTA / button default bg  */
-  --color-cta-hover: #0960A8;   /* CTA hover                */
-  --color-footer-bg: #0960A8;   /* Footer background        */
-
-  /* ─────────────────────────────────────────
-     COLORS — Backgrounds
-  ───────────────────────────────────────── */
-  --color-bg-blue:  #DAEEF8;   /* Section bg — blue tint   */
-  --color-bg-light: #F4F7FA;   /* Section bg — light       */
-  --color-white:    #ffffff;
-  --color-black:    #000000;
-
-  /* ─────────────────────────────────────────
-     COLORS — UI
-  ───────────────────────────────────────── */
-  --color-icon: #333333;   /* Icons                    */
-  --color-link: #007AFF;   /* Links / text decoration  */
-
-}
+   :root {
+      /* ─────────────────────────────────────────
+         FONT FAMILY
+      ───────────────────────────────────────── */
+      --font-primary: 'Poppins', sans-serif;
+      /* ─────────────────────────────────────────
+         FONT WEIGHTS
+      ───────────────────────────────────────── */
+      --font-weight-light:   300;
+      --font-weight-regular: 400;
+      --font-weight-medium: 500;
+      /* ─────────────────────────────────────────
+         FONT SIZES
+      ───────────────────────────────────────── */
+      --fs-h1:    44px;
+      --fs-h2:    40px;
+      --fs-h3:    30px;
+      --fs-h4:    24px;
+      --fs-h5:    20px;
+      --fs-h6:    18px;
+      --fs-body:  16px;
+      --fs-small: 14px;
+      --fs-60px: 60px;
+      /* ─────────────────────────────────────────
+         LINE HEIGHTS
+      ───────────────────────────────────────── */
+      --lh-h1:    56px;
+      --lh-h2:    54px;
+      --lh-h3:    44px;
+      --lh-40:    40px;
+      --lh-h4:    36px;
+      --lh-h5:    30px;
+      --lh-h6:    28px;
+      --lh-body:  24px;
+      --lh-small: 22px;
+      /* ─────────────────────────────────────────
+         BORDER RADIUS
+      ───────────────────────────────────────── */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-l: 15px;
+      /* ─────────────────────────────────────────
+         SPACING — 8px base scale
+      ───────────────────────────────────────── */
+      --space-1:   4px;
+      --space-2:   8px;
+      --space-10px:  10px;
+      --space-3:   12px;
+      --space-15px:  15px;
+      --space-4:   16px;
+      --space-5:   20px;
+      --space-6:   24px;
+      --space-7:   28px;
+      --space-8:   30px;
+      --space-9:   36px;
+      --space-10:  40px;
+      --space-11:  44px;
+      --space-12:  50px;
+      --space-15:  60px;
+      --space-16:  64px;
+      --space-20:  80px;
+      --space-24:  96px;
+      /* ─────────────────────────────────────────
+         SECTION PADDING
+         Desktop: top/bottom 60px | left/right 20px
+         Mobile:  top/bottom 50px | left/right 20px
+      ───────────────────────────────────────── */
+      /* Desktop */
+      --section-padding-top-desktop:    60px;
+      --section-padding-bottom-desktop: 60px;
+      --section-padding-left-desktop:   20px;
+      --section-padding-right-desktop:  20px;
+      /* Mobile */
+      --section-padding-top-mobile:    50px;
+      --section-padding-bottom-mobile: 50px;
+      --section-padding-left-mobile:   20px;
+      --section-padding-right-mobile:  20px;
+      /* ─────────────────────────────────────────
+         CONTAINER WIDTHS
+         Desktop: 1240px
+         Tablet:   991px
+         Mobile:   767px
+      ───────────────────────────────────────── */
+      --container-desktop: 1240px;
+      --container-tablet:   991px;
+      --container-mobile:   767px;
+      /* ─────────────────────────────────────────
+         BREAKPOINTS (reference only)
+         Desktop: 1240px+
+         Tablet:   768px – 1239px
+         Mobile:   up to 767px
+      ───────────────────────────────────────── */
+      --bp-desktop: 1240px;
+      --bp-tablet:   768px;
+      --bp-mobile:   767px;
+      /* ─────────────────────────────────────────
+         TRANSITION
+      ───────────────────────────────────────── */
+      --transition-btn: background-color 0.2s ease;
+      /* ─────────────────────────────────────────
+         COLORS — Brand
+      ───────────────────────────────────────── */
+      --color-primary:   #112446;   /* Primary dark navy        */
+      --color-secondary: #313F58;   /* Secondary slate          */
+      --color-cta:       #13367D;   /* CTA / button default bg  */
+      --color-cta-hover: #0960A8;   /* CTA hover                */
+      --color-footer-bg: #0960A8;   /* Footer background        */
+      /* ─────────────────────────────────────────
+         COLORS — Backgrounds
+      ───────────────────────────────────────── */
+      --color-bg-blue:  #DAEEF8;   /* Section bg — blue tint   */
+      --color-bg-light: #F4F7FA;   /* Section bg — light       */
+      --color-white:    #ffffff;
+      --color-black:    #000000;
+      /* ─────────────────────────────────────────
+         COLORS — UI
+      ───────────────────────────────────────── */
+      --color-icon: #333333;   /* Icons                    */
+      --color-link: #007AFF;   /* Links / text decoration  */
+    }

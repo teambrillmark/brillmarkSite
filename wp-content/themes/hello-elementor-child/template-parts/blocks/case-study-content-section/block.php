@@ -43,7 +43,7 @@ if (!empty($testimonial_image)) {
         </div>
         <div class="case-study-content-section-details flex flex-col gap-5">
           <?php if (!empty($client_label)): ?>
-            <h6 class="case-study-content-section-client text-primary m-0 text-left"><?php echo esc_html($client_label); ?></h6>
+            <h6 class="case-study-content-section-client text-primary m-0 text-left"><?php echo wp_kses_post($client_label); ?></h6>
           <?php endif; ?>
           <?php if (!empty($requirement)): ?>
             <p class="case-study-content-section-requirement text-primary m-0 text-left text-body"><?php echo wp_kses_post($requirement); ?></p>

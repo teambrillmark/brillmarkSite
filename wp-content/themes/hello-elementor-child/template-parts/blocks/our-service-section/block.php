@@ -27,7 +27,7 @@ $swiper_options_json = wp_json_encode($swiper_options);
 ?>
 <section id="<?php echo esc_attr($block_id); ?>" class="<?php echo esc_attr( str_replace( 'our-service-section-section', 'our-service-section', $wrapper['class'] ) ); ?> section bg-light">
   <div class="container">
-    <div class="our-service-section-wrapper flex flex-col items-center justify-center gap-12">
+    <div class="our-service-section-wrapper flex flex-col items-center justify-center gap-10">
       <div class="our-service-section-header flex flex-col items-center justify-center gap-5">
         <div class="our-service-section-title-wrap flex flex-col items-center justify-center gap-5">
           <?php if (!empty($section_title)): ?>
@@ -39,7 +39,7 @@ $swiper_options_json = wp_json_encode($swiper_options);
           <div class="our-service-section-tabs-area flex flex-row flex-wrap items-center justify-center gap-5" role="tablist">
             <?php foreach ($services as $i => $service): ?>
               <button
-                class="our-service-section-tab<?php echo $i === 0 ? ' active' : ''; ?>"
+                class="our-service-section-tab text-white <?php echo $i === 0 ? ' active' : ''; ?>"
                 role="tab"
                 aria-selected="<?php echo $i === 0 ? 'true' : 'false'; ?>"
                 data-tab-index="<?php echo (int) $i; ?>"
@@ -63,7 +63,7 @@ $swiper_options_json = wp_json_encode($swiper_options);
           <?php endif; ?>
 
           <div class="swiper our-service-section-swiper" data-swiper="<?php echo esc_attr($swiper_options_json); ?>">
-            <div class="swiper-wrapper bm-align-items-stretch bm-display-flex-2 bm-flex-direction-column-2 bm-gap-space-10-2">
+            <div class="swiper-wrapper bm-align-items-stretch bm-display-flex-2 bm-flex-direction-column-2 bm-gap-space-10-2 bm-gap-space-8">
               <?php foreach ($services as $i => $service):
                 $srv_title    = $service['service_title'] ?? '';
                 $srv_image    = $service['service_image'] ?? null;
@@ -75,7 +75,7 @@ $swiper_options_json = wp_json_encode($swiper_options);
               <div class="swiper-slide<?php echo $i === 0 ? ' swiper-slide--open' : ''; ?>" data-slide-index="<?php echo (int) $i; ?>">
                 <button
                   type="button"
-                  class="our-service-section-panel-mobile-trigger"
+                  class="our-service-section-panel-mobile-trigger bm-display-none bm-display-none-2"
                   data-panel-index="<?php echo (int) $i; ?>"
                   aria-expanded="<?php echo $i === 0 ? 'true' : 'false'; ?>"
                   aria-controls="<?php echo esc_attr($block_id); ?>-panel-<?php echo (int) $i; ?>"
@@ -85,7 +85,7 @@ $swiper_options_json = wp_json_encode($swiper_options);
                   <span class="our-service-section-panel-mobile-trigger-chevron" aria-hidden="true"></span>
                 </button>
                 <div
-                  class="our-service-section-panel bm-display-flex bm-flex-direction-column bm-align-items-center bm-justify-content-center bm-gap-10 bm-display-flex-2"
+                  class="our-service-section-panel bm-display-flex bm-flex-direction-column bm-align-items-center bm-justify-content-center bm-gap-10 bm-display-flex-2 mb-10"
                   role="tabpanel"
                   data-panel-index="<?php echo (int) $i; ?>"
                   data-cta-text="<?php echo esc_attr($srv_cta_text); ?>"
@@ -94,13 +94,13 @@ $swiper_options_json = wp_json_encode($swiper_options);
                   aria-labelledby="<?php echo esc_attr($block_id); ?>-tab-<?php echo (int) $i; ?>"
                 >
                   <div class="our-service-section-panel-inner flex flex-col items-center gap-5">
-                    <div class="our-service-section-panel-body flex flex-col items-center gap-6 bm-gap-space-5-2">
+                    <div class="our-service-section-panel-body flex flex-col items-center gap-10 bm-gap-space-5-2">
                       <?php if (!empty($srv_title)): ?>
                       <div class="our-service-section-panel-title-wrap flex flex-col items-center">
                         <h3 class="our-service-section-panel-title text-center text-primary m-0 bm-font-size-fs-h3 bm-line-height-lh-h3"><?php echo esc_html($srv_title); ?></h3>
                       </div>
                       <?php endif; ?>
-                      <div class="our-service-section-panel-columns flex items-center justify-center gap-6 bm-flex-direction-column-2 bm-gap-30 bm-gap-60-2">
+                      <div class="our-service-section-panel-columns flex items-center justify-center gap-15 bm-flex-direction-column-2 bm-gap-30 bm-gap-60-2">
                         <?php if (!empty($srv_image)): ?>
                           <img
                             class="our-service-section-panel-image"
@@ -137,34 +137,33 @@ $swiper_options_json = wp_json_encode($swiper_options);
                     </div>
                   </div>
                   <?php if (!empty($srv_cta_text)): ?>
-                  <div class="our-service-section-panel-cta flex justify-center bm-display-none bm-justify-content-center-2 bm-display-flex-2">
-                    <a class="our-service-section-cta btn btn-primary bm-padding-10px-20px" href="<?php echo esc_url($srv_cta_link); ?>">
-                      <span class="our-service-section-cta-text text-white"><?php echo esc_html($srv_cta_text); ?></span>
-                    </a>
-                  </div>
-                  <?php endif; ?>
+                <div class="our-service-section-panel-cta flex justify-center mobile-cta">
+                  <a class="our-service-section-cta btn btn-primary" href="<?php echo esc_url($srv_cta_link); ?>">
+                    <span class="our-service-section-cta-text text-white"><?php echo esc_html($srv_cta_text); ?></span>
+                  </a>
                 </div>
+                <?php endif; ?>
+                </div>
+                <?php if (!empty($srv_cta_text)): ?>
+                <div class="our-service-section-panel-cta flex justify-center desktop-cta">
+                  <a class="our-service-section-cta btn btn-primary" href="<?php echo esc_url($srv_cta_link); ?>">
+                    <span class="our-service-section-cta-text text-white"><?php echo esc_html($srv_cta_text); ?></span>
+                  </a>
+                </div>
+                <?php endif; ?>
               </div>
               <?php endforeach; ?>
             </div>
             <button class="our-service-section-nav-prev" aria-label="<?php esc_attr_e('Previous service', 'textdomain'); ?>" type="button">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <button class="our-service-section-nav-next bm-padding-0 bm-display-none-2" aria-label="<?php esc_attr_e('Next service', 'textdomain'); ?>" type="button">
+            <button class="our-service-section-nav-next bm-padding-0 bm-display-none-2 bm-display-none" aria-label="<?php esc_attr_e('Next service', 'textdomain'); ?>" type="button">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
 
           <?php if (!empty($right_decor)): ?>
             <img class="our-service-section-decor-right" src="<?php echo esc_url($right_decor); ?>" alt="" aria-hidden="true" width="100" height="509" />
-          <?php endif; ?>
-        </div>
-
-        <div class="our-service-section-cta-wrap flex flex-col items-center gap-5">
-          <?php if (!empty($first_cta_text)): ?>
-          <a class="our-service-section-cta btn btn-primary" href="<?php echo esc_url($first_cta_link); ?>">
-            <span class="our-service-section-cta-text"><?php echo esc_html($first_cta_text); ?></span>
-          </a>
           <?php endif; ?>
         </div>
       </div>

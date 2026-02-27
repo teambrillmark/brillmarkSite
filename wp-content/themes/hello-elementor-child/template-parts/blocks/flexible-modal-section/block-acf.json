@@ -1,0 +1,171 @@
+{
+  "key": "group_flexible_modal_section_fields",
+  "title": "Flexible Modal Section Fields",
+  "fields": [
+    {
+      "key": "field_flexible_modal_section_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": 1,
+      "default_value": "Flexible Engagement Models"
+    },
+    {
+      "key": "field_flexible_modal_section_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea",
+      "required": 0,
+      "default_value": "At BrillMark, we recognize that every business has unique needs and priorities. That\u2019s why we offer flexible engagement models to deliver the support and expertise you need, when you need it.",
+      "rows": 3
+    },
+    {
+      "key": "field_flexible_modal_section_background",
+      "label": "Background (Color or Gradient)",
+      "name": "background",
+      "type": "text",
+      "required": 0,
+      "instructions": "Solid color (e.g. #ecf5fa) or CSS gradient (e.g. linear-gradient(135deg, #ecf5fa 0%, #ffffff 100%)). Leave empty for default section background.",
+      "default_value": ""
+    },
+    {
+      "key": "field_flexible_modal_section_check_icon",
+      "label": "Check Icon",
+      "name": "check_icon",
+      "type": "image",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "thumbnail",
+      "instructions": "Shared checkmark icon used for all feature items across cards."
+    },
+    {
+      "key": "field_flexible_modal_section_cards",
+      "label": "Cards",
+      "name": "cards",
+      "type": "repeater",
+      "required": 1,
+      "min": 1,
+      "max": 6,
+      "layout": "block",
+      "sub_fields": [
+        {
+          "key": "field_flexible_modal_section_card_icon",
+          "label": "Card Icon",
+          "name": "card_icon",
+          "type": "image",
+          "required": 0,
+          "return_format": "array",
+          "preview_size": "thumbnail"
+        },
+        {
+          "key": "field_flexible_modal_section_card_title",
+          "label": "Card Title",
+          "name": "card_title",
+          "type": "text",
+          "required": 1,
+          "default_value": ""
+        },
+        {
+          "key": "field_flexible_modal_section_card_description",
+          "label": "Card Description",
+          "name": "card_description",
+          "type": "textarea",
+          "required": 0,
+          "default_value": "",
+          "rows": 3
+        },
+        {
+          "key": "field_flexible_modal_section_features",
+          "label": "Features",
+          "name": "features",
+          "type": "repeater",
+          "required": 0,
+          "min": 0,
+          "max": 10,
+          "layout": "table",
+          "sub_fields": [
+            {
+              "key": "field_flexible_modal_section_feature_text",
+              "label": "Feature Text",
+              "name": "feature_text",
+              "type": "text",
+              "required": 1,
+              "default_value": ""
+            }
+          ]
+        },
+        {
+          "key": "field_flexible_modal_section_button_text",
+          "label": "Button Text",
+          "name": "button_text",
+          "type": "text",
+          "required": 0,
+          "default_value": "Learn more"
+        },
+        {
+          "key": "field_flexible_modal_section_button_link",
+          "label": "Button Link",
+          "name": "button_link",
+          "type": "url",
+          "required": 0,
+          "default_value": "#"
+        }
+      ],
+      "default_value": [
+        {
+          "card_title": "Retainer-Based Partnerships",
+          "card_description": "Ideal for businesses with ongoing development needs, including eCommerce companies and CRO agencies.",
+          "button_text": "Learn more",
+          "button_link": "#",
+          "features": [
+            { "feature_text": "Predictable Costs" },
+            { "feature_text": "Dedicated Resources" },
+            { "feature_text": "Priority Service" },
+            { "feature_text": "Long-Term Collaboration" }
+          ]
+        },
+        {
+          "card_title": "Block of Hours",
+          "card_description": "Perfect for businesses looking to start testing development, establish a testing culture, or require on-demand services without a long-term commitment.",
+          "button_text": "Learn more",
+          "button_link": "#",
+          "features": [
+            { "feature_text": "Flexibility" },
+            { "feature_text": "On-Demand Support" },
+            { "feature_text": "Budget Control" },
+            { "feature_text": "Trial Opportunity" }
+          ]
+        },
+        {
+          "card_title": "Project-Based Engagements",
+          "card_description": "Designed for one-time projects or specific initiatives with clearly defined scopes and timelines.",
+          "button_text": "Learn more",
+          "button_link": "#",
+          "features": [
+            { "feature_text": "Defined Scope and Timeline" },
+            { "feature_text": "Focused Expertise" },
+            { "feature_text": "Transparent Pricing" },
+            { "feature_text": "Specialized Solutions" }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/flexible-modal-section"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Flexible engagement models section with cards showing title, description, features checklist, and CTA button."
+}

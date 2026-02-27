@@ -8,6 +8,10 @@
     section.dataset.jsInitialized = "true";
 
     try {
+      if (typeof window.initSwiperInRoot === 'function') {
+        window.initSwiperInRoot(section);
+      }
+
       var ctaButtons = section.querySelectorAll('.case-study-section-cta');
       ctaButtons.forEach(function (btn) {
         if (!btn || btn.dataset.jsBound) return;

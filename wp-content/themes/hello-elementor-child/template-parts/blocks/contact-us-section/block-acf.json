@@ -3,169 +3,441 @@
   "title": "Contact Us Section Fields",
   "fields": [
     {
-      "key": "field_contact_us_section_layout",
-      "label": "Layout variant",
-      "name": "layout",
-      "type": "select",
-      "instructions": "Choose the section layout variant.",
-      "choices": {
-        "1": "Variant 1 (blue tint, form + steps)",
-        "2": "Variant 2 (light bg, checklist + form)",
-        "3": "Variant 3 (dark blue, simplified)"
-      },
-      "default_value": "1"
+      "key": "field_contact_us_section_tab_appearance",
+      "label": "Appearance",
+      "name": "",
+      "type": "tab"
     },
     {
-      "key": "field_contact_us_section_flip_layout",
-      "label": "Swap left/right layout",
-      "name": "flip_layout",
+      "key": "field_contact_us_section_variant",
+      "label": "Variant",
+      "name": "variant",
+      "type": "select",
+      "instructions": "Choose a style variant. Use this in your CSS to target this block (e.g. .contact-us-section-section--dark).",
+      "choices": {
+        "default": "Default",
+        "Varient-1": "Varient-1",
+        "Varient-2": "Varient-2",
+        "Varient-3": "Varient-3"
+      },
+      "default_value": "default"
+    },
+    {
+      "key": "field_contact_us_section_section_color",
+      "label": "Section / left column color",
+      "name": "section_color",
+      "type": "color_picker",
+      "instructions": "Background color for the left column. Leave empty to use the variant default.",
+      "default_value": ""
+    },
+    {
+      "key": "field_contact_us_section_background",
+      "label": "Custom background (advanced)",
+      "name": "background",
+      "type": "text",
+      "instructions": "Override with a gradient or exact CSS value (e.g. linear-gradient(135deg, #2660aa 0%, #1a4a88 100%)). Leave empty to use Section color or variant."
+    },
+    {
+      "key": "field_contact_us_section_layout_swap",
+      "label": "Swap layout",
+      "name": "layout_swap",
       "type": "true_false",
-      "instructions": "Swap the order of the two columns (form/custom code vs info/features).",
+      "ui": 1,
+      "instructions": "When ON: form appears on the left, content (heading, list, etc.) on the right. When OFF: content left, form right.",
+      "default_value": 0
+    },
+    {
+      "key": "field_contact_us_section_tab_left",
+      "label": "Left column content",
+      "name": "",
+      "type": "tab"
+    },
+    {
+      "key": "field_contact_us_section_heading",
+      "label": "Main heading",
+      "name": "heading",
+      "type": "text",
+      "required": 1,
+      "instructions": "The main title shown on the left (e.g. \"Ready to Migrate to Shopify? Let's Get Started.\").",
+      "default_value": "Ready to Migrate to Shopify? Let's Get Started."
+    },
+    {
+      "key": "field_contact_us_section_show_intro",
+      "label": "Show intro paragraph",
+      "name": "show_intro",
+      "type": "true_false",
+      "ui": 1,
+      "instructions": "Turn on to display the paragraph below the heading.",
+      "default_value": 1
+    },
+    {
+      "key": "field_contact_us_section_intro",
+      "label": "Intro paragraph",
+      "name": "intro",
+      "type": "textarea",
+      "required": 0,
+      "rows": 3,
+      "instructions": "Short paragraph below the heading. Plain text; line breaks are kept.",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_intro", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_show_sub_intro",
+      "label": "Show sub intro paragraph",
+      "name": "show_sub_intro",
+      "type": "true_false",
+      "ui": 1,
+      "instructions": "Turn on to display the paragraph below the heading.",
+      "default_value": 1
+    },
+    {
+      "key": "field_contact_us_section_sub_intro",
+      "label": "Sub Intro paragraph",
+      "name": "sub_intro",
+      "type": "textarea",
+      "required": 0,
+      "rows": 3,
+      "instructions": "Short paragraph below the sub heading. Plain text; line breaks are kept.",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_sub_intro", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_show_feature_list",
+      "label": "Show feature / steps list",
+      "name": "show_feature_list",
+      "type": "true_false",
+      "ui": 1,
+      "instructions": "Turn on to show a bullet list (e.g. \"What Happens Next\" with items).",
+      "default_value": 1
+    },
+    {
+      "key": "field_contact_us_section_feature_list_subtitle",
+      "label": "List title",
+      "name": "feature_list_subtitle",
+      "type": "text",
+      "default_value": "What Happens Next:",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_feature_list", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_feature_list_icon",
+      "label": "List icon (used for all items)",
+      "name": "feature_list_icon",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "thumbnail",
+      "instructions": "Upload one icon; it appears before each list item. Leave empty for a checkmark.",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_feature_list", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_feature_list",
+      "label": "List items",
+      "name": "feature_list",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add item",
+      "sub_fields": [
+        {
+          "key": "field_contact_us_section_feature_item_text",
+          "label": "Item text",
+          "name": "item_text",
+          "type": "text",
+          "required": 1
+        }
+      ],
+      "conditional_logic": [[{"field": "field_contact_us_section_show_feature_list", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_show_email_button",
+      "label": "Show email / contact button",
+      "name": "show_email_button",
+      "type": "true_false",
       "ui": 1,
       "default_value": 0
     },
     {
-      "key": "field_contact_us_section_section_background",
-      "label": "Section background",
-      "name": "section_background",
+      "key": "field_contact_us_section_email_button_text",
+      "label": "Button label",
+      "name": "email_button_text",
       "type": "text",
-      "instructions": "CSS value for background. Accepts color (e.g. #fff) or gradient (e.g. linear-gradient(135deg, #667eea 0%, #764ba2 100%)). Leave empty to use the variant default.",
-      "placeholder": "#deeef7 or linear-gradient(...)"
+      "default_value": "info@brillmark.com",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_email_button", "operator": "==", "value": "1"}]]
     },
     {
-      "key": "field_contact_us_section_section_textcolor",
-      "label": "Section textcolor",
-      "name": "section_textcolor",
-      "type": "text",
-      "instructions": "CSS value for text color. Accepts color (e.g. #fff) or gradient (e.g. linear-gradient(135deg, #667eea 0%, #764ba2 100%)). Leave empty to use the variant default.",
-      "placeholder": "#deeef7 or linear-gradient(...)"
+      "key": "field_contact_us_section_email_button_url",
+      "label": "Button link (URL or mailto:)",
+      "name": "email_button_url",
+      "type": "url",
+      "default_value": "mailto:info@brillmark.com",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_email_button", "operator": "==", "value": "1"}]]
     },
     {
-      "key": "field_contact_us_section_show_cta",
-      "label": "Show CTA button",
-      "name": "show_cta",
+      "key": "field_contact_us_section_email_button_icon",
+      "label": "Button icon",
+      "name": "email_button_icon",
+      "type": "image",
+      "return_format": "array",
+      "preview_size": "thumbnail",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_email_button", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_tab_form",
+      "label": "Form (right side)",
+      "name": "",
+      "type": "tab"
+    },
+    {
+      "key": "field_contact_us_section_show_whats_next",
+      "label": "Show \"What's next?\" block below the form",
+      "name": "show_whats_next",
       "type": "true_false",
-      "instructions": "Show the primary CTA button below the custom code area.",
+      "ui": 1,
+      "instructions": "When ON: a second card with steps, feedback, email and social icons appears below the contact form. Form is always shown.",
+      "default_value": 0
+    },
+    {
+      "key": "field_contact_us_section_what_next_title",
+      "label": "What's next — Section title",
+      "name": "what_next_title",
+      "type": "text",
+      "default_value": "What's next?",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_what_next_steps",
+      "label": "What's next — Steps",
+      "name": "what_next_steps",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add step",
+      "sub_fields": [
+        {
+          "key": "field_contact_us_section_what_next_step_title",
+          "label": "Step title",
+          "name": "step_title",
+          "type": "text",
+          "required": 1
+        },
+        {
+          "key": "field_contact_us_section_what_next_step_description",
+          "label": "Step description",
+          "name": "step_description",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "key": "field_contact_us_section_what_next_step_link_text",
+          "label": "Phrase to link (optional)",
+          "name": "step_link_text",
+          "type": "text",
+          "instructions": "Text inside the description to turn into a link."
+        },
+        {
+          "key": "field_contact_us_section_what_next_step_link_url",
+          "label": "Link URL",
+          "name": "step_link_url",
+          "type": "url"
+        }
+      ],
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_what_next_feedback",
+      "label": "What's next — Feedback text",
+      "name": "what_next_feedback",
+      "type": "textarea",
+      "rows": 2,
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_what_next_email_label",
+      "label": "What's next — Email label",
+      "name": "what_next_email_label",
+      "type": "text",
+      "default_value": "Email:",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_what_next_email_address",
+      "label": "What's next — Email address",
+      "name": "what_next_email_address",
+      "type": "text",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_what_next_social",
+      "label": "What's next — Social icons",
+      "name": "what_next_social",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add icon",
+      "sub_fields": [
+        {
+          "key": "field_contact_us_section_what_next_social_icon",
+          "label": "Icon",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "thumbnail"
+        },
+        {
+          "key": "field_contact_us_section_what_next_social_url",
+          "label": "Link URL",
+          "name": "url",
+          "type": "url"
+        },
+        {
+          "key": "field_contact_us_section_what_next_social_label",
+          "label": "Accessible label",
+          "name": "label",
+          "type": "text"
+        }
+      ],
+      "conditional_logic": [[{"field": "field_contact_us_section_show_whats_next", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_form_intro",
+      "label": "Text above the form",
+      "name": "form_intro",
+      "type": "textarea",
+      "rows": 2,
+      "instructions": "One or two lines shown above the form fields (e.g. \"Fill out the form and we'll be in touch.\").",
+      "default_value": "Fill out the form and we'll be in touch as soon as possible."
+    },
+    {
+      "key": "field_contact_us_section_form_shortcode",
+      "label": "Form shortcode",
+      "name": "form_shortcode",
+      "type": "text",
+      "instructions": "Use a shortcode for the form (e.g. contact-form-7 or [contact-form-7 id=\"123\"]). When set, this replaces the custom form fields below. Leave empty to use the form fields repeater."
+    },
+    {
+      "key": "field_contact_us_section_form_fields",
+      "label": "Form fields",
+      "name": "form_fields",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add field",
+      "instructions": "Add each form field (name, email, message, etc.). Use \"Show this field\" to include or hide without deleting.",
+      "sub_fields": [
+        {
+          "key": "field_contact_us_section_form_field_show",
+          "label": "Include this field",
+          "name": "show",
+          "type": "true_false",
+          "ui": 1,
+          "default_value": 1
+        },
+        {
+          "key": "field_contact_us_section_form_field_type",
+          "label": "Input type",
+          "name": "type",
+          "type": "select",
+          "choices": {
+            "text": "Text",
+            "email": "Email",
+            "url": "Website URL",
+            "tel": "Phone",
+            "textarea": "Multi-line (comments / message)",
+            "select": "Dropdown"
+          },
+          "default_value": "text"
+        },
+        {
+          "key": "field_contact_us_section_form_field_name",
+          "label": "Field name (for form submission)",
+          "name": "name",
+          "type": "text",
+          "required": 1,
+          "instructions": "Use lowercase, no spaces (e.g. full_name, email)."
+        },
+        {
+          "key": "field_contact_us_section_form_field_label",
+          "label": "Label (shown above the input)",
+          "name": "label",
+          "type": "text"
+        },
+        {
+          "key": "field_contact_us_section_form_field_placeholder",
+          "label": "Placeholder (grey hint inside the input)",
+          "name": "placeholder",
+          "type": "text"
+        },
+        {
+          "key": "field_contact_us_section_form_field_required",
+          "label": "Required (show asterisk)",
+          "name": "required",
+          "type": "true_false",
+          "ui": 1,
+          "default_value": 0
+        },
+        {
+          "key": "field_contact_us_section_form_field_options",
+          "label": "Dropdown options (one per line)",
+          "name": "options",
+          "type": "textarea",
+          "rows": 3,
+          "conditional_logic": [[{"field": "field_contact_us_section_form_field_type", "operator": "==", "value": "select"}]]
+        }
+      ]
+    },
+    {
+      "key": "field_contact_us_section_show_consent",
+      "label": "Show consent checkbox",
+      "name": "show_consent",
+      "type": "true_false",
       "ui": 1,
       "default_value": 1
     },
     {
-      "key": "field_contact_us_section_title",
-      "label": "Title",
-      "name": "title",
-      "type": "text"
-    },
-    {
-      "key": "field_contact_us_section_description",
-      "label": "Description",
-      "name": "description",
-      "type": "textarea",
-      "rows": 3
-    },
-    {
-      "key": "field_contact_us_section_form_title",
-      "label": "Form title",
-      "name": "form_title",
-      "type": "text",
-      "instructions": "Optional heading above the form (custom code) area."
-    },
-    {
-      "key": "field_contact_us_section_custom_code",
-      "label": "Form (custom code)",
-      "name": "custom_code",
-      "type": "text",
-      "instructions": "The form area uses only this custom code. Add your contact form HTML or shortcode here (e.g. [contact-form-7 id=\"123\"]). No built-in form is rendered—this field defines the entire form content.",
-      "tabs": "all",
-      "toolbar": "full",
-      "media_upload": 1,
-      "delay": 0
-    },
-    {
-      "key": "field_contact_us_section_button_text",
-      "label": "CTA button text",
-      "name": "button_text",
-      "type": "text",
-      "default_value": "Get in Touch"
-    },
-    {
-      "key": "field_contact_us_section_email_address",
-      "label": "Email address",
-      "name": "email_address",
-      "type": "email",
-      "default_value": "info@brillmark.com"
-    },
-    {
-      "key": "field_contact_us_section_footer_text",
-      "label": "Footer text",
-      "name": "footer_text",
-      "type": "text"
-    },
-    {
-      "key": "field_contact_us_section_footer_subtext",
-      "label": "Footer subtext",
-      "name": "footer_subtext",
-      "type": "text"
-    },
-    {
-      "key": "field_contact_us_section_sidebar_heading",
-      "label": "Sidebar heading",
-      "name": "sidebar_heading",
-      "type": "text"
-    },
-    {
-      "key": "field_contact_us_section_features_richtext",
-      "label": "Features / list content",
-      "name": "features_richtext",
-      "type": "wysiwyg",
-      "instructions": "Rich text for the sidebar (replaces the old checklist/step list).",
-      "tabs": "all",
-      "toolbar": "full",
-      "media_upload": 0
-    },
-    {
-      "key": "field_contact_us_section_consent_text",
+      "key": "field_contact_us_section_consent_label",
       "label": "Consent text",
-      "name": "consent_text",
+      "name": "consent_label",
       "type": "text",
-      "default_value": "I consent to have BrillMark collect my details via this form and agree to the Privacy Policy"
+      "instructions": "Text next to the checkbox. \"Privacy Policy\" will become a link if you set the URL below.",
+      "default_value": "I consent to have BrillMark collect my details via this form and agree to the Privacy Policy.",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_consent", "operator": "==", "value": "1"}]]
     },
     {
-      "key": "field_contact_us_section_social_links",
-      "label": "Social links",
-      "name": "social_links",
-      "type": "repeater",
-      "layout": "table",
-      "button_label": "Add link",
-      "sub_fields": [
-        {
-          "key": "field_contact_us_section_platform",
-          "label": "Platform",
-          "name": "platform",
-          "type": "select",
-          "choices": {
-            "linkedin": "LinkedIn",
-            "twitter": "Twitter",
-            "facebook": "Facebook"
-          }
-        },
-        {
-          "key": "field_contact_us_section_url",
-          "label": "URL",
-          "name": "url",
-          "type": "url"
-        }
-      ]
+      "key": "field_contact_us_section_privacy_policy_url",
+      "label": "Privacy Policy URL",
+      "name": "privacy_policy_url",
+      "type": "url",
+      "instructions": "Makes the words \"Privacy Policy\" in the consent text clickable.",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_consent", "operator": "==", "value": "1"}]]
+    },
+    {
+      "key": "field_contact_us_section_submit_button_text",
+      "label": "Submit button text",
+      "name": "submit_button_text",
+      "type": "text",
+      "required": 1,
+      "default_value": "GET IN TOUCH"
+    },
+    {
+      "key": "field_contact_us_section_form_action_url",
+      "label": "Form action URL",
+      "name": "form_action_url",
+      "type": "url",
+      "instructions": "Where the form is sent on submit. Leave empty for custom handling (e.g. AJAX or theme handler)."
+    },
+    {
+      "key": "field_contact_us_section_show_followup",
+      "label": "Show text below the form",
+      "name": "show_followup",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1
+    },
+    {
+      "key": "field_contact_us_section_followup_text",
+      "label": "Text below the form",
+      "name": "followup_text",
+      "type": "textarea",
+      "rows": 3,
+      "instructions": "Plain text or short paragraph (e.g. contact email). For links, add the full URL on its own line and we will auto-link it.",
+      "default_value": "We look forward to partnering with you. If you have any questions, please email us at info@brillmark.com",
+      "conditional_logic": [[{"field": "field_contact_us_section_show_followup", "operator": "==", "value": "1"}]]
     }
   ],
-  "location": [
-    [
-      {
-        "param": "block",
-        "operator": "==",
-        "value": "acf/contact-us-section"
-      }
-    ]
-  ],
+  "location": [[{"param": "block", "operator": "==", "value": "acf/contact-us-section"}]],
   "menu_order": 0,
   "position": "normal",
   "style": "default",
