@@ -78,10 +78,11 @@
     border-left: 1px solid rgba(51, 51, 51, 0.1);
     border-top-left-radius: var(--radius-l);
     border-bottom-left-radius: var(--radius-l);
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
   }
   
   .table-section-column:last-child {
-    border-right: 1px solid rgba(51, 51, 51, 0.1);
+    border-right: 0px;
     border-radius: var(--radius-l);
   }
   
@@ -276,7 +277,10 @@
 
   /* 2columnPop */
   .table-section-section[data-variant="2columnPop"] .table-section-columns{
-    grid-template-columns: .4fr 1fr !important;
+    align-items: center;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: flex !important;
     justify-content: center;
   }
 
@@ -326,9 +330,34 @@
   /* 3columnPop */
 
   .table-section-section[data-variant="3columnPop"] .table-section-columns{
-    grid-template-columns: .5fr 1fr .7fr !important;
-    justify-content: center;
+      align-items: center;
+      border-spacing: 0;
+      border-collapse: collapse;
+      display: flex !important;
+      justify-content: center;
   }
+  .table-section-section[data-variant="3columnPop"] .table-section-columns .table-section-column .table-section-cell{
+    min-height: 140px;
+}
+
+.table-section-section[data-variant="3columnPop"] .table-section-columns .table-section-column.table-section-column--popout .table-section-cell {
+    min-height: 148px;
+}
+
+.table-section-section[data-variant="3columnPop"] .table-section-columns .table-section-column {
+    width: 25%;
+}
+
+.table-section-section[data-variant="3columnPop"] .table-section-columns .table-section-column.table-section-column--popout {
+    width: 45%;
+    border-bottom-right-radius: var(--radius-l);
+ 
+}
+
+.table-section-section[data-variant="3columnPop"] .table-section-columns .table-section-column:nth-child(3) {
+    width: 40%;
+    border-bottom-left-radius: 0px;
+}
   .table-section-section[data-variant="3columnPop"] .table-section-cell--header{
     font-size: var(--fs-h5);
     color: var(--color-primary);
@@ -347,3 +376,23 @@
     padding: var(--space-5) var(--space-15);
     border-radius: var(--radius-l) var(--radius-l) 0 0;
   }
+  .table-section-section[data-variant="2columnPop"] .table-section-table {
+    max-width: 874px;
+}
+.table-section-section[data-variant="2columnPop"] .table-section-columns .table-section-column {
+    width: 30%;
+}
+
+.table-section-section[data-variant="2columnPop"] .table-section-columns .table-section-column.table-section-column--popout {
+    width: 70%;
+    border-bottom-left-radius: var(--radius-l);
+    overflow: hidden;
+}
+
+.table-section-section[data-variant="2columnPop"] .table-section-columns .table-section-column .table-section-cell {
+    min-height: 140px;
+}
+
+.table-section-section[data-variant="2columnPop"] .table-section-columns .table-section-column.table-section-column--popout .table-section-cell {
+    min-height: 120px;
+}

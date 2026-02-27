@@ -87,7 +87,7 @@ if ($col_count > 0) {
           ?>
           <div class="<?php echo esc_attr($col_class); ?>"<?php if ($col_style !== ''): ?> style="<?php echo $col_style; ?>"<?php endif; ?>>
             <div class="table-section-cell table-section-cell--header"<?php if ($header_bg !== ''): ?> style="background-color: <?php echo esc_attr($header_bg); ?>;"<?php endif; ?>>
-              <?php echo esc_html($col['header_label'] ?? ''); ?>
+              <?php echo wp_kses_post($col['header_label'] ?? ''); ?>
             </div>
             <?php for ($row_index = 0; $row_index < $row_count; $row_index++): ?>
               <?php
