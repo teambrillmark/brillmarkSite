@@ -534,7 +534,7 @@ add_filter('upload_mimes', 'allow_woff2_uploads');
 function theme_enqueue_vite_assets()
 {
 
-    $is_dev = true; // 🔥 TEMPORARY FORCE DEV MODE
+    $is_dev = false; // 🔥 TEMPORARY FORCE DEV MODE
 
     if ($is_dev) {
 
