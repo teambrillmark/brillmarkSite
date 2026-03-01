@@ -41,7 +41,7 @@
    Source: .navbar-section-cta-btn
 ───────────────────────────────────────── */
 .btn-primary {
-  padding:          var(--space-2) var(--space-5);  /* --space-2 --space-5 → 8px 20px */
+  padding:          var(--space-10px) var(--space-5);  /* --space-2 --space-5 → 8px 20px */
   background-color: var(--color-cta);               /* --color-cta   → #13367D        */
   color:            var(--color-bg-light);           /* --color-bg-light → #F4F7FA     */
 }

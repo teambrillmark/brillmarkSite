@@ -7,6 +7,7 @@
 
 // Design system + utilities + common
 import '../css/design-system.css';
+import './header.js';
 
 import Swiper from 'swiper';
 import { Navigation, Autoplay } from 'swiper/modules';

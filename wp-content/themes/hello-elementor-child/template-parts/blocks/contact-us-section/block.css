@@ -62,6 +62,13 @@
     font-weight: var(--font-weight-light);
     line-height: var(--lh-h1);
     margin-bottom: 0px;
+    color: var(--color-primary);
+}
+.contact-us-section-section[data-variant="Varient-1"] .contact-us-section-heading {
+    color: var(--color-primary);
+}
+.contact-us-section-section[data-variant="Varient-1"] .contact-us-section-subheading {
+    color: var(--color-secondary);
 }
 .contact-us-section-section[data-variant="Varient-3"] .contact-us-section-heading {
     margin-top: 0px;
@@ -89,10 +96,13 @@
 .contact-us-section-section[data-variant="Varient-2"] .contact-us-section-intro{
     font-size: var(--fs-h6);
     line-height: var(--lh-h6);	
-	font-weight:     var(--font-weight-regular);
-	    margin-bottom: var(--space-10);
-	max-width: 502px;
-
+	  font-weight:     var(--font-weight-regular);
+    margin-bottom: var(--space-10);
+	  max-width: 502px;
+    color: var(--color-secondary);
+}
+.contact-us-section-section[data-variant="Varient-2"] .contact-us-section-feature-item{
+    color: var(--color-primary);
 }
 .contact-us-section-section[data-variant=Varient-3] .contact-us-section-header .contact-us-section-subheading {
     margin-bottom: var(--space-10);
@@ -228,7 +238,7 @@
   font-weight: bold;
 }
 
-.contact-us-section-email-btn {
+.contact-us-section-section .contact-us-section-email-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);

@@ -17,6 +17,32 @@
       "default_value": "default"
     },
     {
+      "key": "field_table_section_3column_pop_layout_desktop",
+      "label": "3-Column Pop layout (Desktop)",
+      "name": "layout_3column_pop_desktop",
+      "type": "select",
+      "instructions": "On desktop: choose normal column slide or sticky header with row labels above each row.",
+      "choices": {
+        "default": "Default (column slide)",
+        "sticky_row_headers": "Sticky header, row label above each row"
+      },
+      "default_value": "default",
+      "conditional_logic": [[{"field": "field_table_section_variant", "operator": "==", "value": "3columnPop"}]]
+    },
+    {
+      "key": "field_table_section_3column_pop_layout_mobile",
+      "label": "3-Column Pop layout (Mobile)",
+      "name": "layout_3column_pop_mobile",
+      "type": "select",
+      "instructions": "On mobile: choose normal column slide or sticky header with row labels above each row.",
+      "choices": {
+        "default": "Default (column slide)",
+        "sticky_row_headers": "Sticky header, row label above each row"
+      },
+      "default_value": "default",
+      "conditional_logic": [[{"field": "field_table_section_variant", "operator": "==", "value": "3columnPop"}]]
+    },
+    {
       "key": "field_table_section_title",
       "label": "Title",
       "name": "title",
@@ -107,11 +133,20 @@
       "ui": 1
     },
     {
-      "key": "field_table_section_popout",
-      "label": "Popout Column",
-      "name": "popout_column",
+      "key": "field_table_section_popout_desktop",
+      "label": "Popout on desktop",
+      "name": "popout_desktop",
       "type": "true_false",
-      "instructions": "Visually highlight one column (e.g. border or shadow).",
+      "instructions": "Column structure + highlight on desktop. OFF = row structure on desktop.",
+      "default_value": 0,
+      "ui": 1
+    },
+    {
+      "key": "field_table_section_popout_mobile",
+      "label": "Popout on mobile",
+      "name": "popout_mobile",
+      "type": "true_false",
+      "instructions": "Column structure + highlight on mobile. OFF = row structure on mobile.",
       "default_value": 0,
       "ui": 1
     },
@@ -120,10 +155,10 @@
       "label": "Column to Popout",
       "name": "popout_column_index",
       "type": "number",
-      "instructions": "Which column to popout (1 = first column).",
+      "instructions": "Which column to popout (1 = first). Shown when desktop or mobile popout is on.",
       "min": 1,
       "default_value": 1,
-      "conditional_logic": [[{"field": "field_table_section_popout", "operator": "==", "value": "1"}]]
+      "conditional_logic": [[{"field": "field_table_section_popout_desktop", "operator": "==", "value": "1"}], [{"field": "field_table_section_popout_mobile", "operator": "==", "value": "1"}]]
     },
     {
       "key": "field_table_section_odd_row_bg",

@@ -50,6 +50,7 @@
   white-space: nowrap;
   font-family: var(--font-primary);
   flex-shrink: 0;
+  color: var(--color-secondary);
 }
 
 .our-service-section .our-service-section-tab.active,
@@ -58,10 +59,9 @@
   border-color: var(--color-cta);
   color: var(--color-white);
 }
-
-.our-service-section .our-service-section-tab:hover:not(.active) {
-  background-color: var(--color-cta);
-  border-color: var(--color-cta);
+.our-service-section .our-service-section-tab.active .our-service-section-tab-label,
+.our-service-section .our-service-section-tab[aria-selected="true"] .our-service-section-tab-label {
+  color: var(--color-white);
 }
 
 .our-service-section .our-service-section-tab:focus-visible {
@@ -71,6 +71,7 @@
 
 .our-service-section .our-service-section-tab-label {
   pointer-events: none;
+  color: var(--color-secondary);
 }
 
 /* ─── Slider Area ─── */
@@ -356,9 +357,7 @@
     padding: var(--space-10) var(--space-5) var(--space-4);
   }
 
-  .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger:hover {
-    background-color: var(--color-bg-blue);
-  }
+  
 
   .our-service-section.our-service-section--stacked .our-service-section-panel-mobile-trigger[aria-expanded="true"] {
     background-color: var(--color-bg-blue);

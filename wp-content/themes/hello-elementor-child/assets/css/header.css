@@ -587,7 +587,6 @@
       display: block;
       padding: 20px;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
-	  margin-top: 20px;
 	  height: 80vh;
 	  overflow: scroll;
 	  box-shadow: 11px 5px 33px 0 rgba(48, 48, 48, .07);
