@@ -17,11 +17,24 @@
       "default_value": "default"
     },
     {
-      "key": "field_table_section_3column_pop_layout",
-      "label": "3-Column Pop layout",
-      "name": "layout_3column_pop",
+      "key": "field_table_section_3column_pop_layout_desktop",
+      "label": "3-Column Pop layout (Desktop)",
+      "name": "layout_3column_pop_desktop",
       "type": "select",
-      "instructions": "When variant is 3columnPop: choose normal column slide or sticky header with row labels above each row (first column shown as heading above each content row).",
+      "instructions": "On desktop: choose normal column slide or sticky header with row labels above each row.",
+      "choices": {
+        "default": "Default (column slide)",
+        "sticky_row_headers": "Sticky header, row label above each row"
+      },
+      "default_value": "default",
+      "conditional_logic": [[{"field": "field_table_section_variant", "operator": "==", "value": "3columnPop"}]]
+    },
+    {
+      "key": "field_table_section_3column_pop_layout_mobile",
+      "label": "3-Column Pop layout (Mobile)",
+      "name": "layout_3column_pop_mobile",
+      "type": "select",
+      "instructions": "On mobile: choose normal column slide or sticky header with row labels above each row.",
       "choices": {
         "default": "Default (column slide)",
         "sticky_row_headers": "Sticky header, row label above each row"

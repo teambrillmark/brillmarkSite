@@ -68,28 +68,33 @@
 
 /* Card white background layer */
 .case-study-content-section-section .case-study-content-section-card-bg {
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-white);
-  border-radius: var(--radius-sm);
+  display: none;
 }
 
 /* Card image layer */
 .case-study-content-section-section .case-study-content-section-card-image {
   position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
+    inset: 0;
+    background-size: contain;
+    background-position: top;
+    z-index: 2;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Quote wrapper — sits above image */
 .case-study-content-section-section .case-study-content-section-quote-wrapper {
   position: relative;
   z-index: 1;
-  width: 418px;
   max-width: 100%;
-  height: 100%;
+  height: 70%;
   padding: 20px;
+  background-color: var(--color-white);
+  width: 100%;
+  justify-content: end;
 }
 
 /* Quote text */

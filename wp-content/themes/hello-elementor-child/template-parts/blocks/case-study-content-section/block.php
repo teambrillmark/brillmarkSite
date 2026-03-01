@@ -31,9 +31,9 @@ if (!empty($testimonial_image)) {
 ?>
 <section id="<?php echo esc_attr($wrapper['id']); ?>" class="<?php echo esc_attr($wrapper['class']); ?> section bg-blue-tint<?php echo esc_attr($flip_class); ?>">
   <div class="container mx-auto">
-    <div class="case-study-content-section-wrapper flex flex-col gap-8 items-center">
+    <div class="case-study-content-section-wrapper flex flex-row gap-8 items-center">
       <div class="case-study-content-section-info flex flex-col gap-4">
-        <div class="case-study-content-section-heading-group flex flex-col gap-5">
+        <div class="case-study-content-section-heading-group flex flex-col gap-1">
           <?php if (!empty($subtitle)): ?>
             <span class="case-study-content-section-subtitle text-secondary text-h6 text-center"><?php echo esc_html($subtitle); ?></span>
           <?php endif; ?>
@@ -41,7 +41,7 @@ if (!empty($testimonial_image)) {
             <h3 class="case-study-content-section-title text-primary m-0 text-left"><?php echo esc_html($title); ?></h3>
           <?php endif; ?>
         </div>
-        <div class="case-study-content-section-details flex flex-col gap-5">
+        <div class="case-study-content-section-details flex flex-col gap-1">
           <?php if (!empty($client_label)): ?>
             <h6 class="case-study-content-section-client text-primary m-0 text-left"><?php echo wp_kses_post($client_label); ?></h6>
           <?php endif; ?>
@@ -50,10 +50,10 @@ if (!empty($testimonial_image)) {
           <?php endif; ?>
         </div>
       </div>
-      <div class="case-study-content-section-testimonial-card">
+      <div class="case-study-content-section-testimonial-card justify-end items-end flex">
         <div class="case-study-content-section-card-bg"></div>
         <div class="case-study-content-section-card-image"<?php if (!empty($image_url)): ?> style="background-image: url('<?php echo esc_url($image_url); ?>');"<?php endif; ?>></div>
-        <div class="case-study-content-section-quote-wrapper flex flex-col gap-4 justify-center items-center">
+        <div class="case-study-content-section-quote-wrapper flex flex-col gap-11 justify-end items-center">
           <?php if (!empty($testimonial_quote)): ?>
             <p class="case-study-content-section-quote-text text-primary m-0 text-h6 text-left"><?php echo wp_kses_post($testimonial_quote); ?></p>
           <?php endif; ?>

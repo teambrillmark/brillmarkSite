@@ -16,11 +16,24 @@ if (empty($variant_id)) {
   $variant_id = 'default';
 }
 $variant_id = sanitize_html_class($variant_id);
-$layout_3column_pop = get_field('layout_3column_pop');
-if (empty($layout_3column_pop)) {
-  $layout_3column_pop = 'default';
+$layout_3column_pop_desktop = get_field('layout_3column_pop_desktop');
+$layout_3column_pop_mobile  = get_field('layout_3column_pop_mobile');
+$legacy_layout = get_field('layout_3column_pop');
+if ($layout_3column_pop_desktop === null || $layout_3column_pop_desktop === '') {
+  $layout_3column_pop_desktop = $legacy_layout ?: 'default';
 }
-$use_sticky_row_headers = ($variant_id === '3columnPop' && $layout_3column_pop === 'sticky_row_headers');
+if ($layout_3column_pop_mobile === null || $layout_3column_pop_mobile === '') {
+  $layout_3column_pop_mobile = $legacy_layout ?: 'default';
+}
+$layout_3column_pop_desktop = $layout_3column_pop_desktop ?: 'default';
+$layout_3column_pop_mobile  = $layout_3column_pop_mobile ?: 'default';
+
+$use_sticky_desktop = ($variant_id === '3columnPop' && $layout_3column_pop_desktop === 'sticky_row_headers');
+$use_sticky_mobile  = ($variant_id === '3columnPop' && $layout_3column_pop_mobile === 'sticky_row_headers');
+$use_sticky_row_headers = $use_sticky_desktop || $use_sticky_mobile;
+$sticky_both = $use_sticky_desktop && $use_sticky_mobile;
+$sticky_desktop_only = $use_sticky_desktop && !$use_sticky_mobile;
+$sticky_mobile_only = $use_sticky_mobile && !$use_sticky_desktop;
 $title     = get_field('title');
 $desc      = get_field('description');
 $columns   = get_field('columns');
@@ -53,7 +66,13 @@ if (!$transpose && $popout_desktop && !$popout_mobile) {
   $section_popout_mode = ' table-section-section--mobile-column-desktop-row';
 }
 if ($use_sticky_row_headers) {
-  $section_popout_mode .= ' table-section-section--3column-pop-sticky-rows';
+  if ($sticky_both) {
+    $section_popout_mode .= ' table-section-section--3column-pop-sticky-rows';
+  } elseif ($sticky_desktop_only) {
+    $section_popout_mode .= ' table-section-section--3column-pop-sticky-desktop-default-mobile';
+  } elseif ($sticky_mobile_only) {
+    $section_popout_mode .= ' table-section-section--3column-pop-default-desktop-sticky-mobile';
+  }
 }
 ?>
 
@@ -84,7 +103,10 @@ if ($use_sticky_row_headers) {
     }
     ?>
     <?php if ($use_sticky_row_headers && $col_count >= 2): ?>
-    <!-- 3columnPop: sticky header + row label above each row -->
+    <?php
+    // Inline partial: output sticky-rows table (same markup for sticky_both, sticky_desktop_only, sticky_mobile_only).
+    $render_sticky_table = function() use ($columns, $col_count, $row_count, $grid_style, $odd_bg, $odd_color, $even_bg, $even_color) {
+      ?>
     <div class="table-section-table table-section-table--sticky-rows mx-auto" data-columns="<?php echo (int) $col_count; ?>">
       <div class="table-section-sticky-rows-header" style="grid-template-columns: auto repeat(<?php echo (int)($col_count - 1); ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));">
         <div class="table-section-sticky-rows-header-cell table-section-sticky-rows-header-cell--spacer"></div>
@@ -126,6 +148,69 @@ if ($use_sticky_row_headers) {
         <?php endfor; ?>
       </div>
     </div>
+    <?php
+    };
+    // Inline partial: output default column-based table for 3columnPop (used when mobile or desktop shows default layout).
+    $render_default_column_table = function() use ($columns, $col_count, $row_count, $table_class, $grid_style, $popout_i, $popout_desktop, $popout_mobile, $odd_bg, $odd_color, $even_bg, $even_color) {
+      ?>
+    <div class="<?php echo esc_attr($table_class); ?>" data-columns="<?php echo (int) $col_count; ?>">
+      <div class="table-section-columns" style="display: grid; grid-template-columns: repeat(<?php echo (int) $col_count; ?>, minmax(0, <?php echo esc_attr($grid_style); ?>));">
+        <?php foreach ($columns as $col_index => $col): ?>
+          <?php
+          $cells = isset($col['cells']) && is_array($col['cells']) ? $col['cells'] : [];
+          $header_bg = '';
+          if (!empty($col['column_background_color'])) { $header_bg = $col['column_background_color']; } elseif (!empty($col['header_background_color'])) { $header_bg = $col['header_background_color']; }
+          $col_num = $col_index + 1;
+          $is_popout_col = $popout_i === $col_num;
+          $col_class = 'table-section-column';
+          if ($is_popout_col && $popout_desktop) { $col_class .= ' table-section-column--popout-desktop'; }
+          if ($is_popout_col && $popout_mobile) { $col_class .= ' table-section-column--popout-mobile'; }
+          $col_style = isset($col['column_background_color']) && $col['column_background_color'] !== '' ? ' background-color: ' . esc_attr($col['column_background_color']) . ';' : '';
+          ?>
+          <div class="<?php echo esc_attr($col_class); ?>"<?php if ($col_style !== ''): ?> style="<?php echo $col_style; ?>"<?php endif; ?>>
+            <div class="table-section-cell table-section-cell--header"<?php if ($header_bg !== ''): ?> style="background-color: <?php echo esc_attr($header_bg); ?>;"<?php endif; ?>>
+              <?php echo wp_kses_post($col['header_label'] ?? ''); ?>
+            </div>
+            <?php for ($row_index = 0; $row_index < $row_count; $row_index++): ?>
+              <?php
+              $cell_content = isset($cells[$row_index]['content']) ? $cells[$row_index]['content'] : '';
+              $is_odd = ($row_index % 2) === 0;
+              $cell_style = '';
+              if ($is_odd && $odd_bg) { $cell_style = ' background-color: ' . esc_attr($odd_color) . ';'; } elseif (!$is_odd && $even_bg) { $cell_style = ' background-color: ' . esc_attr($even_color) . ';'; }
+              if (isset($col['column_background_color']) && $col['column_background_color'] !== '') { $cell_style = ' background-color: ' . esc_attr($col['column_background_color']) . ';'; }
+              $body_class = 'table-section-cell table-section-cell--body';
+              if ($is_popout_col && $popout_desktop) $body_class .= ' table-section-cell--popout-desktop';
+              if ($is_popout_col && $popout_mobile) $body_class .= ' table-section-cell--popout-mobile';
+              ?>
+              <div class="<?php echo esc_attr($body_class); ?>"<?php if ($cell_style !== ''): ?> style="<?php echo $cell_style; ?>"<?php endif; ?>><?php echo wp_kses_post($cell_content); ?></div>
+            <?php endfor; ?>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <?php
+    };
+    ?>
+    <?php if ($sticky_both): ?>
+    <!-- 3columnPop: sticky header + row label above each row (desktop & mobile) -->
+    <?php $render_sticky_table(); ?>
+    <?php elseif ($sticky_desktop_only): ?>
+    <!-- 3columnPop: sticky on desktop, default column on mobile -->
+    <div class="table-section-3column-pop-desktop-only">
+      <?php $render_sticky_table(); ?>
+    </div>
+    <div class="table-section-3column-pop-mobile-only">
+      <?php $render_default_column_table(); ?>
+    </div>
+    <?php elseif ($sticky_mobile_only): ?>
+    <!-- 3columnPop: default column on desktop, sticky on mobile -->
+    <div class="table-section-3column-pop-desktop-only">
+      <?php $render_default_column_table(); ?>
+    </div>
+    <div class="table-section-3column-pop-mobile-only">
+      <?php $render_sticky_table(); ?>
+    </div>
+    <?php endif; ?>
     <?php else: ?>
     <?php if ($output_both): ?>
     <div class="table-section-columns-wrap table-section-dual-layout">
