@@ -47,9 +47,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-white);
+  color: var(--color-icon);
   border: 1px solid rgba(0, 0, 0, 0.10);
-  border-bottom: none;
-  padding: 15px 10px;
+  padding: 24px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-primary);
@@ -57,6 +57,9 @@
 
 .our-process-section-section .our-process-section-tab:first-child {
   border-radius: var(--radius-md) 0 0 0;
+}
+.our-process-section-section .our-process-section-tab:first-child img{
+  filter: invert(1);
 }
 
 .our-process-section-section .our-process-section-tab:last-child {
@@ -68,6 +71,7 @@
 .our-process-section-section .our-process-section-tab.our-process-section-tab--active {
   background-color: var(--color-cta-hover);
   border-color: var(--color-cta-hover);
+  color: var(--color-white);
 }
 
 .our-process-section-section .our-process-section-tab--active .our-process-section-tab-icon img {
@@ -105,11 +109,11 @@
 /* ----- INDIVIDUAL PANEL ----- */
 .our-process-section-section .our-process-section-panel {
   display: none;
-  padding: 52px 50px;
+  padding: 58px 80px;
 }
 
 .our-process-section-section .our-process-section-panel.our-process-section-panel--active {
-  display: block;
+  display: flex;
 }
 
 /* ----- PANEL INNER LAYOUT ----- */
@@ -201,6 +205,10 @@
    RESPONSIVE — SMALL TABLET (max 768px) — Accordion on mobile
    ============================================================ */
 @media (max-width: 768px) {
+  
+  .our-process-section-section .our-process-section-header{
+    gap: 15px;
+  }
 
   /* Hide tab bar; use per-panel mobile trigger as accordion header */
   .our-process-section-section .our-process-section-tab-bar {
@@ -208,13 +216,24 @@
   }
 
   /* Show all panels so each accordion header is visible; override [hidden] */
+  .our-process-section-section .our-process-section-panel-wrapper{
+    background-color: transparent;
+  }
   .our-process-section-section .our-process-section-panel-wrapper .our-process-section-panel[hidden] {
     display: block !important;
   }
 
-  /* Only the active panel’s content is visible */
-  .our-process-section-section .our-process-section-panel:not(.our-process-section-panel--active) .our-process-section-panel-inner {
-    display: none !important;
+  /* Accordion panel content with smooth open/close transition */
+  .our-process-section-section .our-process-section-panel-inner {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .our-process-section-section .our-process-section-panel.our-process-section-panel--active .our-process-section-panel-inner {
+    max-height: 1000px; /* large enough to fit content */
+    opacity: 1;
   }
 
   /* Mobile accordion trigger = accordion header */
@@ -223,10 +242,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: var(--space-5) var(--space-6);
+    padding: 0px;
     background: var(--color-white);
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    border-top: none;
+    border: none;
     cursor: pointer;
     font-family: var(--font-primary);
     font-size: var(--fs-body);
@@ -236,17 +254,19 @@
   }
 
   .our-process-section-section .our-process-section-panel:first-child .our-process-section-panel-mobile-trigger {
-    border-top: 1px solid rgba(0, 0, 0, 0.10);
+    border: none;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.10); */
+    background-color: transparent;
   }
 
   .our-process-section-section .our-process-section-panel-mobile-trigger:hover {
-    background-color: var(--color-blue-tint, #f5f9fc);
+    background-color: transparent;
   }
 
   .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger {
-    background-color: var(--color-cta-hover);
+    /* background-color: var(--color-cta-hover);
     border-color: var(--color-cta-hover);
-    color: var(--color-white);
+    color: var(--color-white); */
   }
 
   .our-process-section-section .our-process-section-panel-mobile-trigger-icon {
@@ -259,10 +279,13 @@
     max-height: 30px;
     width: auto;
   }
-
-  .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger-icon img {
-    filter: brightness(0) invert(1);
+ .our-process-section-panel:first-child .our-process-section-panel-mobile-trigger-icon img {
+    filter: invert(1);
   }
+
+  /* .our-process-section-section .our-process-section-panel--active .our-process-section-panel-mobile-trigger-icon img {
+    filter: brightness(0) invert(1);
+  } */
 
   .our-process-section-section .our-process-section-panel-mobile-trigger-label {
     flex: 1;
@@ -314,11 +337,15 @@
   }
 
   .our-process-section-section .our-process-section-panel {
-    padding: var(--space-8) var(--space-5);
+    /* padding: var(--space-8) var(--space-5); */
+    /* border: 1px solid var(--color-footer-bg); */
+    background-color: var(--color-white);
   }
+
 
   .our-process-section-section .our-process-section-panel-image {
     width: 100%;
+    display: none;
   }
 
   .our-process-section-section .our-process-section-panel-image img {
@@ -330,17 +357,19 @@
     width: 100%;
     min-width: unset;
   }
+  .our-process-section-panel--active .our-process-section-panel-inner{
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.20);
+  }
+  .our-process-section-section .our-process-section-title{
+    font-size: var(--fs-h3);
+  }
 }
 
 /* ============================================================
    RESPONSIVE — MOBILE (max 480px)
    ============================================================ */
 @media (max-width: 480px) {
-
-  .our-process-section-section .our-process-section-description {
-    font-size: var(--fs-body);
-    line-height: var(--lh-body);
-  }
 
   .our-process-section-section .our-process-section-tab {
     flex: 1 1 100%;
@@ -370,7 +399,7 @@
   }
 
   .our-process-section-section .our-process-section-panel {
-    padding: 20px 15px;
+    padding: 20px 20px;
   }
 
   .our-process-section-section .our-process-section-panel-image img {

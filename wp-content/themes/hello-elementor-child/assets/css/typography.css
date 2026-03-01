@@ -112,6 +112,12 @@
    .font-weight-light {
      font-weight: var(--font-weight-light);
    }
+   .font-weight-regular {
+     font-weight: var(--font-weight-regular);
+   }
+   .font-weight-medium {
+     font-weight: var(--font-weight-medium);
+   }
    
    .leading-1 {
      line-height: 1;

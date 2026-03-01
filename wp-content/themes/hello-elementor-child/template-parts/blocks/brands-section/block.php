@@ -44,44 +44,33 @@ if (!empty($background)) {
       if (!empty($brand_logos) && is_array($brand_logos)): ?>
         <?php if ($logo_layout === 'slider'): ?>
           <?php
-          $slides_per_view = (int) $slides_to_show;
-          if ($slides_per_view < 1) {
-              $slides_per_view = 'auto';
-          }
-          $brands_swiper_options = [
-              'slidesPerView'          => $slides_per_view,
-              'spaceBetween'          => 24,
-              'loop'                   => true,
-              'speed'                  => 800,
-              'wrapperClass'           => 'brands-section-slider-track',
-              'slideClass'             => 'brands-section-slider-slide',
-              'navigationNextSelector' => '.brands-section-slider-next',
-              'navigationPrevSelector' => '.brands-section-slider-prev',
-              'autoplay'              => [
-                  'delay'                => 1000,
-                  'disableOnInteraction' => false,
-              ],
-          ];
+          $brand_logos_filtered = array_values(array_filter($brand_logos, function ($row) {
+              $img = is_array($row['logo_image']) ? ($row['logo_image']['url'] ?? '') : (string) ($row['logo_image'] ?? '');
+              return !empty($img);
+          }));
           ?>
           <div class="brands-section-slider-wrap brands-section-slider-wrap--desktop">
-            <div class="brands-section-slider flex items-center bm-gap-space-4" data-swiper="<?php echo esc_attr(wp_json_encode($brands_swiper_options)); ?>">
-            <button type="button" class="brands-section-slider-prev" aria-label="<?php esc_attr_e('Previous', 'theme'); ?>">&larr;</button>
-            <div class="brands-section-slider-track flex flex-row items-center">
-              <?php foreach ($brand_logos as $logo_index => $row):
-                  $logo_image = is_array($row['logo_image']) ? ($row['logo_image']['url'] ?? '') : (string) ($row['logo_image'] ?? '');
-                  $logo_alt   = $row['logo_alt'] ?? '';
-                  if (empty($logo_image)) continue;
-                  $logo_index_1based = $logo_index + 1;
-              ?>
-                <div class="brands-section-slider-slide flex justify-center items-center">
+            <div class="brands-section-slider" aria-label="<?php esc_attr_e('Brand logos', 'theme'); ?>">
+              <ul class="brands-section-slider-track">
+                <?php
+                /* Render two copies for seamless loop (animation translates -50%) */
+                for ($copy = 0; $copy < 2; $copy++) {
+                    foreach ($brand_logos_filtered as $logo_index => $row):
+                        $logo_image = is_array($row['logo_image']) ? ($row['logo_image']['url'] ?? '') : (string) ($row['logo_image'] ?? '');
+                        $logo_alt   = $row['logo_alt'] ?? '';
+                        $logo_index_1based = $logo_index + 1;
+                ?>
+                <li class="brands-section-slider-slide">
                   <div class="brands-section-logo-item flex justify-center items-center">
-                    <img src="<?php echo esc_url($logo_image); ?>" alt="<?php echo esc_attr(!empty($logo_alt) ? $logo_alt : 'Brand logo ' . $logo_index_1based); ?>">
+                    <img src="<?php echo esc_url($logo_image); ?>" alt="<?php echo esc_attr(!empty($logo_alt) ? $logo_alt : 'Brand logo ' . $logo_index_1based); ?>" loading="lazy" width="120" height="40">
                   </div>
-                </div>
-              <?php endforeach; ?>
+                </li>
+                <?php
+                    endforeach;
+                }
+                ?>
+              </ul>
             </div>
-            <button type="button" class="brands-section-slider-next flex justify-center items-center bm-color-color-primary bm-font-size-fs-h6 bm-padding-0 bm-font-size-fs-small" aria-label="<?php esc_attr_e('Next', 'theme'); ?>">&rarr;</button>
-          </div>
           </div>
           <div class="brands-section-logos--mobile brands-section-logos brands-section-logos--mobile-only flex flex-col items-center gap-4">
             <div class="brands-section-logos-grid flex flex-wrap justify-center items-center">
@@ -99,7 +88,7 @@ if (!empty($background)) {
           </div>
         <?php else: ?>
           <div class="brands-section-logos flex flex-col items-center gap-4 bm-gap-space-6">
-            <div class="brands-section-logo-row brands-section-logo-row-1 flex flex-wrap justify-center items-center gap-3">
+            <div class="brands-section-logo-row brands-section-logo-row-1 flex justify-center items-center gap-3">
               <?php
               $logo_index = 0;
               foreach ($brand_logos as $row):
@@ -108,7 +97,7 @@ if (!empty($background)) {
                   $logo_alt   = $row['logo_alt'] ?? '';
                   if ($logo_index === 7): ?>
             </div>
-            <div class="brands-section-logo-row brands-section-logo-row-2 gap-6 bm-display-flex bm-justify-content-center bm-align-items-center bm-gap-space-6 bm-flex-wrap-wrap bm-gap-space-5">
+            <div class="brands-section-logo-row brands-section-logo-row-2 gap-6 ">
                   <?php endif; ?>
                   <?php if (!empty($logo_image)): ?>
               <div class="brands-section-logo-item brands-section-logo-item--<?php echo esc_attr($logo_index); ?> flex justify-center items-center">

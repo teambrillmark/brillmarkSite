@@ -31,6 +31,7 @@
   border:          none;
   border-radius:   var(--radius-sm);            /* --radius-sm  →  6px   */
   transition:      var(--transition-btn);       /* --transition-btn      */
+  color: var(--color-white);                 /* --color-white → #ffffff */
 }
 
 

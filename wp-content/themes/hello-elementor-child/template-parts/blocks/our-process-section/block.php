@@ -18,7 +18,7 @@ $tabs        = get_field('tabs');
   <div class="container">
     <div class="our-process-section-inner flex flex-col items-center gap-10">
 
-      <div class="our-process-section-header flex flex-col items-center text-center gap-10">
+      <div class="our-process-section-header flex flex-col items-center text-center gap-6">
         <?php if (!empty($title)): ?>
           <h2 class="our-process-section-title text-primary font-weight-light m-0 bm-font-family-font-primary"><?php echo esc_html($title); ?></h2>
         <?php endif; ?>
@@ -43,7 +43,7 @@ $tabs        = get_field('tabs');
                   aria-selected="<?php echo $is_active ? 'true' : 'false'; ?>"
                   data-tab="<?php echo esc_attr($index); ?>"
                 >
-                  <div class="our-process-section-tab-inner flex flex-col items-center gap-8">
+                  <div class="our-process-section-tab-inner flex flex-col items-center gap-4">
                     <?php if (!empty($tab_icon)): ?>
                       <div class="our-process-section-tab-icon flex items-center justify-center">
                         <img src="<?php echo esc_url($tab_icon); ?>" alt="<?php echo esc_attr($tab_title); ?>">
@@ -57,7 +57,7 @@ $tabs        = get_field('tabs');
               <?php endforeach; ?>
             </div>
 
-            <div class="our-process-section-panel-wrapper">
+            <div class="our-process-section-panel-wrapper flex flex-col gap-11">
               <?php foreach ($tabs as $index => $tab):
                 $tab_description  = isset($tab['tab_description']) ? $tab['tab_description'] : '';
                 $tab_image        = isset($tab['tab_image']) ? $tab['tab_image'] : '';
@@ -69,7 +69,7 @@ $tabs        = get_field('tabs');
               ?>
                 <?php $tab_icon = isset($tab['tab_icon']) ? $tab['tab_icon'] : ''; ?>
                 <div
-                  class="our-process-section-panel<?php echo $is_active ? ' our-process-section-panel--active' : ''; ?>"
+                  class="our-process-section-panel flex flex-col gap-4<?php echo $is_active ? ' our-process-section-panel--active' : ''; ?>"
                   data-panel="<?php echo esc_attr($index); ?>"
                   role="tabpanel"
                   <?php echo !$is_active ? 'hidden' : ''; ?>
@@ -94,7 +94,7 @@ $tabs        = get_field('tabs');
                   </button>
                   <div
                     id="our-process-section-panel-content-<?php echo esc_attr($index); ?>"
-                    class="our-process-section-panel-inner flex flex-row items-center gap-10 bm-flex-direction-column-2"
+                    class="our-process-section-panel-inner flex flex-row items-center gap-10 justify-center"
                     role="region"
                     aria-labelledby="our-process-section-panel-trigger-<?php echo esc_attr($index); ?>"
                   >
@@ -104,23 +104,23 @@ $tabs        = get_field('tabs');
                       </div>
                     <?php endif; ?>
 
-                    <div class="our-process-section-panel-body flex flex-col gap-6 bm-util-2863">
-                      <div class="our-process-section-panel-text-group flex flex-col gap-10">
+                    <div class="our-process-section-panel-body flex flex-col gap-10 ">
+                      <div class="our-process-section-panel-text-group flex flex-col gap-4">
                         <?php if (!empty($tab_description)): ?>
-                          <p class="our-process-section-panel-description text-primary m-0 bm-text-ada5 bm-font-size-fs-body bm-line-height-lh-body"><?php echo wp_kses_post($tab_description); ?></p>
+                          <p class="our-process-section-panel-description text-primary m-0 font-weight-regular"><?php echo wp_kses_post($tab_description); ?></p>
                         <?php endif; ?>
 
                         <?php if (!empty($checklist_items) && is_array($checklist_items)): ?>
-                          <div class="our-process-section-checklist flex flex-col gap-5">
+                          <div class="our-process-section-checklist flex flex-col gap-4">
                             <?php foreach ($checklist_items as $item):
                               $item_text = isset($item['item_text']) ? $item['item_text'] : '';
                             ?>
                               <?php if (!empty($item_text)): ?>
-                                <div class="our-process-section-checklist-item flex flex-row items-center gap-5">
+                                <div class="our-process-section-checklist-item flex flex-row items-center gap-2">
                                   <?php if (!empty($check_icon)): ?>
                                     <img class="our-process-section-check-icon" src="<?php echo esc_url($check_icon); ?>" alt="" width="15" height="15">
                                   <?php endif; ?>
-                                  <span class="our-process-section-checklist-text text-secondary bm-text-ada5 bm-font-size-fs-body bm-line-height-lh-body"><?php echo esc_html($item_text); ?></span>
+                                  <span class="our-process-section-checklist-text text-secondary"><?php echo esc_html($item_text); ?></span>
                                 </div>
                               <?php endif; ?>
                             <?php endforeach; ?>
